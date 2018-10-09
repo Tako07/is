@@ -1,0 +1,184 @@
+*{
+	margin:0px 0px;
+	padding: 0px 0px;
+	border: 0px solid #000000;
+}
+a{
+	text-decoration: none;
+	text-decoration-color: #000000;
+}
+#cabecera{					/*Esta es la parte de la cabecera, el color el tamaño y el tipo de letra*/
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	height: 90px;
+	width: 100%;
+	background: #1976D2;
+	padding: 5px 15px;
+	align-content: center;
+	font: bold 14px verdana, sans-serif; 
+	align-items: center;
+}
+#buscar{				/*Este es la parte del buscador fondo, tipo de letra tamaño*/
+	flex-shrink: 3;
+	text-align: left;
+	-moz-transform: translateY(-10px);
+	-webkit-transform: translateY(-10px);
+	width: 370px;
+	height: 40px;
+	color: white;
+	font: bold 15px verdana, sans-serif;
+	background-color: transparent;
+	border-style: groove;
+	border-width: 0px 0px 3px 0px;/*	*/
+	border-color: #0D47A1;
+}
+.logo{						/*Este sera el tamaño del Logo de la pagina*/
+	width: 270px;
+	height: 70px;
+	flex-shrink: 3;
+}
+.icono{						/*Este es el icono que aparece a la derecha*/
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	background-color: transparent;
+	border-style: groove;
+	border-width: 3px 3px 3px 3px;
+	border-color: #1565c0;
+}
+button[name*="b"]{			/*esto es para el boton de la pinche hamburguesa*/
+	flex-shrink: 0;	
+	border-radius: 50%;
+	width: 45px;
+	height: 45px;
+	padding: 0px;
+	background-color: transparent;
+	border-style: groove;
+	border-width: 3px 3px 3px 3px;
+	border-color: #1565c0;
+	outline: none;
+	cursor: pointer;
+} 
+#botonesN{					/*Estos son los botones de Registro e Inicio de sesion*/
+	cursor: pointer;
+	outline: none;
+	color: white; 
+	padding: 5px;
+	background-color: #1565c0;
+	border-width: 1px;
+	border-color: #0d47a1
+}
+input:focus{						/*Esto es para cuando se da click en un boton no se marque un cuadro alrededor*/
+	outline: none;
+}
+::placeholder{						/*De aqui para abajo es para el color del placeholder*/
+	color: #D8D8D8;
+	opacity: 1;
+}
+:-ms-input-placeholder{
+	color: white;
+}
+::-ms-input-placeholder{
+	color: white;
+}
+
+/*/////////////////////////////////////////////////////////////////////////Hasta aqui es la cabecera////////////////////////////////////////*/
+
+
+#centro{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin: 5px;
+}
+#centro1{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+#seccion-banner{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	visibility: visible;
+	height: 550px;
+	width: 250px;
+	padding: 0px 5px 0px 0px;
+}
+
+#banner{
+	background: -webkit-linear-gradient(top, #A4A4A4 50%, #6E6E6E 90%);
+	padding: 15px 10px 15px 10px;
+	float: left;
+	height: 565px;
+	width: 30px;
+	max-width: 250px;
+	text-overflow: initial;
+	visibility: hidden; 					/*Quitar para mostrar la raya gris*/
+}
+#ocultar{
+	visibility: hidden;
+}
+#banner1{
+	background: -webkit-linear-gradient(top, #A4A4A4 50%, #6E6E6E 90%);
+	padding: 15px 10px 15px 10px;
+	float: left;
+	text-overflow: initial;
+	-webkit-animation: banner 1.5s;
+	animation: banner 1.5s;
+	width: 250px;
+	height: 565px;
+	visibility: visible;					/*quitar para mostrar la raya gris*/
+}
+
+@keyframes banner{
+	0%{width: 30px}
+	100%{width: 250px}
+}
+#mostrar{
+	visibility: visible;
+	transition: visibility 3s;
+}	
+
+#publicidad1{
+	padding: 5px;
+	max-width: 200px;
+	max-height: 300px;
+	visibility: visible;
+}
+
+#mapa{
+	flex-shrink: 3;
+	width: 1085px;
+	height: 300px;
+}
+#recomendados{
+	flex-shrink: 3;
+	width: 800px;
+	height: 250px;
+	border: 1px solid #000000; 
+}
+#video{
+	padding: 0px 0px 0px 10px;
+	height: 250px;
+	width: 270px;
+	flex-shrink: 3;
+}
+#pie{
+	background-color: black;
+	width: 100%;
+	height: 35px;		
+}
+#anunciate{
+	margin-top: 2.5px;
+	margin-right: 50px;
+	float: right;
+	height: 30px;
+	cursor: pointer;
+	outline: none;
+	padding: 5px;
+	border-width: 1px;
+	align-items: right;
+}
