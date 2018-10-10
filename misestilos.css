@@ -55,9 +55,6 @@ button[name*="b"]{			/*esto es para el boton de la pinche hamburguesa*/
 	height: 45px;
 	padding: 0px;
 	background-color: transparent;
-	border-style: groove;
-	border-width: 3px 3px 3px 3px;
-	border-color: #1565c0;
 	outline: none;
 	cursor: pointer;
 } 
