@@ -17,7 +17,7 @@ a{
 	background: #1976D2;
 	padding: 5px 15px;
 	align-content: center;
-	font: bold 14px verdana, sans-serif; 
+	font: bold 14px verdana, sans-serif;
 	align-items: center;
 }
 #buscar{				/*Este es la parte del buscador fondo, tipo de letra tamaño*/
@@ -56,7 +56,7 @@ button[name*="b"]{			/*esto es para el boton de la pinche hamburguesa*/
 	background-color: transparent;
 	outline: none;
 	cursor: pointer;
-} 
+}
 #hamburguesa{
 	margin-left: 10px;
 	background-image: url("https://trello-attachments.s3.amazonaws.com/5ba023426a260a1d5f1e9f38/5bbd678fbacffa7056a6de88/5c646c1a6a4aa0ad092075b448fc1315/icons8-men%C3%BA-filled-500.png");
@@ -71,7 +71,7 @@ button[name*="b"]{			/*esto es para el boton de la pinche hamburguesa*/
 #botonesN{					/*Estos son los botones de Registro e Inicio de sesion*/
 	cursor: pointer;
 	outline: none;
-	color: white; 
+	color: white;
 	padding: 5px;
 	background-color: #1565c0;
 	border-width: 1px;
@@ -89,6 +89,9 @@ input:focus{						/*Esto es para cuando se da click en un boton no se marque un 
 }
 ::-ms-input-placeholder{
 	color: white;
+}
+li{
+	list-style:none;
 }
 
 /*/////////////////////////////////////////////////////////////////////////Hasta aqui es la cabecera////////////////////////////////////////*/
@@ -147,7 +150,7 @@ input:focus{						/*Esto es para cuando se da click en un boton no se marque un 
 #mostrar{
 	visibility: visible;
 	transition: visibility 3s;
-}	
+}
 
 #publicidad1{
 	padding: 5px;
@@ -165,7 +168,7 @@ input:focus{						/*Esto es para cuando se da click en un boton no se marque un 
 	flex-shrink: 3;
 	width: 800px;
 	height: 250px;
-	border: 1px solid #000000; 
+	border: 1px solid #000000;
 }
 #video{
 	padding: 0px 0px 0px 10px;
@@ -176,7 +179,7 @@ input:focus{						/*Esto es para cuando se da click en un boton no se marque un 
 #pie{
 	background-color: black;
 	width: 100%;
-	height: 35px;		
+	height: 35px;
 }
 #anunciate{
 	margin-top: 2.5px;
