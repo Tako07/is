@@ -94,7 +94,7 @@ input:focus{						/*Esto es para cuando se da click en un boton no se marque un 
 /*/////////////////////////////////////////////////////////////////////////Hasta aqui es la cabecera////////////////////////////////////////*/
 
 li{
-	border-radius: 30%/50%;
+	border-radius: 10px;
 	margin-top: 4px;
 	margin-bottom: 4px;
 	box-shadow: rgba(0,0,0,0.5) 3px 3px 5px;
