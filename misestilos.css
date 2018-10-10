@@ -35,8 +35,9 @@ a{
 	border-color: #0D47A1;
 }
 .logo{						/*Este sera el tamaño del Logo de la pagina*/
+	margin-top: 40px;
 	width: 270px;
-	height: 70px;
+	height: 90px;
 	flex-shrink: 3;
 }
 .icono{						/*Este es el icono que aparece a la derecha*/
