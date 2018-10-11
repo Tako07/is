@@ -12,7 +12,7 @@ a{
 	flex-direction: row;
 	justify-content: space-between;
 	flex-wrap: wrap;
-	height: 90px;
+	height: 70px;
 	width: 100%;
 	background: #1976D2;
 	padding: 5px 15px;
@@ -37,6 +37,7 @@ a{
 .logo{						/*Este sera el tamaño del Logo de la pagina*/
 	width: 270px;
 	height: 70px;
+	margin-top: 30px;
 	flex-shrink: 3;
 }
 .icono{						/*Este es el icono que aparece a la derecha*/
@@ -44,9 +45,6 @@ a{
 	width: 60px;
 	height: 60px;
 	background-color: transparent;
-	border-style: groove;
-	border-width: 3px 3px 3px 3px;
-	border-color: #1565c0;
 }
 button[name*="b"]{			/*esto es para el boton de la pinche hamburguesa*/
 	flex-shrink: 0;
@@ -69,6 +67,8 @@ button[name*="b"]{			/*esto es para el boton de la pinche hamburguesa*/
 	background-image: url("https://trello-attachments.s3.amazonaws.com/5ba023426a260a1d5f1e9f38/5bbd678fbacffa7056a6de88/28e0cd05cdff8fb815373638d7f6ee59/icons8-b%C3%BAsqueda-filled-500.png");
 }
 #botonesN{					/*Estos son los botones de Registro e Inicio de sesion*/
+	box-shadow: rgba(0,0,0,0.5) 3px 3px 5px;
+	border-radius: 15%;
 	cursor: pointer;
 	outline: none;
 	color: white;
@@ -90,13 +90,15 @@ input:focus{						/*Esto es para cuando se da click en un boton no se marque un 
 ::-ms-input-placeholder{
 	color: white;
 }
-li{
-	list-style:none;
-}
 
 /*/////////////////////////////////////////////////////////////////////////Hasta aqui es la cabecera////////////////////////////////////////*/
 
-
+li{
+	border-radius: 10px;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	box-shadow: rgba(0,0,0,0.5) 3px 3px 5px;
+}
 #centro{
 	display: flex;
 	flex-direction: row;
@@ -113,7 +115,7 @@ li{
 	flex-direction: row;
 	flex-wrap: wrap;
 	visibility: visible;
-	height: 550px;
+	height: 590px;
 	width: 250px;
 	padding: 0px 5px 0px 0px;
 }
@@ -139,7 +141,7 @@ li{
 	-webkit-animation: banner 1.5s;
 	animation: banner 1.5s;
 	width: 250px;
-	height: 565px;
+	height: 590px;
 	visibility: visible;					/*quitar para mostrar la raya gris*/
 }
 
@@ -194,9 +196,11 @@ li{
 	align-items: right;
 }
 #lista_recom li {
-	margin: 4%;
+	/*margin: 4%;*/
 	display: inline-block;
 }
-#tarjeta{
-	padding: 1%;
+#tarjetas{
+	margin-left: 10px;
+	width: 250px;
+	height: 100%;
 }
