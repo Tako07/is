@@ -212,6 +212,7 @@ li{
   flex-direction: column;
   height: auto;
   display: flex;
+	box-shadow: rgba(0,0,0,0.5) 3px 3px 5px;
 
 
 }
