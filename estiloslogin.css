@@ -1,0 +1,98 @@
+*{
+	margin:0px 0px;
+	padding: 0px 0px;
+	border: 0px solid #000000;
+}
+
+#app{
+	display: block;
+}
+
+header{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+body{
+	background-color: #D8D8D8D8;
+}
+
+#cabecera{
+	flex-direction: row;
+	width: 100%;
+	height: 10%;
+	background: #1976D2;
+	padding: 5px 15px;	
+	align-content: center;
+	font: bold 14px verdana, sans-serif;
+	align-items: center;
+}
+
+.home{
+	margin-left: 1%;
+	height: 57%;
+	padding: 0px;
+	cursor: pointer;
+	float: left;
+}
+#home{
+	width: 100%;
+}
+.logo{						/*Este sera el tamaño del Logo de la pagina*/
+	width: 19%;
+	height: 100%;
+	margin-left: 35%;
+}
+#logo{
+	width: 100%;
+	height: 100%;
+}
+
+#seccion{
+	margin: 3% 25% 0% 25%;
+	padding: 2%;
+	display: box;
+	background-color: #FFFFFF;
+	/*box-shadow: rgba(0,0,0,0.5) 3px 3px 5px;*/
+}
+
+.icono{
+	margin: auto;
+	width: 13%;
+	height: 10%;
+}
+#icono{
+	width: 100%;
+	height: 100%;
+}
+.formulario{
+	margin: 10% auto auto auto;
+	display: box;
+}
+.correo{
+	border: 1px solid #A4A4A4;
+	margin: 0% 25%;
+	font:  190% roboto;
+	width: 55%;
+}
+.pass{
+	border: 1px solid #A4A4A4;
+	margin: 5% 25%;
+	font:  190% roboto;
+	width: 55%;	
+}
+.botones{
+	margin: 5% 25% 5% 25%;
+}
+.formButton{
+	cursor: pointer;
+	outline: none;
+	color: white;
+	width: 50%;
+	padding: 5%;
+	font: 120% roboto;
+	margin: 3% 25%;
+	background-color: #1565c0;
+	border-width: 1px;
+	border-color: #0d47a1;
+}

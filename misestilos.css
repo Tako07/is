@@ -17,7 +17,7 @@ a{
 	background: #1976D2;
 	padding: 5px 15px;
 	align-content: center;
-	font: bold 14px verdana, sans-serif;
+	font: bold 14px roboto;
 	align-items: center;
 }
 #buscar{				/*Este es la parte del buscador fondo, tipo de letra tamaño*/
@@ -28,7 +28,7 @@ a{
 	width: 370px;
 	height: 40px;
 	color: white;
-	font: bold 15px verdana, sans-serif;
+	font: bold 15px roboto;
 	background-color: transparent;
 	border-style: groove;
 	border-width: 0px 0px 3px 0px;/*	*/
@@ -46,7 +46,7 @@ a{
 	height: 60px;
 	background-color: transparent;
 }
-button[name*="b"]{			/*esto es para el boton de la pinche hamburguesa*/
+button[name*="b"]{			/*esto es para el boton de la hamburguesa*/
 	flex-shrink: 0;
 	width: 40px;
 	height: 40px;
@@ -93,7 +93,7 @@ input:focus{						/*Esto es para cuando se da click en un boton no se marque un 
 
 /*/////////////////////////////////////////////////////////////////////////Hasta aqui es la cabecera////////////////////////////////////////*/
 
-li{
+li{											
 	border-radius: 10px;
 	margin-top: 4px;
 	margin-bottom: 4px;
@@ -207,7 +207,7 @@ li{
 	margin-right: 3%;
 	width: 250px;
 	background-color: #cccccc;
-	font: bold 14px verdana, sans-serif;
+	font: bold 14px roboto;
 	justify-content: space-between;
   flex-direction: column;
   height: auto;
@@ -239,3 +239,6 @@ li{
 .bt{
 	background-color: #00CCF1;
 }
+
+
+/*/////////////////////////////////////////////////INICIA LOGIN///////////////////////////////////////////////////*/
