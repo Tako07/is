@@ -1,0 +1,40 @@
+*{
+		border: 0px solid #000000;
+
+
+}
+#cabecera{					/*Esta es la parte de la cabecera, el color el tamaño y el tipo de letra*/
+margin-top: 0;
+  display: flex;
+	justify-content: space-between;
+	height: 15%;
+	width: 98%;
+	background: #1976D2;
+	padding: 1% 1%;
+	align-content: center;
+
+	align-items: center;
+}
+.logo{						/*Este sera el tamaño del Logo de la pagina*/
+  width: auto;
+	height: auto;
+	margin-top: 1%;
+}
+#botonesN{					/*Estos son los botones de Registro e Inicio de sesion*/
+	box-shadow: rgba(0,0,0,0.5) 3px 3px 5px;
+	border-radius: 15%;
+	cursor: pointer;
+	outline: none;
+	color: white;
+	padding: 5px;
+	background-color: #1565c0;
+	border-width: 1px;
+	border-color: #0d47a1;
+}
+#formulario{
+  margin-top: 3%;
+  margin-left: 30%;
+  width: 50%;
+  border: 1px solid #000000;
+
+}
