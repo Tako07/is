@@ -228,7 +228,7 @@ h1{						/*FORMATO DE TEXTO DEL REGISTRO*/
 	background-color: #00BCD4;
 
 }
-#mensaje{
-	margin: 10%;
+#mensaje{/*Caja del mensaje*/
+	margin: 15% 30% 40% 30%;
 	font: 100% roboto;
 }
