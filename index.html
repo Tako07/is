@@ -25,10 +25,10 @@
 						<img src="https://trello-attachments.s3.amazonaws.com/5ba023426a260a1d5f1e9f38/5bbd678fbacffa7056a6de88/362bb87762fdc171859f83824931ef7d/Services_In_Logo_2.png">
 						<!--Link a imageen-->
 					</figure>
-					<div>
+					<form action="busqueda.php" method="post">
 						<input id="buscar" type="search" v-model="Busqueda" placeholder="Ingresa un servicio a buscar"></input>
-						<button name="bsearch" id="lupa"></button>
-					</div>
+						<button type="submit" name="bsearch" id="lupa"></button>
+					</form>
 						<button id="botonesN" onclick="regcliente();">Registrate</button>
 						<button id="botonesN" onclick="login();">Iniciar Sesión</button>
 						<figure class="icono">
