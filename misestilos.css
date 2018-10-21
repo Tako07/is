@@ -39,6 +39,7 @@ a{
 	height: 70px;
 	margin-top: 30px;
 	flex-shrink: 3;
+	cursor: pointer;
 }
 .icono{						/*Este es el icono que aparece a la derecha*/
 	border-radius: 50%;
