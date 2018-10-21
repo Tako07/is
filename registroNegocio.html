@@ -1,24 +1,50 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="es">
 	<head>
-		<meta charset="utf-8">
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Services in</title>
-		<link rel="stylesheet" href="misestilos2.css">
+		<link rel="stylesheet" href="estiloslogin.css">
+
 	</head>
 
-<body>
-
-	<header id="cabecera">
-		<figure id="home" class="logo">
-			<a href="index.html"><img src="icon_home.png"></a>
-		</figure>
-		<figure id="logo" class="logo">
-			<img src="Services_In_Logo_2.png">
-		</figure>
-		<button id="botonesN">Iniciar Sesion</button>
-	</header>
-	<div id="formulario">
-		Llena el formulario <br> para continuar
-	</div>
-</body>
+	<body>
+		<div id="app">
+			<header id="cabecera">
+					<figure class="home" onclick="home();">
+						<img id="home" src="https://trello-attachments.s3.amazonaws.com/5ba023426a260a1d5f1e9f38/5bc61da775eb1463f0fe4d2c/3f85905084726cdb161b8289d67cf5c8/icon_home.png">
+					</figure>
+					<h1 id="texto">Services In</h1>
+					<button id="botonesN" onclick="login();">Iniciar Sesion</button>
+			</header>
+			<section id="seccionc2RN">
+				<h1>Llena el formulario <br> para continuar</h1>
+				<form>
+					<input class="formatoIn2R" type="text" name="Negocio" placeholder="Piñas coladas Martita" required>
+					<p class="formatoL2R">Domicilio:</p>
+					<textarea class="formatoIn2R" type="text" name="Nombre" placeholder="Escriba su domicilio" required></textarea>
+					<p class="formatoL2R">Descripción del negocio:</p>
+					<textarea class="formatoIn2R" type="text" name="Descripcion" placeholder="Escriba una breve descripción de su negocio" required></textarea>
+					<p class="formatoL2R">Horarios</p>
+					<textarea class="formatoIn2R" type="text" name="Horarios" placeholder="Escriba los horarios" required></textarea>
+					<p class="formatoL2R">Categoría del negocio:</p>
+					<div class="lista">categorias |
+						<select id="desplegable" name="OS">
+   						<option value="1">Categoria 1</option>
+   						<option value="2">Categoria 2</option>
+   						<option value="3">Categoria 3</option>
+   						<option value="4">Categoria 4</option>
+   						<option value="5">Categoria 5</option>
+   						<option value="6">Categoria 6</option>
+						</select>
+					</div>
+					<center>
+						<button id="registroFin">Registrarse</button>
+					</center>
+				</form>
+<!--sujefa-->
+			</section>
+		</div>
+	</body>
 </html>
