@@ -28,11 +28,14 @@ function home(){
 	window.open("index.html","_self");
 }
 function login(){
-	window.open("login.html","_self");	
+	window.open("login.html","_self");
 }
 function regnegocio(){
-	window.open("registroN.html","_self");		
+	window.open("registroN.html","_self");
 }
 function regcliente(){
-	window.open("registroC.html","_self");			
+	window.open("registroC.html","_self");
+}
+function finRegistro(){
+	window.open("FinRegistro.html","_self");
 }

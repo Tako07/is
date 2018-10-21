@@ -203,12 +203,12 @@ h1{						/*FORMATO DE TEXTO DEL REGISTRO*/
 	font:  150% roboto;
 	width: 100%;
 }
-.formatoL2R{ /*Cajas de labels en la segunda pantalla de registro*/
+.formatoL2R{ /*Cajas de labels en la segunda pantalla de registro negocio*/
 	margin: 0% 0% 0% 0%;
 	font:  150% roboto;
 	width: 100%;
 }
-.lista{/*Formato de la caja de lista de categorías segunda pantalla de registro*/
+.lista{/*Formato de la caja de lista de categorías segunda pantalla de registro negocio*/
 	margin-top: 3%;
 	width: 50%;
 	font: 150% roboto;
@@ -218,14 +218,17 @@ h1{						/*FORMATO DE TEXTO DEL REGISTRO*/
 	font: 70% roboto;
 	width: 67%;
 }
-#registroFin{
+#registroFin{/*Botón registrar segunda pantalla de registro negocio*/
 	cursor: pointer;
 	outline: none;
 	color: white;
-
 	margin-top: 10%;
 	padding: 5px;
 	font: 180% roboto;
 	background-color: #00BCD4;
 
+}
+#mensaje{
+	margin: 10%;
+	font: 100% roboto;
 }
