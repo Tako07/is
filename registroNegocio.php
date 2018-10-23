@@ -14,7 +14,7 @@
 		<div id="app">
 			<header id="cabecera">
 					<figure class="home" onclick="home();">
-						<img id="home" src="https://trello-attachments.s3.amazonaws.com/5ba023426a260a1d5f1e9f38/5bc61da775eb1463f0fe4d2c/3f85905084726cdb161b8289d67cf5c8/icon_home.png">
+						<img id="home" src="iconos/ic_home_v3.png">
 					</figure>
 					<h1 id="texto">Services In</h1>
 					<button id="botonesN" onclick="login();">Iniciar Sesion</button>

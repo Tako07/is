@@ -6,11 +6,13 @@
 
 #app{
 	display: block;
+	overflow: hidden;
 }
 
 header{
 	display: flex;
 	flex-wrap: wrap;
+
 }
 
 body{
@@ -34,7 +36,7 @@ body{
 
 .home{						/*caja del icono de la casa*/
 	margin-left: 1%;
-	height: 57%;
+	width: 4%;
 	padding: 0px;
 	cursor: pointer;
 	float: left;
@@ -134,16 +136,17 @@ h1{						/*FORMATO DE TEXTO DEL REGISTRO*/
 }
 .nombreNU{				/*Formato de la caja con Icono del Username/Nombre de registro*/
 	display: flex;
+	align-items: center;
+	align-content: center;
 	width: 55%;
 	margin: 0% 25%;
 }
 .iconoUser{				/*caja de icono de User*/
-	width: 9%;
-	height: 10%;
+	width: 8.8%;
+	margin-top: 1%;
 }
 #iconoUser{				/*tamño del icono de user*/
 	width: 100%;
-	height: 100%;
 }
 .formato1{				/*FORMATO PARA LA CAJA DE USER O NOMBRE DE NEGOCIO PANTALLA REGISTRO*/
 	border: 1px solid #A4A4A4;
@@ -229,6 +232,15 @@ h1{						/*FORMATO DE TEXTO DEL REGISTRO*/
 
 }
 #mensaje{/*Caja del mensaje*/
-	margin: 15% 30% 40% 30%;
+	margin: 5% 28% 40% 28%;
 	font: 100% roboto;
+}
+
+.info{
+	margin: 5% auto 0% auto;
+	width: 8%;
+}
+#info{
+	width: 100%;
+	height: 100%;
 }

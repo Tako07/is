@@ -11,20 +11,20 @@
 		<div id="app">
 			<header id="cabecera">
 					<figure class="home" onclick="home();">
-							<img id="home" src="https://trello-attachments.s3.amazonaws.com/5ba023426a260a1d5f1e9f38/5bc61da775eb1463f0fe4d2c/3f85905084726cdb161b8289d67cf5c8/icon_home.png">
+							<img id="home" src="iconos/ic_home_v3.png">
 					</figure>
 					<h1 id="texto">Services In</h1>
 			</header>
 			<section id="seccion">
 				<figure class="icono">
-					<img id="icono" src="https://trello-attachments.s3.amazonaws.com/5ba023426a260a1d5f1e9f38/5bc61da775eb1463f0fe4d2c/e412d847e9f696aba8666682daa8ee8c/icon_profile.png">
+					<img id="icono" src="iconos/ic_profile_v3.png">
 				</figure>
 				<form action="perfilNormal.php" name="miformulario" id="miformulario" method="post" class="formulario">
 					<input class="correo" type="text" name="correo" placeholder="Correo electronico/Username" required>
 					<div class="posicion">
 						<input id="contraseña" class="pass" type="password" name="contraseña" value="contraseña" required>
 						<figure class="ojo">
-							<img id="ojo" src="ojo.png" onclick="mostrarpass(0);">
+							<img id="ojo" src="iconos/ojo.png" onclick="mostrarpass(0);">
 						</figure>
 					</div>
 					<div class="botones">

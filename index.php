@@ -22,7 +22,7 @@
 			<header id="cabecera">
 					<button name="bbanner" id="hamburguesa"></button>
 					<figure class="logo" onclick="home();">
-						<img src="https://trello-attachments.s3.amazonaws.com/5ba023426a260a1d5f1e9f38/5bbd678fbacffa7056a6de88/362bb87762fdc171859f83824931ef7d/Services_In_Logo_2.png">
+						<img src="iconos/logo.png">
 						<!--Link a imageen-->
 					</figure>
 					<form action="busqueda.php" method="post">
@@ -32,7 +32,7 @@
 						<button id="botonesN" onclick="regcliente();">Registrate</button>
 						<button id="botonesN" onclick="login();">Iniciar Sesión</button>
 						<figure class="icono">
-							<img src="https://trello-attachments.s3.amazonaws.com/5ba023426a260a1d5f1e9f38/5bbd678fbacffa7056a6de88/70f1c70cef65817dcac934211f4ebdcd/icons8-usuario-de-g%C3%A9nero-neutro-100.png">
+							<img src="iconos/ic_profile_v3.png">
 						</figure>
 			</header>
 			<section id="centro">
@@ -58,11 +58,11 @@
 							</lo>
 						</nav>
 						<figure id="publicidad1">
-							<a href="https://www.trivago.com"><img src="https://www.itgovernance.co.uk/blog/wp-content/uploads/2017/01/Cyber-Essentials-banner.jpg"></a>
+							<a href="https://www.trivago.com"><img src="iconos/publicidad1.jpg"></a>
 						</figure>
 					</section>
 					<figure id="publicidad1">
-							<a href="https://www.trivago.com"><img src="https://www.itgovernance.co.uk/blog/wp-content/uploads/2017/01/Cyber-Essentials-banner.jpg"></a>
+							<a href="https://www.trivago.com"><img src="iconos/publicidad1.jpg"></a>
 					</figure>
 				</div>
 				<section id="centro1">

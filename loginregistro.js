@@ -25,17 +25,17 @@ function mostrarpass(i){
 }
 
 function home(){
-	window.open("index.html","_self");
+	window.open("index.php","_self");
 }
 function login(){
-	window.open("login.html","_self");
+	window.open("login.php","_self");
 }
 function regnegocio(){
-	window.open("registroN.html","_self");
+	window.open("registroN.php","_self");
 }
 function regcliente(){
-	window.open("registroC.html","_self");
+	window.open("registroC.php","_self");
 }
 function finRegistro(){
-	window.open("FinRegistro.html","_self");
+	window.open("FinRegistro.php","_self");
 }

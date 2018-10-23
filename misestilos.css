@@ -58,14 +58,14 @@ button[name*="b"]{			/*esto es para el boton de la hamburguesa*/
 }
 #hamburguesa{
 	margin-left: 10px;
-	background-image: url("https://trello-attachments.s3.amazonaws.com/5ba023426a260a1d5f1e9f38/5bbd678fbacffa7056a6de88/5c646c1a6a4aa0ad092075b448fc1315/icons8-men%C3%BA-filled-500.png");
+	background-image: url("iconos/ic_menu_v3.png");
 	background-size: cover;
 	background-repeat: center;
 }
 #lupa{
 	background-size: cover;
 	background-repeat: center;
-	background-image: url("https://trello-attachments.s3.amazonaws.com/5ba023426a260a1d5f1e9f38/5bbd678fbacffa7056a6de88/28e0cd05cdff8fb815373638d7f6ee59/icons8-b%C3%BAsqueda-filled-500.png");
+	background-image: url("iconos/ic_lupa_v3.png");
 }
 #botonesN{					/*Estos son los botones de Registro e Inicio de sesion*/
 	box-shadow: rgba(0,0,0,0.5) 3px 3px 5px;
@@ -74,6 +74,7 @@ button[name*="b"]{			/*esto es para el boton de la hamburguesa*/
 	outline: none;
 	color: white;
 	padding: 5px;
+	font: bold 15px roboto;
 	background-color: #1565c0;
 	border-width: 1px;
 	border-color: #0d47a1;
@@ -84,12 +85,15 @@ input:focus{						/*Esto es para cuando se da click en un boton no se marque un 
 ::placeholder{						/*De aqui para abajo es para el color del placeholder*/
 	color: #D8D8D8;
 	opacity: 1;
+	font: bold 15px roboto;
 }
 :-ms-input-placeholder{
 	color: white;
+	font: bold 15px roboto;
 }
 ::-ms-input-placeholder{
 	color: white;
+	font: bold 15px roboto;
 }
 
 /*/////////////////////////////////////////////////////////////////////////Hasta aqui es la cabecera////////////////////////////////////////*/
