@@ -24,12 +24,7 @@
 					<img id="icono" src="iconos/ic_profile_v3.png">
 				</figure>
 				<form>
-					<div class="nombreNU">
-						<figure class="iconoUser">
-							<img id="iconoUser" src="iconos/ic_username_v3.png">
-						</figure>
-						<input class="formato1" type="text" name="user" placeholder="Nombre negocio" required>
-					</div>
+					<input class="formato" type="text" name="user" placeholder="Nombre negocio" required>
 					<input class="formato" type="text" name="Nombre" placeholder="Nombre Completo" required>
 					<input class="formato" type="email" name="correo" placeholder="Correo electronico" required>
 					<div class="posicion">
