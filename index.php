@@ -16,7 +16,6 @@
 		<!-- Api de google maps con la llave de acceso-->
 		</script>
 	</head>
-
 	<body>
 		<div id="app">
 			<header id="cabecera">
@@ -71,41 +70,45 @@
 					</div>
 					<div id="centro">
 						<section id="recomendados">
-							<div class="tarjetas">
-								<img id="recom1" src="mjolnir.jpg">
-								<div id="descripcion">
-									<p>Nombre del servicio<br>que se está ofreciendo</p>
-								</div>
-								<div id="bt_holder">
-									<button type="button" class="bt">Ver servicio</button>
-								</div>
+							<?php
+							$host = "localhost";
+							$database ="data_service_in";
+							$user ="root";
+							$password ="Privada";
+							$conexion= mysqli_connect($host,$user,$password,$database);
+								for ($i=1; $i <4 ; $i++) {
+									echo '<div class="tarjetas">';
+										echo '<img id="recom1" src="mjolnir.jpg">';
+										echo '<div id="descripcion">';
+										echo '<p>';
+											$aux=mysqli_query($conexion, 'select nombre_negocio from negocio where id_negocio='.$i);
+											if (mysqli_num_rows($aux) >= 0) {
+												$j=0;
+												while ($row=mysqli_fetch_assoc($aux)) {
+													$response[$j]['dato1']=utf8_encode($row['nombre_negocio']);
+													echo $response[$j]['dato1'];
+													$j++;
+												}
+											}else {
+												echo "0 results";
+											}
+											echo '</p>';
+										echo '</div>';
+										echo '<div id="bt_holder">';
+											echo '<button type="button" class="bt">Ver servicio</button>';
+										echo '</div>';
+										echo "</div>";
+									}
+									mysqli_close($conexion);
+							?>
 
 
-							</div>
-							<div class="tarjetas">
-								<img id="recom1" src="mjolnir.jpg">
-								<div id="descripcion">
-									<p>Nombre del servicio<br>que se está ofreciendo</p>
-								</div>
-								<div id="bt_holder">
-									<button type="button" class="bt">Ver servicio</button>
-								</div>
-
-							</div>
-							<div class="tarjetas">
-								<img id="recom1" src="mjolnir.jpg">
-								<div id="descripcion">
-									<p>Nombre del servicio<br>que se está ofreciendo</p>
-								</div>
-								<div id="bt_holder">
-									<button type="button" class="bt">Ver servicio</button>
-								</div>
-
-							</div>
 						</section>
 						<section id="video">
 							<div id="player"></div>
+
 						</section>
+						</div>
 					</div>
 				</section>
 			</section>

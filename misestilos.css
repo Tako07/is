@@ -98,7 +98,7 @@ input:focus{						/*Esto es para cuando se da click en un boton no se marque un 
 
 /*/////////////////////////////////////////////////////////////////////////Hasta aqui es la cabecera////////////////////////////////////////*/
 
-li{											
+li{
 	border-radius: 10px;
 	margin-top: 4px;
 	margin-bottom: 4px;
@@ -174,7 +174,7 @@ li{
 	height: 300px;
 }
 #recomendados{
-	display: flex;
+	display:flex;
 	margin-left: 0px;
 	flex-shrink: 3;
 	width: 800px;
@@ -210,7 +210,8 @@ li{
 .tarjetas{
 	margin-left: 0px;
 	margin-right: 3%;
-	width: 250px;
+	height: auto;
+	width: 38%;
 	background-color: #cccccc;
 	font: bold 14px roboto;
 	justify-content: space-between;
