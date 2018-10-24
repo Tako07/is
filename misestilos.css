@@ -88,11 +88,11 @@ input:focus{						/*Esto es para cuando se da click en un boton no se marque un 
 	font: bold 15px roboto;
 }
 :-ms-input-placeholder{
-	color: white;
+	color: #D8D8D8;
 	font: bold 15px roboto;
 }
 ::-ms-input-placeholder{
-	color: white;
+	color: #D8D8D8;
 	font: bold 15px roboto;
 }
 

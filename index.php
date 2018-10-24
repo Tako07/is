@@ -26,7 +26,7 @@
 						<!--Link a imageen-->
 					</figure>
 					<form action="busqueda.php" method="post">
-						<input id="buscar" type="search" v-model="Busqueda" placeholder="Ingresa un servicio a buscar"></input>
+						<input id="buscar" type="search" name="busqueda" maxlength="200" placeholder="Ingresa tu busqueda"></input>
 						<button type="submit" name="bsearch" id="lupa"></button>
 					</form>
 						<button id="botonesN" onclick="regcliente();">Registrate</button>
