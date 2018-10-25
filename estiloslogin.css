@@ -112,6 +112,7 @@ body{
 	padding: 5%;
 	font: 120% roboto;
 	margin: 3% 25%;
+	/*background-color: #00BCD4;*/
 	background-color: #1565c0;
 }
 ::placeholder{						/*De aqui para abajo es para el color del placeholder*/
@@ -189,7 +190,7 @@ h1{						/*FORMATO DE TEXTO DEL REGISTRO*/
 	padding: 3%;
 	font: 100% roboto;
 	margin: 5% 5%;
-	background-color: #1565c0;
+	background-color: #00BCD4;
 	text-align: center;
 	text-justify: inter-word;
 }
@@ -200,7 +201,7 @@ h1{						/*FORMATO DE TEXTO DEL REGISTRO*/
 	margin-left: 5%;
 	padding: 5px;
 	font: 100% roboto;
-	background-color: #1565c0;
+	background-color: #00BCD4;
 }
 #fecha{
 
@@ -224,7 +225,7 @@ h1{						/*FORMATO DE TEXTO DEL REGISTRO*/
 }
 #desplegable{ /*Formato opciones deplegables*/
 	font: 70% roboto;
-	width: 67%;
+	width: 63%;
 }
 #registroFin{/*Botón registrar segunda pantalla de registro negocio*/
 	cursor: pointer;
@@ -233,7 +234,7 @@ h1{						/*FORMATO DE TEXTO DEL REGISTRO*/
 	margin-top: 10%;
 	padding: 5px;
 	font: 180% roboto;
-	background-color: #1565c0;
+	background-color: #00BCD4;
 
 }
 #mensaje{/*Caja del mensaje*/
@@ -258,4 +259,18 @@ h1{						/*FORMATO DE TEXTO DEL REGISTRO*/
 }
 #apell{
 	margin-left: 0%;
+}
+.flex{
+	display: flex;
+}
+#lblColonia{
+	margin-right: 50%;
+}
+#inputCP{
+	margin-left: 0%;
+	width: 20%;
+	margin-right: 0%;
+}
+#inputColonia{
+	margin-right: 1%;
 }
