@@ -1,5 +1,7 @@
 <!DOCTYPE html>
+<?php
 
+ ?>
 <html lang="es">
 	<head>
 		<meta charset="UTF-8"/>
@@ -25,8 +27,11 @@
 				</figure>
 				<form action="registroNegocio.php" name="formulario" id="formulario" method="post">
 					<input class="formato" type="text" name="user" placeholder="Nombre negocio" required>
-					<input class="formato" type="text" name="Nombre" placeholder="Nombre Completo" required>
-					<input class="formato" type="email" name="correo" placeholder="Correo electronico" required>
+          <div id="nomApe">
+  					<input class="formato" type="text" name="nombre" placeholder="Nombre" required>
+  					<input id="apell"class="formato" type="text" name="apellido" placeholder="Apellido" required>
+          </div>
+          <input class="formato" type="email" name="correo" placeholder="Correo electronico" required>
 					<div class="posicion">
 						<input id="contraseña" class="formatopass" type="password" name="contrasena" value="contraseña" required>
 						<figure class="ojo">
