@@ -7,7 +7,7 @@
 		if(mysqli_connect_errno()){
 			printf("Falló la conexión: %s\n",mysqli_connect_errno());
 		}
-		$q="SELECT id_usuario FROM usuario WHERE username='".$usuario."' AND password=SHA1('".$contraseña."') OR correo='".$usuario."' AND password=SHA1('".$contraseña."');";
+		$q="SELECT id_usuario FROM usuario WHERE username='".$usuario."' AND password=MD5('".$contraseña."') OR correo='".$usuario."' AND password=MD5('".$contraseña."');";
 		$result=mysqli_query ($con,$q);
 		if(mysqli_num_rows($result)==0){
 			echo '<script>alert("Usuario o contraseña incorrectos");
