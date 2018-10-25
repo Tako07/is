@@ -22,7 +22,7 @@ function mostrarpass(i){
 			pass2=0;
 		}
 	}
-}
+}	
 
 function home(){
 	window.open("index.php","_self");

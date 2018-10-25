@@ -112,7 +112,19 @@ body{
 	padding: 5%;
 	font: 120% roboto;
 	margin: 3% 25%;
-	background-color: #00BCD4;
+	/*background-color: #00BCD4;*/
+	background-color: #1565c0;
+}
+::placeholder{						/*De aqui para abajo es para el color del placeholder*/
+	font: bold 70% roboto;
+}
+:-ms-input-placeholder{
+	color: #D8D8D8;
+	font: bold 70% roboto;
+}
+::-ms-input-placeholder{
+	color: #D8D8D8;
+	font: bold 70% roboto;
 }
 /*////////////////////////////////////////////////////////////////login////////////////////////////////////////////////////*/
 #seccionc{				/*SECCION BLANCA EN EL DE REGISTRO*/

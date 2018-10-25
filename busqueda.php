@@ -1,6 +1,6 @@
  <?php session_start();
 	$buscar=$_POST['busqueda'];
-	$con=mysqli_connect("localhost" , "root" , "" , "data_services_in") or die("No se pudo conectar: ".mysql_error());
+	$con=mysqli_connect("localhost" , "root" , "" , "data_service_in") or die("No se pudo conectar: ".mysql_error());
 	if(mysqli_connect_errno()){
 		printf("Falló la conexión: %s\n",mysqli_connect_errno());
 	}

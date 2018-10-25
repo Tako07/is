@@ -16,6 +16,7 @@
 		<!-- Api de google maps con la llave de acceso-->
 		</script>
 	</head>
+
 	<body>
 		<div id="app">
 			<header id="cabecera">
@@ -72,9 +73,9 @@
 						<section id="recomendados">
 							<?php
 							$host = "localhost";
-							$database ="data_service_in";
-							$user ="root";
-							$password ="Privada";
+							$database = "data_service_in";
+							$user = "root";
+							$password = "Privada";
 							$conexion= mysqli_connect($host,$user,$password,$database);
 								for ($i=1; $i <4 ; $i++) {
 									echo '<div class="tarjetas">';
@@ -101,14 +102,41 @@
 									}
 									mysqli_close($conexion);
 							?>
+							<div class="tarjetas">
+								<img id="recom1" src="mjolnir.jpg">
+								<div id="descripcion">
+									<p>Nombre del servicio<br>que se está ofreciendo</p>
+								</div>
+								<div id="bt_holder">
+									<button type="button" class="bt">Ver servicio</button>
+								</div>
 
 
+							</div>
+							<div class="tarjetas">
+								<img id="recom1" src="mjolnir.jpg">
+								<div id="descripcion">
+									<p>Nombre del servicio<br>que se está ofreciendo</p>
+								</div>
+								<div id="bt_holder">
+									<button type="button" class="bt">Ver servicio</button>
+								</div>
+
+							</div>
+							<div class="tarjetas">
+								<img id="recom1" src="mjolnir.jpg">
+								<div id="descripcion">
+									<p>Nombre del servicio<br>que se está ofreciendo</p>
+								</div>
+								<div id="bt_holder">
+									<button type="button" class="bt">Ver servicio</button>
+								</div>
+
+							</div>
 						</section>
 						<section id="video">
 							<div id="player"></div>
-
 						</section>
-						</div>
 					</div>
 				</section>
 			</section>
