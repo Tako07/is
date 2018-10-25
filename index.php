@@ -71,18 +71,24 @@
 					</div>
 					<div id="centro">
 						<section id="recomendados">
+							<table id="tablaRecom">
 							<?php
 							$host = "localhost";
 							$database = "data_service_in";
 							$user = "root";
 							$password = "Privada";
 							$conexion= mysqli_connect($host,$user,$password,$database);
-								for ($i=1; $i <4 ; $i++) {
-									echo '<div class="tarjetas">';
-										echo '<img id="recom1" src="mjolnir.jpg">';
-										echo '<div id="descripcion">';
-										echo '<p>';
-											$aux=mysqli_query($conexion, 'select nombre_negocio from negocio where id_negocio='.$i);
+								for ($i=1; $i <7 ; $i=$i+3) {
+									echo '<tr>';
+										echo '<td><img class="recomImg" src="mjolnir.jpg"></td>';
+										echo '<td><img class="recomImg" src="mjolnir.jpg"></td>';
+										echo '<td><img class="recomImg" src="mjolnir.jpg"></td></tr>';
+										echo '<tr>';
+										for ($k=$i; $k <4 ; $k++) {
+											echo '<td><div class="recomDesc">';
+											echo '<p class="textDesc">';
+
+											$aux=mysqli_query($conexion, 'select nombre_negocio from negocio where id_negocio='.$k);
 											if (mysqli_num_rows($aux) >= 0) {
 												$j=0;
 												while ($row=mysqli_fetch_assoc($aux)) {
@@ -93,12 +99,19 @@
 											}else {
 												echo "0 results";
 											}
+
 											echo '</p>';
-										echo '</div>';
-										echo '<div id="bt_holder">';
+										echo '</div></td>';
+									}echo '</tr>';
+										echo '<tr><td><div class="btVerServ">';
 											echo '<button type="button" class="bt">Ver servicio</button>';
-										echo '</div>';
-										echo "</div>";
+										echo '</div></td>';
+										echo '<td><div class="btVerServ">';
+											echo '<button type="button" class="bt">Ver servicio</button>';
+										echo '</div></td>';
+										echo '<td><div class="btVerServ">';
+											echo '<button type="button" class="bt">Ver servicio</button>';
+										echo '</div></td><tr>';
 									}
 									mysqli_close($conexion);
 							?>
@@ -112,6 +125,7 @@
 								</div>
 
 
+<<<<<<< Updated upstream
 							</div>
 							<div class="tarjetas">
 								<img id="recom1" src="mjolnir.jpg">
@@ -133,6 +147,9 @@
 								</div>
 
 							</div>
+=======
+						</table>
+>>>>>>> Stashed changes
 						</section>
 						<section id="video">
 							<div id="player"></div>
