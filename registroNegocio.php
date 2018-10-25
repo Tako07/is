@@ -23,14 +23,22 @@
 				<h1>Llena el formulario <br> para continuar</h1>
 				<form>
 					<input class="formatoIn2R" type="text" name="Negocio" placeholder="Piñas coladas Martita" required>
-					<p class="formatoL2R">Domicilio:</p>
-					<textarea class="formatoIn2R" type="text" name="Nombre" placeholder="Escriba su domicilio" required></textarea>
+					<p class="formatoL2R">Calle:</p>
+					<input class="formatoIn2R" type="text" name="calle" placeholder="Aquiles Caigo #69" required>
+					<div class="flex">
+						<p id="lblColonia" class="formatoL2R">Colonia:</p>
+						<p id="lblCP" class="formatoL2R">Codigo postal:</p>
+					</div>
+					<div class="flex">
+						<input id="inputColonia" class="formatoIn2R" type="text" name="colonia" placeholder="Heroes de la nación" required>
+						<input id="inputCP" class="formatoIn2R" type="text" name="cp" placeholder="59826" required>
+					</div>
 					<p class="formatoL2R">Descripción del negocio:</p>
 					<textarea class="formatoIn2R" type="text" name="Descripcion" placeholder="Escriba una breve descripción de su negocio" required></textarea>
 					<p class="formatoL2R">Horarios</p>
 					<textarea class="formatoIn2R" type="text" name="Horarios" placeholder="Escriba los horarios" required></textarea>
 					<p class="formatoL2R">Categoría del negocio:</p>
-					<div class="lista">categorias |
+					<div class="lista">Categorias |
 						<select id="desplegable" name="OS">
    						<option value="1">Categoria 1</option>
    						<option value="2">Categoria 2</option>
