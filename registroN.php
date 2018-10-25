@@ -23,12 +23,12 @@
 				<figure class="icono">
 					<img id="icono" src="iconos/ic_profile_v3.png">
 				</figure>
-				<form>
+				<form action="registroNegocio.php" name="formulario" id="formulario" method="post">
 					<input class="formato" type="text" name="user" placeholder="Nombre negocio" required>
 					<input class="formato" type="text" name="Nombre" placeholder="Nombre Completo" required>
 					<input class="formato" type="email" name="correo" placeholder="Correo electronico" required>
 					<div class="posicion">
-						<input id="contraseña" class="formatopass" type="password" name="contraseña" value="contraseña" required>
+						<input id="contraseña" class="formatopass" type="password" name="contrasena" value="contraseña" required>
 						<figure class="ojo">
 							<img id="ojo" src="iconos/ojo.png" onclick="mostrarpass(0);">
 						</figure>
@@ -41,7 +41,7 @@
 					</div>
 					<input type="checkbox" name="terminos" id="terminos" value="Acepto" required> Aceptas nuestros <a href="https://www.trivago.es/terminos-y-condiciones">terminos y condiciones.</a>
 					<div class="botones1">
-						<input type="submit" name="enviar" class="formButton1" value="Registrarse">
+						<input form ="formulario" type="submit" name="enviar" class="formButton1" value="Registrarse">
 						<input type="reset"  name="Cancelar" class="formButton1" value="Quiero ser un cliente" onclick="regcliente();">
 					</div>
 				</form>

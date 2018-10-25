@@ -115,41 +115,7 @@
 									}
 									mysqli_close($conexion);
 							?>
-							<div class="tarjetas">
-								<img id="recom1" src="mjolnir.jpg">
-								<div id="descripcion">
-									<p>Nombre del servicio<br>que se está ofreciendo</p>
-								</div>
-								<div id="bt_holder">
-									<button type="button" class="bt">Ver servicio</button>
-								</div>
-
-
-<<<<<<< Updated upstream
-							</div>
-							<div class="tarjetas">
-								<img id="recom1" src="mjolnir.jpg">
-								<div id="descripcion">
-									<p>Nombre del servicio<br>que se está ofreciendo</p>
-								</div>
-								<div id="bt_holder">
-									<button type="button" class="bt">Ver servicio</button>
-								</div>
-
-							</div>
-							<div class="tarjetas">
-								<img id="recom1" src="mjolnir.jpg">
-								<div id="descripcion">
-									<p>Nombre del servicio<br>que se está ofreciendo</p>
-								</div>
-								<div id="bt_holder">
-									<button type="button" class="bt">Ver servicio</button>
-								</div>
-
-							</div>
-=======
 						</table>
->>>>>>> Stashed changes
 						</section>
 						<section id="video">
 							<div id="player"></div>
