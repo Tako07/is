@@ -112,7 +112,6 @@ body{
 	padding: 5%;
 	font: 120% roboto;
 	margin: 3% 25%;
-	/*background-color: #00BCD4;*/
 	background-color: #1565c0;
 }
 ::placeholder{						/*De aqui para abajo es para el color del placeholder*/
@@ -190,7 +189,7 @@ h1{						/*FORMATO DE TEXTO DEL REGISTRO*/
 	padding: 3%;
 	font: 100% roboto;
 	margin: 5% 5%;
-	background-color: #00BCD4;
+	background-color: #1565c0;
 	text-align: center;
 	text-justify: inter-word;
 }
@@ -201,7 +200,7 @@ h1{						/*FORMATO DE TEXTO DEL REGISTRO*/
 	margin-left: 5%;
 	padding: 5px;
 	font: 100% roboto;
-	background-color: #00BCD4;
+	background-color: #1565c0;
 }
 #fecha{
 
@@ -234,7 +233,7 @@ h1{						/*FORMATO DE TEXTO DEL REGISTRO*/
 	margin-top: 10%;
 	padding: 5px;
 	font: 180% roboto;
-	background-color: #00BCD4;
+	background-color: #1565c0;
 
 }
 #mensaje{/*Caja del mensaje*/

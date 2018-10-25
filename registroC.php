@@ -25,17 +25,20 @@
 				</figure>
 				<form>
 					<input class="formato" type="text" name="user" placeholder="Username" required>	
-					<input class="formato" type="text" name="Nombre" placeholder="Nombre Completo" required>
+					<div id="nomApe">
+	  					<input class="formato" type="text" name="nombre" placeholder="Nombre" required>
+	  					<input id="apell"class="formato" type="text" name="apellido" placeholder="Apellido" required>
+          			</div>
 					<input id="fecha" class="formato" type="text" name="fecha" placeholder="Fecha de Nacimiento" required onclick="cambiaFecha();">
-					<input class="formato" type="email" name="correo" placeholder="Correo electronico" required>
+					<input class="formato" type="email" name="correo" placeholder="Correo electrónico" required>
 					<div class="posicion">
-						<input id="contraseña" class="formatopass" type="password" name="contraseña" value="contraseña" required>
+						<input id="contraseña" class="formatopass" type="password" name="contraseña" value="" placeholder="Contraseña" required>
 						<figure class="ojo">
 							<img id="ojo" src="iconos/ojo.png" onclick="mostrarpass(0);">
 						</figure>
 					</div>
 					<div class="posicion">
-						<input id="contraseña1" class="formatopass" type="password" name="contraseña1" value="contraseña" required>
+						<input id="contraseña1" class="formatopass" type="password" name="contraseña1" value="" placeholder="Contraseña" required>
 						<figure class="ojo">
 							<img id="ojo" src="iconos/ojo.png" onclick="mostrarpass(1);">
 						</figure>

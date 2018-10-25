@@ -61,9 +61,9 @@
 					<img id="icono" src="iconos/ic_profile_v3.png">
 				</figure>
 				<form action="" name="miformulario" id="miformulario" method="post" class="formulario">
-					<input class="correo" type="text" name="usuario" placeholder="Correo electronico o Nombre de usuario" required>
+					<input class="correo" type="text" name="usuario" placeholder="Correo electrónico o nombre de usuario" required>
 					<div class="posicion">
-						<input id="contraseña" class="pass" type="password" name="contraseña" value="contraseña" required>
+						<input id="contraseña" class="pass" type="password" name="contraseña" value="" placeholder="Contraseña" required>
 						<figure class="ojo">
 							<img id="ojo" src="iconos/ojo.png" onclick="mostrarpass(0);">
 						</figure>
