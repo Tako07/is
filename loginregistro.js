@@ -41,7 +41,8 @@ function finRegistro(){
 }
 function validarUser(){
 	var correo=document.getElementById('correo').value;
-	if(correo==""){
+	var arroba= correo.search("@");
+	if(correo==""||arroba==-1){
 		alert("Ingrese un correo electrónico válido");
 	}else{
 		var nombre=document.getElementById('nombre').value;
@@ -64,8 +65,20 @@ function validarUser(){
 					mm='0'+mm;
 				}
 				hoy=yy+'-'+mm+'-'+dd;
-				if (fecha==hoy) {
+				if (fecha==hoy || fecha=="") {
 					alert("Ingrese una fecha válida");
+				}else{
+					var contra=document.getElementById('contraseña').value;
+					var contra1=document.getElementById('contraseña1').value;
+					if (contra!=contra1) {
+						alert("Las contraseñas no coinciden");
+					}else{
+						var check=document.getElementById('terminos').checked;
+						if(check){
+							document.getElementById("Formulario").submit();
+						}else{
+							alert("Acepta nuestros terminos");
+					}	}
 				}
 			}
 		}
