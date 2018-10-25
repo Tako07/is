@@ -39,3 +39,35 @@ function regcliente(){
 function finRegistro(){
 	window.open("FinRegistro.php","_self");
 }
+function validarUser(){
+	var correo=document.getElementById('correo').value;
+	if(correo==""){
+		alert("Ingrese un correo electrónico válido");
+	}else{
+		var nombre=document.getElementById('nombre').value;
+		if(nombre==""){
+			alert("Complete el campo con su nombre");
+		}else{
+			var apellido=document.getElementById('apell').value;
+			if (apellido==""){
+				alert("Complete el campo con su apellido");
+			}else{
+				var fecha=document.getElementById('fecha').value;
+				var hoy= new Date();
+				var dd= hoy.getDate();
+				var mm= hoy.getMonth()+1;
+				var yy= hoy.getFullYear();
+				if(dd<10){
+					dd='0'+dd;
+				}
+				if(mm<10){
+					mm='0'+mm;
+				}
+				hoy=yy+'-'+mm+'-'+dd;
+				if (fecha==hoy) {
+					alert("Ingrese una fecha válida");
+				}
+			}
+		}
+	}
+}
