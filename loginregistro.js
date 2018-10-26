@@ -40,6 +40,7 @@ function finRegistro(){
 	window.open("FinRegistro.php","_self");
 }
 function validaFormulario() {
+	//declaración de variables
 	var pass1=document.getElementById('contrasena').value;
 	var pass2=document.getElementById('contrasena1').value;
 	var nombNegocio = document.getElementById('NombNegocio').value;
@@ -48,30 +49,36 @@ function validaFormulario() {
 	var correo =document.getElementById('correo').value;
 	var terminos= document.getElementById('terminos').checked;
 
+	//verificar si el nombre del negocio no está vacío
 	if (nombNegocio =="" ||nombNegocio.length==0|| /^\s+$/.test(nombNegocio)) {
 		alert('Nombre de negocio vacío');
 		return false;
 	}
+	//verifica si el nombre del cliente está vacío
 	if (nombre == null ||nombre.length==0|| /^\s+$/.test(nombre)) {
 		alert('Nombre vacío');
 		return false;
 	}
+	//verifica que el nombre del cliente no tenga caractres especiales
 	if(){
 
 	}
+	//verifica que el apellido del cliente no esté vacío
 	if (apellido ==null ||apellido.length==0|| /^\s+$/.test(apellido)) {
 		alert('Apellido vacío');
 		return false;
 	}
+	//verifica que se haya ingresado un correo electrónico
 	if(!(/\S+@\S+\.\S+/.test(correo))){
 			alert('Debe escribir un correo válido');
 			return false;
 	}
-
+//verifica que ambas contraseñas sean iguales
 	if(pass1.localeCompare(pass2)!=0){
 		alert("Las contraseñas no coinciden");
 		return false;
 	}
+	//verifica que el checkbox esté marcado
 	if(!terminos){
 		alert("Debes aceptar los terminos y condiciones");
 		return false;
