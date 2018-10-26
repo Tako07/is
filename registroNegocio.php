@@ -1,5 +1,12 @@
 <!DOCTYPE html>
+<?php
+	$negocio=$_GET['negocio'];
+	$nombre=$_GET['nombre'];
+	$apellido=$_GET['apellido'];
+	$correo=$_GET['correo'];
+	$pass=$_GET['contrasena'];
 
+ ?>
 <html lang="es">
 	<head>
 		<meta charset="UTF-8"/>
