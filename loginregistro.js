@@ -22,7 +22,7 @@ function mostrarpass(i){
 			pass2=0;
 		}
 	}
-}	
+}
 
 function home(){
 	window.open("index.php","_self");
@@ -38,6 +38,45 @@ function regcliente(){
 }
 function finRegistro(){
 	window.open("FinRegistro.php","_self");
+}
+function validaFormulario() {
+	var pass1=document.getElementById('contrasena').value;
+	var pass2=document.getElementById('contrasena1').value;
+	var nombNegocio = document.getElementById('NombNegocio').value;
+	var nombre=document.getElementById('nombre').value;
+	var apellido=document.getElementById('apell').value;
+	var correo =document.getElementById('correo').value;
+	var terminos= document.getElementById('terminos').checked;
+
+	if (nombNegocio =="" ||nombNegocio.length==0|| /^\s+$/.test(nombNegocio)) {
+		alert('Nombre de negocio vacío');
+		return false;
+	}
+	if (nombre == null ||nombre.length==0|| /^\s+$/.test(nombre)) {
+		alert('Nombre vacío');
+		return false;
+	}
+	if(){
+
+	}
+	if (apellido ==null ||apellido.length==0|| /^\s+$/.test(apellido)) {
+		alert('Apellido vacío');
+		return false;
+	}
+	if(!(/\S+@\S+\.\S+/.test(correo))){
+			alert('Debe escribir un correo válido');
+			return false;
+	}
+
+	if(pass1.localeCompare(pass2)!=0){
+		alert("Las contraseñas no coinciden");
+		return false;
+	}
+	if(!terminos){
+		alert("Debes aceptar los terminos y condiciones");
+		return false;
+	}
+	return true;
 }
 function validarUser(){
 	var correo=document.getElementById('correo').value;

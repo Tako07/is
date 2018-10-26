@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-<?php
-
- ?>
 <html lang="es">
 	<head>
 		<meta charset="UTF-8"/>
@@ -25,29 +22,29 @@
 				<figure class="icono">
 					<img id="icono" src="iconos/ic_profile_v3.png">
 				</figure>
-				<form action="registroNegocio.php" name="formulario" id="formulario" method="post">
-					<input class="formato" type="text" name="user" placeholder="Nombre negocio" required>
+				<form action="registroNegocio.php" name="formulario" id="formulario" method="get" onsubmit='return validaFormulario();'>
+					<input id='NombNegocio' class="formato" type="text" name="negocio" placeholder="Nombre negocio">
           <div id="nomApe">
-  					<input class="formato" type="text" name="nombre" placeholder="Nombre" required>
-  					<input id="apell"class="formato" type="text" name="apellido" placeholder="Apellido" required>
+  					<input id='nombre' class="formato" type="text" name="nombre" placeholder="Nombre">
+  					<input id='apell' class="formato" type="text" name="apellido" placeholder="Apellido">
           </div>
-          <input class="formato" type="email" name="correo" placeholder="Correo electrónico" required>
+          <input id='correo' class="formato" type="email" name="correo" placeholder="Correo electrónico" >
 					<div class="posicion">
-						<input id="contraseña" class="formatopass" type="password" name="contrasena" value="" placeholder="Contraseña" required>
+						<input id='contrasena' class="formatopass" type="password" name="contrasena" value="" placeholder="Contraseña">
 						<figure class="ojo">
 							<img id="ojo" src="iconos/ojo.png" onclick="mostrarpass(0);">
 						</figure>
 					</div>
 					<div class="posicion">
-						<input id="contraseña1" class="formatopass" type="password" name="contraseña1" value="" placeholder="Contraseña" required>
+						<input id='contrasena1' class="formatopass" type="password" name="contraseña1" value="" placeholder="Contraseña">
 						<figure class="ojo">
 							<img id="ojo" src="iconos/ojo.png" onclick="mostrarpass(1);">
 						</figure>
 					</div>
-					<input type="checkbox" name="terminos" id="terminos" value="Acepto" required> Aceptas nuestros <a href="https://www.trivago.es/terminos-y-condiciones">terminos y condiciones.</a>
+					<input type="checkbox" name="terminos" id='terminos' value="Acepto"> Aceptas nuestros <a href="https://www.trivago.es/terminos-y-condiciones">terminos y condiciones.</a>
 					<div class="botones1">
-						<input form ="formulario" type="submit" name="enviar" class="formButton1" value="Registrarse">
-						<input type="reset"  name="Cancelar" class="formButton1" value="Quiero ser un cliente" onclick="regcliente();">
+						<input type="submit"  class="formButton1" value="Registrarse" >
+						<input type="reset"  name="Cancelar" class="formButton1" value="Quiero ser un cliente">
 					</div>
 				</form>
 <!--sujefa-->
