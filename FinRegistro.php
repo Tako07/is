@@ -1,4 +1,23 @@
 <!DOCTYPE html>
+<?php
+	$negocio=$_POST['negocio'];
+	$calle=$_POST['calle'];
+	$colonia=$_POST['colonia'];
+	$cp=$_POST['cp'];
+	$desc=$_POST['descripcion'];
+  $horarios=$_POST['horarios'];
+  $idUsr=$_POST['idUsr'];
+	$con=mysqli_connect("localhost" , "root" , "Privada" , "data_service_in") or die("No se pudo conectar: ".mysql_error());
+	if(mysqli_connect_errno()){
+		printf("Falló la conexión: %s\n",mysqli_connect_errno());
+	}
+  else{
+	   $sql="INSERT INTO negocio (nombre_negocio,id_usuario,calle,colonia,codigopostal,descripcion,horarios) VALUES ('".$negocio."', $idUsr ,'".$calle."','".$colonia."','".$cp."','".$desc."','".$horarios."');";
+     mysqli_query($con,$sql);
+  }
+
+
+ ?>
 <html lang=es dir="ltr">
 <head>
   <meta charset="UTF-8"/>

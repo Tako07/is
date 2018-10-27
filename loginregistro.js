@@ -60,12 +60,17 @@ function validaFormulario() {
 		return false;
 	}
 	//verifica que el nombre del cliente no tenga caractres especiales
-	if(){
+	if(!/[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ.-]+/.test(nombre)){
+		alert('Nombre no valido, no se pueden utilizar caracteres especiales');
 
 	}
 	//verifica que el apellido del cliente no esté vacío
 	if (apellido ==null ||apellido.length==0|| /^\s+$/.test(apellido)) {
 		alert('Apellido vacío');
+		return false;
+	}
+	if(!/[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ.-]+/.test(apellido)){
+		alert('El apellido no puede tener caracteres especiales');
 		return false;
 	}
 	//verifica que se haya ingresado un correo electrónico
