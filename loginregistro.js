@@ -60,9 +60,9 @@ function validaFormulario() {
 		return false;
 	}
 	//verifica que el nombre del cliente no tenga caractres especiales
-	if(){
+	//if(){
 
-	}
+	//}
 	//verifica que el apellido del cliente no esté vacío
 	if (apellido ==null ||apellido.length==0|| /^\s+$/.test(apellido)) {
 		alert('Apellido vacío');
@@ -124,6 +124,7 @@ function validarUser(){
 							document.getElementById("Formulario").submit();
 						}else{
 							alert("Acepta nuestros terminos");
+							document.getElementById("cajaT").id="terminosno";
 					}	}
 				}
 			}

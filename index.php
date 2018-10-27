@@ -76,7 +76,7 @@
 							$host = "localhost";
 							$database = "data_service_in";
 							$user = "root";
-							$password = "Privada";
+							$password = "";
 							$conexion= mysqli_connect($host,$user,$password,$database);
 								for ($i=1; $i <7 ; $i=$i+3) {
 									echo '<tr>';
