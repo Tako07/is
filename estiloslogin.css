@@ -175,7 +175,15 @@ h1{						/*FORMATO DE TEXTO DEL REGISTRO*/
 #terminos{				/*FORMATO A LA PARTE DE TERMINOS Y CONDICIONES */
 	text-align: center;
 	font: bold 100% roboto;
+}
+#cajaT{
 	margin: 6% 0% 0% 28%;
+	width: 48%;
+}
+#terminosno{
+	margin: 6% 0% 0% 28%;
+	width: 48%;
+	box-shadow: 1px 1px 1px	1px #FF0000;
 }
 .botones1{				/*CAJA PARA LOS BOTONES DEL REGISTRO*/
 	display: flex;

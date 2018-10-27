@@ -63,7 +63,7 @@ function validaFormulario() {
 	if(!/[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ.-]+/.test(nombre)){
 		alert('Nombre no valido, no se pueden utilizar caracteres especiales');
 
-	}
+	//}
 	//verifica que el apellido del cliente no esté vacío
 	if (apellido ==null ||apellido.length==0|| /^\s+$/.test(apellido)) {
 		alert('Apellido vacío');
@@ -129,6 +129,7 @@ function validarUser(){
 							document.getElementById("Formulario").submit();
 						}else{
 							alert("Acepta nuestros terminos");
+							document.getElementById("cajaT").id="terminosno";
 					}	}
 				}
 			}
