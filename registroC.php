@@ -74,7 +74,7 @@
 	  					<input id= "nombre" pattern="([a-z]|[A-Z]|\s)*" class="formato" type="text" name="nombre" placeholder="Nombre" required>
 	  					<input id="apell" pattern="([a-z]|[A-Z]|\s)*"  class="formato" type="text" name="apellido" placeholder="Apellido" required>
           			</div>
-					<input id="fecha" class="formato" type="text" name="fecha" placeholder="Fecha de Nacimiento" required onclick="cambiaFecha();">
+					<input id="fecha" class="formato" type="text" name="fecha" placeholder="Fecha de Nacimiento" required onfocus="cambiaFecha();">
 					<input class="formato" id="correo" type="email" name="correo" placeholder="Correo electrónico" required>
 					<div class="posicion">
 						<input id="contraseña" minlength="6" class="formatopass" type="password" name="contraseña" value="" placeholder="Contraseña" required>
@@ -88,7 +88,9 @@
 							<img id="ojo" src="iconos/ojo.png" onclick="mostrarpass(1);">
 						</figure>
 					</div>
-					<input type="checkbox" name="terminos" id="terminos" value="Acepto" required> Aceptas nuestros <a href="https://www.trivago.es/terminos-y-condiciones">terminos y condiciones.</a>
+					<div id="cajaT">
+						<input type="checkbox" name="terminos" id="terminos" value="Acepto" required> Aceptas nuestros <a href="https://www.trivago.es/terminos-y-condiciones">terminos y condiciones.</a>
+					</div>
 					<div class="botones1">
 						<input type="button" name="enviar" class="formButton1" value="Registrarse" onclick="validarUser();">
 						<input type="reset"  name="Cancelar" class="formButton1" value="Quiero ser un negocio" onclick="regnegocio();">
