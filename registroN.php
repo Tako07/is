@@ -9,26 +9,27 @@
 	</head>
 
 	<body>
-		<div id="app">
-			<header id="cabecera">
+		<div id="app"><!--caja principal del documento-->
+			<header id="cabecera"><!--Caja de barra superior de la página-->
 					<figure class="home" onclick="home();">
 						<img id="home" src="iconos/ic_home_v3.png">
 					</figure>
 					<h1 id="texto">Services In</h1>
 					<button id="botonesN" onclick="login();">Iniciar Sesión</button>
 			</header>
-			<section id="seccionc">
+			<section id="seccionc"><!--Sección principal del registro del negocio-->
 				<h1>Registro de negocio</h1>
 				<figure class="icono">
 					<img id="icono" src="iconos/ic_profile_v3.png">
 				</figure>
+				<!--Formulario de datos -->
 				<form action="registroNegocio.php" name="formulario" id="formulario" method="POST" onsubmit='return validaFormulario();'>
 					<input id='NombNegocio' class="formato" type="text" name='negocio' placeholder="Nombre negocio" required>
-          <div id="nomApe">
-  					<input id='nombre' class="formato" type="text" name='nombre' placeholder="Nombre" required>
-  					<input id='apell' class="formato" type="text" name='apellido' placeholder="Apellido" required>
-          </div>
-          <input id='correo' class="formato" type="email" name='correo' placeholder="Correo electrónico" required>
+          			<div id="nomApe">
+  						<input id='nombre' class="formato" type="text" name='nombre' placeholder="Nombre" required>
+  						<input id='apell' class="formato" type="text" name='apellido' placeholder="Apellido" required>
+          			</div>
+          			<input id='correo' class="formato" type="email" name='correo' placeholder="Correo electrónico" required>
 					<div class="posicion">
 						<input id='contrasena' class="formatopass" type="password" name='contrasena' value="" placeholder="Contraseña" required>
 						<figure class="ojo">
@@ -49,7 +50,6 @@
 						<input type="reset"  name="Cancelar" class="formButton1" value="Quiero ser un cliente">
 					</div>
 				</form>
-<!--sujefa-->
 			</section>
 		</div>
 	</body>

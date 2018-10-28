@@ -39,7 +39,7 @@ function regcliente(){
 function finRegistro(){
 	window.open("FinRegistro.php","_self");
 }
-function validaFormulario() {
+function validaFormulario() {//funcion para validar el formulario de la segunda pantalla del registro de negocio
 	//declaración de variables
 	var pass1=document.getElementById('contrasena').value;
 	var pass2=document.getElementById('contrasena1').value;
