@@ -41,7 +41,9 @@
 							<img id="ojo" src="iconos/ojo.png" onclick="mostrarpass(1);" required>
 						</figure>
 					</div>
-					<input type="checkbox" name='terminos' id='terminos' value="Acepto" required> Aceptas nuestros <a href="https://www.trivago.es/terminos-y-condiciones">terminos y condiciones.</a>
+					<div id="cajaT">
+						<input type="checkbox" name="terminos" id="terminos" value="Acepto" required> Aceptas nuestros <a href="https://www.trivago.es/terminos-y-condiciones">terminos y condiciones.</a>
+					</div>
 					<div class="botones1">
 						<input type="submit"  class="formButton1" value="Registrarse" >
 						<input type="reset"  name="Cancelar" class="formButton1" value="Quiero ser un cliente">

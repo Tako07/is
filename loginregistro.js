@@ -130,9 +130,11 @@ function validarUser(){
 						}else{
 							alert("Acepta nuestros terminos");
 							document.getElementById("cajaT").id="terminosno";
-					}	}
+						}	
+					}
 				}
 			}
 		}
 	}
+}
 }
