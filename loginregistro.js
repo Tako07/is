@@ -90,6 +90,7 @@ function validaFormulario() {//funcion para validar el formulario de la segunda 
 	}
 	return true;
 }
+}
 function validarUser(){
 	var correo=document.getElementById('correo').value;
 	var arroba= correo.search("@");
@@ -136,5 +137,4 @@ function validarUser(){
 			}
 		}
 	}
-}
 }
