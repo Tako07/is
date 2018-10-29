@@ -1,23 +1,38 @@
+/**
+*@description Funcion para cambiar el tipo de input para la fecha de nacimiento
+*/
 function cambiaFecha(){
 	fecha=document.getElementById('fecha').type="date";
 }
-
+/**
+*@description Bandera para el primer cuadro de contraseña
+*/
 var pass1=0;
+/**
+*@description Bandera para el segundo cuando de contraseña
+*/
 var pass2=0;
+/**
+*@description Funcion que cambiara el tipo de input de pass a text y viceversa dependiendo del valor mandado
+*/
 function mostrarpass(i){
 	if(i==0){
-		if (pass1==0) {
+		if (pass1==0) {	
+			/*Si esta en tipo pass se cambia a text y la bandera cambia*/
 			document.getElementById('contraseña').type="text";
 			pass1=1;
 		}else{
+			/*Si esta en tipo text se cambia a pass y la bandera cambia*/
 			document.getElementById('contraseña').type="password";
 			pass1=0;
 		}
 	}else{
 		if (pass2==0) {
+			/*Si esta en tipo pass se cambia a text y la bandera cambia*/
 			document.getElementById('contraseña1').type="text";
 			pass2=1;
 		}else{
+			/*Si esta en tipo text se cambia a pass y la bandera cambia*/
 			document.getElementById('contraseña1').type="password";
 			pass2=0;
 		}
@@ -154,44 +169,98 @@ function validaFormulario() {
 	}
 	return true;
 }
+/**
+* @description Funcion para validar el registro de usuario
+*/
 function validarUser(){
+	/**
+	* @description Guarda la informacion ingresada en el input de correo
+	*/
 	var correo=document.getElementById('correo').value;
+	/**
+	* @description Verifica que exista el @ dentro de la cadena de correo
+	*/
 	var arroba= correo.search("@");
 	if(correo==""||arroba==-1){
+		/*Muesta un mensaje con el error*/
 		alert("Ingrese un correo electrónico válido");
 	}else{
+		/**
+		* @description Guarda la informacion del input de nombre
+		*/
 		var nombre=document.getElementById('nombre').value;
-		if(nombre==""){
+		/*Verifica que el campo no este vacio */
+		if(nombre==""){ 
+			/*Muesta un mensaje con el error*/
 			alert("Complete el campo con su nombre");
 		}else{
+			/**
+			* @description Guarda la informacion del input de apellido
+			*/
 			var apellido=document.getElementById('apell').value;
+			/*Verifica que el campo no este vacio*/
 			if (apellido==""){
+				/*Muesta un mensaje con el error*/
 				alert("Complete el campo con su apellido");
 			}else{
+				/**
+				* @description Obtiene la fecha ingresada en el formulario
+				*/
 				var fecha=document.getElementById('fecha').value;
+				/**
+				* @description Se crea una variable con la fecha actual
+				*/
 				var hoy= new Date();
+				/**
+				* @description De la fecha actual se obtiene el día
+				*/
 				var dd= hoy.getDate();
+				/**
+				* @description De la fecha actual se obtiene el mes ya que inicia desde 0 se le suma uno
+				*/
 				var mm= hoy.getMonth()+1;
+				/**
+				* @description De la fecha actual se obtiene el años
+				*/
 				var yy= hoy.getFullYear();
+				/*Si el día es menor a 2 digitos se le concatena un 0 al inicio*/
 				if(dd<10){
 					dd='0'+dd;
 				}
+				/*Si el emes es menor a 2 digitos se le concatena un 0 al inicio*/
 				if(mm<10){
 					mm='0'+mm;
 				}
+				/*Se concatena todo el formato de la fecha en una variable*/
 				hoy=yy+'-'+mm+'-'+dd;
+				/*Se comparan les fechas para que no coincidan y verifica que el campo no este vacio*/
 				if (fecha==hoy || fecha=="") {
+					/*Muesta un mensaje con el error*/
 					alert("Ingrese una fecha válida");
 				}else{
+					/**
+					* @description Obtiene la contraseña ingresada en el primer campo de contraseña
+					*/
 					var contra=document.getElementById('contraseña').value;
+					/**
+					* @description Obtiene la contraseña ingresada en el segundo campo de contraseña
+					*/
 					var contra1=document.getElementById('contraseña1').value;
+					/*Compara que las contraseñas sean iguales*/
 					if (contra!=contra1) {
+						/*Muesta un mensaje con el error*/
 						alert("Las contraseñas no coinciden");
 					}else{
+						/**
+						* @description Obtiene el estado que se encuentra el checkbox de terminos y condiciones
+						*/
 						var check=document.getElementById('terminos').checked;
+						/*Verifica que haya sido marcado el checkbox*/
 						if(check){
+							/*Se manda el formulario al siguiente paso*/
 							document.getElementById("Formulario").submit();
 						}else{
+							/*Muesta un mensaje con el error*/
 							alert("Acepta nuestros terminos");
 							document.getElementById("cajaT").id="terminosno";
 						}

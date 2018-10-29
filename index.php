@@ -80,7 +80,7 @@
 							/*!&lt; Usuario con el que se va a ingresar*/
 							$user = "root";
 							/*!&lt; Contraseña del usuario*/
-							$password = "Privada";
+							$password = "";
 							/*!&lt; Conexión a la base de datos*/
 							$conexion= mysqli_connect($host,$user,$password,$database);
 								for ($i=1; $i <7 ; $i=$i+3) {
