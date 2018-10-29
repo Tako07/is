@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <?php
 	//Obtención de variables del formulario
-	$negocio=$_POST['negocio'];
+	/*!&lt; Contiene el nobre del usuario del nuevo negocio*/
+	$usuario=$_POST['usuario'];
+	/*!&lt; Nombre del dueño del negocio*/
 	$nombre=$_POST['nombre'];
+	/*!&lt; Apellido del duelo del negocio*/
 	$apellido=$_POST['apellido'];
+	/*!&lt; Correo del dueño del negocio*/
 	$correo=$_POST['correo'];
+	/*!&lt; Contraseña de la cuenta de usuario generada*/
 	$pass=$_POST['contrasena'];
+	/*!&lt; Id del uaurio en la base de datos*/
 	$idUsr;
-	//Conección con la base de datos
+	//Conexión con la base de datos
+	/*!&lt; Conexión con la base de datos*/
 	$con=mysqli_connect("localhost" , "root" , "Privada" , "data_service_in") or die("No se pudo conectar: ".mysql_error());
+	/*!&lt; Posible fallo en la conexión*/
 	if(mysqli_connect_errno()){
 		printf("Falló la conexión: %s\n",mysqli_connect_errno());
 	}
 	//Consulta para verificar si el correo existe en BD
+	/*!&lt; Consulta para verificar si el correo existe en BD*/
 	$q="SELECT * FROM usuario WHERE correo='".$correo."';";
 	//ejecución de la consulta
+	/*!&lt; Ejecución de conculta y almacentamiento en variable*/
 	$result=mysqli_query ($con,$q);
 	//Si existe el correo en la BD
 	if(mysqli_num_rows($result)>0){
@@ -23,9 +33,11 @@
 	//si no existe el correo en la BD insertar el usuario
 	}else {
 		//Inserción del usuario en la bd
-		$sql="INSERT INTO usuario (nombre,apellido,correo,password) VALUES ('".$nombre."','".$apellido."','".$correo."',MD5('".$pass."'));";
+		/*!&lt;Consulta para ingresar un nuevo usuario a la base de datos*/
+		$sql="INSERT INTO usuario (nombre,username,apellido,correo,password) VALUES ('".$nombre."','".$usuario."','".$apellido."','".$correo."',MD5('".$pass."'));";
 		if(mysqli_query($con,$sql)){
 			//Obtención del id del usuario recien insertado
+			/*!&lt; Obtención del id del usuario recien incertado*/
 			$idUsr=mysqli_insert_id($con);
 		}
 	}
@@ -54,7 +66,7 @@
 				<h1>Llena el formulario <br> para continuar</h1>
 				<!--Formulario de datos -->
 				<form action="FinRegistro.php" name="form" id="formulario" method="POST">
-					<input class="formatoIn2R" type="text" name='negocio' placeholder="Piñas coladas Martita" value='<?php echo $negocio; ?>' readonly>
+					<input class="formatoIn2R" type="text" name='negocio' placeholder="Piñas coladas Martita" value='Nombre del negocio'>
 					<p class="formatoL2R">Calle:</p>
 					<input class="formatoIn2R" type="text" name='calle' placeholder="ej. Aquiles Caigo #69" required>
 					<div class="flex">
