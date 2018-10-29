@@ -41,17 +41,24 @@ function finRegistro(){
 }
 function validaFormulario() {//funcion para validar el formulario de la segunda pantalla del registro de negocio
 	//declaración de variables
+	//variable que contiene la primera contraseña
 	var pass1=document.getElementById('contrasena').value;
+	//variable que contiene la segunda contraseña
 	var pass2=document.getElementById('contrasena1').value;
+	//variable con el nombre del usuario del negocio
 	var nombNegocio = document.getElementById('NombNegocio').value;
+	//variable con el nombre real del usuario
 	var nombre=document.getElementById('nombre').value;
+	//variable con el apellido del usuario
 	var apellido=document.getElementById('apell').value;
+	//variable con el correo del usuario
 	var correo =document.getElementById('correo').value;
+	//variable que tiene el estado del checkbox
 	var terminos= document.getElementById('terminos').checked;
 
 	//verificar si el nombre del negocio no está vacío
 	if (nombNegocio =="" ||nombNegocio.length==0|| /^\s+$/.test(nombNegocio)) {
-		alert('Nombre de negocio vacío');
+		alert('Nombre de usuario negocio vacío');
 		return false;
 	}
 	//verifica si el nombre del cliente está vacío
@@ -62,8 +69,8 @@ function validaFormulario() {//funcion para validar el formulario de la segunda 
 	//verifica que el nombre del cliente no tenga caractres especiales
 	if(!/[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ.-]+/.test(nombre)){
 		alert('Nombre no valido, no se pueden utilizar caracteres especiales');
-
-	//}
+		return false;
+	}
 	//verifica que el apellido del cliente no esté vacío
 	if (apellido ==null ||apellido.length==0|| /^\s+$/.test(apellido)) {
 		alert('Apellido vacío');
@@ -89,7 +96,6 @@ function validaFormulario() {//funcion para validar el formulario de la segunda 
 		return false;
 	}
 	return true;
-}
 }
 function validarUser(){
 	var correo=document.getElementById('correo').value;
@@ -131,7 +137,7 @@ function validarUser(){
 						}else{
 							alert("Acepta nuestros terminos");
 							document.getElementById("cajaT").id="terminosno";
-						}	
+						}
 					}
 				}
 			}

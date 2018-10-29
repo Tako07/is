@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <?php
   //Obtención de variables del formulario
+	/*!&lt; Contiene nombre de negocio*/
 	$negocio=$_POST['negocio'];
+	/*!&lt; Calle del negocio*/
 	$calle=$_POST['calle'];
+	/*!&lt; Colonia del negocio*/
 	$colonia=$_POST['colonia'];
+	/*!&lt; Código postal del negocio*/
 	$cp=$_POST['cp'];
+	/*!&lt; Descripción del negocio*/
 	$desc=$_POST['descripcion'];
+	/*!&lt; Horarios del negocio*/
   $horarios=$_POST['horarios'];
+	/*!&lt; id del usuario que dió de alta el negocio*/
   $idUsr=$_POST['idUsr'];
   //Conección con la base de datos
+	/*!&lt; Conexión a la base de datos*/
 	$con=mysqli_connect("localhost" , "root" , "Privada" , "data_service_in") or die("No se pudo conectar: ".mysql_error());
+	/*!&lt; su existe error en la conexión a la base de datos*/
 	if(mysqli_connect_errno()){
 		printf("Falló la conexión: %s\n",mysqli_connect_errno());
 	}
   else{
     //inserción del negocio en la BD
+		/*!&lt; Sentencia para incertar en la base de datos*/
 	   $sql="INSERT INTO negocio (nombre_negocio,id_usuario,calle,colonia,codigopostal,descripcion,horarios) VALUES ('".$negocio."', $idUsr ,'".$calle."','".$colonia."','".$cp."','".$desc."','".$horarios."');";
      mysqli_query($con,$sql);
   }

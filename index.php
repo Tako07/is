@@ -73,10 +73,15 @@
 						<section id="recomendados">
 							<table id="tablaRecom">
 							<?php
+							/*!&lt; Servidor al que se va a conectar*/
 							$host = "localhost";
+							/*!&lt; Nombre de la base de datos a la que se va a conectar*/
 							$database = "data_service_in";
+							/*!&lt; Usuario con el que se va a ingresar*/
 							$user = "root";
-							$password = "";
+							/*!&lt; Contraseña del usuario*/
+							$password = "Privada";
+							/*!&lt; Conexión a la base de datos*/
 							$conexion= mysqli_connect($host,$user,$password,$database);
 								for ($i=1; $i <7 ; $i=$i+3) {
 									echo '<tr>';
@@ -87,11 +92,13 @@
 										for ($k=$i; $k <4 ; $k++) {
 											echo '<td><div class="recomDesc">';
 											echo '<p class="textDesc">';
-
+											/*!&lt; Conexión a la base de datos con query a ejecutar*/
 											$aux=mysqli_query($conexion, 'select nombre_negocio from negocio where id_negocio='.$k);
+
 											if (mysqli_num_rows($aux) >= 0) {
 												$j=0;
 												while ($row=mysqli_fetch_assoc($aux)) {
+													/*!&lt; Obtiene el nombre del negocio y lo coloca en un arreglo asociativo*/
 													$response[$j]['dato1']=utf8_encode($row['nombre_negocio']);
 													echo $response[$j]['dato1'];
 													$j++;
