@@ -23,74 +23,131 @@ function mostrarpass(i){
 		}
 	}
 }
-
+/**
+* @description funcion para redireccionar a página home
+*/
 function home(){
 	window.open("index.php","_self");
 }
+/**
+* @description funcion para redireccionar al login
+*/
 function login(){
 	window.open("login.php","_self");
 }
+/**
+* @description funcion para redireccionar a segunda página del registro de negocio
+*/
 function regnegocio(){
 	window.open("registroN.php","_self");
 }
+/**
+* @description funcion para redireccionar a registro del cliente
+*/
 function regcliente(){
 	window.open("registroC.php","_self");
 }
+/**
+* @description funcion para redireccionar a finRegistro
+*/
 function finRegistro(){
 	window.open("FinRegistro.php","_self");
 }
-function validaFormulario() {//funcion para validar el formulario de la segunda pantalla del registro de negocio
+
+/**
+* @description funcion para validar el formulario de la segunda pantalla del registro de negocio
+* @returns {boolean} Verdadero o falso para proceder o no con el registro en la base de datos
+*/
+function validaFormulario() {
 	//declaración de variables
-	//variable que contiene la primera contraseña
+	/**
+	*@description variable que contiene la primera contraseña
+	*@type {String}
+	*/
 	var pass1=document.getElementById('contrasena').value;
-	//variable que contiene la segunda contraseña
+	/**
+	*@description variable que contiene la segunda contraseña
+	*@type {String}
+	*/
 	var pass2=document.getElementById('contrasena1').value;
-	//variable con el nombre del usuario del negocio
+	/**
+	*@description variable con el nombre del usuario del negocio
+	*@type {String}
+	*/
 	var nombNegocio = document.getElementById('NombNegocio').value;
-	//variable con el nombre real del usuario
+	/**
+	*@description variable con el nombre real del usuario
+	*@type {String}
+	*/
 	var nombre=document.getElementById('nombre').value;
-	//variable con el apellido del usuario
+	/**
+	*@description variable con el apellido del usuario
+	*@type {String}
+	*/
 	var apellido=document.getElementById('apell').value;
-	//variable con el correo del usuario
+	/**
+	*@description variable con el correo del usuario
+	*@type {String}
+	*/
 	var correo =document.getElementById('correo').value;
-	//variable que tiene el estado del checkbox
+	/**
+	*@description variable que tiene el estado del checkbox
+	*@type {String}
+	*/
 	var terminos= document.getElementById('terminos').checked;
 
-	//verificar si el nombre del negocio no está vacío
+	/**
+	*@description verificar si el nombre del negocio no está vacío
+	*/
 	if (nombNegocio =="" ||nombNegocio.length==0|| /^\s+$/.test(nombNegocio)) {
 		alert('Nombre de usuario negocio vacío');
 		return false;
 	}
-	//verifica si el nombre del cliente está vacío
+	/**
+	*@description verifica si el nombre del cliente está vacío
+	*/
 	if (nombre == null ||nombre.length==0|| /^\s+$/.test(nombre)) {
 		alert('Nombre vacío');
 		return false;
 	}
-	//verifica que el nombre del cliente no tenga caractres especiales
+	/**
+	*@description verifica que el nombre del cliente no tenga caractres especiales
+	*/
 	if(!/[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ.-]+/.test(nombre)){
 		alert('Nombre no valido, no se pueden utilizar caracteres especiales');
 		return false;
 	}
-	//verifica que el apellido del cliente no esté vacío
+	/**
+	*@description verifica que el apellido del cliente no esté vacío
+	*/
 	if (apellido ==null ||apellido.length==0|| /^\s+$/.test(apellido)) {
 		alert('Apellido vacío');
 		return false;
 	}
+	/**
+	*@description verifica que el apellido del cliente no tenga caracteres especiales
+	*/
 	if(!/[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ.-]+/.test(apellido)){
 		alert('El apellido no puede tener caracteres especiales');
 		return false;
 	}
-	//verifica que se haya ingresado un correo electrónico
+	/**
+	*@description verifica que se haya ingresado un correo electrónico
+	*/
 	if(!(/\S+@\S+\.\S+/.test(correo))){
 			alert('Debe escribir un correo válido');
 			return false;
 	}
-//verifica que ambas contraseñas sean iguales
+	/**
+	*@description verifica que ambas contraseñas sean iguales
+	*/
 	if(pass1.localeCompare(pass2)!=0){
 		alert("Las contraseñas no coinciden");
 		return false;
 	}
-	//verifica que el checkbox esté marcado
+	/**
+	*@description verifica que el checkbox esté marcado
+	*/
 	if(!terminos){
 		alert("Debes aceptar los terminos y condiciones");
 		return false;
