@@ -1,8 +1,15 @@
 var divMapa;
+
+/**
+*@description Inicializa el mapa
+*/
 function initMap(){
 	divMapa = document.getElementById('mapa');//div donde se va a colocar el mapa
 	navigator.geolocation.getCurrentPosition(fn_si,fn_no);//encontrar posición actual del usuario
 }
+/**
+*@description funcion en caso de que el usuario no de permisos de localización
+*/
 function fn_no(){//función si el usuario no acepta permisos de ubicación
 	var objConfig={
 		zoom : 17,//zoom del mapa por defecto
@@ -11,6 +18,9 @@ function fn_no(){//función si el usuario no acepta permisos de ubicación
 	var gMapa = new google.maps.Map(divMapa,objConfig);
 
  }
+ /**
+ *@description funcion en caso de que el usuario otorgue permisos de localización
+ */
 function fn_si(ruta){//función si acepta permisos de ubicación
 	var latitud =ruta.coords.latitude; //localización de la latitud del usuario
 	var longitud = ruta.coords.longitude;//localización de la longitud del usuario
