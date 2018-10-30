@@ -47,7 +47,7 @@
 					</div>
 					<div class="botones1">
 						<input type="submit"  class="formButton1" value="Registrarse" >
-						<input type="reset"  name="Cancelar" class="formButton1" value="Quiero ser un cliente">
+						<input type="reset"  name="Cancelar" class="formButton1" value="Quiero ser un cliente" onclick="regcliente();">
 					</div>
 				</form>
 			</section>
