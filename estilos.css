@@ -1,0 +1,205 @@
+*{
+	margin:0px 0px;
+	padding: 0px 0px;
+	border: 0px solid #000000;
+}
+#app{				/*Encierra toda la pagina y evita que se coloque un scroll horizontal*/
+	display: block;
+	overflow: hidden;
+}
+a{
+	text-decoration: none;
+	text-decoration-color: #000000;
+}
+#cabecera{					/*Esta es la parte de la cabecera, el color el tamaño y el tipo de letra*/
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	height: 70px;
+	width: 100%;
+	background: #1976D2;
+	padding: 0.7% 1.2%;
+	align-content: center;
+	align-items: center;
+}
+#hamburguesa{
+	margin-left: 0.5%;
+	margin-right: 2.5%;
+	padding: 0%;
+	width: 3%;
+	height: 50%;
+	background-image: url("iconos/ic_menu_v3.png");
+	background-size: cover;
+	background-repeat: center;
+	background-color: transparent;
+	outline: none;
+	cursor: pointer;
+}
+.logo{						/*Este sera el tamaño del Logo de la pagina*/
+	width: 20%;
+	height: 70%;
+	margin-left: 2.5%;
+	margin-right: 5%;
+	cursor: pointer;
+}
+#logo{
+	width: 100%;
+	height: 100%;
+}
+
+.buscar{
+	display: flex;
+	flex-direction: row;
+	width: 25%;
+	height: 50%;
+	margin-left: 2.5%;
+	margin-right: 2.5%;
+}
+#formulario{
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: 100%;
+}
+#buscar{				/*Este es la parte del buscador fondo, tipo de letra tamaño*/
+	text-align: left;
+	width: 90%;
+	height: 100%;
+	color: white;
+	font: bold 130% roboto;
+	background-color: transparent;
+	border-style: groove;
+	border-width: 0px 0px 3px 0px;/*	*/
+	border-color: #0D47A1;
+}
+#lupa{
+	width: 10%;
+	height: 100%;
+	background-color: transparent;
+	outline: none;
+	cursor: pointer;
+	background-size: cover;
+	background-repeat: center;
+	background-image: url("iconos/ic_lupa_v3.png");
+}
+
+/*button[name*="b"]{			/*esto es para el boton de la hamburguesa*/
+/*	flex-shrink: 0;
+	width: 40px;
+	height: 40px;
+	padding: 0%;
+	background-color: transparent;
+	outline: none;
+	cursor: pointer;
+}*/
+#botonesN{					/*Estos son los botones de Registro e Inicio de sesion*/
+	box-shadow: rgba(0,0,0,0.5) 3px 3px 5px;
+	border-radius: 15%;
+	cursor: pointer;
+	outline: none;
+	color: white;
+	padding: 0.3%;
+	font: bold 95% roboto;
+	background-color: #1565c0;
+	border-width: 1px;
+	border-color: #0d47a1;
+	margin-right: 2.5%;
+	margin-left: 2.5%;
+}
+.notificacion{
+	width: 2%;
+	margin-left: 0.5%;
+	margin-right: 1.5%;
+
+}
+#notificacion{
+	width: 100%;
+	height: 100%;
+}
+
+.icono{						/*Este es el icono que aparece a la derecha*/
+	border-radius: 50%;
+	width: 5%;
+	height: 80%;
+	background-color: transparent;
+	margin-left: 1%;
+}
+#icono{
+	width: 100%;
+	height: 100%;
+}
+input:focus{						/*Esto es para cuando se da click en un boton no se marque un cuadro alrededor*/
+	outline: none;
+}
+::placeholder{						/*De aqui para abajo es para el color del placeholder*/
+	color: #D8D8D8;
+	opacity: 1;
+	font: bold 100% roboto;
+}
+:-ms-input-placeholder{
+	color: #D8D8D8;
+	font: bold 100% roboto;
+}
+::-ms-input-placeholder{
+	color: #D8D8D8;
+	font: bold 100% roboto;
+}
+/*///////////////////////////////////////////////////////////////////////////Cabecera//////////////////////////////////////////*/
+
+#centro{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 100%;
+	margin-left: 0px;
+	border: 1px solid #FF0000;
+}
+#seccion-banner{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	visibility: visible;
+	height: 100%;
+	width: 20%;
+	border: 1px solid #FF0000;
+}
+#banner{
+	background: -webkit-linear-gradient(top, #A4A4A4 50%, #6E6E6E 90%);
+	padding: 15px 10px 15px 10px;
+	float: left;
+	height: 565px;
+	width: 30px;
+	max-width: 250px;
+	text-overflow: initial;
+	visibility: hidden; 					/*Quitar para mostrar la raya gris*/
+}
+#ocultar{
+	visibility: hidden;
+}
+#banner1{
+	background-color: #A4A4A4;
+	padding: 15px 10px 15px 10px;
+	float: left;
+	text-overflow: initial;
+	-webkit-animation: banner 1.5s;
+	animation: banner 1.5s;
+	width: 250px;
+	height: 590px;
+	visibility: visible;					/*quitar para mostrar la raya gris*/
+}
+
+@keyframes banner{
+	0%{width: 30px}
+	100%{width: 250px}
+}
+#mostrar{
+	visibility: visible;
+	transition: visibility 3s;
+}
+
+#publicidad1{
+	padding: 5px;
+	max-width: 200px;
+	max-height: 300px;
+	visibility: visible;
+}

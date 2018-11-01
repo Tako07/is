@@ -17,7 +17,7 @@
   $idUsr=$_POST['idUsr'];
   //Conección con la base de datos
 	/*!&lt; Conexión a la base de datos*/
-	$con=mysqli_connect("localhost" , "root" , "Privada" , "data_service_in") or die("No se pudo conectar: ".mysql_error());
+	$con=mysqli_connect("localhost" , "root" , "" , "data_service_in") or die("No se pudo conectar: ".mysql_error());
 	/*!&lt; su existe error en la conexión a la base de datos*/
 	if(mysqli_connect_errno()){
 		printf("Falló la conexión: %s\n",mysqli_connect_errno());
