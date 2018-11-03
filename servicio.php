@@ -17,7 +17,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Services In</title>
 		<link rel="stylesheet" href="estilos.css">
-		<script src="botonHamb.js"></script>
+		<script src="botonHamb1.js"></script>
 		<script src="reproductor.js"></script>
 		<script src="mapa.js"></script>
 		<script src="loginregistro.js"></script>
@@ -68,14 +68,15 @@
 								<a href="https://www.google.com/">Ver mas...</a>
 							</lo>
 						</nav>
-						<figure id="publicidad1">
-							<a href="https://www.trivago.com"><img src="iconos/publicidad1.jpg"></a>
-						</figure>
+						<a href="https://www.trivago.com"><img id="publicidad1" src="iconos/publicidad1.jpg"></a>
 					</section>
-					<figure id="publicidad1">
-							<a href="https://www.trivago.com"><img src="iconos/publicidad1.jpg"></a>
+					<figure>
+						<a href="https://www.trivago.com"><img id="publicidad2" src="iconos/publicidad1.jpg"></a>
 					</figure>
 				</div>
+				<section id="centro1">
+					
+				</section>
 			</section>
 			<footer id="pie">
 				<button id="anunciate">Anuncia tu servicio</button>

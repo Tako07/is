@@ -1,0 +1,39 @@
+/**
+*@description Bandera para saber el estado del banner
+*/
+var cont=0;
+/**
+*@description Funcion para mostrar el banner
+*/
+function cambiarid (acc){
+	if (cont==0) {				/*Si esta oculta*/
+		var g = document.getElementsByTagName('figure')[3];
+		var h = document.getElementById('banner');
+		var i = document.getElementById('ocultar');
+		g.id="ocultar";
+		h.id="banner1";
+		i.id="mostrar";
+		cont=1;
+	}else{						/*Sino esta oculta*/
+		var g = document.getElementsByTagName('figure')[3];
+		var h = document.getElementById('banner1');
+		var i = document.getElementById('mostrar');
+		g.id="publicidad2";
+		h.id="banner";
+		i.id="ocultar"
+		cont=0;
+	}
+}
+
+"use strict"
+/**
+*@description Funcion que llamara a la funcion
+*/
+function funciones(){
+		document.getElementsByTagName('button')[0].onclick=cambiarid;
+	}
+
+/**
+*@description Cuando se cargue la pagina, cargara la funcion "funciones()"
+*/
+window.onload=funciones;

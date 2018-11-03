@@ -3,14 +3,12 @@
 	padding: 0px 0px;
 	border: 0px solid #000000;
 }
+/*border: 1px solid #FF0000;*/
 #app{				/*Encierra toda la pagina y evita que se coloque un scroll horizontal*/
 	display: block;
 	overflow: hidden;
 }
-a{
-	text-decoration: none;
-	text-decoration-color: #000000;
-}
+
 #cabecera{					/*Esta es la parte de la cabecera, el color el tamaño y el tipo de letra*/
 	display: flex;
 	flex-direction: row;
@@ -37,7 +35,7 @@ a{
 }
 .logo{						/*Este sera el tamaño del Logo de la pagina*/
 	width: 20%;
-	height: 70%;
+	height: 50%;
 	margin-left: 2.5%;
 	margin-right: 5%;
 	cursor: pointer;
@@ -83,15 +81,6 @@ a{
 	background-image: url("iconos/ic_lupa_v3.png");
 }
 
-/*button[name*="b"]{			/*esto es para el boton de la hamburguesa*/
-/*	flex-shrink: 0;
-	width: 40px;
-	height: 40px;
-	padding: 0%;
-	background-color: transparent;
-	outline: none;
-	cursor: pointer;
-}*/
 #botonesN{					/*Estos son los botones de Registro e Inicio de sesion*/
 	box-shadow: rgba(0,0,0,0.5) 3px 3px 5px;
 	border-radius: 15%;
@@ -119,7 +108,7 @@ a{
 
 .icono{						/*Este es el icono que aparece a la derecha*/
 	border-radius: 50%;
-	width: 5%;
+	width: 4%;
 	height: 80%;
 	background-color: transparent;
 	margin-left: 1%;
@@ -134,72 +123,111 @@ input:focus{						/*Esto es para cuando se da click en un boton no se marque un 
 ::placeholder{						/*De aqui para abajo es para el color del placeholder*/
 	color: #D8D8D8;
 	opacity: 1;
-	font: bold 100% roboto;
+	font: bold 80% roboto;
 }
 :-ms-input-placeholder{
 	color: #D8D8D8;
-	font: bold 100% roboto;
+	font: bold 80% roboto;
 }
 ::-ms-input-placeholder{
 	color: #D8D8D8;
-	font: bold 100% roboto;
+	font: bold 80% roboto;
 }
 /*///////////////////////////////////////////////////////////////////////////Cabecera//////////////////////////////////////////*/
 
-#centro{
+#centro{							/*Parte central de la pagina*/
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	width: 100%;
-	margin-left: 0px;
-	border: 1px solid #FF0000;
+	height: 100%;
+	margin-left: 0%;
 }
-#seccion-banner{
+#seccion-banner{					/*Caja para el banner*/
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	flex-wrap: wrap;
-	visibility: visible;
 	height: 100%;
 	width: 20%;
-	border: 1px solid #FF0000;
+	margin: 0%;
 }
-#banner{
-	background: -webkit-linear-gradient(top, #A4A4A4 50%, #6E6E6E 90%);
-	padding: 15px 10px 15px 10px;
-	float: left;
-	height: 565px;
-	width: 30px;
-	max-width: 250px;
-	text-overflow: initial;
-	visibility: hidden; 					/*Quitar para mostrar la raya gris*/
-}
-#ocultar{
+#banner{							/*Banner oculto de la pagina*/
+	height: 100%;
+	width: 0%;
 	visibility: hidden;
 }
-#banner1{
+#banner1{							/*Baner visible de la pagina*/
 	background-color: #A4A4A4;
-	padding: 15px 10px 15px 10px;
+	padding: 5% 3% 5% 3%;
 	float: left;
 	text-overflow: initial;
 	-webkit-animation: banner 1.5s;
 	animation: banner 1.5s;
-	width: 250px;
-	height: 590px;
-	visibility: visible;					/*quitar para mostrar la raya gris*/
+	width: 94%;
+	height: 100%;
+	visibility: visible;
 }
 
-@keyframes banner{
-	0%{width: 30px}
-	100%{width: 250px}
+@keyframes banner{					/*Animacion*/
+	0%{width: 1%; height: 100%;}
+	100%{width: 94%; height: 100%;}
 }
-#mostrar{
+#mostrar{								/*Mostrara algo en este caso la lista*/
 	visibility: visible;
 	transition: visibility 3s;
 }
+#ocultar{								/*Sirve para ocultar cosas, como la publicidad y la lista*/
+	height: 0px;
+	visibility: hidden;
+}
+h1{										/*Formato a la parte en negro de la lista*/
+	font: bold 100% roboto;
+}
+li{										/*Formato a la lista*/
+	font: 95% roboto;										
+	border-radius: 10px;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	box-shadow: rgba(0,0,0,0.5) 3px 3px 5px;
+}
+a{										/*Formato para los hipervinculos*/
+	text-decoration: none;
+	text-decoration-color: #000000;
+}
 
-#publicidad1{
-	padding: 5px;
-	max-width: 200px;
-	max-height: 300px;
+#publicidad1{							/*Publicidad que se encuentra dentro del banner */
+	width: 100%;
+	height: 60%;
 	visibility: visible;
+}
+#publicidad2{							/*Publicidad que se encuentra fuera del banner */
+	width: 90%;
+	height: 60%;
+	margin: 0% 5%;
+	padding: 0% 0% 80% 0%;
+	visibility: visible;
+}
+
+#centro1{
+	width: 79.8%;
+	height: 100%;
+	border: 1px solid #FF0000;
+}
+#pie{									/*Pie de la pagina*/
+	background-color: black;
+	width: 100%;
+	height: 35px;
+  	bottom: 0px;
+}
+#anunciate{								/*Boton dentro del pie de pagina*/
+	margin-top: 2.5px;
+	margin-right: 50px;
+	float: right;
+	height: 30px;
+	cursor: pointer;
+	outline: none;
+	padding: 5px;
+	border-width: 1px;
+	align-items: right;
+	font: 95% roboto;										
 }
