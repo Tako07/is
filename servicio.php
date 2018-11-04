@@ -1,6 +1,8 @@
  <?php session_start();
-  $IDU=$_POST['idUsuario'];
-	$IDN=$_POST['idNegocio'];
+  //$IDU=$_POST['idUsuario'];
+	//$IDN=$_POST['idNegocio'];
+  $IDU='10';
+  $IDN='5';
 	$con=mysqli_connect("localhost" , "root" , "" , "data_service_in") or die("No se pudo conectar: ".mysql_error());
 	if(mysqli_connect_errno()){
 		printf("Falló la conexión: %s\n",mysqli_connect_errno());

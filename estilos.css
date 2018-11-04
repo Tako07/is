@@ -292,7 +292,6 @@ h2{
 #imagenN{
 	text-align: center;
 	width: 100%;
-	border: 1px solid #645400;
 }
 #imgnegocio{/*Formato de la imágen en pantalla Servicio*/
 	max-width: 100%;
@@ -302,7 +301,7 @@ h2{
 #descNegocio{
 	text-align: center;
 	width: 100%;
-	border: 1px solid #645400;
+
 
 }
 #descHorario{
