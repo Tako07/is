@@ -9,6 +9,8 @@
 	$result=mysqli_query ($con,$q);
 	$q="SELECT * FROM vista_negocio WHERE nombre_negocio='".$IDN."';";
 	$result2=mysqli_query ($con,$q);
+	$fila=mysqli_fetch_row($result);
+	$fila2=mysqli_fetch_row($result2);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -75,7 +77,23 @@
 					</figure>
 				</div>
 				<section id="centro1">
-					
+					<section id="perfil">
+						
+					</section>	
+					<section id="extras">
+						<h2>Servicio recomendado</h2>
+						<div id="player"></div>
+						<div id="mapa"></div>
+						<div id="info">
+							<H2>Contacta a <?php echo '"'.$fila2[0].'"';?></H2><br>
+							<section id="codi">
+								<label id="etiqueta" for="correo">Correo:</label>
+								<p name="correo"><?php echo ''.$fila[5].'';?></p><br>
+								<label id="etiqueta" for="direccion">Dirección:</label>
+								<p name="direccion"><?php echo $fila2[1].' '.$fila2[2];?></p><br>
+							</section>
+						</div>
+					</section>
 				</section>
 			</section>
 			<footer id="pie">

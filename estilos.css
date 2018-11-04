@@ -2,6 +2,7 @@
 	margin:0px 0px;
 	padding: 0px 0px;
 	border: 0px solid #000000;
+	font-family: roboto;
 }
 /*border: 1px solid #FF0000;*/
 #app{				/*Encierra toda la pagina y evita que se coloque un scroll horizontal*/
@@ -139,6 +140,7 @@ input:focus{						/*Esto es para cuando se da click en un boton no se marque un 
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+	justify-content: space-between;
 	width: 100%;
 	height: 100%;
 	margin-left: 0%;
@@ -198,6 +200,7 @@ a{										/*Formato para los hipervinculos*/
 #publicidad1{							/*Publicidad que se encuentra dentro del banner */
 	width: 100%;
 	height: 60%;
+	padding: 0%;
 	visibility: visible;
 }
 #publicidad2{							/*Publicidad que se encuentra fuera del banner */
@@ -209,10 +212,65 @@ a{										/*Formato para los hipervinculos*/
 }
 
 #centro1{
-	width: 79.8%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	width: 79%;
 	height: 100%;
-	border: 1px solid #FF0000;
 }
+#perfil{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	text-align: center;
+	margin-top: 2%;
+	width: 70%;
+	height: 100%;
+	padding-bottom: 50%;
+}
+#extras{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	width: 29%;
+	height: 100%;
+	margin-top: 2%;
+}
+#player{
+	padding: 2% 2%;
+	width: 90%;
+	height: 20%;
+}
+#mapa{
+	padding: 50% 0%;
+	margin-top: 2%;
+	margin-bottom: 4%;
+	width: 90%;
+	height: 50%;
+}
+#info{
+	width: 90%;
+	height: 30%;
+	font: 90% roboto;
+	background-color: #A4A4A4;
+	border: 1px solid #1565c0;
+	margin-bottom: 5%;
+	text-align: center;
+}
+h2{
+	font: bold 130% roboto;
+}
+#codi{									/*Ajusta texto de correo y direccion a la izquierda*/
+	text-align: left;
+	margin-left: 5%;
+}
+#etiqueta{								/*Da formato al texto de "Correo" y "Direccion"*/
+	font: bold 100% roboto;
+}
+
 #pie{									/*Pie de la pagina*/
 	background-color: black;
 	width: 100%;
