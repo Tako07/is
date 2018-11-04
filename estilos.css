@@ -186,7 +186,7 @@ h1{										/*Formato a la parte en negro de la lista*/
 	font: bold 100% roboto;
 }
 li{										/*Formato a la lista*/
-	font: 95% roboto;										
+	font: 95% roboto;
 	border-radius: 10px;
 	margin-top: 1%;
 	margin-bottom: 1%;
@@ -286,5 +286,37 @@ h2{
 	padding: 5px;
 	border-width: 1px;
 	align-items: right;
-	font: 95% roboto;										
+	font: 95% roboto;
+}
+#imagenN{
+	text-align: center;
+	width: 100%;
+	border: 1px solid #645400;
+}
+#imgnegocio{/*Formato de la imágen en pantalla Servicio*/
+	max-width: 100%;
+	height: 50%;
+	max-height: 500px;
+}
+#descNegocio{
+	text-align: center;
+	width: 100%;
+	border: 1px solid #645400;
+
+}
+#descHorario{
+	text-align: justify;
+	max-height: 100%;
+}
+#estrellas{
+	text-align: left;
+}
+.certificados{
+		font: 95% roboto;
+		border-radius: 0px;
+		margin-top: 1%;
+		margin-bottom: 1%;
+		box-shadow: rgba(0,0,0,0.5) 0px 0px 0px;
+		padding-left: 3%;
+
 }
