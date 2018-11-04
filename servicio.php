@@ -1,5 +1,5 @@
  <?php session_start();
-	$IDU=$_POST['idUsuario'];
+  $IDU=$_POST['idUsuario'];
 	$IDN=$_POST['idNegocio'];
 	$con=mysqli_connect("localhost" , "root" , "" , "data_service_in") or die("No se pudo conectar: ".mysql_error());
 	if(mysqli_connect_errno()){
@@ -9,7 +9,7 @@
 	$result=mysqli_query ($con,$q);
 	$q="SELECT * FROM vista_negocio WHERE nombre_negocio='".$IDN."';";
 	$result2=mysqli_query ($con,$q);
-	$fila=mysqli_fetch_row($result);
+  $fila=mysqli_fetch_row($result);
 	$fila2=mysqli_fetch_row($result2);
 ?>
 <!DOCTYPE html>
@@ -77,9 +77,29 @@
 					</figure>
 				</div>
 				<section id="centro1">
-					<section id="perfil">
-						
-					</section>	
+          <section id="perfil">
+            <div id='descNegocio'>
+              <figure id='imagenN'>
+                <img id='imgnegocio' src="mjolnir.jpg">
+              </figure>
+              <h1 id='nombServicio'>Nombre del servicio<h1>
+              <div id='estrellas'>Estrellas que después pongo</div>
+              <br>
+              <div id='descHorario'>
+                <h1>Descripción del servicio:</h1>
+                <p>aquí va un php</p>
+                  <br>
+                <h1>Horarios</h1>
+                <p>aquí va un php</p>
+                <br>
+                <h1>Certificados:</h1>
+                <lo>
+  								<li class='certificados'><a href="https://www.google.com/">Servicio 1</a></li>
+  								<li class='certificados'><a href="https://www.google.com/">Servicio 2</a></li>
+                </lo>
+              </div>
+            </div>
+					</section>
 					<section id="extras">
 						<h2>Servicio recomendado</h2>
 						<div id="player"></div>
@@ -95,7 +115,8 @@
 						</div>
 					</section>
 				</section>
-			</section>
+
+				</section>
 			<footer id="pie">
 				<button id="anunciate">Anuncia tu servicio</button>
 			</footer>
