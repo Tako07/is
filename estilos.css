@@ -100,11 +100,11 @@
 	width: 2%;
 	margin-left: 0.5%;
 	margin-right: 1.5%;
-
 }
 #notificacion{
 	width: 100%;
 	height: 100%;
+	cursor: pointer;
 }
 
 .icono{						/*Este es el icono que aparece a la derecha*/
@@ -226,7 +226,6 @@ a{										/*Formato para los hipervinculos*/
 	margin-top: 2%;
 	width: 70%;
 	height: 100%;
-	padding-bottom: 50%;				/*Quita esto cuando empieces a trabajar*/
 }
 #extras{
 	display: flex;

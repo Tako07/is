@@ -1,9 +1,8 @@
-<<<<<<< HEAD
  <?php
-	if(isset($_POST['idUsuario'])){
+	if(isset($_GET['idUsuario'])){
 		session_start();
-		$IDU=$_POST['idUsuario'];
-		$NN=$_POST['Negocio'];
+		$IDU=$_GET['idUsuario'];
+		$NN=$_GET['Negocio'];
 		$con=mysqli_connect("localhost" , "root" , "" , "data_service_in") or die("No se pudo conectar: ".mysql_error());
 		if(mysqli_connect_errno()){
 			printf("Falló la conexión: %s\n",mysqli_connect_errno());
@@ -25,27 +24,12 @@
 		$q="SELECT * FROM vista_negocio WHERE nombre_negocio='".$NN."';";
 		$result2=mysqli_query ($con,$q);
 		$fila2=mysqli_fetch_row($result2);
-		$bandera=1;
+		$bandera=2;
 		}else{
 			$bandera=0;
 		}
 	}
-	if($bandera==1){	
-=======
- <?php session_start();
-  $IDU=$_POST['idUsuario'];
-	$IDN=$_POST['idNegocio'];
-	$con=mysqli_connect("localhost" , "root" , "" , "data_service_in") or die("No se pudo conectar: ".mysql_error());
-	if(mysqli_connect_errno()){
-		printf("Falló la conexión: %s\n",mysqli_connect_errno());
-	}
-	$q="SELECT * FROM usuario WHERE id_usuario=".$IDU.";";
-	$result=mysqli_query ($con,$q);
-	$q="SELECT * FROM vista_negocio WHERE nombre_negocio='".$IDN."';";
-	$result2=mysqli_query ($con,$q);
-  $fila=mysqli_fetch_row($result);
-	$fila2=mysqli_fetch_row($result2);
->>>>>>> master
+	if($bandera>0){
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -74,8 +58,11 @@
 							<button type="submit" name="bsearch" id="lupa"></button>
 						</form>
 					</section>
-						<button id="botonesN" onclick="regcliente();">Registrate</button>
-						<button id="botonesN" onclick="login();">Iniciar Sesión</button>
+						<?php
+						if($bandera==2){
+						echo '<button id="botonesN" onclick="regcliente();">Registrate</button>
+							<button id="botonesN" onclick="login();">Iniciar Sesión</button>';
+						}?>
 						<figure class="notificacion">
 							<img id="notificacion" src="iconos/ic_notificacion_v3.png">
 						</figure>
@@ -143,7 +130,7 @@
 							<H2>Contacta a <?php echo '"'.$fila2[0].'"';?></H2><br>
 							<section id="codi">
 								<label id="etiqueta" for="correo">Correo:</label>
-								<p name="correo"><?php echo ''.$fila[5].'';?></p><br>
+								<p name="correo"><?php echo ''.$fila2[5].'';?></p><br>
 								<label id="etiqueta" for="direccion">Dirección:</label>
 								<p name="direccion"><?php echo $fila2[1].' '.$fila2[2];?></p><br>
 							</section>
@@ -158,7 +145,6 @@
 		</div>
 	</body>
 </html>
-<<<<<<< HEAD
 <?php
 }else{
 		echo '<script>
@@ -170,5 +156,3 @@
 		</script>';
 	}
 ?>
-=======
->>>>>>> master
