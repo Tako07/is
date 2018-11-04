@@ -219,7 +219,7 @@ a{										/*Formato para los hipervinculos*/
 	width: 79%;
 	height: 100%;
 }
-#perfil{
+#perfil{								/*Zona con las imagenes y descripcion de negocio*/
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
@@ -227,7 +227,7 @@ a{										/*Formato para los hipervinculos*/
 	margin-top: 2%;
 	width: 70%;
 	height: 100%;
-	padding-bottom: 50%;
+	padding-bottom: 50%;				/*Quita esto cuando empieces a trabajar*/
 }
 #extras{
 	display: flex;
