@@ -1,16 +1,35 @@
- <?php session_start();
-	$IDU=$_POST['idUsuario'];
-	$IDN=$_POST['idNegocio'];
-	$con=mysqli_connect("localhost" , "root" , "" , "data_service_in") or die("No se pudo conectar: ".mysql_error());
-	if(mysqli_connect_errno()){
-		printf("Falló la conexión: %s\n",mysqli_connect_errno());
+ <?php
+	if(isset($_POST['idUsuario'])){
+		session_start();
+		$IDU=$_POST['idUsuario'];
+		$NN=$_POST['Negocio'];
+		$con=mysqli_connect("localhost" , "root" , "" , "data_service_in") or die("No se pudo conectar: ".mysql_error());
+		if(mysqli_connect_errno()){
+			printf("Falló la conexión: %s\n",mysqli_connect_errno());
+		}
+		$q="SELECT * FROM usuario WHERE id_usuario=".$IDU.";";
+		$result=mysqli_query ($con,$q);
+		$q="SELECT * FROM vista_negocio WHERE nombre_negocio='".$NN."';";
+		$result2=mysqli_query ($con,$q);
+		$fila=mysqli_fetch_row($result);
+		$fila2=mysqli_fetch_row($result2);
+		$bandera=1;
+	}else{
+		if (isset($_GET['Negocio'])) {
+		$NN=$_GET['Negocio'];
+		$con=mysqli_connect("localhost" , "root" , "" , "data_service_in") or die("No se pudo conectar: ".mysql_error());
+		if(mysqli_connect_errno()){
+			printf("Falló la conexión: %s\n",mysqli_connect_errno());
+		}
+		$q="SELECT * FROM vista_negocio WHERE nombre_negocio='".$NN."';";
+		$result2=mysqli_query ($con,$q);
+		$fila2=mysqli_fetch_row($result2);
+		$bandera=1;
+		}else{
+			$bandera=0;
+		}
 	}
-	$q="SELECT * FROM usuario WHERE id_usuario=".$IDU.";";
-	$result=mysqli_query ($con,$q);
-	$q="SELECT * FROM vista_negocio WHERE nombre_negocio='".$IDN."';";
-	$result2=mysqli_query ($con,$q);
-	$fila=mysqli_fetch_row($result);
-	$fila2=mysqli_fetch_row($result2);
+	if($bandera==1){	
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -102,3 +121,14 @@
 		</div>
 	</body>
 </html>
+<?php
+}else{
+		echo '<script>
+		function funciones(){
+			alert("Pagina no encontrada");
+			window.open("index.php","_self");
+		}
+		window.onload=funciones;
+		</script>';
+	}
+?>

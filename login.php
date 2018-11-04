@@ -41,7 +41,7 @@
 				$fila2=mysqli_fetch_row($result2);
 				echo '<form action="servicio.php" id="formulario" method="POST">
 				<input name="idUsuario" value="'.$fila[0].'">
-				<input name="idNegocio" value="'.$fila2[1].'"></form>';
+				<input name="Negocio" value="'.$fila2[1].'"></form>';
 				echo '<script>
 						function funciones(){
 							document.getElementById("formulario").submit();
