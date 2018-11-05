@@ -14,6 +14,7 @@
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+	justify-content: space-between;
 	height: 70px;
 	width: 100%;
 	background: #1976D2;
@@ -22,9 +23,6 @@
 	align-items: center;
 }
 #hamburguesa{
-	margin-left: 0.5%;
-	margin-right: 2.5%;
-	padding: 0%;
 	width: 3%;
 	height: 50%;
 	background-image: url("iconos/ic_menu_v3.png");
@@ -37,8 +35,6 @@
 .logo{						/*Este sera el tamaño del Logo de la pagina*/
 	width: 20%;
 	height: 50%;
-	margin-left: 2.5%;
-	margin-right: 5%;
 	cursor: pointer;
 }
 #logo{
@@ -51,8 +47,6 @@
 	flex-direction: row;
 	width: 25%;
 	height: 50%;
-	margin-left: 2.5%;
-	margin-right: 2.5%;
 }
 #formulario{
 	display: flex;
@@ -81,25 +75,39 @@
 	background-repeat: center;
 	background-image: url("iconos/ic_lupa_v3.png");
 }
-
+.botones{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	height: 60%;
+	width: 15%;
+}
 #botonesN{					/*Estos son los botones de Registro e Inicio de sesion*/
 	box-shadow: rgba(0,0,0,0.5) 3px 3px 5px;
 	border-radius: 15%;
 	cursor: pointer;
 	outline: none;
 	color: white;
-	padding: 0.3%;
-	font: bold 95% roboto;
+	padding: 4% 2%;
+	font: 85% roboto;
 	background-color: #1565c0;
 	border-width: 1px;
 	border-color: #0d47a1;
-	margin-right: 2.5%;
-	margin-left: 2.5%;
+}
+.iconos{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+	height: 80%;
+	width: 10%;
+	margin-right: 1%;
 }
 .notificacion{
-	width: 2%;
-	margin-left: 0.5%;
-	margin-right: 1.5%;
+	width: 20%;
 }
 #notificacion{
 	width: 100%;
@@ -109,10 +117,10 @@
 
 .icono{						/*Este es el icono que aparece a la derecha*/
 	border-radius: 50%;
-	width: 4%;
-	height: 80%;
+	width: 50%;
+	height: 100%;
+	margin-left: 20%;
 	background-color: transparent;
-	margin-left: 1%;
 }
 #icono{
 	width: 100%;
@@ -166,7 +174,7 @@ input:focus{						/*Esto es para cuando se da click en un boton no se marque un 
 	-webkit-animation: banner 1.5s;
 	animation: banner 1.5s;
 	width: 94%;
-	padding-bottom: 22.5%;
+	padding-bottom: 42%;
 	visibility: visible;
 }
 
@@ -180,6 +188,8 @@ input:focus{						/*Esto es para cuando se da click en un boton no se marque un 
 }
 #ocultar{								/*Sirve para ocultar cosas, como la publicidad y la lista*/
 	height: 0px;
+	margin: 0px;
+	padding: 0px;
 	visibility: hidden;
 }
 h1{										/*Formato a la parte en negro de la lista*/

@@ -58,17 +58,23 @@
 							<button type="submit" name="bsearch" id="lupa"></button>
 						</form>
 					</section>
+					<section class="botones">
 						<?php
 						if($bandera==2){
-						echo '<button id="botonesN" onclick="regcliente();">Registrate</button>
-							<button id="botonesN" onclick="login();">Iniciar Sesión</button>';
+						echo '
+								<button id="botonesN" onclick="regcliente();">Registrate</button>
+								<button id="botonesN" onclick="login();">Iniciar Sesión</button>
+							';
 						}?>
+					</section>
+					<section class="iconos">
 						<figure class="notificacion">
 							<img id="notificacion" src="iconos/ic_notificacion_v3.png">
 						</figure>
 						<figure class="icono">
 							<img id="icono" src="iconos/ic_profile_v3.png">
 						</figure>
+					</section>
 			</header>
 			<section id="centro">
 				<div id="seccion-banner">
@@ -104,15 +110,15 @@
               <figure id='imagenN'>
                 <img id='imgnegocio' src="mjolnir.jpg">
               </figure>
-              <h1 id='nombServicio'>Nombre del servicio<h1>
+              <h1 id='nombServicio'><?php echo $fila2[0]?><h1>
               <div id='estrellas'>Estrellas que después pongo</div>
               <br>
               <div id='descHorario'>
                 <h1>Descripción del servicio:</h1>
-                <p>aquí va un php</p>
+                <p><?php echo $fila2[5]?></p>
                   <br>
                 <h1>Horarios</h1>
-                <p>aquí va un php</p>
+                <p><?php echo $fila2[6]?></p>
                 <br>
                 <h1>Certificados:</h1>
                 <lo>
@@ -130,9 +136,9 @@
 							<H2>Contacta a <?php echo '"'.$fila2[0].'"';?></H2><br>
 							<section id="codi">
 								<label id="etiqueta" for="correo">Correo:</label>
-								<p name="correo"><?php echo ''.$fila2[5].'';?></p><br>
+								<p name="correo"><?php echo ''.$fila2[1].'';?></p><br>
 								<label id="etiqueta" for="direccion">Dirección:</label>
-								<p name="direccion"><?php echo $fila2[1].' '.$fila2[2];?></p><br>
+								<p name="direccion"><?php echo $fila2[2].' '.$fila2[3];?></p><br>
 							</section>
 						</div>
 					</section>
