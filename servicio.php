@@ -68,9 +68,14 @@
 						}?>
 					</section>
 					<section class="iconos">
-						<figure class="notificacion">
-							<img id="notificacion" src="iconos/ic_notificacion_v3.png">
-						</figure>
+						<?php 
+						if ($bandera==1) {
+							echo '
+							<figure class="notificacion">
+								<img id="notificacion" src="iconos/ic_notificacion_v3.png">
+							</figure>';
+						}
+						?>
 						<figure class="icono">
 							<img id="icono" src="iconos/ic_profile_v3.png">
 						</figure>
