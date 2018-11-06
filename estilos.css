@@ -332,8 +332,89 @@ h2{
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
-	justify-content: space-between;
 	width: 79%;
 	height: 100%;
+	padding-top: 1%;
+}
+.perfil{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
+	align-content: center;
+	justify-content: space-between;
+	width: 100%;
 	border: 1px solid #FF0000;
+}
+.iPerfil{
+	width: 10%;
+	height: 30%;
+}
+#iPerfil{
+	width: 100%;
+}
+.subirImg{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-around;
+	background-color: #D8D8D8;
+	width: 14%;
+	height: 10%;
+	cursor: pointer;
+	margin-bottom: 2%;
+}
+#bsubir{
+	font: bold 100% roboto;
+	cursor: pointer;
+	outline: none;
+	padding: 0.5% 0%;
+	width: 80%;
+	height: 100%;
+	margin-bottom: 3%;
+}
+.camara{
+	width: 10%;
+	height: 100%;
+}
+#camara{
+	height: 100%;
+	width: 100%;
+}
+#datosNegrita{
+	margin-bottom: 1%;
+}
+#datosUser{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	text-align: left;
+	justify-content: space-around;
+}
+#datos{
+	font: 100% roboto;
+	margin: 2% 0%;
+}
+.favoritos{
+	width: 100%;
+	height: 25%;
+	
+}
+#tabla{
+	border: 1px solid #FF0000;
+}
+.negocios{
+	border: 1px solid #FF0000;
+	width: 20%;
+	height: 50%;
+}
+#negocios{
+	width: 100%;
+}
+#nombre{
+	border: 1px solid #FF0000;
+	width: 20%;
+	height: 35%;
+	background-color: #D8D8D8;
 }

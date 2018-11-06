@@ -1,7 +1,7 @@
  <?php
-	if(isset($_POST['idUsuario'])){
+	if(isset($_POST['idNegocio'])){
 		session_start();
-		$IDU=$_POST['idUsuario'];
+		$IDU=$_POST['idNegocio'];
 		$NN=$_GET['Negocio'];
 		$con=mysqli_connect("localhost" , "root" , "" , "data_service_in") or die("No se pudo conectar: ".mysql_error());
 		if(mysqli_connect_errno()){

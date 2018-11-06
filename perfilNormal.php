@@ -14,6 +14,9 @@
 		window.onload=funciones;
 		</script>';
 	}else{
+	$q2='select n.nombre_negocio, i.url_imagen from favorito f inner join negocio n ON f.id_negocio=n.id_negocio inner join imagenes i on n.id_negocio=i.id_negocio where f.id_usuario='.$ID.';';
+	$result2=mysqli_query($con,$q2);
+	$fila=mysqli_fetch_row($result);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -79,7 +82,59 @@
 					</figure>
 				</div>
 				<section id="centro2">
-		        	
+		       		<H2>Perfil</H2>
+		        	<div class="perfil">
+		        		<figure class="iPerfil">
+							<img id="iPerfil" src="iconos/ic_profile_v3.png">
+						</figure>
+						<div class="subirImg">
+							<button id="bsubir">Subir imagen</button>
+							<figure class="camara">
+								<img id="camara" src="iconos/ic_full_star_v3.png">
+							</figure>
+						</div>
+						<h2 id="datosNegrita">Datos del usuario</h2>
+						<div id="datosUser">
+							<p id="datos">Nombre: <?php echo $fila[2].' '.$fila[3]?></p>
+							<p id="datos">Username: <?php echo $fila[1]?></p>
+							<p id="datos">Correo: <?php echo $fila[5]?></p>
+						</div>
+		        	</div>
+		        	<H2>Mís favoritos</H2>
+
+		        	<div class="favoritos">
+	        		<?php
+	        		if(mysqli_num_rows($result2)>0){ 
+	        			$j=0;
+		        		while ($row=mysqli_fetch_assoc($result2)) {
+							$resultado[$j]['nombre']=utf8_encode($row['nombre_negocio']);
+							$resultado[$j]['url']=utf8_encode($row['url_imagen']);
+							$j++;
+						}?>
+						<tabl id="tabla">
+							<tr>
+								<?php for ($i=0; $i <mysqli_num_rows($result2); $i=$i+1) {?>
+								<?php echo '<td><figure class="negocios">
+								<img id="negocios" src="negocios/'.$resultado[$i]['url'].'"></td>
+								</figure>'; }?>
+							</tr>
+							<tr>
+								<?php for ($i=0; $i <mysqli_num_rows($result2); $i=$i+1) {?>
+								<td>
+									<div id="nombre">
+										<?php echo '<p>'.$resultado[$i]['nombre'].'</p>'; ?>
+									</div>
+								</td>
+								<?php } ?>
+							</tr>
+							<tr>
+								<?php for ($i=0; $i <mysqli_num_rows($result2); $i=$i+1) {?>
+								<button id="botones" onclick="servicio(<?php echo'\''.$resultado[$i]["nombre"].'\''?>);">Ver servicio</button>
+								<?php }?>
+							</tr>
+						</table>
+					<?php }?>
+		        	</div>
 				</section>
 			</section>
 			<footer id="pie">

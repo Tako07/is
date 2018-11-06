@@ -5,13 +5,12 @@ var cont=0;
 /**
 *@description Funcion para mostrar el banner
 */
-function cambiarid (acc){
+function cambiarid (){
 	if (cont==0) {				/*Si esta oculta*/
 		document.getElementsByTagName('figure')[3].id="ocultar";
 		document.getElementsByTagName('img')[4].id="ocultar";
 		var h = document.getElementById('banner');
 		var i = document.getElementById('ocultar');
-		//g.id="ocultar";
 		h.id="banner1";
 		i.id="mostrar";
 		cont=1;
@@ -38,4 +37,7 @@ function funciones(){
 /**
 *@description Cuando se cargue la pagina, cargara la funcion "funciones()"
 */
+function servicio(url){
+	window.open("servicio.php?Negocio="+url,"_self");
+}
 window.onload=funciones;
