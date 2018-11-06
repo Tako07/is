@@ -29,7 +29,7 @@
 			$result2=mysqli_query ($con,$q1);
 			/*!&lt; Si el numero de filas es 0 el usuario que inicio sesion es un cliente normal y se mandara a su pagina*/
 			if(mysqli_num_rows($result2)==0){
-				echo '<form action="perfilNormal.php" id="formulario" method="GET"><input name="idUsuario" value="'.$fila[0].'"></form>';
+				echo '<form action="perfilNormal.php" id="formulario" method="POST"><input name="idUsuario" value="'.$fila[0].'"></form>';
 				echo '<script>
 						function funciones(){
 							document.getElementById("formulario").submit();
@@ -37,11 +37,10 @@
 						window.onload=funciones;
 				</script>';
 			}else{
-				/*!&lt; De no ser 0 se mandara por el formulario el ID de usuario y el ID de negocio y se mandara a la pagina de su negocio*/
+				/*!&lt; De no ser 0 se mandara por el formulario el ID de usuario y el nombre de negocio y se mandara a la pagina de su negocio*/
 				$fila2=mysqli_fetch_row($result2);
-				echo '<form action="servicio.php" id="formulario" method="get">
-				<input name="idUsuario" value="'.$fila[0].'">
-				<input name="Negocio" value="'.$fila2[1].'"></form>';
+				echo '<form action="servicio.php?Negocio='.$fila2[1].'" id="formulario" method="POST">
+				<input name="idUsuario" value="'.$fila[0].'"></form>';
 				echo '<script>
 						function funciones(){
 							document.getElementById("formulario").submit();

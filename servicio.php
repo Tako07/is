@@ -1,7 +1,7 @@
  <?php
-	if(isset($_GET['idUsuario'])){
+	if(isset($_POST['idUsuario'])){
 		session_start();
-		$IDU=$_GET['idUsuario'];
+		$IDU=$_POST['idUsuario'];
 		$NN=$_GET['Negocio'];
 		$con=mysqli_connect("localhost" , "root" , "" , "data_service_in") or die("No se pudo conectar: ".mysql_error());
 		if(mysqli_connect_errno()){
@@ -48,38 +48,38 @@
 	<body>
 		<div id="app">
 			<header id="cabecera">
-					<button name="bbanner" id="hamburguesa"></button>
-					<figure class="logo" onclick="home();">
-						<img id="logo" src="iconos/logo.png">
-					</figure>
-					<section class="buscar">
-						<form id="formulario" action="busqueda.php" method="post">
-							<input id="buscar" type="search" name="busqueda" maxlength="200" placeholder="Ingresa tu busqueda"></input>
-							<button type="submit" name="bsearch" id="lupa"></button>
-						</form>
-					</section>
-					<section class="botones">
-						<?php
-						if($bandera==2){
+				<button name="bbanner" id="hamburguesa"></button>
+				<figure class="logo" onclick="home();">
+					<img id="logo" src="iconos/logo.png">
+				</figure>
+				<section class="buscar">
+					<form id="formulario" action="busqueda.php" method="post">
+						<input id="buscar" type="search" name="busqueda" maxlength="200" placeholder="Ingresa tu busqueda"></input>
+						<button type="submit" name="bsearch" id="lupa"></button>
+					</form>
+				</section>
+				<section class="botones">
+					<?php
+					if($bandera==2){
+					echo '
+							<button id="botonesN" onclick="regcliente();">Registrate</button>
+							<button id="botonesN" onclick="login();">Iniciar Sesión</button>
+						';
+					}?>
+				</section>
+				<section class="iconos">
+					<?php 
+					if ($bandera==1) {
 						echo '
-								<button id="botonesN" onclick="regcliente();">Registrate</button>
-								<button id="botonesN" onclick="login();">Iniciar Sesión</button>
-							';
-						}?>
-					</section>
-					<section class="iconos">
-						<?php 
-						if ($bandera==1) {
-							echo '
-							<figure class="notificacion">
-								<img id="notificacion" src="iconos/ic_notificacion_v3.png">
-							</figure>';
-						}
-						?>
-						<figure class="icono">
-							<img id="icono" src="iconos/ic_profile_v3.png">
-						</figure>
-					</section>
+						<figure class="notificacion">
+							<img id="notificacion" src="iconos/ic_notificacion_v3.png">
+						</figure>';
+					}
+					?>
+					<figure class="icono">
+						<img id="icono" src="iconos/ic_profile_v3.png">
+					</figure>
+				</section>
 			</header>
 			<section id="centro">
 				<div id="seccion-banner">
@@ -110,28 +110,28 @@
 					</figure>
 				</div>
 				<section id="centro1">
-          <section id="perfil">
-            <div id='descNegocio'>
-              <figure id='imagenN'>
-                <img id='imgnegocio' src="mjolnir.jpg">
-              </figure>
-              <h1 id='nombServicio'><?php echo $fila2[0]?><h1>
-              <div id='estrellas'>Estrellas que después pongo</div>
-              <br>
-              <div id='descHorario'>
-                <h1>Descripción del servicio:</h1>
-                <p><?php echo $fila2[5]?></p>
-                  <br>
-                <h1>Horarios</h1>
-                <p><?php echo $fila2[6]?></p>
-                <br>
-                <h1>Certificados:</h1>
-                <lo>
+		        	  <section id="perfil">
+			            <div id='descNegocio'>
+			              	<figure id='imagenN'>
+			                	<img id='imgnegocio' src="mjolnir.jpg">
+			             	</figure>
+				            <h1 id='nombServicio'><?php echo $fila2[0]?><h1>
+				            <div id='estrellas'>Estrellas que después pongo</div>
+				            <br>
+				            <div id='descHorario'>
+	                		<h1>Descripción del servicio:</h1>
+			                <p><?php echo $fila2[5]?></p>
+		                	<br>
+			                <h1>Horarios</h1>
+			                <p><?php echo $fila2[6]?></p>
+			                <br>
+			                <h1>Certificados:</h1>
+			                <lo>
   								<li class='certificados'><a href="https://www.google.com/">Servicio 1</a></li>
   								<li class='certificados'><a href="https://www.google.com/">Servicio 2</a></li>
-                </lo>
-              </div>
-            </div>
+			                </lo>
+			              </div>
+			            </div>
 					</section>
 					<section id="extras">
 						<h2>Servicio recomendado</h2>
@@ -143,13 +143,12 @@
 								<label id="etiqueta" for="correo">Correo:</label>
 								<p name="correo"><?php echo ''.$fila2[1].'';?></p><br>
 								<label id="etiqueta" for="direccion">Dirección:</label>
-								<p name="direccion"><?php echo $fila2[2].' '.$fila2[3];?></p><br>
+								<p name="direccion"><?php echo $fila2[2].', '.$fila2[3];?></p><br>
 							</section>
 						</div>
 					</section>
 				</section>
-
-				</section>
+			</section>
 			<footer id="pie">
 				<button id="anunciate">Anuncia tu servicio</button>
 			</footer>

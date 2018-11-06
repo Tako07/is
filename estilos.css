@@ -22,7 +22,7 @@
 	align-content: center;
 	align-items: center;
 }
-#hamburguesa{
+#hamburguesa{				/*Formato al boton de menu*/
 	width: 3%;
 	height: 50%;
 	background-image: url("iconos/ic_menu_v3.png");
@@ -37,26 +37,26 @@
 	height: 50%;
 	cursor: pointer;
 }
-#logo{
+#logo{						/*Asigna la imagen al tamaño correspondiente*/
 	width: 100%;
 	height: 100%;
 }
 
-.buscar{
+.buscar{					/*Tamaño a toda la zona relacionada con la busqueda (input y lupa)*/
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	width: 25%;
 	height: 50%;
 }
-#formulario{
+#formulario{				/*Da formato al formulario que se utilizara para enviar la busqueda*/
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	width: 100%;
 	height: 100%;
 }
-#buscar{				/*Este es la parte del buscador fondo, tipo de letra tamaño*/
+#buscar{				/*Este es la parte del buscador fondo, tamaño*/
 	text-align: left;
 	width: 90%;
 	height: 100%;
@@ -64,10 +64,10 @@
 	font: bold 130% roboto;
 	background-color: transparent;
 	border-style: groove;
-	border-width: 0px 0px 3px 0px;/*	*/
+	border-width: 0px 0px 3px 0px;
 	border-color: #0D47A1;
 }
-#lupa{
+#lupa{									/*Le da tamaño al boton de la lupa*/
 	width: 10%;
 	background-color: transparent;
 	outline: none;
@@ -76,7 +76,7 @@
 	background-repeat: center;
 	background-image: url("iconos/ic_lupa_v3.png");
 }
-.botones{
+.botones{							/*Le da tamaño a toda la zona de los botones Registro e inicio de Sesión*/
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -97,7 +97,7 @@
 	border-width: 1px;
 	border-color: #0d47a1;
 }
-.iconos{
+.iconos{					/*Tamaño a toda la zona de notificaciones e icono*/
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -107,23 +107,23 @@
 	width: 10%;
 	margin-right: 1%;
 }
-.notificacion{
+.notificacion{				/*Le da tamaño a la caja de la notificacion*/
 	width: 20%;
 }
-#notificacion{
+#notificacion{				/*Le asigna el tamaño a la imagen de la notificacion*/
 	width: 100%;
 	height: 100%;
 	cursor: pointer;
 }
 
-.icono{						/*Este es el icono que aparece a la derecha*/
+.icono{						/*Le da tamñao a la caja del icono*/
 	border-radius: 50%;
 	width: 50%;
 	height: 100%;
 	margin-left: 20%;
 	background-color: transparent;
 }
-#icono{
+#icono{						/*Asigna el tamaño a la imagen del icono*/
 	width: 100%;
 	height: 100%;
 }
@@ -143,7 +143,7 @@ input:focus{						/*Esto es para cuando se da click en un boton no se marque un 
 	color: #D8D8D8;
 	font: bold 80% roboto;
 }
-/*///////////////////////////////////////////////////////////////////////////Cabecera//////////////////////////////////////////*/
+/*///////////////////////////////////////////////////////////////////////////Empieza  banner//////////////////////////////////////////*/
 
 #centro{							/*Parte central de la pagina*/
 	display: flex;
@@ -207,7 +207,6 @@ a{										/*Formato para los hipervinculos*/
 	text-decoration: none;
 	text-decoration-color: #000000;
 }
-
 #publicidad1{							/*Publicidad que se encuentra dentro del banner */
 	width: 100%;
 	height: 60%;
@@ -220,8 +219,8 @@ a{										/*Formato para los hipervinculos*/
 	padding: 0% 0% 0% 0%;
 	visibility: visible;
 }
-
-#centro1{
+/*//////////////////////////////////////////////////////////////Empieza pagina de servicio//////////////////////////////////////////////////////////////////////////////*/
+#centro1{								/*Parte central de la pagina de servicio*/
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -238,7 +237,7 @@ a{										/*Formato para los hipervinculos*/
 	width: 70%;
 	height: 100%;
 }
-#extras{
+#extras{								/*Zona con el video de publicidad, mapa, e informacion del negocio*/
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
@@ -248,19 +247,19 @@ a{										/*Formato para los hipervinculos*/
 	height: 100%;
 	margin-top: 2%;
 }
-#player{
+#player{								/*Tamaño para el reproductor*/
 	padding: 2% 2%;
 	width: 90%;
 	height: 20%;
 }
-#mapa{
+#mapa{									/*Tamaño para el mapa*/
 	padding: 50% 0%;
 	margin-top: 2%;
 	margin-bottom: 4%;
 	width: 90%;
 	height: 50%;
 }
-#info{
+#info{									/*Tanaño de la informacion cuadro de contacto */
 	width: 90%;
 	height: 30%;
 	font: 90% roboto;
@@ -327,4 +326,14 @@ h2{
 		box-shadow: rgba(0,0,0,0.5) 0px 0px 0px;
 		padding-left: 3%;
 
+}
+/*////////////////////////////////////////////////////////Empieza perfil normal///////////////////////////////////////////////////////////////////*/
+#centro2{							/*Parte central de la pagina de perfil normal*/
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	width: 79%;
+	height: 100%;
+	border: 1px solid #FF0000;
 }
