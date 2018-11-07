@@ -267,7 +267,11 @@ tr{
 	border: 0px solid #000000;
 }
 /*/Categorias*/
+#appCat{
+	background-color: #ededed;
+}
 #centroCat{
+	background-color: #ededed;
 	width: 65%;
 	height:auto;
 	text-align: center;
@@ -305,6 +309,23 @@ tr{
 }
 #CentroCat p{
 	margin-left: 15%;
+	text-align: left;
+}
+#paqActual{
+	margin-left: 15%;
+	width: 50%;
+	height: auto;
+	display: flex;
+}
+#actualIzq{
+	width: 15%;
+	height: auto;
+	color: #FFFFFF;
+	background-color: #6D6C6B;
+}
+#actualDer{
+	background-color: #FFFFFF;
+	padding-left: 2%;
 	text-align: left;
 }
 /*/////////////////////////////////////////////////INICIA LOGIN///////////////////////////////////////////////////*/

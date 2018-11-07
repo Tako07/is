@@ -12,7 +12,7 @@
 	</head>
 
 	<body>
-		<div id="app">
+		<div id="appCat">
 			<header id="cabecera">
 					<button name="bbanner" id="hamburguesa"></button>
 					<figure class="logo" onclick="home();">
@@ -61,8 +61,17 @@
 				<section id="centroCat">
 					<h1>!Anuncia tu servicio¡ Mira los paquetes disponibles que tenemos <br> para ti</h1>
 					<p><br>Ahora mismo tu paquete es este:</p>
-					<div>
-						
+					<div id='paqActual'>
+						<div id='actualIzq'>
+							Básico
+						</div>
+						<div id='actualDer'>
+							Tu paquete contiene
+							<lo>
+								<li class="ListCat"><a href="https://www.google.com/">3 fotos subidas por ti mismo</a></li>
+								<li class="ListCat"><a href="https://www.google.com/">3 Promociones</a></li>
+							</lo>
+						</div>
 					</div>
 				</section>
 			</section>
