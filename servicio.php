@@ -33,9 +33,12 @@
 		if(mysqli_connect_errno()){
 			printf("Falló la conexión: %s\n",mysqli_connect_errno());
 		}
-		$q="SELECT * FROM vista_negocio WHERE nombre_negocio='".$NN."';";
+		$q="SELECT * FROM negocio WHERE nombre_negocio='".$NN."';";
 		$result2=mysqli_query ($con,$q);
 		$fila2=mysqli_fetch_row($result2);
+		$q1="SELECT descripcion FROM vista_promocion WHERE id_negocio='".$fila2[0]."';";
+		$result3=mysqli_query ($con,$q1);
+		$fila3=mysqli_fetch_row($result3);
 		$bandera=2;
 		}else{
 			$bandera=0;
@@ -128,22 +131,43 @@
 			              	<figure id='imagenN'>
 			                	<img id='imgnegocio' src="mjolnir.jpg">
 			             	</figure>
-				            <h1 id='nombServicio'><?php echo $fila2[0]?><h1>
+				            <h1 id='nombServicio'><?php echo $fila2[1]?><h1>
 				            <div id='estrellas'>Estrellas que después pongo</div>
 				            <br>
 				            <div id='descHorario'>
-	                		<h1>Descripción del servicio:</h1>
-			                <p><?php echo $fila2[5]?></p>
-		                	<br>
-			                <h1>Horarios</h1>
-			                <p><?php echo $fila2[6]?></p>
-			                <br>
-			                <h1>Certificados:</h1>
-			                <lo>
-  								<li class='certificados'><a href="https://www.google.com/">Servicio 1</a></li>
-  								<li class='certificados'><a href="https://www.google.com/">Servicio 2</a></li>
-			                </lo>
-			              </div>
+		                		<h1>Descripción del servicio:</h1>
+				                <p><?php echo $fila2[6]?></p>
+			                	<br>
+				                <h1>Horarios</h1>
+				                <p><?php echo $fila2[7]?></p>
+				                <br>
+				                <h1>Certificados:</h1>
+				                <lo>
+	  								<li class='certificados'><a href="https://www.google.com/">Servicio 1</a></li>
+	  								<li class='certificados'><a href="https://www.google.com/">Servicio 2</a></li>
+				                </lo>
+			             	 </div>
+			              	<div class="mispromociones">
+								<?php 
+								$i=0;?>
+				        		<section id="promo">
+					        		<?php for($count=0; $i<mysqli_num_rows($result3)&&$count<3; $i=$i+1, $count++) {?>	
+						        			<section id="tarjetas">
+						        				<div id="rojo">¡Promoción!</div>
+						        				<div id="desc"><?php echo $fila3[0];?></div>
+						        			</section>
+					        		<?php }
+									if($count<3){
+										while ($count<3) {
+											echo '<section id="notarjetas">
+					        				<div id="norojo"></div>
+					        				<div id="nodesc"></div>
+					        			</section>';
+											$count++;
+										}
+									}?>
+	        					</section>
+	        				</div>
 			            </div>
 					</section>
 					<section id="extras">
