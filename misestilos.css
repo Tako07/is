@@ -257,13 +257,13 @@ li{
 #tablaRecom{
 	border: 0px solid #000000;
 }
-td{
+#tablaRecom td{
 	padding-left: : 1%;
 	padding-right: 1%;
 	border: 0px solid #000000;
 
 }
-tr{
+#tablaRecom tr{
 	border: 0px solid #000000;
 }
 /*/Categorias*/
@@ -327,5 +327,50 @@ tr{
 	background-color: #FFFFFF;
 	padding-left: 2%;
 	text-align: left;
+}
+#paquetes{
+	margin-top: 3%;
+	width: 100%;
+	padding: 1%;
+	
+}
+#paquetes td{
+	width: 30%;
+	height: auto;
+	padding-left: 1%;
+	padding-right: 1%;
+}
+#paq1 p{
+	text-align: center;
+	margin-left: 1%;
+	margin-right: 1%;
+	background-color: #5AF6E9;
+	height: 40px;
+	padding-top: 4%;
+	
+}
+#paq2 p{
+	text-align: center;
+	margin-left: 1%;
+	margin-right: 1%;
+	background-color: #F6881A;
+	height: 40px;
+	padding-top: 4%;
+}
+#paq3 p{
+	text-align: center;
+	margin-left: 1%;
+	margin-right: 1%;
+	background-color: #F6311A;
+	height: 40px;
+	padding-top: 4%;
+}
+.descPaquetes{
+	height: 100px;
+	margin-left: 1%;
+	margin-right: 1%;
+	margin-bottom: 0px;
+	padding-top: 3%;
+	background-color: #FFFFFF;
 }
 /*/////////////////////////////////////////////////INICIA LOGIN///////////////////////////////////////////////////*/
