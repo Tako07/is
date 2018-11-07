@@ -9,7 +9,9 @@
 	display: block;
 	overflow: hidden;
 }
-
+body{
+	background-color: #EDEDED;
+}
 #cabecera{					/*Esta es la parte de la cabecera, el color el tamaño y el tipo de letra*/
 	display: flex;
 	flex-direction: row;
@@ -175,6 +177,7 @@ input:focus{						/*Esto es para cuando se da click en un boton no se marque un 
 	-webkit-animation: banner 1.5s;
 	animation: banner 1.5s;
 	width: 94%;
+	height: 100%;
 	padding-bottom: 42%;
 	visibility: visible;
 }
@@ -332,8 +335,171 @@ h2{
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
-	justify-content: space-between;
 	width: 79%;
 	height: 100%;
-	border: 1px solid #FF0000;
+	padding-top: 1%;
+}
+.perfil{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
+	align-content: center;
+	justify-content: space-between;
+	width: 100%;
+}
+.iPerfil{
+	width: 10%;
+	height: 30%;
+}
+#iPerfil{
+	width: 100%;
+}
+.subirImg{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-around;
+	background-color: #D8D8D8;
+	width: 14%;
+	height: 10%;
+	cursor: pointer;
+	margin-bottom: 2%;
+}
+#bsubir{
+	font: bold 100% roboto;
+	cursor: pointer;
+	outline: none;
+	padding: 0.5% 0%;
+	width: 80%;
+	height: 100%;
+	margin-bottom: 3%;
+}
+.camara{
+	width: 10%;
+	height: 100%;
+}
+#camara{
+	height: 100%;
+	width: 100%;
+}
+#datosNegrita{
+	margin-bottom: 1%;
+}
+#datosUser{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	text-align: left;
+	justify-content: space-around;
+}
+#datos{
+	font: 100% roboto;
+	margin: 2% 0%;
+}
+.favoritos{
+	margin-top: 1%;
+	width: 100%;
+	height: 25%;
+	
+}
+.fav{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: space-between;
+}
+.negocios{
+	width: 20%;
+	height: 50%;
+}
+#negocios{
+	width: 100%;
+	height: 100%;
+}
+
+#nombre{
+	width: 20%;
+	padding: 3% 0%;
+	text-align: center;
+	font: bold 120% roboto;
+	background-color: #BDBDBD;
+}
+#nada{
+	width: 20%;
+	padding: 3% 0%;	
+}
+#botones{
+	width: 20%;
+	padding: 0.5% 0%;
+	text-align: center;
+	font: bold 120% roboto;
+	background-color: #1565c0;
+	cursor: pointer;
+}
+#bnada{
+	width: 20%;
+	padding: 0.5% 0%;
+	background-color: transparent;
+	outline: none;
+}
+.mispromociones{
+	width: 100%;
+	margin-top: 1%;
+}
+#promo{
+	height: 50%;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: space-between;
+	margin-bottom: 5%;
+}
+#tarjetas{
+	width: 18%;
+	height: 25%;
+	display: flex;
+	cursor: pointer;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-content: center;
+}
+#notarjetas{
+	width: 18%;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-content: center;	
+}
+#rojo{
+	width: 100%;
+	background-color: #FF0000;
+	font: bold 120% roboto;
+	text-align: center;
+	color: #FFFFFF;
+	padding: 1% 0%;
+}
+#norojo{
+	width: 100%;
+	padding: 1% 0%;
+	margin: 0% 5%;
+}
+#desc{
+	width: 90%;
+	height: 25%;
+	font: 100% roboto;
+	text-align: center;
+	background-color: #ffffFF;
+	padding: 10% 5%;
+	margin-bottom: 5%;
+}
+#nodesc{
+	width: 100%;
+	padding: 1% 0%;
+	margin: 0% 5%;
 }

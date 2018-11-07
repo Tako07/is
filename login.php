@@ -40,7 +40,7 @@
 				/*!&lt; De no ser 0 se mandara por el formulario el ID de usuario y el nombre de negocio y se mandara a la pagina de su negocio*/
 				$fila2=mysqli_fetch_row($result2);
 				echo '<form action="servicio.php?Negocio='.$fila2[1].'" id="formulario" method="POST">
-				<input name="idUsuario" value="'.$fila[0].'"></form>';
+				<input name="idNegocio" value="'.$fila[0].'"></form>';
 				echo '<script>
 						function funciones(){
 							document.getElementById("formulario").submit();
