@@ -33,7 +33,7 @@
 	<body>
 		<div id="app">
 			<header id="cabecera">
-				<button name="bbanner" id="hamburguesa"></button>
+				<button name="bbanner" id="hamburguesa" onclick="cambiarid();"></button>
 				<figure class="logo" onclick="home();">
 					<img id="logo" src="iconos/logo.png">
 				</figure>

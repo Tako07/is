@@ -9,9 +9,9 @@
 		}
 		$q="SELECT * FROM usuario WHERE id_usuario=".$IDU.";";
 		$result=mysqli_query ($con,$q);
+		$fila=mysqli_fetch_row($result);
 		$q="SELECT * FROM vista_negocio WHERE nombre_negocio='".$NN."';";
 		$result2=mysqli_query ($con,$q);
-		$fila=mysqli_fetch_row($result);
 		$fila2=mysqli_fetch_row($result2);
 		$bandera=1;
 	}else{
@@ -33,7 +33,7 @@
 		if(mysqli_connect_errno()){
 			printf("Falló la conexión: %s\n",mysqli_connect_errno());
 		}
-		$q="SELECT * FROM negocio WHERE nombre_negocio='".$NN."';";
+		$q='SELECT * FROM negocio n inner join usuario u on n.id_usuario=u.id_usuario WHERE nombre_negocio=\''.$NN.'\';';
 		$result2=mysqli_query ($con,$q);
 		$fila2=mysqli_fetch_row($result2);
 		$q1="SELECT descripcion FROM vista_promocion WHERE id_negocio='".$fila2[0]."';";
@@ -64,7 +64,7 @@
 	<body>
 		<div id="app">
 			<header id="cabecera">
-				<button name="bbanner" id="hamburguesa"></button>
+				<button name="bbanner" id="hamburguesa" onclick="cambiarid1();"></button>
 				<figure class="logo" onclick="home();">
 					<img id="logo" src="iconos/logo.png">
 				</figure>
@@ -175,12 +175,12 @@
 						<div id="player"></div>
 						<div id="mapa"></div>
 						<div id="info">
-							<H2>Contacta a <?php echo '"'.$fila2[0].'"';?></H2><br>
+							<H2>Contacta a <?php echo '"'.$fila2[1].'"';?></H2><br>
 							<section id="codi">
 								<label id="etiqueta" for="correo">Correo:</label>
-								<p name="correo"><?php echo ''.$fila2[1].'';?></p><br>
+								<p name="correo"><?php echo ''.$fila2[20].'';?></p><br>
 								<label id="etiqueta" for="direccion">Dirección:</label>
-								<p name="direccion"><?php echo $fila2[2].', '.$fila2[3];?></p><br>
+								<p name="direccion"><?php echo $fila2[3].', '.$fila2[4];?></p><br>
 							</section>
 						</div>
 					</section>
