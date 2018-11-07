@@ -40,4 +40,5 @@ function funciones(){
 function servicio(url){
 	window.open("servicio.php?Negocio="+url,"_self");
 }
+
 window.onload=funciones;

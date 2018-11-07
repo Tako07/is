@@ -17,6 +17,18 @@
 	}else{
 		if (isset($_GET['Negocio'])) {
 		$NN=$_GET['Negocio'];
+		$NN=str_replace("Á", "A", $NN);
+		$NN=str_replace("É", "E", $NN);
+		$NN=str_replace("Í", "I", $NN);
+		$NN=str_replace("Ó", "O", $NN);
+		$NN=str_replace("Ú", "U", $NN);
+		$NN=str_replace("Ü", "U", $NN);
+		$NN=str_replace("á", "a", $NN);
+		$NN=str_replace("é", "e", $NN);
+		$NN=str_replace("í", "i", $NN);
+		$NN=str_replace("ó", "o", $NN);
+		$NN=str_replace("ú", "u", $NN);
+		$NN=str_replace("ü", "u", $NN);
 		$con=mysqli_connect("localhost" , "root" , "" , "data_service_in") or die("No se pudo conectar: ".mysql_error());
 		if(mysqli_connect_errno()){
 			printf("Falló la conexión: %s\n",mysqli_connect_errno());
@@ -35,6 +47,7 @@
 <html lang="es">
 	<head>
 		<meta charset="UTF-8"/>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Services In</title>
 		<link rel="stylesheet" href="estilos.css">

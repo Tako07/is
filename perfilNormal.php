@@ -6,6 +6,7 @@
 	}
 	$q="SELECT * FROM usuario WHERE id_usuario=".$ID.";";
 	$result=mysqli_query ($con,$q);
+	$fila=mysqli_fetch_row($result);
 	if(mysqli_num_rows($result)==0){
 		echo '<script>
 		function funciones(){
@@ -16,7 +17,8 @@
 	}else{
 	$q2='select n.nombre_negocio, i.url_imagen from favorito f inner join negocio n ON f.id_negocio=n.id_negocio inner join imagenes i on n.id_negocio=i.id_negocio where f.id_usuario='.$ID.';';
 	$result2=mysqli_query($con,$q2);
-	$fila=mysqli_fetch_row($result);
+	$q3='select i.nombre_negocio, p.descripcion from favorito f inner join vista_imagenes i on f.id_negocio=i.id_negocio inner join vista_promocion p on i.id_negocio=p.id_negocio where f.id_usuario='.$ID.';';
+	$result3=mysqli_query($con,$q3);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -90,7 +92,7 @@
 						<div class="subirImg">
 							<button id="bsubir">Subir imagen</button>
 							<figure class="camara">
-								<img id="camara" src="iconos/ic_full_star_v3.png">
+								<img id="camara" src="iconos/ic_camara.png">
 							</figure>
 						</div>
 						<h2 id="datosNegrita">Datos del usuario</h2>
@@ -101,39 +103,129 @@
 						</div>
 		        	</div>
 		        	<H2>Mís favoritos</H2>
-
 		        	<div class="favoritos">
-	        		<?php
-	        		if(mysqli_num_rows($result2)>0){ 
-	        			$j=0;
-		        		while ($row=mysqli_fetch_assoc($result2)) {
-							$resultado[$j]['nombre']=utf8_encode($row['nombre_negocio']);
-							$resultado[$j]['url']=utf8_encode($row['url_imagen']);
-							$j++;
-						}?>
-						<tabl id="tabla">
-							<tr>
-								<?php for ($i=0; $i <mysqli_num_rows($result2); $i=$i+1) {?>
-								<?php echo '<td><figure class="negocios">
-								<img id="negocios" src="negocios/'.$resultado[$i]['url'].'"></td>
-								</figure>'; }?>
-							</tr>
-							<tr>
-								<?php for ($i=0; $i <mysqli_num_rows($result2); $i=$i+1) {?>
-								<td>
+		        		<?php
+		        		if(mysqli_num_rows($result2)>0){ 
+		        			$j=0;
+			        		while ($row=mysqli_fetch_assoc($result2)) {
+								$resultado[$j]['nombre']=utf8_encode($row['nombre_negocio']);
+								$resultado[$j]['url']=utf8_encode($row['url_imagen']);
+								$j++;
+							}
+							?>
+							<?php $nfilas=mysqli_num_rows($result2);							
+							if(($nfilas/4)<1){
+								$nfilas=4;
+							}else{
+								if($nfilas%4!=0){
+									$nfilas/=4;
+									$nfilas=intval($nfilas);
+									$nfilas*=4;
+									$nfilas+=4;	
+								}else{
+									$nfilas/=4;
+									$nfilas=intval($nfilas);
+									$nfilas*=4;
+								}
+							}
+							for($j=4; $j-1<$nfilas; $j+=4){
+								if($j>4){
+									echo '<br>';
+								}?>
+								<section class="fav">
+									<?php for ($i=$j-4; $i <mysqli_num_rows($result2); $i=$i+1) {?>
+										<?php echo '<td><figure class="negocios">
+										<img id="negocios" src="negocios/'.$resultado[$i]['url'].'">
+										</figure>'; 
+									}
+									if($i<$j){
+										while ($i<$j) {
+											echo '<figure class="negocios">
+											</figure>';
+											$i++;
+										}
+									}?>
+								</section>
+								<section class="fav">
+									<?php for ($i=$j-4; $i <mysqli_num_rows($result2); $i=$i+1) {?>	
 									<div id="nombre">
 										<?php echo '<p>'.$resultado[$i]['nombre'].'</p>'; ?>
 									</div>
-								</td>
-								<?php } ?>
-							</tr>
-							<tr>
-								<?php for ($i=0; $i <mysqli_num_rows($result2); $i=$i+1) {?>
-								<button id="botones" onclick="servicio(<?php echo'\''.$resultado[$i]["nombre"].'\''?>);">Ver servicio</button>
-								<?php }?>
-							</tr>
-						</table>
-					<?php }?>
+									<?php }
+									if($i<$j){
+										while ($i<$j) {
+											echo'<div id="nada">
+											<p></p>
+											</div>';
+											$i++;
+										}
+									}?>
+								</section>
+								<section class="fav">
+									<?php for ($i=$j-4; $i <mysqli_num_rows($result2); $i=$i+1) {?>
+									<button id="botones" onclick="servicio(<?php echo'\''.$resultado[$i]["nombre"].'\''?>);">Ver servicio</button>
+									<?php }
+									if($i<$j){
+										while ($i<$j) {
+											echo '<button id="bnada"></button>';
+											$i++;
+										}
+									}?>
+								</section>
+							<?php }?>
+						<?php }?>
+		        	</div>
+		        	<br>
+		        	<H2>Promociones de mis favoritos</H2>
+		        	<div class="mispromociones">
+		        		<?php if(mysqli_num_rows($result3)>0){ 
+		        			$j=0;
+			        		while ($row=mysqli_fetch_assoc($result3)) {
+								$resultado[$j]['nombre']=utf8_encode($row['nombre_negocio']);
+								$resultado[$j]['desc']=utf8_encode($row['descripcion']);
+								$j++;
+							}
+							?>
+							<?php $nfilas=mysqli_num_rows($result3);
+							if(($nfilas/5)<1){
+								$nfilas=1;
+							}else{
+								if($nfilas%5!=0){
+									$nfilas/=5;
+									$nfilas=intval($nfilas);
+									$nfilas+=1;	
+								}else{
+									$nfilas/=5;
+									$nfilas=intval($nfilas);
+								}
+							}
+							$i=0;
+							for($j=1; $j-1<$nfilas; $j+=1){
+								$count=0;
+								if($j>1){
+									echo "";
+									echo '<br>';
+								}?>
+			        		<section id="promo">
+				        		<?php for ($count=0; $i<mysqli_num_rows($result3)&&$count<5; $i=$i+1, $count++) {?>	
+					        			<section id="tarjetas" onclick="servicio(<?php echo'\''.$resultado[$i]["nombre"].'\''?>);">
+					        				<div id="rojo">¡Promoción!</div>
+					        				<div id="desc"><?php echo $resultado[$i]['desc'];?></div>
+					        			</section>
+				        		<?php }
+									if($count<5){
+										while ($count<5) {
+											echo '<section id="notarjetas">
+					        				<div id="norojo"></div>
+					        				<div id="nodesc"></div>
+					        			</section>';
+											$count++;
+											$j++;
+										}
+									}
+								}?>
+		        			</section>
+		        		<?php }?>
 		        	</div>
 				</section>
 			</section>
