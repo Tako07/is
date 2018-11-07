@@ -300,4 +300,11 @@ tr{
 	background-color: #ededed;
 	padding: 2%;
 }
+#CentroCat h1{
+	font: bold 20px roboto;
+}
+#CentroCat p{
+	margin-left: 15%;
+	text-align: left;
+}
 /*/////////////////////////////////////////////////INICIA LOGIN///////////////////////////////////////////////////*/

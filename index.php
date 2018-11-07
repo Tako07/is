@@ -54,7 +54,7 @@
 								<li><a href="https://www.google.com/">Electricista</a></li>
 								<li><a href="https://www.google.com/">Mecanico</a></li>
 								<br><br>
-								<a href="https://www.google.com/">Ver mas...</a>
+								<a href="categorias.php">Ver mas...</a>
 							</lo>
 						</nav>
 						<figure id="publicidad1">
