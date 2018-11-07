@@ -266,5 +266,38 @@ td{
 tr{
 	border: 0px solid #000000;
 }
+/*/Categorias*/
+#centroCat{
+	width: 65%;
+	height:auto;
+	text-align: center;
+	border: 0px solid #000000;
 
+}
+.ListCat{
+
+	border-radius: 0px;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	box-shadow: rgba(0,0,0,0) 0px 0px 0px;
+}
+#CategoriasIzq{
+	
+	width: 45%;
+	height: auto;
+	text-align: left;
+}
+#CategoriasDer{
+	margin-left: 25%;
+	width: 45%;
+	height: auto;
+	text-align: left;
+
+}
+#contCat{
+	display: flex;
+	margin: 3% 25%;
+	background-color: #ededed;
+	padding: 2%;
+}
 /*/////////////////////////////////////////////////INICIA LOGIN///////////////////////////////////////////////////*/
