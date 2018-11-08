@@ -401,7 +401,7 @@ h2{
 	margin-top: 1%;
 	width: 100%;
 	height: 25%;
-	
+
 }
 .fav{
 	width: 100%;
@@ -429,7 +429,7 @@ h2{
 }
 #nada{
 	width: 20%;
-	padding: 3% 0%;	
+	padding: 3% 0%;
 }
 #botones{
 	width: 20%;
@@ -473,7 +473,7 @@ h2{
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
-	align-content: center;	
+	align-content: center;
 }
 #rojo{
 	width: 100%;
@@ -508,4 +508,127 @@ h2{
 	flex-direction: row;
 	flex-wrap: wrap;
 	margin-bottom: 5%;
+}
+/*/Categorias*/
+#appCat{
+	background-color: #EDEDED;
+}
+#centroCat{
+	margin-left: 0%;
+	margin-top: 5%;
+	width: 79%;
+	height:auto;
+	text-align: left;
+	border: 0px solid #000000;
+
+}
+#centroCat p{
+	padding-left: 20%;
+}
+.ListCat{
+	border-radius: 0px;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	box-shadow: rgba(0,0,0,0) 0px 0px 0px;
+}
+#CategoriasIzq{
+
+	width: 45%;
+	height: auto;
+	text-align: left;
+}
+#CategoriasDer{
+	margin-left: 25%;
+	width: 45%;
+	height: auto;
+	text-align: left;
+
+}
+#contCat{
+	display: flex;
+	margin-top: 3%;
+	margin-left: 15%;
+	margin-right: 30%;
+	background-color: #A4A4A4;
+	padding: 2%;
+}
+#CentroCat h1{
+	font: bold 20px roboto;
+}
+#CentroCat p{
+	margin: 1%;
+	text-align: left;
+}
+#parrPaquete{
+	width: 100%;
+	margin-bottom: 1%;
+	padding-left: 15%;
+	text-align: left;
+}
+#paqActual{
+	margin-left: 15%;
+	width: 60%;
+	height: auto;
+	display: flex;
+}
+#actualIzq{
+	width: 10%;
+	height: auto;
+	color: #FFFFFF;
+	background-color: #6D6C6B;
+	text-align: center;
+	padding-top: 1%;
+}
+#actualDer{
+	width: 40%;
+	padding-bottom: 5%;
+	background-color: #FFFFFF;
+	padding-left: 2%;
+	text-align: left;
+}
+#paquetes{
+	margin-top: 3%;
+	width: 100%;
+	padding: 1%;
+	text-align: justify;
+
+}
+#paquetes td{
+	width: 30%;
+	height: auto;
+	padding-left: 3%;
+	padding-right: 3%;
+}
+#paq1 p{
+	text-align: center;
+	margin-left: 1%;
+	margin-right: 1%;
+	background-color: #5AF6E9;
+	height: 40px;
+	padding-top: 4%;
+
+}
+#paq2 p{
+	text-align: center;
+	margin-left: 1%;
+	margin-right: 1%;
+	background-color: #F6881A;
+	height: 40px;
+	padding-top: 4%;
+}
+#paq3 p{
+	text-align: center;
+	margin-left: 1%;
+	margin-right: 1%;
+	background-color: #F6311A;
+	height: 40px;
+	padding-top: 4%;
+}
+.descPaquetes{
+	height: 100px;
+	margin-left: 1%;
+	margin-right: 1%;
+	margin-bottom: 0px;
+	padding-top: 3%;
+	background-color: #FFFFFF;
 }

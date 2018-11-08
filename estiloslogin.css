@@ -9,15 +9,15 @@
 	overflow: hidden;
 }
 
-header{				
-	display: flex;		
+header{
+	display: flex;
 	flex-wrap: wrap;
 
 }
 
 body{		/*le da el color gris al fondo de la pagina*/
 	background-color: #EDEDED;
-}	
+}
 #texto{			/*Formato al titulo de la pagina "Services In" en el login y registros*/
 	margin-left: 39%;
 	color: #ffffff;
@@ -66,7 +66,7 @@ body{		/*le da el color gris al fondo de la pagina*/
 	display: block;
 }
 .correo{					/*da formato al input del correo en el login*/
-	border: 1px solid #A4A4A4;	
+	border: 1px solid #A4A4A4;
 	margin: 0% 25%;
 	font:  170% roboto;			/*le da el tipo de letra necesario*/
 	width: 55%;
@@ -274,4 +274,3 @@ h1{						/*FORMATO DE TEXTO DEL REGISTRO*/
 #inputColonia{
 	margin-right: 1%;
 }
-

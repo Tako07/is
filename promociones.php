@@ -1,33 +1,39 @@
 <html lang="es">
 	<head>
 		<meta charset="UTF-8"/>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="https://cdn.rawgit.com/jgthms/
-		minireset.css/master/minireset.css">		<!--no borrar esta linea por lo que más quieran-->
 		<title>Services In</title>
-		<link rel="stylesheet" href="misestilos.css">
+		<link rel="stylesheet" href="estilos.css">
 		<script src="botonHamb.js"></script>
-		<script src="reproductor.js"></script>
-		</script>
+		<script src="loginregistro.js"></script>
 	</head>
 
 	<body>
 		<div id="appCat">
 			<header id="cabecera">
-					<button name="bbanner" id="hamburguesa"></button>
-					<figure class="logo" onclick="home();">
-						<img src="iconos/logo.png">
-						<!--Link a imageen-->
-					</figure>
-					<form action="busqueda.php" method="post">
+				<button name="bbanner" id="hamburguesa" onclick="cambiarid();"></button>
+				<figure class="logo" onclick="home();">
+					<img id="logo" src="iconos/logo.png">
+				</figure>
+				<section class="buscar">
+					<form id="formulario" action="busqueda.php" method="post">
 						<input id="buscar" type="search" name="busqueda" maxlength="200" placeholder="Ingresa tu busqueda"></input>
 						<button type="submit" name="bsearch" id="lupa"></button>
 					</form>
-						<button id="botonesN" onclick="regcliente();">Registrate</button>
-						<button id="botonesN" onclick="login();">Iniciar Sesión</button>
-						<figure class="icono">
-							<img src="iconos/ic_profile_v3.png">
-						</figure>
+				</section>
+				<section class="botones">
+					<button id="botonesN" onclick="regcliente();">Registrate</button>
+					<button id="botonesN" onclick="login();">Iniciar Sesión</button>
+				</section>
+				<section class="iconos">
+					<figure class="notificacion">
+						<img id="notificacion" src="iconos/ic_notificacion_v3.png">
+					</figure>
+					<figure class="icono">
+						<img id="icono" src="iconos/ic_profile_v3.png">
+					</figure>
+				</section>
 			</header>
 			<section id="centro">
 				<div id="seccion-banner">
@@ -59,14 +65,14 @@
 					</figure>
 				</div>
 				<section id="centroCat">
-					<h1>!Anuncia tu servicio¡ Mira los paquetes disponibles que tenemos <br> para ti</h1>
-					<p><br>Ahora mismo tu paquete es este:</p>
+					<center><h1>!Anuncia tu servicio¡ Mira los paquetes disponibles que tenemos <br> para ti</h1></center>
+					<div id='parrPaquete'><br>Ahora mismo tu paquete es este:</div>
 					<div id='paqActual'>
 						<div id='actualIzq'>
 							Básico
 						</div>
 						<div id='actualDer'>
-							Tu paquete contiene
+							Tu paquete contiene:
 							<lo>
 								<li class="ListCat"><a href="https://www.google.com/">3 fotos subidas por ti mismo</a></li>
 								<li class="ListCat"><a href="https://www.google.com/">3 Promociones</a></li>
@@ -80,19 +86,19 @@
 							<td id='paq3'><p>Paquete 3</p></td>
 						</tr>
 						<tr>
-							<td ><div class='descPaquetes'>Con este paquete llevate
+							<td ><div class='descPaquetes'>Con este paquete llevate:
 								<lo>
 									<li class="ListCat">5 Fotografías de tu negocio tomadas por Services In</li>
 								</lo>
 							</div>
 							</td>
-							<td><div class='descPaquetes'>Con este paquete llevate
+							<td><div class='descPaquetes'>Con este paquete llevate:
 								<lo>
 									<li class="ListCat">2 Videos promocionales grabadas y editadas por Services In</li>
 								</lo>
 							</div>
 							</td>
-							<td><div class='descPaquetes'>Con este paquete llevate
+							<td><div class='descPaquetes'>Con este paquete llevate:
 								<lo>
 									<li class="ListCat">1 Spot de radio</li>
 								</lo>
@@ -119,4 +125,3 @@
 		</div>
 	</body>
 </html>
-
