@@ -263,12 +263,11 @@ a{										/*Formato para los hipervinculos*/
 	height: 50%;
 }
 #info{									/*Tanaño de la informacion cuadro de contacto */
-	width: 90%;
-	height: 30%;
+	width: 49%;
+	height: 60%;
 	font: 90% roboto;
 	background-color: #A4A4A4;
 	border: 1px solid #1565c0;
-	margin-bottom: 5%;
 	text-align: center;
 }
 h2{
@@ -301,13 +300,13 @@ h2{
 	font: 95% roboto;
 }
 #imagenN{
-	text-align: center;
-	width: 100%;
+	border: 1px solid #FF0000;
+	width: 50%;
 }
 #imgnegocio{/*Formato de la imágen en pantalla Servicio*/
 	max-width: 100%;
-	height: 50%;
-	max-height: 300px;
+	/*height: 50%;
+	max-height: 300px;*/
 }
 #descNegocio{
 	text-align: center;
@@ -502,4 +501,11 @@ h2{
 	width: 100%;
 	padding: 1% 0%;
 	margin: 0% 5%;
+}
+#ejemplo{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-bottom: 5%;
 }

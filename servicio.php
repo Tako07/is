@@ -1,18 +1,22 @@
  <?php
 	if(isset($_POST['idNegocio'])){
 		session_start();
-		$IDU=$_POST['idNegocio'];
+		$IDN=$_POST['idNegocio'];
 		$NN=$_GET['Negocio'];
 		$con=mysqli_connect("localhost" , "root" , "" , "data_service_in") or die("No se pudo conectar: ".mysql_error());
 		if(mysqli_connect_errno()){
 			printf("Falló la conexión: %s\n",mysqli_connect_errno());
 		}
-		$q="SELECT * FROM usuario WHERE id_usuario=".$IDU.";";
+		$q="SELECT * FROM usuario WHERE id_usuario=".$IDN.";";
 		$result=mysqli_query ($con,$q);
 		$fila=mysqli_fetch_row($result);
 		$q="SELECT * FROM vista_negocio WHERE nombre_negocio='".$NN."';";
+		$q='SELECT * FROM negocio n inner join usuario u on n.id_usuario=u.id_usuario WHERE nombre_negocio=\''.$NN.'\';';
 		$result2=mysqli_query ($con,$q);
 		$fila2=mysqli_fetch_row($result2);
+		$q1="SELECT descripcion FROM vista_promocion WHERE id_negocio='".$fila2[0]."';";
+		$result3=mysqli_query ($con,$q1);
+		$fila3=mysqli_fetch_row($result3);
 		$bandera=1;
 	}else{
 		if (isset($_GET['Negocio'])) {
@@ -64,7 +68,7 @@
 	<body>
 		<div id="app">
 			<header id="cabecera">
-				<button name="bbanner" id="hamburguesa" onclick="cambiarid1();"></button>
+				<button name="bbanner" id="hamburguesa" onclick="cambiarid(<?php echo $bandera;?>);"></button>
 				<figure class="logo" onclick="home();">
 					<img id="logo" src="iconos/logo.png">
 				</figure>
@@ -116,7 +120,7 @@
 								<li><a href="https://www.google.com/">Electricista</a></li>
 								<li><a href="https://www.google.com/">Mecanico</a></li>
 								<br><br>
-								<a href="https://www.google.com/">Ver mas...</a>
+								<a href="categorias.php/">Ver mas...</a>
 							</lo>
 						</nav>
 						<a href="https://www.trivago.com"><img id="publicidad1" src="iconos/publicidad1.jpg"></a>
@@ -128,9 +132,20 @@
 				<section id="centro1">
 		        	  <section id="perfil">
 			            <div id='descNegocio'>
-			              	<figure id='imagenN'>
-			                	<img id='imgnegocio' src="mjolnir.jpg">
-			             	</figure>
+			              	<div id="ejemplo">
+				              	<figure id='imagenN'>
+				                	<img id='imgnegocio' src="mjolnir.jpg">
+				             	</figure>
+				             	<div id="info">
+									<H2>Contacta a <?php echo '"'.$fila2[1].'"';?></H2><br>
+									<section id="codi">
+										<label id="etiqueta" for="correo">Correo:</label>
+										<p name="correo"><?php echo ''.$fila2[20].'';?></p><br>
+										<label id="etiqueta" for="direccion">Dirección:</label>
+										<p name="direccion"><?php echo $fila2[3].', '.$fila2[4];?></p><br>
+									</section>
+								</div>
+							</div>
 				            <h1 id='nombServicio'><?php echo $fila2[1]?><h1>
 				            <div id='estrellas'>Estrellas que después pongo</div>
 				            <br>
@@ -174,15 +189,6 @@
 						<h2>Servicio recomendado</h2>
 						<div id="player"></div>
 						<div id="mapa"></div>
-						<div id="info">
-							<H2>Contacta a <?php echo '"'.$fila2[1].'"';?></H2><br>
-							<section id="codi">
-								<label id="etiqueta" for="correo">Correo:</label>
-								<p name="correo"><?php echo ''.$fila2[20].'';?></p><br>
-								<label id="etiqueta" for="direccion">Dirección:</label>
-								<p name="direccion"><?php echo $fila2[3].', '.$fila2[4];?></p><br>
-							</section>
-						</div>
 					</section>
 				</section>
 			</section>

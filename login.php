@@ -11,7 +11,7 @@
 		if(mysqli_connect_errno()){
 			printf("Falló la conexión: %s\n",mysqli_connect_errno());
 		}
-		/*!&lt; Crea la consulta para saber si el usuario existe y/o el correo y la contraseña es correca*/
+		/*!&lt; Crea la consulta para saber si el usuario existe y/o el correo y la contraseña es correct a*/
 		$q="SELECT id_usuario FROM usuario WHERE username='".$usuario."' AND password=MD5('".$contraseña."') OR correo='".$usuario."' AND password=MD5('".$contraseña."');";
 		/*!&lt; Manda la consulta y se obtiene el resultado en la variable $result*/
 		$result=mysqli_query ($con,$q);

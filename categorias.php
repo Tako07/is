@@ -7,8 +7,6 @@
 		<title>Services In</title>
 		<link rel="stylesheet" href="misestilos.css">
 		<script src="botonHamb.js"></script>
-		<script src="reproductor.js"></script>
-		</script>
 	</head>
 
 	<body>
@@ -17,7 +15,6 @@
 					<button name="bbanner" id="hamburguesa"></button>
 					<figure class="logo" onclick="home();">
 						<img src="iconos/logo.png">
-						<!--Link a imageen-->
 					</figure>
 					<form action="busqueda.php" method="post">
 						<input id="buscar" type="search" name="busqueda" maxlength="200" placeholder="Ingresa tu busqueda"></input>
@@ -65,7 +62,7 @@
 						<lo>
 							<li class ='ListCat'><a href="https://www.google.com/">Plomería</a></li>
 							<li class ='ListCat'><a href="https://www.google.com/">Electricista</a></li>
-							<li class ='ListCat'><a href="https://www.google.com/">Caríntería</a></li>
+							<li class ='ListCat'><a href="https://www.google.com/">Carpíntería</a></li>
 							<li class ='ListCat'><a href="https://www.google.com/">Carrajería</a></li>
 						</lo>
 					</div>
