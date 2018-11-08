@@ -12,7 +12,7 @@
 	</head>
 
 	<body>
-		<div id="app">
+		<div id="appCat">
 			<header id="cabecera">
 					<button name="bbanner" id="hamburguesa"></button>
 					<figure class="logo" onclick="home();">
@@ -61,9 +61,59 @@
 				<section id="centroCat">
 					<h1>!Anuncia tu servicio¡ Mira los paquetes disponibles que tenemos <br> para ti</h1>
 					<p><br>Ahora mismo tu paquete es este:</p>
-					<div>
-						
+					<div id='paqActual'>
+						<div id='actualIzq'>
+							Básico
+						</div>
+						<div id='actualDer'>
+							Tu paquete contiene
+							<lo>
+								<li class="ListCat"><a href="https://www.google.com/">3 fotos subidas por ti mismo</a></li>
+								<li class="ListCat"><a href="https://www.google.com/">3 Promociones</a></li>
+							</lo>
+						</div>
 					</div>
+					<table id='paquetes'>
+						<tr>
+							<td id='paq1'><p>Paquete 1</p></td>
+							<td id='paq2'><p>Paquete 2</p></td>
+							<td id='paq3'><p>Paquete 3</p></td>
+						</tr>
+						<tr>
+							<td ><div class='descPaquetes'>Con este paquete llevate
+								<lo>
+									<li class="ListCat">5 Fotografías de tu negocio tomadas por Services In</li>
+								</lo>
+							</div>
+							</td>
+							<td><div class='descPaquetes'>Con este paquete llevate
+								<lo>
+									<li class="ListCat">2 Videos promocionales grabadas y editadas por Services In</li>
+								</lo>
+							</div>
+							</td>
+							<td><div class='descPaquetes'>Con este paquete llevate
+								<lo>
+									<li class="ListCat">1 Spot de radio</li>
+								</lo>
+							</div>
+							</td>
+						</tr>
+						<tr>
+							<td><div class="btVerServ">
+									<button type="button" class="bt">Comprar por <br>$300.00MXN</button>
+								</div>
+							</td>
+							<td><div class="btVerServ">
+									<button type="button" class="bt">Comprar por <br>$500.00MXN</button>
+								</div>
+							</td>
+							<td><div class="btVerServ">
+									<button type="button" class="bt">Comprar por <br>$700.00MXN</button>
+								</div>
+							</td>
+					</table>
+
 				</section>
 			</section>
 		</div>
