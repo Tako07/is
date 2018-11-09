@@ -1,16 +1,17 @@
  <?php
+ 	session_start();
+	$con=mysqli_connect("localhost" , "root" , "" , "data_service_in") or die("No se pudo conectar: ".mysql_error());
+	if(mysqli_connect_errno()){
+		printf("Falló la conexión: %s\n",mysqli_connect_errno());
+	}
+	/*Esto es para los acentos*/
+	$con->set_charset("utf8");
 	if(isset($_POST['idNegocio'])){
-		session_start();
 		$IDN=$_POST['idNegocio'];
 		$NN=$_GET['Negocio'];
-		$con=mysqli_connect("localhost" , "root" , "" , "data_service_in") or die("No se pudo conectar: ".mysql_error());
-		if(mysqli_connect_errno()){
-			printf("Falló la conexión: %s\n",mysqli_connect_errno());
-		}
 		$q="SELECT * FROM usuario WHERE id_usuario=".$IDN.";";
 		$result=mysqli_query ($con,$q);
 		$fila=mysqli_fetch_row($result);
-		$q="SELECT * FROM vista_negocio WHERE nombre_negocio='".$NN."';";
 		$q='SELECT * FROM negocio n inner join usuario u on n.id_usuario=u.id_usuario WHERE nombre_negocio=\''.$NN.'\';';
 		$result2=mysqli_query ($con,$q);
 		$fila2=mysqli_fetch_row($result2);
@@ -19,33 +20,36 @@
 		$fila3=mysqli_fetch_row($result3);
 		$bandera=1;
 	}else{
-		if (isset($_GET['Negocio'])) {
-		$NN=$_GET['Negocio'];
-		$NN=str_replace("Á", "A", $NN);
-		$NN=str_replace("É", "E", $NN);
-		$NN=str_replace("Í", "I", $NN);
-		$NN=str_replace("Ó", "O", $NN);
-		$NN=str_replace("Ú", "U", $NN);
-		$NN=str_replace("Ü", "U", $NN);
-		$NN=str_replace("á", "a", $NN);
-		$NN=str_replace("é", "e", $NN);
-		$NN=str_replace("í", "i", $NN);
-		$NN=str_replace("ó", "o", $NN);
-		$NN=str_replace("ú", "u", $NN);
-		$NN=str_replace("ü", "u", $NN);
-		$con=mysqli_connect("localhost" , "root" , "" , "data_service_in") or die("No se pudo conectar: ".mysql_error());
-		if(mysqli_connect_errno()){
-			printf("Falló la conexión: %s\n",mysqli_connect_errno());
-		}
-		$q='SELECT * FROM negocio n inner join usuario u on n.id_usuario=u.id_usuario WHERE nombre_negocio=\''.$NN.'\';';
-		$result2=mysqli_query ($con,$q);
-		$fila2=mysqli_fetch_row($result2);
-		$q1="SELECT descripcion FROM vista_promocion WHERE id_negocio='".$fila2[0]."';";
-		$result3=mysqli_query ($con,$q1);
-		$fila3=mysqli_fetch_row($result3);
-		$bandera=2;
+		if(isset($_POST['Usuario'])){
+			$IDU=$_POST['Usuario'];
+			$NN=$_GET['Negocio'];
+			$q='SELECT * FROM negocio n inner join usuario u on n.id_usuario=u.id_usuario WHERE nombre_negocio=\''.$NN.'\';';
+			$result2=mysqli_query ($con,$q);
+			$fila2=mysqli_fetch_row($result2);
+			$q1="SELECT descripcion FROM vista_promocion WHERE id_negocio='".$fila2[0]."';";
+			$result3=mysqli_query ($con,$q1);
+			$fila3=mysqli_fetch_row($result3);
+			$q2='select id_favorito from favorito where id_usuario='.$IDU.' AND id_negocio='.$fila2[0].';';
+			$result4=mysqli_query ($con,$q2);
+			if(mysqli_num_rows($result4)==0){
+				$siguiendo=0;
+			}else{
+				$siguiendo=1;
+			}
+			$bandera=3;
 		}else{
-			$bandera=0;
+			if (isset($_GET['Negocio'])) {
+			$NN=$_GET['Negocio'];
+			$q='SELECT * FROM negocio n inner join usuario u on n.id_usuario=u.id_usuario WHERE nombre_negocio=\''.$NN.'\';';
+			$result2=mysqli_query ($con,$q);
+			$fila2=mysqli_fetch_row($result2);
+			$q1="SELECT descripcion FROM vista_promocion WHERE id_negocio='".$fila2[0]."';";
+			$result3=mysqli_query ($con,$q1);
+			$fila3=mysqli_fetch_row($result3);
+			$bandera=2;
+			}else{
+				$bandera=0;
+			}
 		}
 	}
 	if($bandera>0){
@@ -89,7 +93,7 @@
 				</section>
 				<section class="iconos">
 					<?php 
-					if ($bandera==1) {
+					if ($bandera==3) {
 						echo '
 						<figure class="notificacion">
 							<img id="notificacion" src="iconos/ic_notificacion_v3.png">
@@ -132,9 +136,9 @@
 				<section id="centro1">
 		        	  <section id="perfil">
 			            <div id='descNegocio'>
-			              	<div id="ejemplo">
+			              	<div id="img-info">
 				              	<figure id='imagenN'>
-				                	<img id='imgnegocio' src="mjolnir.jpg">
+				                	<img id='imgnegocio' src="negocios/carpinteria_jose.jpg">
 				             	</figure>
 				             	<div id="info">
 									<H2>Contacta a <?php echo '"'.$fila2[1].'"';?></H2><br>
@@ -146,17 +150,34 @@
 									</section>
 								</div>
 							</div>
-				            <h1 id='nombServicio'><?php echo $fila2[1]?><h1>
-				            <div id='estrellas'>Estrellas que después pongo</div>
+							<section id="nom-fav">
+	                			<?php	
+		                			if($bandera==3){
+		                				echo '<figure class="favo" onclick="seguir('.$siguiendo.','.$IDU.','.$fila2[0].');">';
+		                				if($siguiendo==0){
+		                					echo '<img id="favo" src="iconos/ic_fav_1.png">';
+		                				}else{
+		                					echo '<img id="favo" src="iconos/ic_fav_2.png">';
+		                				}
+		                				echo '</figure>';
+		                			}
+	                			?>	                			
+			            		<h1 id='nombServicio'><?php echo $fila2[1]?><h1>
+	            			</section>
 				            <br>
 				            <div id='descHorario'>
-		                		<h1>Descripción del servicio:</h1>
-				                <p><?php echo $fila2[6]?></p>
+		              			<h1>Descripción del servicio:</h1>
+		                        <p><?php echo $fila2[6]?></p>
 			                	<br>
 				                <h1>Horarios</h1>
 				                <p><?php echo $fila2[7]?></p>
 				                <br>
-				                <h1>Certificados:</h1>
+				                <section id="nom-fav">
+									<figure class="favo">
+										<img id="favo" src="iconos/ic_certificado_v3.png">
+		                			</figure>
+				            		<h1 id='nombServicio'>Certificados:<h1>
+	            				</section>
 				                <lo>
 	  								<li class='certificados'><a href="https://www.google.com/">Servicio 1</a></li>
 	  								<li class='certificados'><a href="https://www.google.com/">Servicio 2</a></li>
@@ -167,7 +188,7 @@
 								$i=0;?>
 				        		<section id="promo">
 					        		<?php for($count=0; $i<mysqli_num_rows($result3)&&$count<3; $i=$i+1, $count++) {?>	
-						        			<section id="tarjetas">
+						        			<section id="tarjetasServ">
 						        				<div id="rojo">¡Promoción!</div>
 						        				<div id="desc"><?php echo $fila3[0];?></div>
 						        			</section>

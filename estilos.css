@@ -240,6 +240,34 @@ a{										/*Formato para los hipervinculos*/
 	width: 70%;
 	height: 100%;
 }
+#img-info{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-bottom: 2%;
+}
+#nom-fav{
+	width: 100%;
+	height: 10%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+}
+#nombServicio{
+	width: 90%;
+}
+.favo{
+	cursor: pointer;
+	width: 5%;
+	height: 5%;
+}
+#favo{
+	width: 100%;
+	height: 100%;
+}
+
 #extras{								/*Zona con el video de publicidad, mapa, e informacion del negocio*/
 	display: flex;
 	flex-direction: column;
@@ -264,7 +292,6 @@ a{										/*Formato para los hipervinculos*/
 }
 #info{									/*Tanaño de la informacion cuadro de contacto */
 	width: 49%;
-	height: 60%;
 	font: 90% roboto;
 	background-color: #A4A4A4;
 	border: 1px solid #1565c0;
@@ -280,6 +307,17 @@ h2{
 #etiqueta{								/*Da formato al texto de "Correo" y "Direccion"*/
 	font: bold 100% roboto;
 }
+
+#tarjetasServ{
+	width: 25%;
+	height: 25%;
+	display: flex;
+	cursor: pointer;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-content: center;
+}
+
 
 #pie{									/*Pie de la pagina*/
 	background-color: black;
@@ -300,13 +338,10 @@ h2{
 	font: 95% roboto;
 }
 #imagenN{
-	border: 1px solid #FF0000;
 	width: 50%;
 }
-#imgnegocio{/*Formato de la imágen en pantalla Servicio*/
+#imgnegocio{
 	max-width: 100%;
-	/*height: 50%;
-	max-height: 300px;*/
 }
 #descNegocio{
 	text-align: center;
@@ -321,12 +356,12 @@ h2{
 	text-align: left;
 }
 .certificados{
-		font: 95% roboto;
-		border-radius: 0px;
-		margin-top: 1%;
-		margin-bottom: 1%;
-		box-shadow: rgba(0,0,0,0.5) 0px 0px 0px;
-		padding-left: 3%;
+	font: 95% roboto;
+	border-radius: 0px;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	box-shadow: rgba(0,0,0,0.5) 0px 0px 0px;
+	padding-left: 3%;
 
 }
 /*////////////////////////////////////////////////////////Empieza perfil normal///////////////////////////////////////////////////////////////////*/
@@ -336,7 +371,7 @@ h2{
 	flex-wrap: wrap;
 	width: 79%;
 	height: 100%;
-	padding-top: 1%;
+	padding-topop: 1%;
 }
 .perfil{
 	display: flex;
@@ -405,34 +440,49 @@ h2{
 }
 .fav{
 	width: 100%;
+	height: 50%;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+	align-items: center;
 	align-content: center;
 	justify-content: space-between;
 }
-.negocios{
+
+#tarjeta{
 	width: 20%;
-	height: 50%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+#notarjeta{
+	width: 20%;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+.negocios{
+	width: 100%;
+	height: 25%;
 }
 #negocios{
 	width: 100%;
 	height: 100%;
 }
-
 #nombre{
-	width: 20%;
+	width: 100%;
 	padding: 3% 0%;
 	text-align: center;
 	font: bold 120% roboto;
 	background-color: #BDBDBD;
 }
 #nada{
-	width: 20%;
+	width: 100%;
 	padding: 3% 0%;
 }
 #botones{
-	width: 20%;
+	width: 100%;
 	padding: 0.5% 0%;
 	text-align: center;
 	font: bold 120% roboto;
@@ -440,14 +490,14 @@ h2{
 	cursor: pointer;
 }
 #bnada{
-	width: 20%;
+	width: 100%;
 	padding: 0.5% 0%;
 	background-color: transparent;
 	outline: none;
 }
 .mispromociones{
 	width: 100%;
-	margin-top: 1%;
+	margin-top: 3%;
 }
 #promo{
 	height: 50%;
@@ -502,14 +552,8 @@ h2{
 	padding: 1% 0%;
 	margin: 0% 5%;
 }
-#ejemplo{
-	width: 100%;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	margin-bottom: 5%;
-}
-/*/Categorias*/
+
+/*//////////////////////////////////////////////////////////////////Categorias////////////////////////////////////////////////////////////////////*/
 #appCat{
 	background-color: #EDEDED;
 }
