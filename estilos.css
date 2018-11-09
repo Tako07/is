@@ -573,21 +573,19 @@ h2{
 	border-radius: 0px;
 	margin-top: 4px;
 	margin-bottom: 4px;
+	background-color: #A4A4A4;
 	box-shadow: rgba(0,0,0,0) 0px 0px 0px;
 }
-#CategoriasIzq{
 
-	width: 45%;
-	height: auto;
-	text-align: left;
-}
-#CategoriasDer{
-	margin-left: 25%;
-	width: 45%;
-	height: auto;
-	text-align: left;
+#categTab td{
+	width: 85%;
+	padding-left: 10%;
 
 }
+#catForm{
+	width: 100%;
+}
+
 #contCat{
 	display: flex;
 	margin-top: 3%;
@@ -601,6 +599,7 @@ h2{
 }
 #CentroCat p{
 	margin: 1%;
+	padding-left: 37%;
 	text-align: left;
 }
 #parrPaquete{

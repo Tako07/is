@@ -66,24 +66,35 @@
 				<section id="centroCat">
 					<p>Categorias:</p>
 					<div id='contCat'>
-					<div id='CategoriasIzq'>
-						<lo>
-							<li class ='ListCat'><a href="https://www.google.com/">Plomería</a></li>
-							<li class ='ListCat'><a href="https://www.google.com/">Electricista</a></li>
-							<li class ='ListCat'><a href="https://www.google.com/">Carpintería</a></li>
-							<li class ='ListCat'><a href="https://www.google.com/">Carrajería</a></li>
-						</lo>
-					</div>
-					<div id='CategoriasDer'>
-						<lo>
-							<li class ='ListCat'><a href="https://www.google.com/">Abarrotes</a></li>
-							<li class ='ListCat'><a href="https://www.google.com/">Clínicas</a></li>
-							<li class ='ListCat'><a href="https://www.google.com/">Cafés</a></li>
-							<li class ='ListCat'><a href="https://www.google.com/">Ropa</a></li>
-							<li class ='ListCat'><a href="https://www.google.com/">Restaurantes</a></li>
-						</lo>
-					</div>
+						<form id='catForm' action="servicios_de_categoria.php" method="GET">
+						<table id='categTab'>
+
+						<?php
+						$con=mysqli_connect("localhost" , "root" , "" , "data_service_in") or die("No se pudo conectar: ".mysql_error());
+						if(mysqli_connect_errno()){
+							printf("Falló la conexión: %s\n",mysqli_connect_errno());
+						}
+						$q="SELECT * FROM categoria;";
+						$result=mysqli_query ($con,$q);
+						$i=0;
+						echo '<tr>';
+						while($row = mysqli_fetch_assoc($result)){
+							$i++;
+							echo '
+							<td class="nombCategoria"><input class="ListCat" type="submit" name="seleccion" value="'.$row["nombre_categoria"].'" readonly ></input></td>
+							';
+							if($i==2){
+								$i=0;
+								echo '</tr>';
+								echo '<tr>';
+							}
+						}
+						echo '</tr>';
+						 ?>
+				</table>
+			</form>
 				</div>
+
 				</section>
 			</section>
 		</div>
