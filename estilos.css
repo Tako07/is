@@ -629,6 +629,20 @@ h2{
 	padding-left: 2%;
 	text-align: left;
 }
+#actualDer .ListCat{
+	width: 100%;
+	padding-bottom: 5%;
+	background-color: #FFFFFF;
+	padding-left: 2%;
+	text-align: left;
+}
+#paquetes .ListCat{
+	width: 100%;
+	padding-bottom: 5%;
+	background-color: #FFFFFF;
+	padding-left: 2%;
+	text-align: left;
+}
 #paquetes{
 	margin-top: 3%;
 	width: 100%;
@@ -644,25 +658,23 @@ h2{
 }
 #paq1 p{
 	text-align: center;
-	margin-left: 1%;
-	margin-right: 1%;
+	padding-right: 30%;
 	background-color: #5AF6E9;
 	height: 40px;
 	padding-top: 4%;
+	border: 1px solid #000000;
 
 }
 #paq2 p{
 	text-align: center;
-	margin-left: 1%;
-	margin-right: 1%;
+	padding-right: 30%;
 	background-color: #F6881A;
 	height: 40px;
 	padding-top: 4%;
 }
 #paq3 p{
 	text-align: center;
-	margin-left: 1%;
-	margin-right: 1%;
+	padding-right: 30%;
 	background-color: #F6311A;
 	height: 40px;
 	padding-top: 4%;
@@ -674,4 +686,11 @@ h2{
 	margin-bottom: 0px;
 	padding-top: 3%;
 	background-color: #FFFFFF;
+}
+.btVerServ{
+	background-color: #00CCF1;
+	text-align: center;
+}
+.btVerServ button{
+	background-color: #00CCF1;
 }

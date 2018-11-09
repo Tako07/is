@@ -64,7 +64,7 @@
 							</lo>
 						</nav>
 						<figure id="publicidad1">
-							
+
 						</figure>
 					</section>
 					<figure id="publicidad1">
@@ -98,8 +98,8 @@
 						<div id='actualDer'>
 							Tu paquete contiene:
 							<lo>
-								<li class="ListCat"><a href="https://www.google.com/">3 fotos subidas por ti mismo</a></li>
-								<li class="ListCat"><a href="https://www.google.com/">3 Promociones</a></li>
+								<li class="ListCat">3 fotos subidas por ti mismo</li>
+								<li class="ListCat">3 Promociones</li>
 							</lo>
 						</div>
 					</div>
@@ -131,15 +131,15 @@
 						</tr>
 						<tr>
 							<td><div class="btVerServ">
-									<button type="button" class="bt">Comprar por <br>$300.00MXN</button>
+									<button type="button" class="bt" onclick="location.href='https://www.paypal.com/mx/home'">Comprar por <br>$300.00MXN</button>
 								</div>
 							</td>
 							<td><div class="btVerServ">
-									<button type="button" class="bt">Comprar por <br>$500.00MXN</button>
+									<button type="button" class="bt" onclick="location.href='https://www.paypal.com/mx/home'">Comprar por <br>$500.00MXN</button>
 								</div>
 							</td>
 							<td><div class="btVerServ">
-									<button type="button" class="bt">Comprar por <br>$700.00MXN</button>
+									<button type="button" class="bt" onclick="location.href='https://www.paypal.com/mx/home'">Comprar por <br>$700.00MXN</button>
 								</div>
 							</td>
 					</table>
