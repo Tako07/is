@@ -5,6 +5,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Services In</title>
 		<link rel="stylesheet" href="estilos.css">
+		<!-- Compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+<!-- Minified JS library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Compiled and minified Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
 		<script src="botonHamb.js"></script>
 		<script src="loginregistro.js"></script>
 	</head>
@@ -60,7 +66,24 @@
 						<a href="https://www.trivago.com"><img id="publicidad1" src="iconos/publicidad1.jpg"></a>
 					</section>
 					<figure>
-						<a href="https://www.trivago.com"><img id="publicidad2" src="iconos/publicidad1.jpg" hidden></a>
+						<div id="publicidad2" class="carousel slide" data-ride="carousel">
+              <script type="text/javascript">
+              $('#publicidad2').carousel({
+                interval: 5000,
+                pause:true,
+                wrap:true
+              });
+            </script>
+
+
+            <div class="carousel-inner">
+              <div class="item active">
+                <img src="iconos/publicidad1.jpg" width="250" alt="">
+              </div>
+              <div class="item">
+                <img src="negocios/carpinteria_jose.jpg" width="250" alt="">
+              </div>
+            </div>
 					</figure>
 				</div>
 				<section id="centroCat">

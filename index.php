@@ -7,6 +7,12 @@
 		<link rel="stylesheet" href="https://cdn.rawgit.com/jgthms/
 		minireset.css/master/minireset.css">		<!--no borrar esta linea por lo que más quieran-->
 		<title>Services In</title>
+		<!-- Compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+<!-- Minified JS library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Compiled and minified Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
 		<link rel="stylesheet" href="misestilos.css">
 		<script src="botonHamb.js"></script>
 		<script src="reproductor.js"></script>
@@ -62,7 +68,24 @@
 						</figure>
 					</section>
 					<figure id="publicidad1">
-							<a href="https://www.trivago.com"><img src="iconos/publicidad1.jpg"></a>
+						<div id="publicidad2" class="carousel slide" data-ride="carousel">
+							<script type="text/javascript">
+							$('#publicidad2').carousel({
+								interval: 8000,
+								pause:true,
+								wrap:true
+							});
+						</script>
+
+
+						<div class="carousel-inner">
+							<div class="item active">
+								<img src="iconos/publicidad1.jpg"  alt="">
+							</div>
+							<div class="item">
+								<img src="negocios/carpinteria_jose.jpg"  alt="">
+							</div>
+						</div>
 					</figure>
 				</div>
 				<section id="centro1">

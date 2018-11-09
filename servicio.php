@@ -61,6 +61,12 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Services In</title>
+    <!-- Compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+<!-- Minified JS library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Compiled and minified Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
 		<link rel="stylesheet" href="estilos.css">
 		<script src="botonHamb1.js"></script>
 		<script src="reproductor.js"></script>
@@ -92,7 +98,7 @@
 					}?>
 				</section>
 				<section class="iconos">
-					<?php 
+					<?php
 					if ($bandera==3) {
 						echo '
 						<figure class="notificacion">
@@ -130,19 +136,66 @@
 						<a href="https://www.trivago.com"><img id="publicidad1" src="iconos/publicidad1.jpg"></a>
 					</section>
 					<figure>
-						<a href="https://www.trivago.com"><img id="publicidad2" src="iconos/publicidad1.jpg"></a>
+            <div id="publicidad2" class="carousel slide" data-ride="carousel">
+              <script type="text/javascript">
+              $('#publicidad2').carousel({
+                interval: 5000,
+                pause:true,
+                wrap:true
+              });
+            </script>
+
+
+            <div class="carousel-inner">
+              <div class="item active">
+                <img src="iconos/publicidad1.jpg"  alt="">
+              </div>
+              <div class="item">
+                <img src="negocios/carpinteria_jose.jpg"  alt="">
+              </div>
+            </div>
 					</figure>
 				</div>
 				<section id="centro1">
 		        	  <section id="perfil">
 			            <div id='descNegocio'>
 			              	<div id="img-info">
-				              	<figure id='imagenN'>
-				                	<img id='imgnegocio' src="negocios/carpinteria_jose.jpg">
-				             	</figure>
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                          <script type="text/javascript">
+                          $('#myCarousel').carousel({
+                            interval: 8000,
+                            pause:true,
+                            wrap:true
+                          });
+                        </script>
+
+
+                        <div class="carousel-inner">
+                          <div class="item active">
+                            <img src="negocios/carpinteria_jose.jpg" width="300" alt="">
+                          </div>
+                          <div class="item">
+                            <img src="negocios/carpinteria_jose2.jpg" width="300" alt="">
+                          </div>
+                          <div class="item">
+                            <img src="negocios/carpinteria_jose3.jpg" width="300" alt="">
+                          </div>
+                        </div>
+
+    <!-- Controls -->
+                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                          <span class="glyphicon glyphicon-chevron-left"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                          <span class="glyphicon glyphicon-chevron-right"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </div>
+
 				             	<div id="info">
-									<H2>Contacta a <?php echo '"'.$fila2[1].'"';?></H2><br>
-									<section id="codi">
+									     <H2>Contacta a <?php echo '"'.$fila2[1].'"';?></H2><br>
+									     <section id="codi">
 										<label id="etiqueta" for="correo">Correo:</label>
 										<p name="correo"><?php echo ''.$fila2[20].'';?></p><br>
 										<label id="etiqueta" for="direccion">Dirección:</label>
@@ -151,7 +204,7 @@
 								</div>
 							</div>
 							<section id="nom-fav">
-	                			<?php	
+	                			<?php
 		                			if($bandera==3){
 		                				echo '<figure class="favo" onclick="seguir('.$siguiendo.','.$IDU.','.$fila2[0].');">';
 		                				if($siguiendo==0){
@@ -161,7 +214,7 @@
 		                				}
 		                				echo '</figure>';
 		                			}
-	                			?>	                			
+	                			?>
 			            		<h1 id='nombServicio'><?php echo $fila2[1]?><h1>
 	            			</section>
 				            <br>
@@ -184,10 +237,10 @@
 				                </lo>
 			             	 </div>
 			              	<div class="mispromociones">
-								<?php 
+								<?php
 								$i=0;?>
 				        		<section id="promo">
-					        		<?php for($count=0; $i<mysqli_num_rows($result3)&&$count<3; $i=$i+1, $count++) {?>	
+					        		<?php for($count=0; $i<mysqli_num_rows($result3)&&$count<3; $i=$i+1, $count++) {?>
 						        			<section id="tarjetasServ">
 						        				<div id="rojo">¡Promoción!</div>
 						        				<div id="desc"><?php echo $fila3[0];?></div>
