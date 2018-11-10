@@ -267,7 +267,26 @@ a{										/*Formato para los hipervinculos*/
 	width: 100%;
 	height: 100%;
 }
-
+#calif{
+	width: 25%;
+	height: 10%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	align-content: center;
+	justify-content: space-around;
+}
+.estrella{
+	padding: 1% 0%;
+	cursor: pointer;
+	width: 10%;
+	height: 3%;	
+}
+#estrella{
+	width: 100%;
+	height: 100%;
+}
 #extras{								/*Zona con el video de publicidad, mapa, e informacion del negocio*/
 	display: flex;
 	flex-direction: column;
@@ -351,9 +370,6 @@ h2{
 #descHorario{
 	text-align: justify;
 	max-height: 100%;
-}
-#estrellas{
-	text-align: left;
 }
 .certificados{
 	font: 95% roboto;

@@ -77,36 +77,16 @@ function servicio(url,IDU){
 	document.getElementById("linkserv").submit();
 }
 function seguir(band,IDU,IDN){
-	if(band==1){
-		document.getElementById("favo").src="iconos/ic_fav_1.png";
-		document.body.innerHTML += '<?php echo $siguiendo=0;?>';
-	}else{
-		document.getElementById("favo").src="iconos/ic_fav_2.png";
-		document.body.innerHTML += '<?php echo $siguiendo=1;?>';
-	}
-	/*var mysql =require('mysql');
-	var con=mysql.createConnection({
-		host:"localhost",
-		user:"root",
-		password:""
-	});
-	if(band==1){
-		con.connect(function(err){
-			if(err) throw err;
-			console.log("Connected!");
-			con.query('insert into favorito (id_usuario,id_negocio) values('+IDU+','+IDN+');',function(err,result){
-				if (err) throw err;
-				console.log("result:"+result);
-			});
-		});
-	}else{
-		con.connect(function(err){
-			if(err) throw err;
-			console.log("Connected!");
-			con.query(' delete from favorito where id_usuario='+IDU+' AND id_negocio='+IDN+';',function(err,result){
-				if (err) throw err;
-				console.log("result:"+result);
-			});
-		});
-	}*/
+	document.body.innerHTML += '<form id="linkserv" action="seguircalif.php" method="post">'+
+	'<input type="hidden" name="Usuario" value="'+IDU+'">'+
+	'<input type="hidden" name="Negocio" value="'+IDN+'">'+
+	'<input type="hidden" name="accion" value="'+band+'"></form>';
+	document.getElementById("linkserv").submit();
+}
+function favoritos(calif,IDU,IDN){
+	document.body.innerHTML += '<form id="linkserv" action="seguircalif.php" method="post">'+
+	'<input type="hidden" name="Usuario" value="'+IDU+'">'+
+	'<input type="hidden" name="Negocio" value="'+IDN+'">'+
+	'<input type="hidden" name="calificacion" value="'+calif+'"></form>';
+	document.getElementById("linkserv").submit();
 }

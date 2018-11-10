@@ -196,7 +196,7 @@
 								}?>
 			        		<section id="promo">
 				        		<?php for ($count=0; $i<mysqli_num_rows($result3)&&$count<5; $i=$i+1, $count++) {?>	
-					        			<section id="tarjetas" onclick="servicio(<?php echo'\''.$resultado[$i]["nombre"].'\''?>);">
+					        			<section id="tarjetas" onclick="servicio(<?php echo'\''.$resultado[$i]["nombre"].'\','.$fila[0]?>);">
 					        				<div id="rojo">¡Promoción!</div>
 					        				<div id="desc"><?php echo $resultado[$i]['desc'];?></div>
 					        			</section>
