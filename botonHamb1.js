@@ -6,7 +6,7 @@ var cont=0;
 *@description Funcion para mostrar el banner
 */
 function cambiarid (ban){
-	if (ban==1) {
+	if (ban==1) { /*Sesion iniciada como Negocio*/
 		if (cont==0) {				/*Si esta oculta*/
 			document.getElementsByTagName('figure')[2].id="ocultar";
 			document.getElementsByTagName('img')[3].id="ocultar";
@@ -26,7 +26,7 @@ function cambiarid (ban){
 			cont=0;
 		}
 	}else{	
-		if(ban==2) {
+		if(ban==2) {/*Sesion de invitado*/
 			if (cont==0) {				/*Si esta oculta*/
 				document.getElementsByTagName('figure')[2].id="ocultar";
 				document.getElementsByTagName('img')[3].id="ocultar";
@@ -46,7 +46,7 @@ function cambiarid (ban){
 				cont=0;
 			}
 		}else{
-			if(ban==3) {
+			if(ban==3) {/*Sesion iniciada como usuario normal*/
 				if (cont==0) {				/*Si esta oculta*/
 					document.getElementsByTagName('figure')[2].id="ocultar";
 					document.getElementsByTagName('img')[3].id="ocultar";
@@ -71,8 +71,8 @@ function cambiarid (ban){
 }
 "use strict"
 
-function servicio(url,IDU){
-	document.body.innerHTML += '<form id="linkserv" action="servicio.php?Negocio='+url+'" method="post">'+
+function usuario(url,IDU){
+	document.body.innerHTML += '<form id="linkserv" action="'+url+'" method="post">'+
 	'<input type="hidden" name="Usuario" value="'+IDU+'"></form>';
 	document.getElementById("linkserv").submit();
 }

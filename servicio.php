@@ -10,42 +10,54 @@
 		$NN=$_GET['Negocio'];
 		$q='SELECT * FROM negocio n inner join usuario u on n.id_usuario=u.id_usuario WHERE nombre_negocio=\''.$NN.'\';';
 		$result2=mysqli_query ($con,$q);
-		$fila2=mysqli_fetch_row($result2);
-		$q1="SELECT descripcion FROM vista_promocion WHERE id_negocio='".$fila2[0]."';";
-		$result3=mysqli_query ($con,$q1);
-		$fila3=mysqli_fetch_row($result3);
-		if(isset($_POST['idNegocio'])){
-			$IDN=$_POST['idNegocio'];
-			$q="SELECT * FROM usuario WHERE id_usuario=".$IDN.";";
-			$result=mysqli_query ($con,$q);
-			$fila=mysqli_fetch_row($result);
-			//entra como negocio
-			$bandera=1;
+		if(mysqli_num_rows($result2)==0){
+			//El negocio ingresado no existe redirecciona a inicio
+			$bandera=0;
 		}else{
-			if(isset($_POST['Usuario'])){
-				$IDU=$_POST['Usuario'];
-				$q2='select id_favorito from favorito where id_usuario='.$IDU.' AND id_negocio='.$fila2[0].';';
-				$result4=mysqli_query ($con,$q2);
-				if(mysqli_num_rows($result4)==0){
-					//no sigue al negocio
-					$siguiendo=0;
-				}else{
-					//esta siguiendo al negocio
-					$siguiendo=1;
-				}
-				$q3='select calificacion from calificacion where id_usuario='.$IDU.' and id_negocio='.$fila2[0].';';
-				$result5=mysqli_query ($con,$q3);
-				if(mysqli_num_rows($result5)==0){
-					//no sigue al negocio
-					$calificacion[0]=0;
-				}else{
-					 $calificacion=mysqli_fetch_row($result5);
-				}
-				//entra como usuario
-				$bandera=3;
+			$fila2=mysqli_fetch_row($result2);
+			$q1="SELECT descripcion FROM vista_promocion WHERE id_negocio='".$fila2[0]."';";
+			$result3=mysqli_query ($con,$q1);
+			$fila3=mysqli_fetch_row($result3);
+			if(isset($_POST['idNegocio'])){
+				//entra como negocio
+				$IDN=$_POST['idNegocio'];
+				$q="SELECT * FROM usuario WHERE id_usuario=".$IDN.";";
+				$result=mysqli_query ($con,$q);
+				$fila=mysqli_fetch_row($result);
+				$bandera=1;
 			}else{
-				//Entra como invitado
-				$bandera=2;	
+				if(isset($_POST['Usuario'])){
+					//entra como usuario
+					$IDU=$_POST['Usuario'];
+					$q2='select id_favorito from favorito where id_usuario='.$IDU.' AND id_negocio='.$fila2[0].';';
+					$result4=mysqli_query ($con,$q2);
+					if(mysqli_num_rows($result4)==0){
+						//no sigue al negocio
+						$siguiendo=0;
+					}else{
+						//esta siguiendo al negocio
+						$siguiendo=1;
+					}
+					$q3='select calificacion from calificacion where id_usuario='.$IDU.' and id_negocio='.$fila2[0].';';
+					$result5=mysqli_query ($con,$q3);
+					if(mysqli_num_rows($result5)==0){
+						//no sigue al negocio
+						$calificacion[0]=0;
+					}else{
+						 $calificacion=mysqli_fetch_row($result5);
+					}
+					$bandera=3;
+				}else{
+					//Entra como invitado
+					$q3='select calificacion from negocio where id_negocio='.$fila2[0].';';
+					$result5=mysqli_query ($con,$q3);
+					if(mysqli_num_rows($result5)==0){
+						$calificacion[0]=0;
+					}else{
+						 $calificacion=mysqli_fetch_row($result5);
+					}
+					$bandera=2;	
+				}
 			}
 		}
 	}else{
@@ -218,6 +230,17 @@
 	            			</section>
 	            			<section id="calif">
 	            				<?php
+		                			if($bandera==2){
+		                				for($count=1;$count<=5;$count++,$calificacion[0]--){
+			                				echo '<figure class="estrella">';
+			                				if($calificacion[0]>0){
+			                					echo '<img id="estrella" src="iconos/ic_full_star_v3.png">';
+			                				}else{
+			                					echo '<img id="estrella" src="iconos/ic_empty_star_v3.png">';
+			                				}
+			                				echo '</figure>';
+		                				}
+		                			}
 		                			if($bandera==3){
 		                				for($count=1;$count<=5;$count++,$calificacion[0]--){
 			                				echo '<figure class="estrella" onclick="favoritos('.$count.','.$IDU.','.$fila2[0].');">';

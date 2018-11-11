@@ -89,12 +89,13 @@
 		        		<figure class="iPerfil">
 							<img id="iPerfil" src="iconos/ic_profile_v3.png">
 						</figure>
-						<div class="subirImg">
-							<button id="bsubir">Subir imagen</button>
+						<label class="subirImg">
+							<div id="bsubir">Subir imagen</div>
+							<input style="position: absolute; display:none;" role="button"aria-hidden="true" type="file" name="subir" title="Subir imagen">
 							<figure class="camara">
 								<img id="camara" src="iconos/ic_camara.png">
 							</figure>
-						</div>
+						</label>
 						<h2 id="datosNegrita">Datos del usuario</h2>
 						<div id="datosUser">
 							<p id="datos">Nombre: <?php echo $fila[2].' '.$fila[3]?></p>
@@ -142,7 +143,7 @@
 											<div id="nombre">
 												<?php echo '<p>'.$resultado[$i]['nombre'].'</p>'; ?>
 											</div>
-											<button id="botones" onclick="servicio(<?php echo'\''.$resultado[$i]["nombre"].'\','.$fila[0]?>);">Ver servicio</button>
+											<button id="botones" onclick="usuario(<?php echo'\'servicio.php?Negocio='.$resultado[$i]["nombre"].'\','.$fila[0]?>);">Ver servicio</button>
 										</section>
 									<?php }
 									if($count<4){
@@ -196,7 +197,7 @@
 								}?>
 			        		<section id="promo">
 				        		<?php for ($count=0; $i<mysqli_num_rows($result3)&&$count<5; $i=$i+1, $count++) {?>	
-					        			<section id="tarjetas" onclick="servicio(<?php echo'\''.$resultado[$i]["nombre"].'\','.$fila[0]?>);">
+					        			<section id="tarjetas" onclick="usuario(<?php echo'\'servicio.php?Negocio='.$resultado[$i]["nombre"].'\','.$fila[0]?>);">
 					        				<div id="rojo">¡Promoción!</div>
 					        				<div id="desc"><?php echo $resultado[$i]['desc'];?></div>
 					        			</section>
