@@ -7,7 +7,7 @@ var cont=0;
 */
 function cambiarid (acc){
 	if (cont==0) {				/*Si esta oculta*/
-		var g = document.getElementsByTagName('figure')[3];
+		var g = document.getElementsByTagName('figure')[2];
 		var f = document.getElementById("banner");
 		var e = document.getElementById("ocultar");
 		g.id="ocultar"			/*OCULTA LA PUBLICIDAD*/
@@ -36,4 +36,3 @@ function funciones(){
 /**
 *@description Cuando se cargue la pagina, cargara la funcion "funciones()"
 */
-window.onload=funciones;

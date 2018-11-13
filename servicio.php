@@ -24,6 +24,13 @@
 				$q="SELECT * FROM usuario WHERE id_usuario=".$IDN.";";
 				$result=mysqli_query ($con,$q);
 				$fila=mysqli_fetch_row($result);
+				$q3='select calificacion from negocio where id_negocio='.$fila2[0].';';
+				$result5=mysqli_query ($con,$q3);
+				if(mysqli_num_rows($result5)==0){
+					$calificacion[0]=0;
+				}else{
+					 $calificacion=mysqli_fetch_row($result5);
+				}
 				$bandera=1;
 			}else{
 				if(isset($_POST['Usuario'])){
@@ -230,7 +237,7 @@
 	            			</section>
 	            			<section id="calif">
 	            				<?php
-		                			if($bandera==2){
+		                			if($bandera==2||$bandera==1){
 		                				for($count=1;$count<=5;$count++,$calificacion[0]--){
 			                				echo '<figure class="estrella">';
 			                				if($calificacion[0]>0){

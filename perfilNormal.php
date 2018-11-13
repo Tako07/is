@@ -1,4 +1,4 @@
- <?php session_start();
+<?php session_start();
 	$ID=$_POST['idUsuario'];
 	$con=mysqli_connect("localhost" , "root" , "" , "data_service_in") or die("No se pudo conectar: ".mysql_error());
 	if(mysqli_connect_errno()){
@@ -91,7 +91,7 @@
 						</figure>
 						<label class="subirImg">
 							<div id="bsubir">Subir imagen</div>
-							<input style="position: absolute; display:none;" role="button"aria-hidden="true" type="file" name="subir" title="Subir imagen">
+							<input style="position: absolute; display:none;" role="button" type="file" name="subir" title="Subir imagen">
 							<figure class="camara">
 								<img id="camara" src="iconos/ic_camara.png">
 							</figure>

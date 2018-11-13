@@ -2,70 +2,90 @@
 	margin:0px 0px;
 	padding: 0px 0px;
 	border: 0px solid #000000;
+	font-family: roboto;
 }
-a{
-	text-decoration: none;
-	text-decoration-color: #000000;
+/*border: 1px solid #FF0000;*/
+#app{				/*Encierra toda la pagina y evita que se coloque un scroll horizontal*/
+	display: block;
+	overflow: hidden;
+}
+body{
+	background-color: #EDEDED;
 }
 #cabecera{					/*Esta es la parte de la cabecera, el color el tamaño y el tipo de letra*/
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
 	flex-wrap: wrap;
-	height: 70px;
+	justify-content: space-between;
+	height: 85px;
 	width: 100%;
 	background: #1976D2;
-	padding: 5px 15px;
+	padding: 0.7% 1.2%;
 	align-content: center;
-	font: bold 14px roboto;
 	align-items: center;
 }
-#buscar{				/*Este es la parte del buscador fondo, tipo de letra tamaño*/
-	flex-shrink: 3;
-	text-align: left;
-	-moz-transform: translateY(-10px);
-	-webkit-transform: translateY(-10px);
-	width: 370px;
-	height: 40px;
-	color: white;
-	font: bold 15px roboto;
-	background-color: transparent;
-	border-style: groove;
-	border-width: 0px 0px 3px 0px;/*	*/
-	border-color: #0D47A1;
-}
-.logo{						/*Este sera el tamaño del Logo de la pagina*/
-	width: 270px;
-	height: 70px;
-	margin-top: 30px;
-	flex-shrink: 3;
-	cursor: pointer;
-}
-.icono{						/*Este es el icono que aparece a la derecha*/
-	border-radius: 50%;
-	width: 60px;
-	height: 60px;
-	background-color: transparent;
-}
-button[name*="b"]{			/*esto es para el boton de la hamburguesa*/
-	flex-shrink: 0;
-	width: 40px;
-	height: 40px;
-	padding: 0px;
+#hamburguesa{				/*Formato al boton de menu*/
+	width: 3%;
+	height: 50%;
+	background-image: url("iconos/ic_menu_v3.png");
+	background-size: cover;
+	background-repeat: center;
 	background-color: transparent;
 	outline: none;
 	cursor: pointer;
 }
-#hamburguesa{
-	margin-left: 10px;
-	background-image: url("iconos/ic_menu_v3.png");
-	background-size: cover;
-	background-repeat: center;
+.logo{						/*Este sera el tamaño del Logo de la pagina*/
+	width: 20%;
+	height: 50%;
+	cursor: pointer;
 }
-#lupa{
+#logo{						/*Asigna la imagen al tamaño correspondiente*/
+	width: 100%;
+	height: 100%;
+}
+
+.buscar{					/*Tamaño a toda la zona relacionada con la busqueda (input y lupa)*/
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 25%;
+	height: 50%;
+}
+#formulario{				/*Da formato al formulario que se utilizara para enviar la busqueda*/
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 100%;
+	height: 100%;
+}
+#buscar{				/*Este es la parte del buscador fondo, tamaño*/
+	text-align: left;
+	width: 90%;
+	height: 100%;
+	color: white;
+	font: bold 130% roboto;
+	background-color: transparent;
+	border-style: groove;
+	border-width: 0px 0px 3px 0px;
+	border-color: #0D47A1;
+}
+#lupa{									/*Le da tamaño al boton de la lupa*/
+	width: 10%;
+	background-color: transparent;
+	outline: none;
+	cursor: pointer;
 	background-size: cover;
 	background-repeat: center;
 	background-image: url("iconos/ic_lupa_v3.png");
+}
+.botones{							/*Le da tamaño a toda la zona de los botones Registro e inicio de Sesión*/
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	height: 70%;
+	width: 15%;
 }
 #botonesN{					/*Estos son los botones de Registro e Inicio de sesion*/
 	box-shadow: rgba(0,0,0,0.5) 3px 3px 5px;
@@ -73,11 +93,41 @@ button[name*="b"]{			/*esto es para el boton de la hamburguesa*/
 	cursor: pointer;
 	outline: none;
 	color: white;
-	padding: 5px;
-	font: bold 15px roboto;
+	padding: 4% 2%;
+	font: 90% roboto;
 	background-color: #1565c0;
 	border-width: 1px;
 	border-color: #0d47a1;
+}
+.iconos{					/*Tamaño a toda la zona de notificaciones e icono*/
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+	height: 80%;
+	width: 10%;
+	margin-right: 1%;
+}
+.notificacion{				/*Le da tamaño a la caja de la notificacion*/
+	width: 20%;
+}
+#notificacion{				/*Le asigna el tamaño a la imagen de la notificacion*/
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+}
+
+.icono{						/*Le da tamñao a la caja del icono*/
+	border-radius: 50%;
+	width: 50%;
+	height: 100%;
+	margin-left: 20%;
+	background-color: transparent;
+}
+#icono{						/*Asigna el tamaño a la imagen del icono*/
+	width: 100%;
+	height: 100%;
 }
 input:focus{						/*Esto es para cuando se da click en un boton no se marque un cuadro alrededor*/
 	outline: none;
@@ -85,125 +135,117 @@ input:focus{						/*Esto es para cuando se da click en un boton no se marque un 
 ::placeholder{						/*De aqui para abajo es para el color del placeholder*/
 	color: #D8D8D8;
 	opacity: 1;
-	font: bold 15px roboto;
+	font: bold 80% roboto;
 }
 :-ms-input-placeholder{
 	color: #D8D8D8;
-	font: bold 15px roboto;
+	font: bold 80% roboto;
 }
 ::-ms-input-placeholder{
 	color: #D8D8D8;
-	font: bold 15px roboto;
+	font: bold 80% roboto;
 }
-
 /*/////////////////////////////////////////////////////////////////////////Hasta aqui es la cabecera////////////////////////////////////////*/
-
-li{
-	border-radius: 10px;
-	margin-top: 4px;
-	margin-bottom: 4px;
-	box-shadow: rgba(0,0,0,0.5) 3px 3px 5px;
-}
-#centro{
+#centro{							/*Parte central de la pagina*/
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	margin: 5px;
-	margin-left: 0px;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+	margin-left: 0%;
 }
-#centro1{
+#seccion-banner{					/*Caja para el banner*/
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
-	margin-left: 0px;
+	height: 100%;
+	width: 20%;
+	margin: 0%;
 }
-#seccion-banner{
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	visibility: visible;
-	height: 590px;
-	width: 250px;
-	padding: 0px 5px 0px 0px;
-}
-
-#banner{
-	background: -webkit-linear-gradient(top, #A4A4A4 50%, #6E6E6E 90%);
-	padding: 15px 10px 15px 10px;
-	float: left;
-	height: 565px;
-	width: 30px;
-	max-width: 250px;
-	text-overflow: initial;
-	visibility: hidden; 					/*Quitar para mostrar la raya gris*/
-}
-#ocultar{
+#banner{							/*Banner oculto de la pagina*/
+	height: 100%;
+	width: 0%;
 	visibility: hidden;
 }
-#banner1{
+#banner1{							/*Baner visible de la pagina*/
 	background-color: #A4A4A4;
-	padding: 15px 10px 15px 10px;
+	padding: 5% 3% 5% 3%;
 	float: left;
 	text-overflow: initial;
 	-webkit-animation: banner 1.5s;
 	animation: banner 1.5s;
-	width: 250px;
-	height: 590px;
-	visibility: visible;					/*quitar para mostrar la raya gris*/
+	width: 94%;
+	height: 100%;
+	padding-bottom: 42%;
+	visibility: visible;
 }
 
-@keyframes banner{
-	0%{width: 30px}
-	100%{width: 250px}
+@keyframes banner{					/*Animacion*/
+	0%{width: 1%; height: 100%;}
+	100%{width: 94%; height: 100%;}
 }
-#mostrar{
+#mostrar{								/*Mostrara algo en este caso la lista*/
 	visibility: visible;
 	transition: visibility 3s;
 }
-
-#publicidad1{
-	padding: 5px;
-	max-width: 200px;
-	max-height: 300px;
+#ocultar{								/*Sirve para ocultar cosas, como la publicidad y la lista*/
+	height: 0px;
+	margin: 0px;
+	padding: 0px;
+	visibility: hidden;
+}
+h1{										/*Formato a la parte en negro de la lista*/
+	font: bold 100% roboto;
+}
+li{										/*Formato a la lista*/
+	font: 95% roboto;
+	border-radius: 10px;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	box-shadow: rgba(0,0,0,0.5) 3px 3px 5px;
+}
+a{										/*Formato para los hipervinculos*/
+	text-decoration: none;
+	text-decoration-color: #000000;
+}
+#publicidad1{							/*Publicidad que se encuentra dentro del banner */
+	width: 100%;
+	height: 60%;
+	padding: 0%;
 	visibility: visible;
+}
+#publicidad2{							/*Publicidad que se encuentra fuera del banner */
+	width: 90%;
+	margin: 0% 5%;
+	padding: 0% 0% 0% 0%;
+	visibility: visible;
+}
+/*///////////////////////////////////////////////////////////BANNER/////////////////////////////////////////////////////////////////////////*/
+#centro1{								/*Parte central de la pagina de servicio*/
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	width: 79%;
+	height: 100%;
+	padding-top: 1%;
 }
 
 #mapa{
 	flex-shrink: 3;
-	width: 1085px;
-	height: 300px;
+	width: 100%;
+	padding: 18%;
 }
+
 #recomendados{
 	display: flex;
-	margin-left: 0px;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
 	flex-shrink: 3;
-	width: 800px;
-	height: auto;
-	padding-left: 0%;
-
-}
-#video{
-	padding: 0px 0px 0px 10px;
-	height: 250px;
-	width: 270px;
-	flex-shrink: 3;
-}
-#pie{
-	background-color: black;
 	width: 100%;
-	height: 35px;
-  bottom: 0px;
-}
-#anunciate{
-	margin-top: 2.5px;
-	margin-right: 50px;
-	float: right;
-	height: 30px;
-	cursor: pointer;
-	outline: none;
-	padding: 5px;
-	border-width: 1px;
-	align-items: right;
+	height: auto;
 }
 
 .tarjetas{
@@ -224,6 +266,12 @@ li{
 	box-shadow: rgba(0,0,0,0.5) 3px 3px 5px;
 
 
+}
+#recom{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	width: 10%;
 }
 .recomImg{
 	width: 100%;
@@ -255,7 +303,7 @@ li{
 	text-align: center;
 }
 #tablaRecom{
-	border: 0px solid #000000;
+	width: 70%;
 }
 #tablaRecom td{
 	padding-left: : 1%;
@@ -267,4 +315,25 @@ li{
 	border: 0px solid #000000;
 }
 
-/*/////////////////////////////////////////////////INICIA LOGIN///////////////////////////////////////////////////*/
+#video{
+	width: 25.5%;
+	height: 50%;
+	flex-shrink: 3;
+}
+#pie{
+	background-color: black;
+	width: 100%;
+	height: 35px;
+  	bottom: 0px;
+}
+#anunciate{
+	margin-top: 2.5px;
+	margin-right: 50px;
+	float: right;
+	height: 30px;
+	cursor: pointer;
+	outline: none;
+	padding: 5px;
+	border-width: 1px;
+	align-items: right;
+}
