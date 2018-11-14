@@ -1,5 +1,6 @@
 <?php
  	session_start();
+  /*!&lt; Conexión con la base de datos*/
 	$con=mysqli_connect("localhost" , "root" , "" , "data_service_in") or die("No se pudo conectar: ".mysql_error());
 	if(mysqli_connect_errno()){
 		printf("Falló la conexión: %s\n",mysqli_connect_errno());
@@ -64,7 +65,7 @@
 					}else{
 						 $calificacion=mysqli_fetch_row($result5);
 					}
-					$bandera=2;	
+					$bandera=2;
 				}
 			}
 		}
@@ -196,30 +197,44 @@
 				                            wrap:true
 				                        });
 		                        	</script>
-
-
-			                        <div class="carousel-inner">
-			                          <div class="item active">
-			                            <img src="negocios/carpinteria_jose.jpg" width="300" alt="">
-			                          </div>
-			                          <div class="item">
-			                            <img src="negocios/carpinteria_jose2.jpg" width="300" alt="">
-			                          </div>
-			                          <div class="item">
-			                            <img src="negocios/carpinteria_jose3.jpg" width="300" alt="">
-			                          </div>
-			                        </div>
-
-		    <!-- Controls -->
-			                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                              <div class="carousel-inner">
+                              <?php
+                              /*!&lt; Query para obtener las imágenes del negocio*/
+                              $qry='select url_imagen from vista_imagenes where nombre_negocio="'.$NN.'"';
+                              /*!&lt; Ejecución de la consulta "qry"*/
+                              $resultImg=mysqli_query ($con,$qry);
+                              /*!&lt; Contador para señalar el item que muestr el carrusel*/
+                              $cont=0;
+                              /*!&lt; Ciclo para colcar colocar las imágenes en el carrusel*/
+                              while ($rowImg=mysqli_fetch_assoc($resultImg)) {
+                                if($cont==0){
+                                  echo '<div class="item active">';
+                                }else{
+                                  echo '<div class="item">';
+                                }$cont++;
+                                echo '
+                                  <img src="negocios/'.$rowImg["url_imagen"].'" width="300" alt="">
+                                  </div>';
+                              }echo '</div>';
+			                        echo '
+                              <a class="left carousel-control" href="#myCarousel" data-slide="prev">
 			                          <span class="glyphicon glyphicon-chevron-left"></span>
 			                          <span class="sr-only">Previous</span>
 			                        </a>
 			                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
 			                          <span class="glyphicon glyphicon-chevron-right"></span>
 			                          <span class="sr-only">Next</span>
-			                        </a>
-		                        </div>
+			                        </a>';
+
+
+
+
+
+		    //<!-- Controls -->
+
+
+                            ?>
+                            </div>
 				             	<div id="info">
 									     <H2>Contacta a <?php echo '"'.$fila2[1].'"';?></H2><br>
 									     <section id="codi">
