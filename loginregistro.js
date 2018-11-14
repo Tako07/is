@@ -17,7 +17,7 @@ var pass2=0;
 */
 function mostrarpass(i){
 	if(i==0){
-		if (pass1==0) {	
+		if (pass1==0) {
 			/*Si esta en tipo pass se cambia a text y la bandera cambia*/
 			document.getElementById('contraseña').type="text";
 			pass1=1;
@@ -68,7 +68,10 @@ function regcliente(){
 function finRegistro(){
 	window.open("FinRegistro.php","_self");
 }
-
+function abreNegocio(){
+	alert('hola');
+	window.open("index.php,"_self");
+}
 /**
 * @description funcion para validar el formulario de la segunda pantalla del registro de negocio
 * @returns {boolean} Verdadero o falso para proceder o no con el registro en la base de datos
@@ -190,7 +193,7 @@ function validarUser(){
 		*/
 		var nombre=document.getElementById('nombre').value;
 		/*Verifica que el campo no este vacio */
-		if(nombre==""){ 
+		if(nombre==""){
 			/*Muesta un mensaje con el error*/
 			alert("Complete el campo con su nombre");
 		}else{

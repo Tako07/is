@@ -1,4 +1,4 @@
-<?php $bandera=2; 
+<?php $bandera=2;
 	/*!&lt; Servidor al que se va a conectar*/
 	$host = "localhost";
 	/*!&lt; Nombre de la base de datos a la que se va a conectar*/
@@ -134,15 +134,28 @@ $conexion->set_charset("utf8");
 							<div id="tablaRecom">
 								<div id='superior'>
 									<?php
+									/*!&lt; */
 									$qry='select nombre_negocio from vista_negocio limit 3';
+									/*!&lt; Conexión a la base de datos*/
 									$aux=mysqli_query($conexion, $qry);
+									/*!&lt; Conexión a la base de datos*/
 									while ($row=mysqli_fetch_assoc($aux)) {
+										/*!&lt; Conexión a la base de datos*/
+										$query='select url_imagen from vista_imagenes where nombre_negocio="'.$row["nombre_negocio"].'" limit 1';
+										/*!&lt; Conexión a la base de datos*/
+										$auxi=mysqli_query($conexion, $query);
+										/*!&lt; Conexión a la base de datos*/
+										$imagen="./mjolnir.jpg";
+										/*!&lt; Conexión a la base de datos*/
+										if($rowe=mysqli_fetch_assoc($auxi)){
+											$imagen=$rowe["url_imagen"];
+										}
 										echo '
 										<div class="card">
-		  								<img class="card-img-top" src="./mjolnir.jpg">
+		  								<img class="card-img-top" src="./negocios/'.$imagen.'" width="150" height="150">
 		  								<div class="card-body">
 		    								<p class="card-text">'.$row["nombre_negocio"].'.</p>
-		    								<button href="#" id="booton" class="btn-primary">Ver servicio</button>
+		    								<button onclick="servicio.php?Negocio='.$row["nombre_negocio"].'" id="booton" class="btn-primary">Ver servicio</button>
 		  								</div>
 										</div>';
 									}
@@ -150,15 +163,28 @@ $conexion->set_charset("utf8");
 								</div>
 								<div id='inferior'>
 								<?php
+								/*!&lt; Conexión a la base de datos*/
 								$qry='select nombre_negocio from vista_negocio limit 3';
+								/*!&lt; Conexión a la base de datos*/
 								$aux2=mysqli_query($conexion, $qry);
+								/*!&lt; Conexión a la base de datos*/
 								while ($row2=mysqli_fetch_assoc($aux2)) {
+									/*!&lt; Conexión a la base de datos*/
+									$query2='select url_imagen from vista_imagenes where nombre_negocio="'.$row2["nombre_negocio"].'" limit 1';
+									/*!&lt; Conexión a la base de datos*/
+									$auxi2=mysqli_query($conexion, $query2);
+									/*!&lt; Conexión a la base de datos*/
+									$imagen2="./mjolnir.jpg";
+									/*!&lt; Conexión a la base de datos*/
+									if($rowe2=mysqli_fetch_assoc($auxi2)){
+										$imagen2=$rowe2["url_imagen"];
+									}
 									echo '
 									<div class="card">
-										<img class="card-img-top" src="./mjolnir.jpg">
+										<img class="card-img-top" src="./negocios/'.$imagen2.'" height="150">
 										<div class="card-body">
 											<p class="card-text">'.$row2["nombre_negocio"].'.</p>
-											<button href="#" id="booton" class="btn-primary">Ver servicio</button>
+											<button onclick="abreNegocio();" id="booton" class="btn-primary" >Ver Servicio</button>
 										</div>
 									</div>';
 								}
@@ -172,9 +198,9 @@ $conexion->set_charset("utf8");
 						</section>
 						</div>
 						</div>
-						
+
 						</section>
-						
+
 					</div>
 				</section>
 			</section>
