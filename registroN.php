@@ -26,7 +26,7 @@
 				<form action="registroNegocio.php" name="formulario" id="formulario" method="POST" onsubmit='return validaFormulario();'>
 					<input id='Usr' class="formato" type="text" name='usuario' placeholder="Nombre usuario negocio" required>
           			<div id="nomApe">
-  						<input id='nombre' class="formato" type="text" name='nombre' placeholder="Nombre" required>
+  						<input id='nombre' class="formato" type="text" name="" e='nombre' placeholder="Nombre" required>
   						<input id='apell' class="formato" type="text" name='apellido' placeholder="Apellido" required>
           			</div>
           			<input id='correo' class="formato" type="email" name='correo' placeholder="Correo electrónico" required>

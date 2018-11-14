@@ -53,14 +53,15 @@
 								<li><a href="https://www.google.com/">Servicio 4</a></li>
 								<li><a href="https://www.google.com/">Servicio 5</a></li>
 							</lo>
-							<h1><b>Categorías más buscadas</b></h1>
-								<lo>
-								<li><a href="https://www.google.com/">Carpinteria</a></li>
-								<li><a href="https://www.google.com/">Plomeria</a></li>
-								<li><a href="https://www.google.com/">Electricista</a></li>
-								<li><a href="https://www.google.com/">Mecanico</a></li>
+							<h1><b>Categorías</b></h1>
+							<lo>
+								<li><a href="servicio_menu.php?categoria='Plomería'">Plomería</a></li>
+								<li><a href="servicio_menu.php?categoria='Electricista'">Electricista</a></li>
+								<li><a href="servicio_menu.php?categoria='Mecánico'">Mecánico</a></li>
+								<li><a href="servicio_menu.php?categoria='Carpinteria'">Carpintería</a></li>
+								<li><a href="servicio_menu.php?categoria='Cerrajería'">Cerrajería</a></li>
 								<br><br>
-								<a href="https://www.google.com/">Ver mas...</a>
+								<a href="categorias.php">Ver mas...</a>
 							</lo>
 						</nav>
 						<figure id="publicidad1">

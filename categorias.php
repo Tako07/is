@@ -11,7 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- Compiled and minified Bootstrap JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
-		<script src="botonHamb.js"></script>
+		<script src="botonHamb1.js"></script>
 		<script src="loginregistro.js"></script>
 	</head>
 
@@ -53,14 +53,15 @@
 								<li><a href="https://www.google.com/">Servicio 4</a></li>
 								<li><a href="https://www.google.com/">Servicio 5</a></li>
 							</lo>
-							<h1><b>Categorías más buscadas</b></h1>
-								<lo>
-								<li><a href="https://www.google.com/">Carpinteria</a></li>
-								<li><a href="https://www.google.com/">Plomeria</a></li>
-								<li><a href="https://www.google.com/">Electricista</a></li>
-								<li><a href="https://www.google.com/">Mecanico</a></li>
+							<h1><b>Categorías</b></h1>
+							<lo>
+								<li><a href="servicio_menu.php?categoria='Plomería'">Plomería</a></li>
+								<li><a href="servicio_menu.php?categoria='Electricista'">Electricista</a></li>
+								<li><a href="servicio_menu.php?categoria='Mecánico'">Mecánico</a></li>
+								<li><a href="servicio_menu.php?categoria='Carpinteria'">Carpintería</a></li>
+								<li><a href="servicio_menu.php?categoria='Cerrajería'">Cerrajería</a></li>
 								<br><br>
-								<a href="categorias.php/">Ver mas...</a>
+								<a href="categorias.php">Ver mas...</a>
 							</lo>
 						</nav>
 						<a href="https://www.trivago.com"><img id="publicidad1" src="iconos/publicidad1.jpg"></a>
@@ -97,6 +98,7 @@
 						if(mysqli_connect_errno()){
 							printf("Falló la conexión: %s\n",mysqli_connect_errno());
 						}
+						$con->set_charset("utf8");
 						$q="SELECT * FROM categoria;";
 						$result=mysqli_query ($con,$q);
 						$i=0;
