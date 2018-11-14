@@ -31,13 +31,13 @@
           			</div>
           			<input id='correo' class="formato" type="email" name='correo' placeholder="Correo electrónico" required>
 					<div class="posicion">
-						<input id='contrasena' class="formatopass" type="password" name='contrasena' value="" placeholder="Contraseña" required>
+						<input id='contraseña' class="formatopass" type="password" name='contraseña' value="" placeholder="Contraseña" required>
 						<figure class="ojo">
 							<img id="ojo" src="iconos/ojo.png" onclick="mostrarpass(0);">
 						</figure>
 					</div>
 					<div class="posicion">
-						<input id='contrasena1' class="formatopass" type="password" name='contrasena1' value="" placeholder="Contraseña" required>
+						<input id='contraseña1' class="formatopass" type="password" name='contraseña1' value="" placeholder="Contraseña" required>
 						<figure class="ojo">
 							<img id="ojo" src="iconos/ojo.png" onclick="mostrarpass(1);" required>
 						</figure>

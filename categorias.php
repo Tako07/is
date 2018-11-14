@@ -1,10 +1,21 @@
 <?php
  	session_start();
+ 	/**
+ 	*@Brief Realiza la conexion
+ 	*Se conecta con la base de datos
+ 	**/
 	$con=mysqli_connect("localhost" , "root" , "" , "data_service_in") or die("No se pudo conectar: ".mysql_error());
+	/**
+ 	*@Brief Realiza la conexion
+ 	* Si no se puede conectar con la base de datos mostrara un mensaje de error
+ 	**/
 	if(mysqli_connect_errno()){
 		printf("Falló la conexión: %s\n",mysqli_connect_errno());
 	}
-	/*Esto es para los acentos*/
+	/**
+ 	*@Brief Coloca la funcion para que pueda leer acentos
+ 	*
+ 	**/
 	$con->set_charset("utf8");
 	$bandera=2;
 ?>
@@ -40,6 +51,10 @@
 				</section>
 				<section class="botones">
 					<?php
+					/**
+				 	*@Brief Botones
+				 	*Si se entra a la pagina como invitado apareceran los botones de iniciar sesión
+				 	**/
 					if($bandera==2){
 					echo '
 							<button id="botonesN" onclick="regcliente();">Registrate</button>
@@ -49,6 +64,10 @@
 				</section>
 				<section class="iconos">
 					<?php
+					/**
+				 	*@Brief Notificaciones
+				 	*Si entra como un usuario normal el icono de notificaciones se activara
+				 	**/
 					if ($bandera==3) {
 						echo '
 						<figure class="notificacion">
@@ -68,6 +87,10 @@
 							<h1><b>Servicios más buscados</b></h1>
 							<lo>
 								<?php
+								/**
+							 	*@Brief Negocios con mejor calificacion
+							 	*Obtendra los 5 negocios con mayor calificacion y los mostrara
+							 	**/
 								$q='select nombre_negocio from negocio order by calificacion limit 5;';
 								$result=mysqli_query ($con,$q);
 								$j=0;

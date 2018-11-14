@@ -1,16 +1,42 @@
 <?php 
+	/**
+ 	*@Brief Despues del registro
+ 	*La misma pantalla recibe la informacion para realizar el registro y la gestiona 
+ 	sino la recibe muestra el formulario para registrarse
+ 	**/
 	if(isset($_POST['user'])){
 		session_start();
+		/**
+	 	*@Brief Guarda todos los campos
+	 	*Guarda los campos del formulario cada uno en su propia variable
+	 	**/
 		$usuario=$_POST['user'];
 		$nombre=$_POST['nombre'];
 		$apellido=$_POST['apellido'];
 		$contraseña=$_POST['contraseña'];
 		$fecha=$_POST['fecha'];
 		$correo=$_POST['correo'];
+		/**
+	 	*@Brief Realiza la conexion
+	 	*Se conecta con la base de datos
+	 	**/
 		$con=mysqli_connect("localhost" , "root" , "" , "data_service_in") or die("No se pudo conectar: ".mysql_error());
+		/**
+	 	*@Brief Realiza la conexion
+	 	* Si no se puede conectar con la base de datos mostrara un mensaje de error
+	 	**/
 		if(mysqli_connect_errno()){
 			printf("Falló la conexión: %s\n",mysqli_connect_errno());
 		}
+		/**
+	 	*@Brief Coloca la funcion para que pueda leer acentos
+	 	*
+	 	**/
+		$con->set_charset("utf8");
+		/**
+	 	*@Brief Info usuario
+	 	*Verifica que el nombre del usuario o el correo hayan sido utilizados para otro registro de ser asi mostrara un mensaje y regresara al formulario
+	 	**/
 		$q="SELECT * FROM usuario WHERE username='".$usuario."';";
 		$result=mysqli_query ($con,$q);
 		$q="SELECT * FROM usuario WHERE correo='".$correo."';";

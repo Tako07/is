@@ -1,30 +1,70 @@
 <?php
  	session_start();
+ 	/**
+ 	*@Brief Realiza la conexion
+ 	*Se conecta con la base de datos
+ 	**/
 	$con=mysqli_connect("localhost" , "root" , "" , "data_service_in") or die("No se pudo conectar: ".mysql_error());
+	/**
+ 	*@Brief Realiza la conexion
+ 	* Si no se puede conectar con la base de datos mostrara un mensaje de error
+ 	**/
 	if(mysqli_connect_errno()){
 		printf("Falló la conexión: %s\n",mysqli_connect_errno());
 	}
-	/*Primero dios funciona esta cosa*/
-	/*Esto es para los acentos*/
+	/**
+ 	*@Brief Coloca la funcion para que pueda leer acentos
+ 	*
+ 	**/
 	$con->set_charset("utf8");
+	/**
+ 	*@Brief URL
+ 	*Si en el URL recibe informacion como nombre de negocio mostrara la pagina como es, de no ser así mostrara un mensaje y mandara al index.php
+ 	**/
 	if (isset($_GET['Negocio'])) {
+		/**
+	 	*@Brief Guarda el nombre del negocio en la variable
+	 	*
+	 	**/
 		$NN=$_GET['Negocio'];
+		/**
+	 	*@Brief Realiza la consulta
+	 	*Realiza la consulta para obtener la informacion del negocio que se ingreso
+	 	**/
 		$q='SELECT * FROM negocio n inner join usuario u on n.id_usuario=u.id_usuario WHERE nombre_negocio=\''.$NN.'\';';
 		$result2=mysqli_query ($con,$q);
+		/**
+	 	*@Brief Si la consulta no regresa valores
+	 	*Si no regresa valores el negocio no existe y redirecciona al index.php
+	 	**/
 		if(mysqli_num_rows($result2)==0){
-			//El negocio ingresado no existe redirecciona a inicio
 			$bandera=0;
 		}else{
 			$fila2=mysqli_fetch_row($result2);
+			/**
+		 	*@Brief consulta descripcion
+		 	*Realiza la consulta para obtener la descripcion del negocio
+		 	**/
 			$q1="SELECT descripcion FROM vista_promocion WHERE id_negocio='".$fila2[0]."';";
 			$result3=mysqli_query ($con,$q1);
 			$fila3=mysqli_fetch_row($result3);
+			/**
+		 	*@Brief Pagina como dueño del negocio
+		 	*Si recibe el ID de negocio mostrara la pagina como si fuera el dueño del negocio
+		 	**/
 			if(isset($_POST['idNegocio'])){
-				//entra como negocio
 				$IDN=$_POST['idNegocio'];
+				/**
+			 	*@Brief Consulta de ID de usuario
+			 	*Realiza la consulta para obtener la informacion de usuario del dueño del negocio
+			 	**/
 				$q="SELECT * FROM usuario WHERE id_usuario=".$IDN.";";
 				$result=mysqli_query ($con,$q);
 				$fila=mysqli_fetch_row($result);
+				/**
+			 	*@Brief Calificacion
+			 	*Obtiene la calificacion promedio del negocio
+			 	**/
 				$q3='select calificacion from negocio where id_negocio='.$fila2[0].';';
 				$result5=mysqli_query ($con,$q3);
 				if(mysqli_num_rows($result5)==0){
@@ -34,9 +74,16 @@
 				}
 				$bandera=1;
 			}else{
+				/**
+			 	*@Brief ID Usuario
+			 	*Si recibe el ID de usuario mostrara la pagina como si fuera 
+			 	**/
 				if(isset($_POST['Usuario'])){
-					//entra como usuario
 					$IDU=$_POST['Usuario'];
+					/**
+				 	*@Brief Consulta de favorito
+				 	*realiza la consulta para saber si sigue al negocio o no
+				 	**/
 					$q2='select id_favorito from favorito where id_usuario='.$IDU.' AND id_negocio='.$fila2[0].';';
 					$result4=mysqli_query ($con,$q2);
 					if(mysqli_num_rows($result4)==0){
@@ -46,17 +93,31 @@
 						//esta siguiendo al negocio
 						$siguiendo=1;
 					}
+					/**
+				 	*@Brief Obtiene la calificacion 
+				 	*Obtiene la calificacion que el usuario le dio al negocio
+				 	**/
 					$q3='select calificacion from calificacion where id_usuario='.$IDU.' and id_negocio='.$fila2[0].';';
 					$result5=mysqli_query ($con,$q3);
+					/**
+				 	*@Brief No lo a calificado
+				 	*Si no recibe informacion de la consulta no a calificado al negocio
+				 	**/
 					if(mysqli_num_rows($result5)==0){
-						//no sigue al negocio
 						$calificacion[0]=0;
 					}else{
 						 $calificacion=mysqli_fetch_row($result5);
 					}
 					$bandera=3;
+				/**
+			 	*@Brief Invitado
+			 	*Si no recibe ninguno de los 2 ID se mostrara la pagina como si fuera 
+			 	**/	
 				}else{
-					//Entra como invitado
+					/**
+				 	*@Brief Calificacion
+				 	*Obtiene la calificacion promedio del negocio
+				 	**/
 					$q3='select calificacion from negocio where id_negocio='.$fila2[0].';';
 					$result5=mysqli_query ($con,$q3);
 					if(mysqli_num_rows($result5)==0){
@@ -72,6 +133,10 @@
 		//no manda link para negocio redirecciona a inicio
 		$bandera=0;
 	}
+	/**
+ 	*@Brief Mostrara la pantalla
+ 	*Si la bandera es mayor a 0 se mando el nombre del negocio en el url
+ 	**/
 	if($bandera>0){
 ?>
 <!DOCTYPE html>
@@ -110,6 +175,10 @@
 				</section>
 				<section class="botones">
 					<?php
+					/**
+				 	*@Brief Botones
+				 	*Si se entra a la pagina como invitado apareceran los botones de iniciar sesión
+				 	**/
 					if($bandera==2){
 					echo '
 							<button id="botonesN" onclick="regcliente();">Registrate</button>
@@ -119,6 +188,10 @@
 				</section>
 				<section class="iconos">
 					<?php
+					/**
+				 	*@Brief Notificaciones
+				 	*Si entra como un usuario normal el icono de notificaciones se activara
+				 	**/
 					if ($bandera==3) {
 						echo '
 						<figure class="notificacion">
@@ -138,6 +211,10 @@
 							<h1><b>Servicios más buscados</b></h1>
 							<lo>
 								<?php
+								/**
+							 	*@Brief Negocios con mejor calificacion
+							 	*Obtendra los 5 negocios con mayor calificacion y los mostrara
+							 	**/
 								$q6='select nombre_negocio from negocio order by calificacion limit 5;';
 								$result6=mysqli_query ($con,$q6);
 								$j=0;
@@ -232,8 +309,16 @@
 							</div>
 							<section id="nom-fav">
 	                			<?php
+	                			/**
+							 	*@Brief Seguir
+							 	*Si se entro como un usuario normal se mostrara el icono para seguir el negocio
+							 	**/
 		                			if($bandera==3){
 		                				echo '<figure class="favo" onclick="seguir('.$siguiendo.','.$IDU.','.$fila2[0].');">';
+		                				/**
+									 	*@Brief Icono seguir
+									 	*Dependiendo de lo que se haya obtenido de la base de datos se mostrara uno de los 2 iconos
+									 	**/
 		                				if($siguiendo==0){
 		                					echo '<img id="favo" src="iconos/ic_fav_1.png">';
 		                				}else{
@@ -246,6 +331,10 @@
 	            			</section>
 	            			<section id="calif">
 	            				<?php
+		            				/**
+								 	*@Brief Calificacion
+								 	*Si se entro como dueño del negocio o invitado mostrara la calificacion promedio
+								 	**/
 		                			if($bandera==2||$bandera==1){
 		                				for($count=1;$count<=5;$count++,$calificacion[0]--){
 			                				echo '<figure class="estrella">';
@@ -257,6 +346,10 @@
 			                				echo '</figure>';
 		                				}
 		                			}
+		                			/**
+								 	*@Brief Calificacion
+								 	*Si se entro como usuario normal mostrara la calificacion que el le dio al negocio
+								 	**/
 		                			if($bandera==3){
 		                				for($count=1;$count<=5;$count++,$calificacion[0]--){
 			                				echo '<figure class="estrella" onclick="favoritos('.$count.','.$IDU.','.$fila2[0].');">';
@@ -288,6 +381,10 @@
 			             	 </div>
 			              	<div class="mispromociones">
 								<?php
+								/**
+							 	*@Brief Colocara las promociones que el negocio tenga en el momento
+							 	*Si se entro como dueño del negocio o invitado mostrara la calificacion promedio
+							 	**/
 								$i=0;?>
 				        		<section id="promo">
 					        		<?php for($count=0; $i<mysqli_num_rows($result3)&&$count<3; $i=$i+1, $count++) {?>
@@ -296,6 +393,10 @@
 						        				<div id="desc"><?php echo $fila3[0];?></div>
 						        			</section>
 					        		<?php }
+					        		/**
+								 	*@Brief Promociones
+								 	*Si tiene menos 3 se llenara de campos blancos para llenar el campo
+								 	**/
 									if($count<3){
 										while ($count<3) {
 											echo '<section id="notarjetas">

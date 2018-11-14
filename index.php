@@ -51,6 +51,10 @@ $conexion->set_charset("utf8");
 				</section>
 				<section class="botones">
 					<?php
+					/**
+				 	*@Brief Botones
+				 	*Si se entra a la pagina como invitado apareceran los botones de iniciar sesión
+				 	**/
 					if($bandera==2){
 					echo '
 							<button id="botonesN" onclick="regcliente();">Registrate</button>
@@ -60,6 +64,10 @@ $conexion->set_charset("utf8");
 				</section>
 				<section class="iconos">
 					<?php
+				 	/**
+				 	*@Brief Notificaciones
+				 	*Si entra como un usuario normal el icono de notificaciones se activara
+				 	**/
 					if ($bandera==3) {
 						echo '
 						<figure class="notificacion">
@@ -79,6 +87,10 @@ $conexion->set_charset("utf8");
 							<h1><b>Servicios más buscados</b></h1>
 							<lo>
 								<?php
+								/**
+							 	*@Brief Negocios con mejor calificacion
+							 	*Obtendra los 5 negocios con mayor calificacion y los mostrara
+							 	**/
 								$q='select nombre_negocio from negocio order by calificacion limit 5;';
 								$result=mysqli_query ($conexion,$q);
 								$j=0;

@@ -61,7 +61,7 @@
 	width: 90%;
 	height: 100%;
 	color: white;
-	font: bold 130% roboto;
+	font: bold 20px roboto;
 	background-color: transparent;
 	border-style: groove;
 	border-width: 0px 0px 3px 0px;
@@ -92,7 +92,7 @@
 	outline: none;
 	color: white;
 	padding: 4% 2%;
-	font: 90% roboto;
+	font: 15px roboto;
 	background-color: #1565c0;
 	border-width: 1px;
 	border-color: #0d47a1;
@@ -194,10 +194,10 @@ input:focus{						/*Esto es para cuando se da click en un boton no se marque un 
 	visibility: hidden;
 }
 h1{										/*Formato a la parte en negro de la lista*/
-	font: bold 100% roboto;
+	font: bold 20px roboto;
 }
 li{										/*Formato a la lista*/
-	font: 95% roboto;
+	font: 15px roboto;
 	border-radius: 10px;
 	margin-top: 1%;
 	margin-bottom: 1%;
