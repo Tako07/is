@@ -131,62 +131,50 @@ $conexion->set_charset("utf8");
 					</div>
 					<div id="centro">
 						<section id="recomendados">
-							<table id="tablaRecom">
-							<?php
-							/*!&lt; Servidor al que se va a conectar*/
-							$host = "localhost";
-							/*!&lt; Nombre de la base de datos a la que se va a conectar*/
-							$database = "data_service_in";
-							/*!&lt; Usuario con el que se va a ingresar*/
-							$user = "root";
-							/*!&lt; Contraseña del usuario*/
-							$password = "";
-							/*!&lt; Conexión a la base de datos*/
-							$conexion= mysqli_connect($host,$user,$password,$database);
-								for ($i=1; $i <7 ; $i=$i+3) {
-									echo '<tr>';
-										echo '<td><img class="recomImg" src="mjolnir.jpg"></td>';
-										echo '<td><img class="recomImg" src="mjolnir.jpg"></td>';
-										echo '<td><img class="recomImg" src="mjolnir.jpg"></td></tr>';
-										echo '<tr>';
-										for ($k=$i; $k <4 ; $k++) {
-											echo '<td><div class="recomDesc">';
-											echo '<p class="textDesc">';
-											/*!&lt; Conexión a la base de datos con query a ejecutar*/
-											$aux=mysqli_query($conexion, 'select nombre_negocio from negocio where id_negocio='.$k);
-
-											if (mysqli_num_rows($aux) >= 0) {
-												$j=0;
-												while ($row=mysqli_fetch_assoc($aux)) {
-													/*!&lt; Obtiene el nombre del negocio y lo coloca en un arreglo asociativo*/
-													$response[$j]['dato1']=utf8_encode($row['nombre_negocio']);
-													echo $response[$j]['dato1'];
-													$j++;
-												}
-											}else {
-												echo "0 results";
-											}
-
-											echo '</p>';
-										echo '</div></td>';
-									}echo '</tr>';
-										echo '<tr><td><div class="btVerServ">';
-											echo '<button type="button" class="bt">Ver servicio</button>';
-										echo '</div></td>';
-										echo '<td><div class="btVerServ">';
-											echo '<button type="button" class="bt">Ver servicio</button>';
-										echo '</div></td>';
-										echo '<td><div class="btVerServ">';
-											echo '<button type="button" class="bt">Ver servicio</button>';
-										echo '</div></td><tr>';
+							<div id="tablaRecom">
+								<div id='superior'>
+									<?php
+									$qry='select nombre_negocio from vista_negocio limit 3';
+									$aux=mysqli_query($conexion, $qry);
+									while ($row=mysqli_fetch_assoc($aux)) {
+										echo '
+										<div class="card">
+		  								<img class="card-img-top" src="./mjolnir.jpg">
+		  								<div class="card-body">
+		    								<p class="card-text">'.$row["nombre_negocio"].'.</p>
+		    								<button href="#" id="booton" class="btn-primary">Ver servicio</button>
+		  								</div>
+										</div>';
 									}
-									mysqli_close($conexion);
-							?>
-						</table>
-						</section>
+									 ?>
+								</div>
+								<div id='inferior'>
+								<?php
+								$qry='select nombre_negocio from vista_negocio limit 3';
+								$aux2=mysqli_query($conexion, $qry);
+								while ($row2=mysqli_fetch_assoc($aux2)) {
+									echo '
+									<div class="card">
+										<img class="card-img-top" src="./mjolnir.jpg">
+										<div class="card-body">
+											<p class="card-text">'.$row2["nombre_negocio"].'.</p>
+											<button href="#" id="booton" class="btn-primary">Ver servicio</button>
+										</div>
+									</div>';
+								}
+								 ?>
+
+								</div>
+							</div>
+							<div id='cajaVideo'>
 						<section id="video">
 							<div id="player"></div>
 						</section>
+						</div>
+						</div>
+						
+						</section>
+						
 					</div>
 				</section>
 			</section>
