@@ -24,6 +24,8 @@ $conexion->set_charset("utf8");
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- Compiled and minified Bootstrap JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
 		<link rel="stylesheet" href="misestilos.css">
 		<script src="botonHamb1.js"></script>
 		<script src="reproductor.js"></script>
@@ -129,53 +131,61 @@ $conexion->set_charset("utf8");
 					</div>
 					<div id="centro">
 						<section id="recomendados">
-							<div id="recom">
-								<table id="tablaRecom">
-									<?php
-									for ($i=1; $i <7 ; $i=$i+3) {
+							<table id="tablaRecom">
+							<?php
+							/*!&lt; Servidor al que se va a conectar*/
+							$host = "localhost";
+							/*!&lt; Nombre de la base de datos a la que se va a conectar*/
+							$database = "data_service_in";
+							/*!&lt; Usuario con el que se va a ingresar*/
+							$user = "root";
+							/*!&lt; Contraseña del usuario*/
+							$password = "";
+							/*!&lt; Conexión a la base de datos*/
+							$conexion= mysqli_connect($host,$user,$password,$database);
+								for ($i=1; $i <7 ; $i=$i+3) {
+									echo '<tr>';
+										echo '<td><img class="recomImg" src="mjolnir.jpg"></td>';
+										echo '<td><img class="recomImg" src="mjolnir.jpg"></td>';
+										echo '<td><img class="recomImg" src="mjolnir.jpg"></td></tr>';
 										echo '<tr>';
-											echo '<td><img class="recomImg" src="mjolnir.jpg"></td>';
-											echo '<td><img class="recomImg" src="mjolnir.jpg"></td>';
-											echo '<td><img class="recomImg" src="mjolnir.jpg"></td></tr>';
-											echo '<tr>';
-											for ($k=$i; $k <4 ; $k++) {
-												echo '<td><div class="recomDesc">';
-												echo '<p class="textDesc">';
-												/*!&lt; Conexión a la base de datos con query a ejecutar*/
-												$aux=mysqli_query($conexion, 'select nombre_negocio from negocio where id_negocio='.$k);
+										for ($k=$i; $k <4 ; $k++) {
+											echo '<td><div class="recomDesc">';
+											echo '<p class="textDesc">';
+											/*!&lt; Conexión a la base de datos con query a ejecutar*/
+											$aux=mysqli_query($conexion, 'select nombre_negocio from negocio where id_negocio='.$k);
 
-												if (mysqli_num_rows($aux) >= 0) {
-													$j=0;
-													while ($row=mysqli_fetch_assoc($aux)) {
-														/*!&lt; Obtiene el nombre del negocio y lo coloca en un arreglo asociativo*/
-														$response[$j]['dato1']=utf8_encode($row['nombre_negocio']);
-														echo $response[$j]['dato1'];
-														$j++;
-													}
-												}else {
-													echo "0 results";
+											if (mysqli_num_rows($aux) >= 0) {
+												$j=0;
+												while ($row=mysqli_fetch_assoc($aux)) {
+													/*!&lt; Obtiene el nombre del negocio y lo coloca en un arreglo asociativo*/
+													$response[$j]['dato1']=utf8_encode($row['nombre_negocio']);
+													echo $response[$j]['dato1'];
+													$j++;
 												}
+											}else {
+												echo "0 results";
+											}
 
-												echo '</p>';
-											echo '</div></td>';
-										}echo '</tr>';
-											echo '<tr><td><div class="btVerServ">';
-												echo '<button type="button" class="bt">Ver servicio</button>';
-											echo '</div></td>';
-											echo '<td><div class="btVerServ">';
-												echo '<button type="button" class="bt">Ver servicio</button>';
-											echo '</div></td>';
-											echo '<td><div class="btVerServ">';
-												echo '<button type="button" class="bt">Ver servicio</button>';
-											echo '</div></td><tr>';
-										}
-										mysqli_close($conexion);
-								?>
-								</table>
-							</div>	
-							<section id="video">
-								<div id="player"></div>
-							</section>
+											echo '</p>';
+										echo '</div></td>';
+									}echo '</tr>';
+										echo '<tr><td><div class="btVerServ">';
+											echo '<button type="button" class="bt">Ver servicio</button>';
+										echo '</div></td>';
+										echo '<td><div class="btVerServ">';
+											echo '<button type="button" class="bt">Ver servicio</button>';
+										echo '</div></td>';
+										echo '<td><div class="btVerServ">';
+											echo '<button type="button" class="bt">Ver servicio</button>';
+										echo '</div></td><tr>';
+									}
+									mysqli_close($conexion);
+							?>
+						</table>
+						</section>
+						<section id="video">
+							<div id="player"></div>
 						</section>
 					</div>
 				</section>
