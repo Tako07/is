@@ -136,11 +136,18 @@
 						<nav id="ocultar">
 							<h1><b>Servicios más buscados</b></h1>
 							<lo>
-								<li><a href="https://www.google.com/">Servicio 1</a></li>
-								<li><a href="https://www.google.com/">Servicio 2</a></li>
-								<li><a href="https://www.google.com/">Servicio 3</a></li>
-								<li><a href="https://www.google.com/">Servicio 4</a></li>
-								<li><a href="https://www.google.com/">Servicio 5</a></li>
+								<?php
+								$q6='select nombre_negocio from negocio order by calificacion limit 5;';
+								$result6=mysqli_query ($con,$q6);
+								$j=0;
+								while ($row=mysqli_fetch_assoc($result6)) {
+									$resultado6[$j]['nombre']=$row['nombre_negocio'];
+									$j++;
+								}
+								for($j=0; $j<mysqli_num_rows($result6);$j++){
+									echo '<li><a href="servicio.php?Negocio='.$resultado6[$j]['nombre'].'">'.$resultado6[$j]['nombre'].'</a></li>';
+								}
+								?>
 							</lo>
 							<h1><b>Categorías</b></h1>
 							<lo>

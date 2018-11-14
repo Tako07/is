@@ -1,3 +1,13 @@
+<?php
+ 	session_start();
+	$con=mysqli_connect("localhost" , "root" , "" , "data_service_in") or die("No se pudo conectar: ".mysql_error());
+	if(mysqli_connect_errno()){
+		printf("Falló la conexión: %s\n",mysqli_connect_errno());
+	}
+	/*Esto es para los acentos*/
+	$con->set_charset("utf8");
+	$bandera=2;
+?>
 <html lang="es">
 	<head>
 		<meta charset="UTF-8"/>
@@ -18,7 +28,7 @@
 	<body>
 		<div id="appCat">
 			<header id="cabecera">
-				<button name="bbanner" id="hamburguesa" onclick="cambiarid();"></button>
+				<button name="bbanner" id="hamburguesa" onclick="cambiarid(<?php echo $bandera;?>);"></button>
 				<figure class="logo" onclick="home();">
 					<img id="logo" src="iconos/logo.png">
 				</figure>
@@ -29,13 +39,23 @@
 					</form>
 				</section>
 				<section class="botones">
-					<button id="botonesN" onclick="regcliente();">Registrate</button>
-					<button id="botonesN" onclick="login();">Iniciar Sesión</button>
+					<?php
+					if($bandera==2){
+					echo '
+							<button id="botonesN" onclick="regcliente();">Registrate</button>
+							<button id="botonesN" onclick="login();">Iniciar Sesión</button>
+						';
+					}?>
 				</section>
 				<section class="iconos">
-					<figure class="notificacion">
-						<img id="notificacion" src="iconos/ic_notificacion_v3.png">
-					</figure>
+					<?php
+					if ($bandera==3) {
+						echo '
+						<figure class="notificacion">
+							<img id="notificacion" src="iconos/ic_notificacion_v3.png">
+						</figure>';
+					}
+					?>
 					<figure class="icono">
 						<img id="icono" src="iconos/ic_profile_v3.png">
 					</figure>
@@ -47,11 +67,18 @@
 						<nav id="ocultar">
 							<h1><b>Servicios más buscados</b></h1>
 							<lo>
-								<li><a href="https://www.google.com/">Servicio 1</a></li>
-								<li><a href="https://www.google.com/">Servicio 2</a></li>
-								<li><a href="https://www.google.com/">Servicio 3</a></li>
-								<li><a href="https://www.google.com/">Servicio 4</a></li>
-								<li><a href="https://www.google.com/">Servicio 5</a></li>
+								<?php
+								$q='select nombre_negocio from negocio order by calificacion limit 5;';
+								$result=mysqli_query ($con,$q);
+								$j=0;
+								while ($row=mysqli_fetch_assoc($result)) {
+									$resultado[$j]['nombre']=$row['nombre_negocio'];
+									$j++;
+								}
+								for($j=0; $j<mysqli_num_rows($result);$j++){
+									echo '<li><a href="servicio.php?Negocio='.$resultado[$j]['nombre'].'">'.$resultado[$j]['nombre'].'</a></li>';
+								}
+								?>
 							</lo>
 							<h1><b>Categorías</b></h1>
 							<lo>
@@ -68,60 +95,57 @@
 					</section>
 					<figure>
 						<div id="publicidad2" class="carousel slide" data-ride="carousel">
-              <script type="text/javascript">
-              $('#publicidad2').carousel({
-                interval: 5000,
-                pause:true,
-                wrap:true
-              });
-            </script>
+			              <script type="text/javascript">
+			              $('#publicidad2').carousel({
+			                interval: 5000,
+			                pause:true,
+			                wrap:true
+			              });
+			            </script>
 
 
-            <div class="carousel-inner">
-              <div class="item active">
-                <img src="iconos/publicidad1.jpg" width="250" alt="">
-              </div>
-              <div class="item">
-                <img src="negocios/carpinteria_jose.jpg" width="250" alt="">
-              </div>
-            </div>
+			            <div class="carousel-inner">
+			              <div class="item active">
+			                <img src="iconos/publicidad1.jpg" width="250" alt="">
+			              </div>
+			              <div class="item">
+			                <img src="negocios/carpinteria_jose.jpg" width="250" alt="">
+			              </div>
+			            </div>
 					</figure>
 				</div>
 				<section id="centroCat">
 					<p>Categorias:</p>
 					<div id='contCat'>
 						<form id='catForm' action="servicios_de_categoria.php" method="GET">
-						<table id='categTab'>
-
-						<?php
-						$con=mysqli_connect("localhost" , "root" , "" , "data_service_in") or die("No se pudo conectar: ".mysql_error());
-						if(mysqli_connect_errno()){
-							printf("Falló la conexión: %s\n",mysqli_connect_errno());
-						}
-						$con->set_charset("utf8");
-						$q="SELECT * FROM categoria;";
-						$result=mysqli_query ($con,$q);
-						$i=0;
-						echo '<tr>';
-						while($row = mysqli_fetch_assoc($result)){
-							$i++;
-							echo '
-							<td class="nombCategoria"><input class="ListCat" type="submit" name="seleccion" value="'.$row["nombre_categoria"].'" readonly ></input></td>
-							';
-							if($i==2){
-								$i=0;
-								echo '</tr>';
-								echo '<tr>';
+							<table id='categTab'>
+							<?php
+							$q="SELECT * FROM categoria;";
+							$result=mysqli_query ($con,$q);
+							$i=0;
+							echo '<tr>';
+							while($row = mysqli_fetch_assoc($result)){
+								$i++;
+								echo '
+								<td class="nombCategoria"><input class="ListCat" type="submit" name="seleccion" value="'.$row["nombre_categoria"].'" readonly ></input></td>
+								';
+								if($i==2){
+									$i=0;
+									echo '</tr>';
+									echo '<tr>';
+								}
 							}
-						}
-						echo '</tr>';
-						 ?>
-				</table>
-			</form>
-				</div>
+							echo '</tr>';
+							 ?>
+							</table>
+						</form>
+					</div>
 
 				</section>
 			</section>
+			<footer id="pie">
+				<button id="anunciate">Anuncia tu servicio</button>
+			</footer>
 		</div>
 	</body>
 </html>

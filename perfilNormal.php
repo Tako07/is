@@ -33,7 +33,7 @@
 	<body>
 		<div id="app">
 			<header id="cabecera">
-				<button name="bbanner" id="hamburguesa" onclick="cambiarid();"></button>
+				<button name="bbanner" id="hamburguesa" onclick="cambiarid(3);"></button>
 				<figure class="logo" onclick="home();">
 					<img id="logo" src="iconos/logo.png">
 				</figure>
@@ -61,11 +61,18 @@
 						<nav id="ocultar">
 							<h1><b>Servicios más buscados</b></h1>
 							<lo>
-								<li><a href="https://www.google.com/">Servicio 1</a></li>
-								<li><a href="https://www.google.com/">Servicio 2</a></li>
-								<li><a href="https://www.google.com/">Servicio 3</a></li>
-								<li><a href="https://www.google.com/">Servicio 4</a></li>
-								<li><a href="https://www.google.com/">Servicio 5</a></li>
+								<?php
+								$q='select nombre_negocio from negocio order by calificacion limit 5;';
+								$result4=mysqli_query ($conexion,$q);
+								$j=0;
+								while ($row=mysqli_fetch_assoc($result4)) {
+									$resultado4[$j]['nombre']=$row['nombre_negocio'];
+									$j++;
+								}
+								for($j=0; $j<mysqli_num_rows($result4);$j++){
+									echo '<li><a href="servicio.php?Negocio='.$resultado4[$j]['nombre'].'">'.$resultado4[$j]['nombre'].'</a></li>';
+								}
+								?>
 							</lo>
 							<h1><b>Categorías</b></h1>
 							<lo>

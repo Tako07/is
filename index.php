@@ -1,4 +1,16 @@
-<?php $bandera=2 ?>
+<?php $bandera=2; 
+	/*!&lt; Servidor al que se va a conectar*/
+	$host = "localhost";
+	/*!&lt; Nombre de la base de datos a la que se va a conectar*/
+	$database = "data_service_in";
+	/*!&lt; Usuario con el que se va a ingresar*/
+	$user = "root";
+	/*!&lt; Contraseña del usuario*/
+	$password = "";
+	/*!&lt; Conexión a la base de datos*/
+$conexion= mysqli_connect($host,$user,$password,$database);
+$conexion->set_charset("utf8");
+?>
 <!DOCTYPE html>
 
 <html lang="es">
@@ -64,19 +76,26 @@
 						<nav id="ocultar">
 							<h1><b>Servicios más buscados</b></h1>
 							<lo>
-								<li><a href="https://www.google.com/">Servicio 1</a></li>
-								<li><a href="https://www.google.com/">Servicio 2</a></li>
-								<li><a href="https://www.google.com/">Servicio 3</a></li>
-								<li><a href="https://www.google.com/">Servicio 4</a></li>
-								<li><a href="https://www.google.com/">Servicio 5</a></li>
+								<?php
+								$q='select nombre_negocio from negocio order by calificacion limit 5;';
+								$result=mysqli_query ($conexion,$q);
+								$j=0;
+								while ($row=mysqli_fetch_assoc($result)) {
+									$resultado[$j]['nombre']=$row['nombre_negocio'];
+									$j++;
+								}
+								for($j=0; $j<mysqli_num_rows($result);$j++){
+									echo '<li><a href="servicio.php?Negocio='.$resultado[$j]['nombre'].'">'.$resultado[$j]['nombre'].'</a></li>';
+								}
+								?>
 							</lo>
 							<h1><b>Categorías</b></h1>
 							<lo>
-								<li><a href="servicio_menu.php?categoria='Plomería'">Plomería</a></li>
-								<li><a href="servicio_menu.php?categoria='Electricista'">Electricista</a></li>
-								<li><a href="servicio_menu.php?categoria='Mecánico'">Mecánico</a></li>
-								<li><a href="servicio_menu.php?categoria='Carpinteria'">Carpintería</a></li>
-								<li><a href="servicio_menu.php?categoria='Cerrajería'">Cerrajería</a></li>
+								<li><a href="servicio_menu.php?categoria=Plomería">Plomería</a></li>
+								<li><a href="servicio_menu.php?categoria=Electricista">Electricista</a></li>
+								<li><a href="servicio_menu.php?categoria=Mecánico">Mecánico</a></li>
+								<li><a href="servicio_menu.php?categoria=Carpintería">Carpintería</a></li>
+								<li><a href="servicio_menu.php?categoria=Cerrajería">Cerrajería</a></li>
 								<br><br>
 								<a href="categorias.php">Ver mas...</a>
 							</lo>
@@ -113,16 +132,6 @@
 							<div id="recom">
 								<table id="tablaRecom">
 									<?php
-									/*!&lt; Servidor al que se va a conectar*/
-									$host = "localhost";
-									/*!&lt; Nombre de la base de datos a la que se va a conectar*/
-									$database = "data_service_in";
-									/*!&lt; Usuario con el que se va a ingresar*/
-									$user = "root";
-									/*!&lt; Contraseña del usuario*/
-									$password = "";
-									/*!&lt; Conexión a la base de datos*/
-									$conexion= mysqli_connect($host,$user,$password,$database);
 									for ($i=1; $i <7 ; $i=$i+3) {
 										echo '<tr>';
 											echo '<td><img class="recomImg" src="mjolnir.jpg"></td>';

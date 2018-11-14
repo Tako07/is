@@ -1,7 +1,8 @@
  <?php session_start();		/*Inicia la conexion con la base de datos*/
 	$buscar=$_POST['busqueda'];	/*Obtine la cadena de busqueda la previa pantalla (index.php) para su uso en esta*/
 	$con=mysqli_connect("localhost" , "root" , "" , "data_service_in") 	/*Realiza la conexion a la base de datos correspondiente el campo vacio es para la contraseña que se le de a la base de datos*/
-	or die("No se pudo conectar: ".mysql_error());	
+	or die("No se pudo conectar: ".mysql_error());
+	$con->set_charset("utf8");	
 	if(mysqli_connect_errno()){						/*Comprueba que la conexion se realiza correctamente de no ser así mostrara un mensaje en pantalla*/
 		printf("Falló la conexión: %s\n",mysqli_connect_errno());
 	}
