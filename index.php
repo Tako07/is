@@ -1,4 +1,4 @@
-<?php $bandera=2; 
+<?php $bandera=2;
 	/*!&lt; Servidor al que se va a conectar*/
 	$host = "localhost";
 	/*!&lt; Nombre de la base de datos a la que se va a conectar*/
@@ -35,7 +35,6 @@ $conexion->set_charset("utf8");
 		<!-- Api de google maps con la llave de acceso-->
 		</script>
 	</head>
-
 	<body>
 		<div id="app">
 			<header id="cabecera">
@@ -146,15 +145,26 @@ $conexion->set_charset("utf8");
 							<div id="tablaRecom">
 								<div id='superior'>
 									<?php
+									/*!&lt; Qry a ejecutar para obtener el nombre de 3 negocios*/
 									$qry='select nombre_negocio from vista_negocio limit 3';
+									/*!&lt; ejecución de la consulta "qry"*/
 									$aux=mysqli_query($conexion, $qry);
+									/*!&lt; Mientras exixstan valores de la consulta imprime tarjetas*/
 									while ($row=mysqli_fetch_assoc($aux)) {
+										$query='select url_imagen from vista_imagenes where nombre_negocio="'.$row["nombre_negocio"].'" limit 1';
+										$auxi=mysqli_query($conexion, $query);
+										$imagen="./mjolnir.jpg";
+										if($rowe=mysqli_fetch_assoc($auxi)){
+											$imagen=$rowe["url_imagen"];
+										}
 										echo '
 										<div class="card">
-		  								<img class="card-img-top" src="./mjolnir.jpg">
+		  								<img class="card-img-top" src="./negocios/'.$imagen.'" width="150" height="150">
 		  								<div class="card-body">
 		    								<p class="card-text">'.$row["nombre_negocio"].'.</p>
-		    								<button href="#" id="booton" class="btn-primary">Ver servicio</button>
+												<div class="linkCard">
+		    									<a href="servicio.php?Negocio='.$row["nombre_negocio"].'" >Ver servicio</a>
+												</div>
 		  								</div>
 										</div>';
 									}
@@ -162,15 +172,30 @@ $conexion->set_charset("utf8");
 								</div>
 								<div id='inferior'>
 								<?php
+								/*!&lt; Consulta para obtener nombre de los negocios*/
 								$qry='select nombre_negocio from vista_negocio limit 3';
+								/*!&lt; ejecución de query "qry"*/
 								$aux2=mysqli_query($conexion, $qry);
+								/*!&lt; Ciclo para colocar tarjetas*/
 								while ($row2=mysqli_fetch_assoc($aux2)) {
+									/*!&lt; Query para obtener las imagenes de los negocios*/
+									$query2='select url_imagen from vista_imagenes where nombre_negocio="'.$row2["nombre_negocio"].'" limit 1';
+									/*!&lt; ejecución del query*/
+									$auxi2=mysqli_query($conexion, $query2);
+									/*!&lt; imagen por defecto*/
+									$imagen2="./mjolnir.jpg";
+									/*!&lt si el negocio tiene una imagen, colocarla*/
+									if($rowe2=mysqli_fetch_assoc($auxi2)){
+										$imagen2=$rowe2["url_imagen"];
+									}
 									echo '
 									<div class="card">
-										<img class="card-img-top" src="./mjolnir.jpg">
+										<img class="card-img-top" src="./negocios/'.$imagen2.'" height="150">
 										<div class="card-body">
 											<p class="card-text">'.$row2["nombre_negocio"].'.</p>
-											<button href="#" id="booton" class="btn-primary">Ver servicio</button>
+											<div class="linkCard">
+												<a href="servicio.php?Negocio='.$row2["nombre_negocio"].'" >Ver servicio</a>
+											</div>
 										</div>
 									</div>';
 								}
@@ -184,9 +209,9 @@ $conexion->set_charset("utf8");
 						</section>
 						</div>
 						</div>
-						
+
 						</section>
-						
+
 					</div>
 				</section>
 			</section>

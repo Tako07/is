@@ -352,5 +352,13 @@ a{										/*Formato para los hipervinculos*/
 .card-img-top{
 	max-width: 180px;
 }
+.linkCard{
+	width: 100%;
+	padding: 3% 1%;
+	background-color:#00CCF1;
+}
+.linkCard a{
+	color: #FFFFFF;
+}
 
 /*/////////////////////////////////////////////////INICIA LOGIN///////////////////////////////////////////////////*/

@@ -125,8 +125,6 @@
 			                wrap:true
 			              });
 			            </script>
-
-
 			            <div class="carousel-inner">
 			              <div class="item active">
 			                <img src="iconos/publicidad1.jpg" width="250" alt="">
@@ -143,10 +141,14 @@
 						<form id='catForm' action="servicios_de_categoria.php" method="GET">
 							<table id='categTab'>
 							<?php
+              /*!&lt; Consulta para obtener todas las categorías registradas*/
 							$q="SELECT * FROM categoria;";
+              /*!&lt; ejecución de la consulta para obtener categorias registradas*/
 							$result=mysqli_query ($con,$q);
+              /*!&lt; Contador para colocar categorias en lado izquierdo y derecho*/
 							$i=0;
 							echo '<tr>';
+              /*!&lt; obtención de una fila de la consulta con la base de datps*/
 							while($row = mysqli_fetch_assoc($result)){
 								$i++;
 								echo '
