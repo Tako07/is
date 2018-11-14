@@ -35,7 +35,6 @@ $conexion->set_charset("utf8");
 		<!-- Api de google maps con la llave de acceso-->
 		</script>
 	</head>
-
 	<body>
 		<div id="app">
 			<header id="cabecera">
