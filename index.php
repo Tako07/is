@@ -150,7 +150,9 @@ $conexion->set_charset("utf8");
 		  								<img class="card-img-top" src="./negocios/'.$imagen.'" width="150" height="150">
 		  								<div class="card-body">
 		    								<p class="card-text">'.$row["nombre_negocio"].'.</p>
-		    								<button onclick="servicio.php?Negocio='.$row["nombre_negocio"].'" id="booton" class="btn-primary">Ver servicio</button>
+												<div class="linkCard">
+		    									<a href="servicio.php?Negocio='.$row["nombre_negocio"].'" >Ver servicio</a>
+												</div>
 		  								</div>
 										</div>';
 									}
@@ -179,7 +181,9 @@ $conexion->set_charset("utf8");
 										<img class="card-img-top" src="./negocios/'.$imagen2.'" height="150">
 										<div class="card-body">
 											<p class="card-text">'.$row2["nombre_negocio"].'.</p>
-											<button onclick="abreNegocio();" id="booton" class="btn-primary" >Ver Servicio</button>
+											<div class="linkCard">
+												<a href="servicio.php?Negocio='.$row2["nombre_negocio"].'" >Ver servicio</a>
+											</div>
 										</div>
 									</div>';
 								}
