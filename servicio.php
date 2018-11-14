@@ -4,6 +4,7 @@
 	if(mysqli_connect_errno()){
 		printf("Falló la conexión: %s\n",mysqli_connect_errno());
 	}
+	/*Primero dios funciona esta cosa*/
 	/*Esto es para los acentos*/
 	$con->set_charset("utf8");
 	if (isset($_GET['Negocio'])) {
