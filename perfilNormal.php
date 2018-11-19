@@ -40,6 +40,7 @@
  	*@Brief Nombre e imagen
  	*Obtiene el nombre de negocio y la imagen del mismo de los negocios que sigue el usuario
  	**/
+ 	$_SESSION['IDU']=$ID;
 	$q2='select n.nombre_negocio, i.url_imagen from favorito f inner join negocio n ON f.id_negocio=n.id_negocio inner join imagenes i on n.id_negocio=i.id_negocio where f.id_usuario='.$ID.' group by f.id_negocio;';
 	$result2=mysqli_query($con,$q2);
 	/**
@@ -130,13 +131,15 @@
 		        		<figure class="iPerfil">
 							<img id="iPerfil" src="iconos/ic_profile_v3.png">
 						</figure>
-						<label class="subirImg">
-							<div id="bsubir">Subir imagen</div>
-							<input style="position: absolute; display:none;" role="button" type="file" name="subir" title="Subir imagen">
-							<figure class="camara">
-								<img id="camara" src="iconos/ic_camara.png">
-							</figure>
-						</label>
+						<form class="subirImg" id="subirimg" action="subirImg.php" method="post" enctype="multipart/form-data">
+							<label id="label">
+								<div id="bsubir">Subir imagen</div>
+								<input style="position: absolute; display:none;" role="button" type="file" name="subir" title="Subir imagen" onchange="guardaImg();">
+								<figure class="camara">
+									<img id="camara" src="iconos/ic_camara.png">
+								</figure>
+							</label>
+						</form>
 						<h2 id="datosNegrita">Datos del usuario</h2>
 						<div id="datosUser">
 							<p id="datos">Nombre: <?php echo $fila[2].' '.$fila[3]?></p>

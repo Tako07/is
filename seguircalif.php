@@ -41,4 +41,4 @@
 				window.onload=funciones;
 		</script>';
 	}
-		?>
+?>

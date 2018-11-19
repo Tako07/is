@@ -70,6 +70,9 @@ function cambiarid (ban){
 	}
 }
 "use strict"
+function guardaImg(){
+	document.getElementById("subirimg").submit();
+}
 
 function usuario(url,IDU){
 	document.body.innerHTML += '<form id="linkserv" action="'+url+'" method="post">'+

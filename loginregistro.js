@@ -72,7 +72,7 @@ function finRegistro(){
 }
 function abreNegocio(){
 	alert('hola');
-	window.open("index.php,"_self");
+	window.open("index.php","_self");
 }
 /**
 * @description funcion para validar el formulario de la segunda pantalla del registro de negocio
