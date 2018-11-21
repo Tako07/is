@@ -27,7 +27,7 @@
 	/**
  	*@Brief Si no existe 
  	*Se regresara al usuario a la pagina anterior si no existe en la base de datos
- 	**/
+ 	**/	
 	if(mysqli_num_rows($result)==0){
 		echo '<script>
 		function funciones(){

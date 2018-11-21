@@ -1,14 +1,10 @@
- <?php session_start();		/*Inicia la conexion con la base de datos*/
-	$buscar=$_POST['busqueda'];	/*Obtine la cadena de busqueda la previa pantalla (index.php) para su uso en esta*/
+<?php
 	$con=mysqli_connect("localhost" , "root" , "" , "data_service_in") 	/*Realiza la conexion a la base de datos correspondiente el campo vacio es para la contraseña que se le de a la base de datos*/
 	or die("No se pudo conectar: ".mysql_error());
 	$con->set_charset("utf8");	
 	if(mysqli_connect_errno()){						/*Comprueba que la conexion se realiza correctamente de no ser así mostrara un mensaje en pantalla*/
 		printf("Falló la conexión: %s\n",mysqli_connect_errno());
 	}
-	$q="SELECT n.nombre_negocio, i.url_imagen FROM negocio n INNER JOIN imagenes i ON n.id_negocio=i.id_negocio INNER JOIN categoria c ON n.id_categoria=c.id_categoria WHERE n.nombre_negocio LIKE '%".$buscar."%' OR n.etiquetas LIKE '%".$buscar."%' OR c.nombre_categoria LIKE '%".$buscar."%' group by n.nombre_negocio;";	/*Realiza la consulta para coincidencías con la base de datos en la tabla de vista de negocio. Las comparaciones se realizan con las columnas de "nombre_negocio" y la de "etiquetas"*/
-	$result=mysqli_query ($con,$q);				/*Se realiza la busqueda de la consulta anterior y se obtienen toda la informacion de los negocios que tengan coincidencias y se guardan  en la variable $result*/
-	$bandera=1;
 ?>
 <html lang="es">
 	<head>
@@ -124,82 +120,3 @@
 			            </div>
 					</figure>
 				</div>
-			<h1>Mostrando resultados de "<?php echo $buscar;?>"</h1>
-			<div class="favoritos">
-	        		<?php
-	        		if(mysqli_num_rows($result)>0){ 
-	        			$j=0;
-		        		while ($row=mysqli_fetch_assoc($result)) {
-							$resultado[$j]['nombre']=$row['nombre_negocio'];
-							$resultado[$j]['url']=$row['url_imagen'];
-							$j++;
-						}
-						/**
-					 	*@Brief Numero de filas negocio
-					 	*Obtiene el numero de filas que se necesitaran para mostrar todos los negocios que sigue el usuario
-					 	**/
-						$nfilas=mysqli_num_rows($result);			
-						if(($nfilas/4)<1){
-							$nfilas=1;
-						}else{
-							if($nfilas%4!=0){
-								$nfilas/=4;
-								$nfilas=intval($nfilas);
-								$nfilas+=1;	
-							}else{
-								$nfilas/=4;
-								$nfilas=intval($nfilas);
-							}
-						}
-						$i=0;
-						/**
-					 	*@Brief Segun el numero de filas se repetira el ciclo
-					 	**/
-						for($j=1; $j-1<$nfilas; $j+=1){
-							$count=0;
-							if($j>1){
-								echo '<br>';
-							}?>
-							<section class="fav">
-								<?php 
-								/**
-							 	*@Brief Numero de tarjetas por fila
-							 	*Coloca hasta 4 tarjetas de informacion por fila si no se completan los 4 se llenara de tarjetas vacias
-							 	**/
-								for($count=0; $i <mysqli_num_rows($result)&&$count<4; $i=$i+1,$count++) {?>
-									<section id="tarjeta">
-										<figure class="negocios">
-											<?php echo '<img id="negocios" src="negocios/'.$resultado[$i]['url'].'">';?>
-										</figure>
-										<div id="nombre">
-											<?php echo '<p>'.$resultado[$i]['nombre'].'</p>'; ?>
-										</div>
-										<button id="botones" onclick="usuario(<?php echo'\'servicio.php?Negocio='.$resultado[$i]["nombre"].'\','.$fila[0]?>);">Ver servicio</button>
-									</section>
-								<?php }
-								if($count<4){
-									while ($count<4) {
-										echo '
-										<section id="notarjeta">
-											<figure class="negocios">
-												</figure>
-												<div id="nada">
-													<p></p>
-												</div>
-											<button id="bnada"></button>
-										</section>';
-										$count++;
-										$i++;
-									}
-								}?>
-							</section>
-						<?php }?>
-					<?php }?>
-	        	</div>
-			</section>
-			<footer id="pie">
-				<button id="anunciate">Anuncia tu servicio</button>
-			</footer>
-		</div>
-	</body>
-</html>

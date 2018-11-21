@@ -5,34 +5,24 @@ var cont=0;
 /**
 *@description Funcion para mostrar el banner
 */
-function cambiarid (acc){
+function cambiarid (){
 	if (cont==0) {				/*Si esta oculta*/
-		var g = document.getElementsByTagName('figure')[2];
-		var f = document.getElementById("banner");
-		var e = document.getElementById("ocultar");
-		g.id="ocultar"			/*OCULTA LA PUBLICIDAD*/
-		f.id="banner1";			//ANIMACION PARA ABRIR
-		e.id="mostrar";			//MUESTRA EL banner
+		var banner=document.getElementById('banner1');
+		var dentro=document.getElementById('publicidad1');
+		var fuera=document.getElementById('publicidad2');
+		banner.style.visibility = 'visible';
+		banner.style.position = 'static';
+		dentro.style.visibility = 'visible';
+		fuera.style.visibility = 'hidden';
 		cont=1;
 	}else{						/*Sino esta oculta*/
-		var g = document.getElementsByTagName('figure')[3];
-		var f = document.getElementById("banner1");
-		var e = document.getElementById("mostrar");
-		f.id="banner";				/*ANIMACION DE OCULTAR*/
-		e.id="ocultar";				/*OCULTA EL BANNER*/
-		g.id="publicidad1"			/*MUESTRA LA PUBLICIDAD*/
+		var banner=document.getElementById('banner1');
+		var dentro=document.getElementById('publicidad1');
+		var fuera=document.getElementById('publicidad2');
+		banner.style.visibility = 'hidden';
+		banner.style.position = 'absolute';
+		dentro.style.visibility = 'hidden';
+		fuera.style.visibility = 'visible';
 		cont=0;
 	}
 }
-
-"use strict"
-/**
-*@description Funcion que llamara a la funcion
-*/
-function funciones(){
-		document.getElementsByTagName('button')[0].onclick=cambiarid;
-	}
-
-/**
-*@description Cuando se cargue la pagina, cargara la funcion "funciones()"
-*/
