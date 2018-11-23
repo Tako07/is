@@ -279,7 +279,7 @@ a{										/*Formato para los hipervinculos*/
 	padding: 1% 0%;
 	cursor: pointer;
 	width: 10%;
-	height: 3%;	
+	height: 3%;
 }
 #estrella{
 	width: 100%;
@@ -581,11 +581,11 @@ h2{
 	width: 79%;
 	height:auto;
 	text-align: left;
-	border: 0px solid #000000;
 
 }
-#centroCat p{
-	padding-left: 20%;
+.cartitas{
+	width: 90%;
+	display: flex;
 }
 .ListCat{
 	border-radius: 0px;
@@ -711,4 +711,41 @@ h2{
 }
 .btVerServ button{
 	background-color: #00CCF1;
+}
+.card-text{
+	margin: 0%;
+	padding: 10% 1%;
+	width: 100%;
+	background-color: #cccccc;
+}
+.card{
+	display: block;
+	text-align: center;
+	width: 30%;
+	padding: 0%;
+	margin: 2%;
+	font: 120% roboto;
+}
+
+.card-body{
+	padding: 0%;
+	margin: 0%;
+}
+
+.btn-primary {
+	padding: 0%;
+	margin: 0%;
+	width: 100%;
+	height: 40px;
+}
+.card-img-top{
+	max-width: 180px;
+}
+.linkCard{
+	width: 100%;
+	padding: 3% 1%;
+	background-color:#00CCF1;
+}
+.linkCard a{
+	color: #FFFFFF;
 }

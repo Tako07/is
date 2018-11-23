@@ -13,7 +13,11 @@ $bandera=1;
 <!DOCTYPE html>
 <html lang="es">
 	<head>
-		<link rel="stylesheet" href="misestilos.css">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Services In</title>
+    <link rel="stylesheet" href="estilos.css">
     	<script src="botonHamb.js"></script>
     	<script src="loginregistro.js"></script>
     	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
@@ -24,7 +28,7 @@ $bandera=1;
 	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   	</head>
   	<body>
-    	<div id="app">
+    	<div id="appCat">
       		<header id="cabecera">
         		<button name="bbanner" id="hamburguesa" onclick="cambiarid();"></button>
         		<figure class="logo" onclick="home();">
@@ -55,9 +59,12 @@ $bandera=1;
             		/**
             		*@Brief Notificaciones
             		*Si entra como un usuario normal el icono de notificaciones se activara
-            		**/ 
+            		**/
             		if ($bandera==3) {
-              			echo '<img id="notificacion" src="iconos/ic_notificacion_v3.png">';
+                  echo '
+                  <figure class="notificacion">
+                    <img id="notificacion" src="iconos/ic_notificacion_v3.png">
+                  </figure>';
             		}
             		?>
             		</figure>
@@ -68,8 +75,8 @@ $bandera=1;
       		</header>
       		<section id="centro">
         		<div id="seccion-banner">
-          			<section id="banner1">
-            			<nav>
+          			<section id="banner">
+            			<nav id="ocultar">
               				<h1><b>Servicios más buscados</b></h1>
               				<lo>
                 			<?php
@@ -113,44 +120,87 @@ $bandera=1;
                     	</script>
                   		<div class="carousel-inner">
                   	  		<div class="item active">
-                        	<img src="iconos/publicidad1.jpg"  alt="">
+                        	<img src="iconos/publicidad1.jpg" width="250" alt="">
                       	</div>
                       	<div class="item">
-							<img src="negocios/carpinteria_jose.jpg"  alt="">
+							<img src="negocios/carpinteria_jose.jpg" width="250" alt="">
                       	</div>
                   		</div>
           			</figure>
         		</div>
-        	</div>
-        	<div>
-        		<div class="card">
-					<img class="card-img-top" src="./negocios/carpinteria_jose.jpg" height="150">
-					<div class="card-body">
-						<p class="card-text">Holi</p>
-						<div class="linkCard">
-							<a href="servicio.php?Negocio='.$row2["nombre_negocio"].'" >Ver servicio</a>
-						</div>
-					</div>
-				</div>
-				<div class="card">
-					<img class="card-img-top" src="./negocios/carpinteria_jose.jpg" height="150">
-					<div class="card-body">
-						<p class="card-text">Holi</p>
-						<div class="linkCard">
-							<a href="servicio.php?Negocio='.$row2["nombre_negocio"].'" >Ver servicio</a>
-						</div>
-					</div>
-				</div>
-				<div class="card">
-					<img class="card-img-top" src="./negocios/carpinteria_jose.jpg" height="150">
-					<div class="card-body">
-						<p class="card-text">Holi</p>
-						<div class="linkCard">
-							<a href="servicio.php?Negocio='.$row2["nombre_negocio"].'" >Ver servicio</a>
-						</div>
-					</div>
-				</div>
-			</div>
+            <section id="centroCat">
+              <div class="cartitas">
+                <div class="card">
+                <img class="center-block" src="./negocios/carpinteria_jose.jpg" height="150">
+                <div class="card-body">
+                <p class="card-text">Holi</p>
+                <div class="linkCard">
+                  <a href="servicio.php?Negocio='.$row2["nombre_negocio"].'" >Ver servicio</a>
+                </div>
+                </div>
+                </div><div class="card">
+                <img class="center-block" src="./negocios/carpinteria_jose.jpg" height="150">
+                <div class="card-body">
+                <p class="card-text">Holi</p>
+                <div class="linkCard">
+                  <a href="servicio.php?Negocio='.$row2["nombre_negocio"].'" >Ver servicio</a>
+                </div>
+                </div>
+                </div><div class="card">
+                <img class="center-block" src="./negocios/carpinteria_jose.jpg" height="150">
+                <div class="card-body">
+                <p class="card-text">Holi</p>
+                <div class="linkCard">
+                  <a href="servicio.php?Negocio='.$row2["nombre_negocio"].'" >Ver servicio</a>
+                </div>
+                </div>
+                </div><div class="card">
+                <img class="center-block" src="./negocios/carpinteria_jose.jpg" height="150">
+                <div class="card-body">
+                <p class="card-text">Holi</p>
+                <div class="linkCard">
+                  <a href="servicio.php?Negocio='.$row2["nombre_negocio"].'" >Ver servicio</a>
+                </div>
+                </div>
+                </div>
+      </div>
+      <div class="cartitas">
+        <div class="card">
+        <img class="center-block" src="./negocios/carpinteria_jose.jpg" height="150">
+        <div class="card-body">
+        <p class="card-text">Holi</p>
+        <div class="linkCard">
+          <a href="servicio.php?Negocio='.$row2["nombre_negocio"].'" >Ver servicio</a>
+        </div>
+        </div>
+        </div>
+        <div class="card">
+        <img class="center-block" src="./negocios/carpinteria_jose.jpg" height="150">
+        <div class="card-body">
+        <p class="card-text">Holi</p>
+        <div class="linkCard">
+          <a href="servicio.php?Negocio='.$row2["nombre_negocio"].'" >Ver servicio</a>
+        </div>
+        </div>
+        </div><div class="card">
+        <img class="center-block" src="./negocios/carpinteria_jose.jpg" height="150">
+        <div class="card-body">
+        <p class="card-text">Holi</p>
+        <div class="linkCard">
+          <a href="servicio.php?Negocio='.$row2["nombre_negocio"].'" >Ver servicio</a>
+        </div>
+        </div>
+        </div><div class="card">
+        <img class="center-block" src="./negocios/carpinteria_jose.jpg" height="150">
+        <div class="card-body">
+        <p class="card-text">Holi</p>
+        <div class="linkCard">
+          <a href="servicio.php?Negocio='.$row2["nombre_negocio"].'" >Ver servicio</a>
+        </div>
+        </div>
+        </div>
+      </div>
+      </section>
     	</section>
 
     	<footer id="pie">

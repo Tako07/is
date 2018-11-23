@@ -12,10 +12,6 @@
 	if(mysqli_connect_errno()){
 		printf("Falló la conexión: %s\n",mysqli_connect_errno());
 	}
-	/**
- 	*@Brief Coloca la funcion para que pueda leer acentos
- 	*
- 	**/
 	$con->set_charset("utf8");
 	/**
  	*@Brief URL
@@ -76,7 +72,7 @@
 			}else{
 				/**
 			 	*@Brief ID Usuario
-			 	*Si recibe el ID de usuario mostrara la pagina como si fuera 
+			 	*Si recibe el ID de usuario mostrara la pagina como si fuera
 			 	**/
 				if(isset($_POST['Usuario'])){
 					$IDU=$_POST['Usuario'];
@@ -94,7 +90,7 @@
 						$siguiendo=1;
 					}
 					/**
-				 	*@Brief Obtiene la calificacion 
+				 	*@Brief Obtiene la calificacion
 				 	*Obtiene la calificacion que el usuario le dio al negocio
 				 	**/
 					$q3='select calificacion from calificacion where id_usuario='.$IDU.' and id_negocio='.$fila2[0].';';
@@ -111,8 +107,8 @@
 					$bandera=3;
 				/**
 			 	*@Brief Invitado
-			 	*Si no recibe ninguno de los 2 ID se mostrara la pagina como si fuera 
-			 	**/	
+			 	*Si no recibe ninguno de los 2 ID se mostrara la pagina como si fuera
+			 	**/
 				}else{
 					/**
 				 	*@Brief Calificacion
