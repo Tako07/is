@@ -272,7 +272,7 @@
                               <div class="carousel-inner">
                               <?php
                               /*!&lt; Query para obtener las imágenes del negocio*/
-                              $qry='select url_imagen from vista_imagenes where nombre_negocio="'.$NN.'"';
+                              $qry='select url_imagen from (vista_imagenes i inner join vista_negocio n on i.id_negocio=n.id_negocio) where nombre_negocio="'.$NN.'"';
                               /*!&lt; Ejecución de la consulta "qry"*/
                               $resultImg=mysqli_query ($con,$qry);
                               /*!&lt; Contador para señalar el item que muestr el carrusel*/
