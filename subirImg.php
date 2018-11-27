@@ -29,12 +29,12 @@
 					window.onload=funciones;
 			</script>';
 		}else{
-			$sql="SELECT username from usuario where id_usuario=".$_SESSION["IDU"];
+			$sql="SELECT username from vista_usuario where id_usuario=".$_SESSION["IDU"];
 			$result=mysqli_query($con,$sql);
 			$nombre=mysqli_fetch_row($result);
 			$filepath="usuarios/".$nombre[0].".jpg";
 			move_uploaded_file($filetmp,$filepath);
-			$sql="SELECT * from imagenes where id_usuario=".$_SESSION["IDU"];
+			$sql="SELECT * from vista_imagenes where id_usuario=".$_SESSION["IDU"];
 			$result=mysqli_query($con,$sql);
 			if(mysqli_num_rows($result)>0){
 				$sql="UPDATE imagenes set url='".$nombre[0].".jpg' where=".$_SESSION["IDU"].";";

@@ -5,7 +5,7 @@ $con=mysqli_connect("localhost" , "root" , "" , "data_service_in") or die("No se
 if(mysqli_connect_errno()){
   printf("Falló la conexión: %s\n",mysqli_connect_errno());
 }
-$q='select n.nombre_negocio, i.url_imagen from categoria c inner join negocio n on c.id_categoria=n.id_categoria inner join imagenes i on n.id_negocio=i.id_negocio where c.nombre_categoria=\''.$nombCat.'\' group by n.id_negocio;';
+$q='select n.nombre_negocio, i.url_imagen from vista_categoria c inner join vista_negocio n on c.id_categoria=n.id_categoria inner join vista_imagenes i on n.id_negocio=i.id_negocio where c.nombre_categoria=\''.$nombCat.'\' group by n.id_negocio;';
 $result=mysqli_query ($con,$q);
 
 $bandera=1;
@@ -86,7 +86,7 @@ $bandera=1;
                 			*@Brief Negocios con mejor calificacion
                 			*Obtendra los 5 negocios con mayor calificacion y los mostrara
                 			**/
-                			$serv='select nombre_negocio from negocio order by calificacion limit 5;';
+                			$serv='select nombre_negocio from vista_negocio order by calificacion limit 5;';
                 			$servi=mysqli_query ($con,$serv);
                 			$j=0;
                 			while ($row=mysqli_fetch_assoc($servi)) {

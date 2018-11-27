@@ -52,7 +52,7 @@
 					$sql="INSERT INTO usuario (username,nombre,apellido,fecha_nacimiento,correo,password) VALUES ('".$usuario."','".$nombre."','".$apellido."','".$fecha."','".$correo."',MD5('".$contraseña."'));";
 					if($con->query($sql)===TRUE){
 						echo '<script>alert("SE Registro");</script>';
-						$q="SELECT id_usuario FROM usuario WHERE username='".$usuario."'";
+						$q="SELECT id_usuario FROM vista_usuario WHERE username='".$usuario."'";
 						$result3=mysqli_query ($con,$q);
 						$fila=mysqli_fetch_row($result3);
 						echo '<form action="perfilNormal.php" id="formulario" method="POST"><input name="idUsuario" value="'.$fila[0].'"></form>';

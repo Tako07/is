@@ -91,7 +91,7 @@
 							 	*@Brief Negocios con mejor calificacion
 							 	*Obtendra los 5 negocios con mayor calificacion y los mostrara
 							 	**/
-								$q='select nombre_negocio from negocio order by calificacion limit 5;';
+								$q='select nombre_negocio from vista_negocio order by calificacion limit 5;';
 								$result=mysqli_query ($con,$q);
 								$j=0;
 								while ($row=mysqli_fetch_assoc($result)) {
@@ -142,7 +142,7 @@
 							<table id='categTab'>
 							<?php
               /*!&lt; Consulta para obtener todas las categorías registradas*/
-							$q="SELECT * FROM categoria;";
+							$q="SELECT * FROM vista_categoria;";
               /*!&lt; ejecución de la consulta para obtener categorias registradas*/
 							$result=mysqli_query ($con,$q);
               /*!&lt; Contador para colocar categorias en lado izquierdo y derecho*/
