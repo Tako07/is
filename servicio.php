@@ -27,7 +27,7 @@
 	 	*@Brief Realiza la consulta
 	 	*Realiza la consulta para obtener la informacion del negocio que se ingreso
 	 	**/
-		$q='SELECT * FROM negocio n inner join usuario u on n.id_usuario=u.id_usuario WHERE nombre_negocio=\''.$NN.'\';';
+		$q='SELECT * FROM vista_negocio n inner join vista_usuario u on n.id_usuario=u.id_usuario WHERE nombre_negocio=\''.$NN.'\';';
 		$result2=mysqli_query ($con,$q);
 		/**
 	 	*@Brief Si la consulta no regresa valores
@@ -54,14 +54,14 @@
 			 	*@Brief Consulta de ID de usuario
 			 	*Realiza la consulta para obtener la informacion de usuario del dueño del negocio
 			 	**/
-				$q="SELECT * FROM usuario WHERE id_usuario=".$IDN.";";
+				$q="SELECT * FROM vista_usuario WHERE id_usuario=".$IDN.";";
 				$result=mysqli_query ($con,$q);
 				$fila=mysqli_fetch_row($result);
 				/**
 			 	*@Brief Calificacion
 			 	*Obtiene la calificacion promedio del negocio
 			 	**/
-				$q3='select calificacion from negocio where id_negocio='.$fila2[0].';';
+				$q3='select calificacion from vista_negocio where id_negocio='.$fila2[0].';';
 				$result5=mysqli_query ($con,$q3);
 				if(mysqli_num_rows($result5)==0){
 					$calificacion[0]=0;
@@ -80,7 +80,7 @@
 				 	*@Brief Consulta de favorito
 				 	*realiza la consulta para saber si sigue al negocio o no
 				 	**/
-					$q2='select id_favorito from favorito where id_usuario='.$IDU.' AND id_negocio='.$fila2[0].';';
+					$q2='select id_favorito from vista_favorito where id_usuario='.$IDU.' AND id_negocio='.$fila2[0].';';
 					$result4=mysqli_query ($con,$q2);
 					if(mysqli_num_rows($result4)==0){
 						//no sigue al negocio
@@ -93,7 +93,7 @@
 				 	*@Brief Obtiene la calificacion
 				 	*Obtiene la calificacion que el usuario le dio al negocio
 				 	**/
-					$q3='select calificacion from calificacion where id_usuario='.$IDU.' and id_negocio='.$fila2[0].';';
+					$q3='select calificacion from vista_calificacion where id_usuario='.$IDU.' and id_negocio='.$fila2[0].';';
 					$result5=mysqli_query ($con,$q3);
 					/**
 				 	*@Brief No lo a calificado
@@ -114,7 +114,7 @@
 				 	*@Brief Calificacion
 				 	*Obtiene la calificacion promedio del negocio
 				 	**/
-					$q3='select calificacion from negocio where id_negocio='.$fila2[0].';';
+					$q3='select calificacion from vista_negocio where id_negocio='.$fila2[0].';';
 					$result5=mysqli_query ($con,$q3);
 					if(mysqli_num_rows($result5)==0){
 						$calificacion[0]=0;
@@ -150,6 +150,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
 		<link rel="stylesheet" href="estilos.css">
 		<script src="botonHamb1.js"></script>
+		<script src="botonHamb.js"></script>
 		<script src="reproductor.js"></script>
 		<script src="mapa.js"></script>
 		<script src="loginregistro.js"></script>
@@ -159,7 +160,7 @@
 	<body>
 		<div id="app">
 			<header id="cabecera">
-				<button name="bbanner" id="hamburguesa" onclick="cambiarid(<?php echo $bandera;?>);"></button>
+				<button name="bbanner" id="hamburguesa" onclick="cambiarid();"></button>
 				<figure class="logo" onclick="home();">
 					<img id="logo" src="iconos/logo.png">
 				</figure>
@@ -183,18 +184,17 @@
 					}?>
 				</section>
 				<section class="iconos">
-					<?php
-					/**
-				 	*@Brief Notificaciones
-				 	*Si entra como un usuario normal el icono de notificaciones se activara
-				 	**/
-					if ($bandera==3) {
-						echo '
 						<figure class="notificacion">
-							<img id="notificacion" src="iconos/ic_notificacion_v3.png">
-						</figure>';
-					}
-					?>
+						<?php
+					 	/**
+					 	*@Brief Notificaciones
+					 	*Si entra como un usuario normal el icono de notificaciones se activara
+					 	**/	
+						if ($bandera==3) {
+							echo '<img id="notificacion" src="iconos/ic_notificacion_v3.png">';
+						}
+						?>
+						</figure>
 					<figure class="icono">
 						<img id="icono" src="iconos/ic_profile_v3.png">
 					</figure>
@@ -202,8 +202,8 @@
 			</header>
 			<section id="centro">
 				<div id="seccion-banner">
-					<section id="banner">
-						<nav id="ocultar">
+					<section id="banner1">
+						<nav>
 							<h1><b>Servicios más buscados</b></h1>
 							<lo>
 								<?php
@@ -211,49 +211,47 @@
 							 	*@Brief Negocios con mejor calificacion
 							 	*Obtendra los 5 negocios con mayor calificacion y los mostrara
 							 	**/
-								$q6='select nombre_negocio from negocio order by calificacion limit 5;';
-								$result6=mysqli_query ($con,$q6);
+								$serv='select nombre_negocio from vista_negocio order by calificacion limit 5;';
+								$servi=mysqli_query ($con,$serv);
 								$j=0;
-								while ($row=mysqli_fetch_assoc($result6)) {
-									$resultado6[$j]['nombre']=$row['nombre_negocio'];
+								while ($row=mysqli_fetch_assoc($servi)) {
+									$servicios[$j]['nombre']=$row['nombre_negocio'];
 									$j++;
 								}
-								for($j=0; $j<mysqli_num_rows($result6);$j++){
-									echo '<li><a href="servicio.php?Negocio='.$resultado6[$j]['nombre'].'">'.$resultado6[$j]['nombre'].'</a></li>';
+								for($j=0; $j<mysqli_num_rows($servi);$j++){
+									echo '<li><a href="servicio.php?Negocio='.$servicios[$j]['nombre'].'">'.$servicios[$j]['nombre'].'</a></li>';
 								}
 								?>
 							</lo>
 							<h1><b>Categorías</b></h1>
 							<lo>
-								<li><a href="servicio_menu.php?categoria='Plomería'">Plomería</a></li>
-								<li><a href="servicio_menu.php?categoria='Electricista'">Electricista</a></li>
-								<li><a href="servicio_menu.php?categoria='Mecánico'">Mecánico</a></li>
-								<li><a href="servicio_menu.php?categoria='Carpinteria'">Carpintería</a></li>
-								<li><a href="servicio_menu.php?categoria='Cerrajería'">Cerrajería</a></li>
+								<li><a href="servicios_de_categoria.php?categoria=Plomería">Plomería</a></li>
+								<li><a href="servicios_de_categoria.php?categoria=Electricista">Electricista</a></li>
+								<li><a href="servicios_de_categoria.php?categoria=Mecánico">Mecánico</a></li>
+								<li><a href="servicios_de_categoria.php?categoria=Carpintería">Carpintería</a></li>
+								<li><a href="servicios_de_categoria.php?categoria=Cerrajería">Cerrajería</a></li>
 								<br><br>
-								<a href="categorias.php">Ver mas...</a>
+								<a id="vermas" href="categorias.php">Ver mas...</a>
 							</lo>
 						</nav>
 						<a href="https://www.trivago.com"><img id="publicidad1" src="iconos/publicidad1.jpg"></a>
 					</section>
 					<figure>
 			            <div id="publicidad2" class="carousel slide" data-ride="carousel">
-			              <script type="text/javascript">
-			              $('#publicidad2').carousel({
-			                interval: 5000,
-			                pause:true,
-			                wrap:true
-			              });
-			            </script>
-
-
+			              	<script type="text/javascript">
+			        	      $('#publicidad2').carousel({
+			            	    interval: 5000,
+			                	pause:true,
+			                	wrap:true
+			             	 });
+			            	</script>
 			            <div class="carousel-inner">
-			              <div class="item active">
-			                <img src="iconos/publicidad1.jpg"  alt="">
-			              </div>
-			              <div class="item">
-			                <img src="negocios/carpinteria_jose.jpg"  alt="">
-			              </div>
+			              	<div class="item active">
+			                	<img src="iconos/publicidad1.jpg"  alt="">
+			              	</div>
+			              	<div class="item">
+			                	<img src="negocios/carpinteria_jose.jpg"  alt="">
+			              	</div>
 			            </div>
 					</figure>
 				</div>

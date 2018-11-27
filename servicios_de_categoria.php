@@ -18,7 +18,9 @@ $bandera=1;
 		<meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Services In</title>
     <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="misestilos.css">
     	<script src="botonHamb.js"></script>
+      <script src="botonHamb1.js"></script>
     	<script src="loginregistro.js"></script>
     	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
 		<!-- Minified JS library -->
@@ -98,11 +100,11 @@ $bandera=1;
               				</lo>
               				<h1><b>Categorías</b></h1>
               				<lo>
-                				<li><a href="servicio_menu.php?categoria=Plomería">Plomería</a></li>
-                				<li><a href="servicio_menu.php?categoria=Electricista">Electricista</a></li>
-                				<li><a href="servicio_menu.php?categoria=Mecánico">Mecánico</a></li>
-                				<li><a href="servicio_menu.php?categoria=Carpintería">Carpintería</a></li>
-                				<li><a href="servicio_menu.php?categoria=Cerrajería">Cerrajería</a></li>
+                				<li><a href="servicios_de_categoria.php?categoria=Plomería">Plomería</a></li>
+                				<li><a href="servicios_de_categoria.php?categoria=Electricista">Electricista</a></li>
+                				<li><a href="servicios_de_categoria.php?categoria=Mecánico">Mecánico</a></li>
+                				<li><a href="servicios_de_categoria.php?categoria=Carpintería">Carpintería</a></li>
+                				<li><a href="servicios_de_categoria.php?categoria=Cerrajería">Cerrajería</a></li>
                 				<br><br>
                 				<a id="vermas" href="categorias.php">Ver mas...</a>
               				</lo>

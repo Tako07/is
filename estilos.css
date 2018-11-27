@@ -63,7 +63,7 @@ body{
 	width: 90%;
 	height: 100%;
 	color: white;
-	font: bold 130% roboto;
+	font: bold 20px roboto;
 	background-color: transparent;
 	border-style: groove;
 	border-width: 0px 0px 3px 0px;
@@ -84,7 +84,7 @@ body{
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
-	height: 60%;
+	height: 70%;
 	width: 15%;
 }
 #botonesN{					/*Estos son los botones de Registro e Inicio de sesion*/
@@ -93,8 +93,10 @@ body{
 	cursor: pointer;
 	outline: none;
 	color: white;
-	padding: 4% 2%;
-	font: 85% roboto;
+	text-align: center;
+	height: 50%;
+	width: 45%;
+	font: 14px roboto;
 	background-color: #1565c0;
 	border-width: 1px;
 	border-color: #0d47a1;
@@ -103,17 +105,20 @@ body{
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: flex-start;
+	justify-content: space-between;
 	align-items: center;
+	align-content: center;
 	height: 80%;
 	width: 10%;
 	margin-right: 1%;
 }
 .notificacion{				/*Le da tamaño a la caja de la notificacion*/
-	width: 20%;
+	width: 30%;
+	height: 70%;
 }
 #notificacion{				/*Le asigna el tamaño a la imagen de la notificacion*/
 	width: 100%;
+	height: 100%;
 	cursor: pointer;
 }
 
@@ -121,11 +126,12 @@ body{
 	border-radius: 50%;
 	width: 50%;
 	margin-left: 20%;
+	margin-top: 5%;
 	background-color: transparent;
 }
 #icono{						/*Asigna el tamaño a la imagen del icono*/
 	width: 100%;
-	height: 100%;
+	cursor: pointer;
 }
 input:focus{						/*Esto es para cuando se da click en un boton no se marque un cuadro alrededor*/
 	outline: none;
@@ -143,8 +149,7 @@ input:focus{						/*Esto es para cuando se da click en un boton no se marque un 
 	color: #D8D8D8;
 	font: bold 80% roboto;
 }
-/*///////////////////////////////////////////////////////////////////////////Empieza  banner//////////////////////////////////////////*/
-
+/*/////////////////////////////////////////////////////////////////////////Hasta aqui es la cabecera////////////////////////////////////////*/
 #centro{							/*Parte central de la pagina*/
 	display: flex;
 	flex-direction: row;
@@ -152,7 +157,9 @@ input:focus{						/*Esto es para cuando se da click en un boton no se marque un 
 	justify-content: space-between;
 	width: 100%;
 	height: 100%;
-	margin-left: 0%;
+	margin: 5px;
+	margin-right: 0%;
+	margin-left: 0px;
 }
 #seccion-banner{					/*Caja para el banner*/
 	display: flex;
@@ -162,11 +169,6 @@ input:focus{						/*Esto es para cuando se da click en un boton no se marque un 
 	width: 20%;
 	margin: 0%;
 }
-#banner{							/*Banner oculto de la pagina*/
-	height: 100%;
-	width: 0%;
-	visibility: hidden;
-}
 #banner1{							/*Baner visible de la pagina*/
 	background-color: #A4A4A4;
 	padding: 5% 3% 5% 3%;
@@ -174,31 +176,21 @@ input:focus{						/*Esto es para cuando se da click en un boton no se marque un 
 	text-overflow: initial;
 	-webkit-animation: banner 1.5s;
 	animation: banner 1.5s;
-	width: 94%;
+	width: 98%;
 	height: 100%;
-	padding-bottom: 42%;
-	visibility: visible;
+	visibility: hidden;
+	position: absolute;
 }
 
 @keyframes banner{					/*Animacion*/
 	0%{width: 1%; height: 100%;}
 	100%{width: 94%; height: 100%;}
 }
-#mostrar{								/*Mostrara algo en este caso la lista*/
-	visibility: visible;
-	transition: visibility 3s;
-}
-#ocultar{								/*Sirve para ocultar cosas, como la publicidad y la lista*/
-	height: 0px;
-	margin: 0px;
-	padding: 0px;
-	visibility: hidden;
-}
 h1{										/*Formato a la parte en negro de la lista*/
-	font: bold 100% roboto;
+	font: bold 20px roboto;
 }
 li{										/*Formato a la lista*/
-	font: 95% roboto;
+	font: 15px roboto;
 	border-radius: 10px;
 	margin-top: 1%;
 	margin-bottom: 1%;
@@ -208,11 +200,14 @@ a{										/*Formato para los hipervinculos*/
 	text-decoration: none;
 	text-decoration-color: #000000;
 }
+#vermas{
+	font: 15px roboto;
+}
 #publicidad1{							/*Publicidad que se encuentra dentro del banner */
 	width: 100%;
 	height: 60%;
 	padding: 0%;
-	visibility: visible;
+	visibility: hidden;
 }
 #publicidad2{							/*Publicidad que se encuentra fuera del banner */
 	width: 90%;

@@ -25,7 +25,7 @@
 			/*!&lt; Guarda todo el resultado de la consulta en $fila*/
 			$fila=mysqli_fetch_row($result);
 			/*!&lt; Crea una consulta para saber si es un negocio o no*/
-			$q1="SELECT * FROM negocio WHERE id_usuario=".$fila[0].";";
+			$q1="SELECT * FROM vista_negocio WHERE id_usuario=".$fila[0].";";
 			/*!&lt; Se manda la consulta*/
 			$result2=mysqli_query ($con,$q1);
 			/*!&lt; Si el numero de filas es 0 el usuario que inicio sesion es un cliente normal y se mandara a su pagina*/
