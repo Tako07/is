@@ -67,7 +67,7 @@ $conexion->set_charset("utf8");
 					 	/**
 					 	*@Brief Notificaciones
 					 	*Si entra como un usuario normal el icono de notificaciones se activara
-					 	**/	
+					 	**/
 						if ($bandera==3) {
 							echo '<img id="notificacion" src="iconos/ic_notificacion_v3.png">';
 						}
@@ -143,12 +143,12 @@ $conexion->set_charset("utf8");
 								<div id='superior'>
 									<?php
 									/*!&lt; Qry a ejecutar para obtener el nombre de 3 negocios*/
-									$qry='select nombre_negocio from vista_negocio limit 3';
+									$qry='select id_negocio,nombre_negocio from vista_negocio limit 3';
 									/*!&lt; ejecución de la consulta "qry"*/
 									$aux=mysqli_query($conexion, $qry);
 									/*!&lt; Mientras exixstan valores de la consulta imprime tarjetas*/
 									while ($row=mysqli_fetch_assoc($aux)) {
-										$query='select url_imagen from vista_imagenes where nombre_negocio="'.$row["nombre_negocio"].'" limit 1';
+										$query='select url_imagen from vista_imagenes where id_negocio="'.$row["id_negocio"].'" limit 1';
 										$auxi=mysqli_query($conexion, $query);
 										$imagen="./mjolnir.jpg";
 										if($rowe=mysqli_fetch_assoc($auxi)){
@@ -170,13 +170,13 @@ $conexion->set_charset("utf8");
 								<div id='inferior'>
 								<?php
 								/*!&lt; Consulta para obtener nombre de los negocios*/
-								$qry='select nombre_negocio from vista_negocio limit 3';
+								$qry='select id_negocio,nombre_negocio from vista_negocio limit 3';
 								/*!&lt; ejecución de query "qry"*/
 								$aux2=mysqli_query($conexion, $qry);
 								/*!&lt; Ciclo para colocar tarjetas*/
 								while ($row2=mysqli_fetch_assoc($aux2)) {
 									/*!&lt; Query para obtener las imagenes de los negocios*/
-									$query2='select url_imagen from vista_imagenes where nombre_negocio="'.$row2["nombre_negocio"].'" limit 1';
+									$query2='select url_imagen from vista_imagenes where id_negocio="'.$row2["id_negocio"].'" limit 1';
 									/*!&lt; ejecución del query*/
 									$auxi2=mysqli_query($conexion, $query2);
 									/*!&lt; imagen por defecto*/
