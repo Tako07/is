@@ -5,7 +5,8 @@ var divMapa;
 */
 function initMap(){
 	divMapa = document.getElementById('mapa');//div donde se va a colocar el mapa
-	navigator.geolocation.getCurrentPosition(fn_si,fn_no);//encontrar posición actual del usuario
+	navigator.geolocation.watchPosition(fn_si,fn_no);//encontrar posición actual del usuario
+
 }
 /**
 *@description funcion en caso de que el usuario no de permisos de localización
@@ -29,8 +30,9 @@ function fn_si(ruta){//función si acepta permisos de ubicación
 		lng:longitud
 	}
 
+
 	var objConfig={//generación del mapa
-		zoom : 17,//zoom del mapa por defecto
+		zoom : 15,//zoom del mapa por defecto
 		center: new google.maps.LatLng(latitud, longitud )//centrar el mapa en la ubicación del usuario
 	};
 	var gMapa = new google.maps.Map(divMapa,objConfig);
@@ -40,4 +42,9 @@ function fn_si(ruta){//función si acepta permisos de ubicación
 		title :'Posicion'
 	});*/
 
+	var marker = new google.maps.Marker({
+		position: LatiLong,
+		map: gMapa,
+		title: 'Hello World!'
+	});
 }

@@ -28,7 +28,7 @@ $conexion->set_charset("utf8");
 		<script src="reproductor.js"></script>
 		<script src="mapa.js"></script>
 		<script src="loginregistro.js"></script>
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx0lps41wdrYFh7wh6BscIvCc_nIRkgRw&callback=initMap" async defer>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1bW_pjIz7e3gCFGnwUs3tn5PR-5I0Khw&callback=initMap" async defer>
 		<!-- Api de google maps con la llave de acceso-->
 		</script>
 		<link rel="stylesheet" href="misestilos.css">
