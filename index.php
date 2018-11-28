@@ -42,7 +42,9 @@ $conexion->set_charset("utf8");
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		<script src="reproductor.js"></script>
-		<script src="mapa.js"></script>
+		<?php
+		include "mapa.php"
+		 ?>
 		<script src="loginregistro.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1bW_pjIz7e3gCFGnwUs3tn5PR-5I0Khw&callback=initMap" async defer>
 		<!-- Api de google maps con la llave de acceso-->
