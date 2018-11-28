@@ -157,7 +157,6 @@ input:focus{						/*Esto es para cuando se da click en un boton no se marque un 
 	justify-content: space-between;
 	width: 100%;
 	height: 100%;
-	margin: 5px;
 	margin-right: 0%;
 	margin-left: 0px;
 }
@@ -167,7 +166,9 @@ input:focus{						/*Esto es para cuando se da click en un boton no se marque un 
 	flex-wrap: wrap;
 	height: 100%;
 	width: 20%;
+	padding-bottom: 35%;
 	margin: 0%;
+	
 }
 #banner1{							/*Baner visible de la pagina*/
 	background-color: #A4A4A4;
