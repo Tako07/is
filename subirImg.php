@@ -34,13 +34,7 @@
 			$nombre=mysqli_fetch_row($result);
 			$filepath="usuarios/".$nombre[0].".jpg";
 			move_uploaded_file($filetmp,$filepath);
-			$sql="SELECT * from vista_imagenes where id_usuario=".$_SESSION["IDU"];
-			$result=mysqli_query($con,$sql);
-			if(mysqli_num_rows($result)>0){
-				$sql="UPDATE imagenes set url='".$nombre[0].".jpg' where=".$_SESSION["IDU"].";";
-			}else{
-				$sql="INSERT INTO imagenes VALUES(default,".$_SESSION["IDU"].",'".$nombre[0].".jpg');";
-			}
+			$sql="UPDATE usuario set foto_perfil='".$nombre[0].".jpg' where id_usuario=".$_SESSION["IDU"].";";
 			if($con->query($sql)===TRUE){
 				echo '<script>
 							function funciones(){

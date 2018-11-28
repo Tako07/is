@@ -1,4 +1,20 @@
-<?php $bandera=2;
+<?php session_start();
+if(isset($_SESSION['idUsuario'])){
+	$ID=$_SESSION['idUsuario'];
+	$_SESSION['idUsuario']=$ID;
+	$bandera=$_SESSION['bandera'];
+	$_SESSION['bandera']=$bandera;
+}else{
+	if(isset($_SESSION['idNegocio'])){
+		$ID=$_SESSION['idNegocio'];
+		$_SESSION['idNegocio']=$ID;
+		$bandera=$_SESSION['bandera'];
+		$_SESSION['bandera']=$bandera;
+	}else{
+		$bandera=1;
+		$_SESSION['bandera']=1;
+	}
+}
 	/*!&lt; Servidor al que se va a conectar*/
 	$host = "localhost";
 	/*!&lt; Nombre de la base de datos a la que se va a conectar*/

@@ -48,8 +48,15 @@
 		 	*@Brief Pagina como dueño del negocio
 		 	*Si recibe el ID de negocio mostrara la pagina como si fuera el dueño del negocio
 		 	**/
-			if(isset($_POST['idNegocio'])){
-				$IDN=$_POST['idNegocio'];
+			if(isset($_POST['idNegocio']) or isset($_SESSION['idNegocio'])){
+				if(isset($_POST['idNegocio'])){
+					$IDN=$_POST['idNegocio'];
+					$_SESSION['idNegocio']=$IDN;
+					$_SESSION['bandera']=1;
+				}else{
+					$IDN=$_SESSION['idNegocio'];
+					$_SESSION['bandera']=1;
+				}
 				/**
 			 	*@Brief Consulta de ID de usuario
 			 	*Realiza la consulta para obtener la informacion de usuario del dueño del negocio
@@ -74,8 +81,15 @@
 			 	*@Brief ID Usuario
 			 	*Si recibe el ID de usuario mostrara la pagina como si fuera
 			 	**/
-				if(isset($_POST['Usuario'])){
-					$IDU=$_POST['Usuario'];
+				if(isset($_POST['Usuario']) or isset($_SESSION['idUsuario'])){
+					if(isset($_POST['Usuario'])){
+						$IDU=$_POST['Usuario'];
+						$_SESSION['idUsuario']=$IDU;
+						$_SESSION['bandera']=3;
+					}else{
+						$IDU=$_SESSION['idUsuario'];
+						$_SESSION['bandera']=3;
+					}
 					/**
 				 	*@Brief Consulta de favorito
 				 	*realiza la consulta para saber si sigue al negocio o no
@@ -127,6 +141,15 @@
 		}
 	}else{
 		//no manda link para negocio redirecciona a inicio
+		if(isset($_SESSION['idUsuario'])){
+			$_SESSION['idUsuario']=$_SESSION=['idUsuario'];
+			$_SESSION['bandera']=$_SESSION=['bandera'];
+		}else{
+			if(isset($_SESSION['idNegocio'])){
+				$_SESSION['idNegocio']=$_SESSION['idNegocio'];
+				$_SESSION['bandera']=$_SESSION=['bandera'];
+			}
+		}
 		$bandera=0;
 	}
 	/**

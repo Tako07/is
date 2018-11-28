@@ -1,5 +1,11 @@
 <?php session_start();
-	$ID=$_POST['idUsuario'];
+	if (isset($_POST['idUsuario'])) {
+		$ID=$_POST['idUsuario'];
+	}
+	if(isset($_SESSION['idUsuario'])){
+		$ID=$_SESSION["idUsuario"];
+		$_SESSION["bandera"]=3;
+	}
 	/**
  	*@Brief Realiza la conexion
  	*Se conecta con la base de datos
@@ -107,7 +113,13 @@
 						?>
 						</figure>
 					<figure class="icono">
-						<img id="icono" src="iconos/ic_profile_v3.png">
+						<?php
+						if($fila[9]!='Null'){?>
+							<img id="icono" src="usuarios/<?php echo $fila[9]; 	?>">
+						<?php }else{
+						?>
+							<img id="icono" src="iconos/ic_profile_v3.png">
+						<?php }?>
 					</figure>
 				</section>
 			</header>
@@ -170,7 +182,13 @@
 		       		<H2>Perfil</H2>
 		        	<div class="perfil">
 		        		<figure class="iPerfil">
+							<?php
+						if($fila[9]!='Null'){?>
+							<img id="iPerfil" src="usuarios/<?php echo $fila[9]; 	?>">
+						<?php }else{
+						?>
 							<img id="iPerfil" src="iconos/ic_profile_v3.png">
+						<?php }?>
 						</figure>
 						<form class="subirImg" id="subirimg" action="subirImg.php" method="post" enctype="multipart/form-data">
 							<label id="label">
