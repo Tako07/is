@@ -149,6 +149,7 @@ $conexion->set_charset("utf8");
 			                	<img src="negocios/Carpinteria_Don_Jose1.jpg"  alt="">
 			              	</div>
 			            </div>
+									</div>
 					</figure>
 				</div>
 				<section id="centro1">

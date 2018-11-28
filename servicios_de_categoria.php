@@ -18,7 +18,6 @@ $bandera=1;
 		<meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Services In</title>
     <link rel="stylesheet" href="estilos.css">
-    <link rel="stylesheet" href="misestilos.css">
     	<script src="botonHamb.js"></script>
       <script src="botonHamb1.js"></script>
     	<script src="loginregistro.js"></script>
@@ -76,60 +75,61 @@ $bandera=1;
         		</section>
       		</header>
       		<section id="centro">
-        		<div id="seccion-banner">
-          			<section id="banner">
-            			<nav id="ocultar">
-              				<h1><b>Servicios más buscados</b></h1>
-              				<lo>
-                			<?php
-                			/**
-                			*@Brief Negocios con mejor calificacion
-                			*Obtendra los 5 negocios con mayor calificacion y los mostrara
-                			**/
-                			$serv='select nombre_negocio from vista_negocio order by calificacion limit 5;';
-                			$servi=mysqli_query ($con,$serv);
-                			$j=0;
-                			while ($row=mysqli_fetch_assoc($servi)) {
-                  				$servicios[$j]['nombre']=$row['nombre_negocio'];
-                  				$j++;
-                			}
-                			for($j=0; $j<mysqli_num_rows($servi);$j++){
-                  				echo '<li><a href="servicio.php?Negocio='.$servicios[$j]['nombre'].'">'.$servicios[$j]['nombre'].'</a></li>';
-                			}
-                			?>
-              				</lo>
-              				<h1><b>Categorías</b></h1>
-              				<lo>
-                				<li><a href="servicios_de_categoria.php?categoria=Plomería">Plomería</a></li>
-                				<li><a href="servicios_de_categoria.php?categoria=Electricista">Electricista</a></li>
-                				<li><a href="servicios_de_categoria.php?categoria=Mecánico">Mecánico</a></li>
-                				<li><a href="servicios_de_categoria.php?categoria=Carpintería">Carpintería</a></li>
-                				<li><a href="servicios_de_categoria.php?categoria=Cerrajería">Cerrajería</a></li>
-                				<br><br>
-                				<a id="vermas" href="categorias.php">Ver mas...</a>
-              				</lo>
-            			</nav>
-            			<a href="https://www.trivago.com"><img id="publicidad1" src="iconos/publicidad1.jpg"></a>
-          			</section>
-          			<figure>
-                  		<div id="publicidad2" class="carousel slide" data-ride="carousel">
-                      	<script type="text/javascript">
-                      	$('#publicidad2').carousel({
-                        	interval: 5000,
-                        	pause:true,
-                        	wrap:true
-                     	});
-                    	</script>
-                  		<div class="carousel-inner">
-                  	  		<div class="item active">
-                        	<img src="iconos/publicidad1.jpg" width="250" alt="">
-                      	</div>
-                      	<div class="item">
-							<img src="negocios/carpinteria_jose.jpg" width="250" alt="">
-                      	</div>
-                  		</div>
-          			</figure>
-        		</div>
+            <div id="seccion-banner">
+    					<section id="banner1">
+    						<nav>
+    							<h1><b>Servicios más buscados</b></h1>
+    							<lo>
+    								<?php
+    								/**
+    							 	*@Brief Negocios con mejor calificacion
+    							 	*Obtendra los 5 negocios con mayor calificacion y los mostrara
+    							 	**/
+    								$serv='select nombre_negocio from vista_negocio order by calificacion limit 5;';
+    								$servi=mysqli_query ($con,$serv);
+    								$j=0;
+    								while ($row=mysqli_fetch_assoc($servi)) {
+    									$servicios[$j]['nombre']=$row['nombre_negocio'];
+    									$j++;
+    								}
+    								for($j=0; $j<mysqli_num_rows($servi);$j++){
+    									echo '<li><a href="servicio.php?Negocio='.$servicios[$j]['nombre'].'">'.$servicios[$j]['nombre'].'</a></li>';
+    								}
+    								?>
+    							</lo>
+    							<h1><b>Categorías</b></h1>
+    							<lo>
+    								<li><a href="servicios_de_categoria.php?categoria=Plomería">Plomería</a></li>
+    								<li><a href="servicios_de_categoria.php?categoria=Electricista">Electricista</a></li>
+    								<li><a href="servicios_de_categoria.php?categoria=Mecánico">Mecánico</a></li>
+    								<li><a href="servicios_de_categoria.php?categoria=Carpintería">Carpintería</a></li>
+    								<li><a href="servicios_de_categoria.php?categoria=Cerrajería">Cerrajería</a></li>
+    								<br><br>
+    								<a id="vermas" href="categorias.php">Ver mas...</a>
+    							</lo>
+    						</nav>
+    						<a href="https://www.trivago.com"><img id="publicidad1" src="iconos/publicidad1.jpg"></a>
+    					</section>
+    					<figure>
+    			            <div id="publicidad2" class="carousel slide" data-ride="carousel">
+    			              	<script type="text/javascript">
+    			        	      $('#publicidad2').carousel({
+    			            	    interval: 5000,
+    			                	pause:true,
+    			                	wrap:true
+    			             	 });
+    			            	</script>
+    			            <div class="carousel-inner">
+    			              	<div class="item active">
+    			                	<img src="iconos/publicidad1.jpg"  alt="">
+    			              	</div>
+    			              	<div class="item">
+    			                	<img src="negocios/Carpinteria_Don_Jose1.jpg"  alt="">
+    			              	</div>
+    			            </div>
+    									</div>
+    					</figure>
+    				</div>
             <section id="centroCat">
               <div class="cartitas">
                 <div class="card">
