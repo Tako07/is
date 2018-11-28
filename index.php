@@ -146,7 +146,7 @@ $conexion->set_charset("utf8");
 			                	<img src="iconos/publicidad1.jpg"  alt="">
 			              	</div>
 			              	<div class="item">
-			                	<img src="negocios/carpinteria_jose.jpg"  alt="">
+			                	<img src="negocios/Carpinteria_Don_Jose1.jpg"  alt="">
 			              	</div>
 			            </div>
 					</figure>

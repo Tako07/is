@@ -18,7 +18,7 @@ function initMap(){
 function fn_no(){//función si el usuario no acepta permisos de ubicación
 	var objConfig={
 		zoom : 17,//zoom del mapa por defecto
-		center: new google.maps.LatLng(0, 0 )
+		center: new google.maps.LatLng(19.702701, -101.192379 )
 	}
 	var gMapa = new google.maps.Map(divMapa,objConfig);
 
@@ -55,7 +55,7 @@ function fn_si(ruta){
 	var gMapa = new google.maps.Map(divMapa,objConfig);
 
 	for(i=0;i<lugares.length;i++){
-		if(Math.abs(lugares[i].lat)-Math.abs(latitud)<0.5&&Math.abs(lugares[i].lng)-Math.abs(longitud)<0.5){
+		if(Math.abs(lugares[i].lat)-Math.abs(latitud)<0.005&&Math.abs(lugares[i].lng)-Math.abs(longitud)<0.005){
 		var marker=new google.maps.Marker({
 			position:new google.maps.LatLng(lugares[i].lat, lugares[i].lng ),
 			map: gMapa,
