@@ -130,7 +130,7 @@
 			                <img src="iconos/publicidad1.jpg" width="250" alt="">
 			              </div>
 			              <div class="item">
-			                <img src="negocios/carpinteria_jose.jpg" width="250" alt="">
+			                <img src="negocios/Carpinteria_Don_Jose1.jpg" width="250" alt="">
 			              </div>
 			            </div>
 					</figure>
@@ -142,7 +142,7 @@
 							<table id='categTab'>
 							<?php
               /*!&lt; Consulta para obtener todas las categorías registradas*/
-							$q="SELECT * FROM vista_categoria;";
+							$q="SELECT * FROM categoria;";
               /*!&lt; ejecución de la consulta para obtener categorias registradas*/
 							$result=mysqli_query ($con,$q);
               /*!&lt; Contador para colocar categorias en lado izquierdo y derecho*/

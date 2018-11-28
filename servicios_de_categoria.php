@@ -133,7 +133,7 @@ $bandera=1;
             <section id="centroCat">
               <div class="cartitas">
                 <div class="card">
-                <img class="center-block" src="./negocios/carpinteria_jose.jpg" height="150">
+                <img class="center-block" src="./negocios/Carpinteria_Don_Jose1.jpg" height="150">
                 <div class="card-body">
                 <p class="card-text">Holi</p>
                 <div class="linkCard">
@@ -141,7 +141,7 @@ $bandera=1;
                 </div>
                 </div>
                 </div><div class="card">
-                <img class="center-block" src="./negocios/carpinteria_jose.jpg" height="150">
+                <img class="center-block" src="./negocios/Carpinteria_Don_Jose1.jpg" height="150">
                 <div class="card-body">
                 <p class="card-text">Holi</p>
                 <div class="linkCard">
@@ -149,7 +149,7 @@ $bandera=1;
                 </div>
                 </div>
                 </div><div class="card">
-                <img class="center-block" src="./negocios/carpinteria_jose.jpg" height="150">
+                <img class="center-block" src="./negocios/Carpinteria_Don_Jose1.jpg" height="150">
                 <div class="card-body">
                 <p class="card-text">Holi</p>
                 <div class="linkCard">
@@ -157,7 +157,7 @@ $bandera=1;
                 </div>
                 </div>
                 </div><div class="card">
-                <img class="center-block" src="./negocios/carpinteria_jose.jpg" height="150">
+                <img class="center-block" src="./negocios/Carpinteria_Don_Jose1.jpg" height="150">
                 <div class="card-body">
                 <p class="card-text">Holi</p>
                 <div class="linkCard">
@@ -168,7 +168,7 @@ $bandera=1;
       </div>
       <div class="cartitas">
         <div class="card">
-        <img class="center-block" src="./negocios/carpinteria_jose.jpg" height="150">
+        <img class="center-block" src="./negocios/Carpinteria_Don_Jose1.jpg" height="150">
         <div class="card-body">
         <p class="card-text">Holi</p>
         <div class="linkCard">
@@ -177,7 +177,7 @@ $bandera=1;
         </div>
         </div>
         <div class="card">
-        <img class="center-block" src="./negocios/carpinteria_jose.jpg" height="150">
+        <img class="center-block" src="./negocios/Carpinteria_Don_Jose1.jpg" height="150">
         <div class="card-body">
         <p class="card-text">Holi</p>
         <div class="linkCard">
@@ -185,7 +185,7 @@ $bandera=1;
         </div>
         </div>
         </div><div class="card">
-        <img class="center-block" src="./negocios/carpinteria_jose.jpg" height="150">
+        <img class="center-block" src="./negocios/Carpinteria_Don_Jose1.jpg" height="150">
         <div class="card-body">
         <p class="card-text">Holi</p>
         <div class="linkCard">
@@ -193,7 +193,7 @@ $bandera=1;
         </div>
         </div>
         </div><div class="card">
-        <img class="center-block" src="./negocios/carpinteria_jose.jpg" height="150">
+        <img class="center-block" src="./negocios/Carpinteria_Don_Jose1.jpg" height="150">
         <div class="card-body">
         <p class="card-text">Holi</p>
         <div class="linkCard">
