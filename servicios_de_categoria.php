@@ -1,10 +1,11 @@
 <?php
-$nombCat=$_GET["seleccion"];
+$nombCat=$_GET["categoria"];
 $idCat;
 $con=mysqli_connect("localhost" , "root" , "" , "data_service_in") or die("No se pudo conectar: ".mysql_error());
 if(mysqli_connect_errno()){
   printf("Falló la conexión: %s\n",mysqli_connect_errno());
 }
+$con->set_charset("utf8");
 $q='select n.nombre_negocio, i.url_imagen from vista_categoria c inner join vista_negocio n on c.id_categoria=n.id_categoria inner join vista_imagenes i on n.id_negocio=i.id_negocio where c.nombre_categoria=\''.$nombCat.'\' group by n.id_negocio;';
 $result=mysqli_query ($con,$q);
 

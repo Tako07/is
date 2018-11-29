@@ -11,8 +11,8 @@ if(isset($_SESSION['idUsuario'])){
 		$bandera=$_SESSION['bandera'];
 		$_SESSION['bandera']=$bandera;
 	}else{
-		$bandera=1;
-		$_SESSION['bandera']=1;
+		$bandera=2;
+		$_SESSION['bandera']=2;
 	}
 }
 	/*!&lt; Servidor al que se va a conectar*/
