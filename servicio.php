@@ -212,7 +212,7 @@
 					 	/**
 					 	*@Brief Notificaciones
 					 	*Si entra como un usuario normal el icono de notificaciones se activara
-					 	**/	
+					 	**/
 						if ($bandera==3) {
 							echo '<img id="notificacion" src="iconos/ic_notificacion_v3.png">';
 						}
@@ -257,7 +257,25 @@
 								<a id="vermas" href="categorias.php">Ver mas...</a>
 							</lo>
 						</nav>
-						<a href="https://www.trivago.com"><img id="publicidad1" src="iconos/publicidad1.jpg"></a>
+            <figure id="publicidad1">
+										<div id="publicidadbann" class="carousel slide" data-ride="carousel">
+												<script type="text/javascript">
+												$('#publicidadbann').carousel({
+													interval: 5000,
+													pause:true,
+													wrap:true
+											 });
+											</script>
+										<div class="carousel-inner">
+												<div class="item active">
+													<img src="iconos/publicidad1.jpg"  alt="">
+												</div>
+												<div class="item">
+													<img src="negocios/Carpinteria_Don_Jose1.jpg"  alt="">
+												</div>
+										</div>
+										</div>
+						</figure>
 					</section>
 					<figure>
 			            <div id="publicidad2" class="carousel slide" data-ride="carousel">

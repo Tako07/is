@@ -31,14 +31,14 @@
 	$result=mysqli_query ($con,$q);
 	$fila=mysqli_fetch_row($result);
 	/**
- 	*@Brief Si no existe 
+ 	*@Brief Si no existe
  	*Se regresara al usuario a la pagina anterior si no existe en la base de datos
- 	**/	
+ 	**/
 	if(mysqli_num_rows($result)==0){
 		echo '<script>
 		function funciones(){
 			history.back();
-		} 
+		}
 		window.onload=funciones;
 		</script>';
 	}else{
@@ -106,7 +106,7 @@
 					 	/**
 					 	*@Brief Notificaciones
 					 	*Si entra como un usuario normal el icono de notificaciones se activara
-					 	**/	
+					 	**/
 						if ($bandera==3) {
 							echo '<img id="notificacion" src="iconos/ic_notificacion_v3.png">';
 						}
@@ -157,7 +157,25 @@
 								<a id="vermas" href="categorias.php">Ver mas...</a>
 							</lo>
 						</nav>
-						<a href="https://www.trivago.com"><img id="publicidad1" src="iconos/publicidad1.jpg"></a>
+						<figure id="publicidad1">
+										<div id="publicidadbann" class="carousel slide" data-ride="carousel">
+												<script type="text/javascript">
+												$('#publicidadbann').carousel({
+													interval: 5000,
+													pause:true,
+													wrap:true
+											 });
+											</script>
+										<div class="carousel-inner">
+												<div class="item active">
+													<img src="iconos/publicidad1.jpg"  alt="">
+												</div>
+												<div class="item">
+													<img src="negocios/Carpinteria_Don_Jose1.jpg"  alt="">
+												</div>
+										</div>
+										</div>
+						</figure>
 					</section>
 					<figure>
 			            <div id="publicidad2" class="carousel slide" data-ride="carousel">
@@ -209,7 +227,7 @@
 		        	<H2>Mís favoritos</H2>
 		        	<div class="favoritos">
 		        		<?php
-		        		if(mysqli_num_rows($result2)>0){ 
+		        		if(mysqli_num_rows($result2)>0){
 		        			$j=0;
 			        		while ($row=mysqli_fetch_assoc($result2)) {
 								$resultado[$j]['nombre']=$row['nombre_negocio'];
@@ -220,14 +238,14 @@
 						 	*@Brief Numero de filas negocio
 						 	*Obtiene el numero de filas que se necesitaran para mostrar todos los negocios que sigue el usuario
 						 	**/
-							$nfilas=mysqli_num_rows($result2);			
+							$nfilas=mysqli_num_rows($result2);
 							if(($nfilas/4)<1){
 								$nfilas=1;
 							}else{
 								if($nfilas%4!=0){
 									$nfilas/=4;
 									$nfilas=intval($nfilas);
-									$nfilas+=1;	
+									$nfilas+=1;
 								}else{
 									$nfilas/=4;
 									$nfilas=intval($nfilas);
@@ -243,7 +261,7 @@
 									echo '<br>';
 								}?>
 								<section class="fav">
-									<?php 
+									<?php
 									/**
 								 	*@Brief Numero de tarjetas por fila
 								 	*Coloca hasta 4 tarjetas de informacion por fila si no se completan los 4 se llenara de tarjetas vacias
@@ -281,7 +299,7 @@
 		        	<br>
 		        	<H2>Promociones de mis favoritos</H2>
 		        	<div class="mispromociones">
-		        		<?php if(mysqli_num_rows($result3)>0){ 
+		        		<?php if(mysqli_num_rows($result3)>0){
 		        			$j=0;
 			        		while ($row=mysqli_fetch_assoc($result3)) {
 								$resultado[$j]['nombre']=utf8_encode($row['nombre_negocio']);
@@ -299,7 +317,7 @@
 								if($nfilas%5!=0){
 									$nfilas/=5;
 									$nfilas=intval($nfilas);
-									$nfilas+=1;	
+									$nfilas+=1;
 								}else{
 									$nfilas/=5;
 									$nfilas=intval($nfilas);
@@ -315,12 +333,12 @@
 									echo '<br>';
 								}?>
 			        		<section id="promo">
-				        		<?php 
+				        		<?php
 				        			/**
 								 	*@Brief Numero de tarjetas por fila
 								 	*Coloca hasta 5 tarjetas de informacion por fila si no se completan los 5 se llenara de tarjetas vacias
 								 	**/
-								 	for ($count=0; $i<mysqli_num_rows($result3)&&$count<5; $i=$i+1, $count++) {?>	
+								 	for ($count=0; $i<mysqli_num_rows($result3)&&$count<5; $i=$i+1, $count++) {?>
 					        			<section id="tarjetas" onclick="usuario(<?php echo'\'servicio.php?Negocio='.$resultado[$i]["nombre"].'\','.$fila[0]?>);">
 					        				<div id="rojo">¡Promoción!</div>
 					        				<div id="desc"><?php echo $resultado[$i]['desc'];?></div>

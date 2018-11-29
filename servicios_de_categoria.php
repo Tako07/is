@@ -1,5 +1,5 @@
 <?php
-$nombCat=$_GET["categoria"];
+$nombCat=$_GET["seleccion"];
 $idCat;
 $con=mysqli_connect("localhost" , "root" , "" , "data_service_in") or die("No se pudo conectar: ".mysql_error());
 if(mysqli_connect_errno()){
@@ -19,7 +19,6 @@ $bandera=1;
 		<meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Services In</title>
     <link rel="stylesheet" href="estilos.css">
-    	<script src="botonHamb.js"></script>
       <script src="botonHamb1.js"></script>
     	<script src="loginregistro.js"></script>
     	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
@@ -109,7 +108,25 @@ $bandera=1;
     								<a id="vermas" href="categorias.php">Ver mas...</a>
     							</lo>
     						</nav>
-    						<a href="https://www.trivago.com"><img id="publicidad1" src="iconos/publicidad1.jpg"></a>
+                <figure id="publicidad1">
+    										<div id="publicidadbann" class="carousel slide" data-ride="carousel">
+    												<script type="text/javascript">
+    												$('#publicidadbann').carousel({
+    													interval: 5000,
+    													pause:true,
+    													wrap:true
+    											 });
+    											</script>
+    										<div class="carousel-inner">
+    												<div class="item active">
+    													<img src="iconos/publicidad1.jpg"  alt="">
+    												</div>
+    												<div class="item">
+    													<img src="negocios/Carpinteria_Don_Jose1.jpg"  alt="">
+    												</div>
+    										</div>
+    										</div>
+    						</figure>
     					</section>
     					<figure>
     			            <div id="publicidad2" class="carousel slide" data-ride="carousel">
