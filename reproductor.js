@@ -23,7 +23,7 @@ var tag = document.createElement('script');
           /*Tipo de link*/
           'listType':'playlist',
           /*Lista a reproducir*/
-          'list':'PLWO2m0Y4HA5czJ_lPT0ZIqKAC_01LaNFC',
+          'list':'PLxWlrEaWzjr69zfvE5IFSjo-gtU_baz-b',
          //la playlist estara en un loop
          'loop':1 
           },
