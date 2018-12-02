@@ -9,7 +9,9 @@ $con->set_charset("utf8");
 $q='select n.nombre_negocio, i.url_imagen from vista_categoria c inner join vista_negocio n on c.id_categoria=n.id_categoria inner join vista_imagenes i on n.id_negocio=i.id_negocio where c.nombre_categoria=\''.$nombCat.'\' group by n.id_negocio;';
 $result=mysqli_query ($con,$q);
 
-$bandera=1;
+if(isset($_SESSION['bandera'])){
+    $bandera=$_SESSION['bandera'];
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -69,7 +71,7 @@ $bandera=1;
             		}
             		?>
             		</figure>
-          			<figure class="icono">
+          			<figure class="icono" onclick="salir();">
             			<img id="icono" src="iconos/ic_profile_v3.png">
           			</figure>
         		</section>
@@ -151,14 +153,15 @@ $bandera=1;
             <section id="centroCat">
               <div class="cartitas">
                 <div class="card">
-                <img class="center-block" src="./negocios/Carpinteria_Don_Jose1.jpg" height="150">
-                <div class="card-body">
-                <p class="card-text">Holi</p>
-                <div class="linkCard">
-                  <a href="servicio.php?Negocio='.$row2["nombre_negocio"].'" >Ver servicio</a>
+                    <img class="center-block" src="./negocios/Carpinteria_Don_Jose1.jpg" height="150">
+                    <div class="card-body">
+                        <p class="card-text">Holi</p>
+                        <div class="linkCard">
+                            <a href="servicio.php?Negocio='.$row2["nombre_negocio"].'" >Ver servicio</a>
+                        </div>
+                    </div>
                 </div>
-                </div>
-                </div><div class="card">
+                <div class="card">
                 <img class="center-block" src="./negocios/Carpinteria_Don_Jose1.jpg" height="150">
                 <div class="card-body">
                 <p class="card-text">Holi</p>

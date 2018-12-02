@@ -12,7 +12,9 @@ $con=mysqli_connect("localhost" , "root" , "" , "data_service_in") or die("No se
  	*
  	**/
 	$con->set_charset("utf8");
-	$bandera=3;?>
+	if(isset($_SESSION['bandera'])){
+		$bandera=$_SESSION['bandera'];
+	}?>
 <html lang="es">
 	<head>
 		<meta charset="UTF-8"/>
@@ -67,7 +69,7 @@ $con=mysqli_connect("localhost" , "root" , "" , "data_service_in") or die("No se
 						}
 						?>
 						</figure>
-					<figure class="icono">
+					<figure class="icono" onclick="salir();">
 						<img id="icono" src="iconos/ic_profile_v3.png">
 					</figure>
 				</section>

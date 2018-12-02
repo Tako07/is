@@ -1,3 +1,6 @@
+function terminos(){
+	window.open("terminos_condiciones_Chicos_que_Lloran.pdf","_blank");		
+}
 /**
 *@description Funcion para cambiar el tipo de input para la fecha de nacimiento
 */

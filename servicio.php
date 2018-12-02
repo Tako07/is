@@ -218,7 +218,7 @@
 						}
 						?>
 						</figure>
-					<figure class="icono">
+					<figure class="icono" onclick="salir();">
 						<img id="icono" src="iconos/ic_profile_v3.png">
 					</figure>
 				</section>

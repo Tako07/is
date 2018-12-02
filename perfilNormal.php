@@ -112,7 +112,7 @@
 						}
 						?>
 						</figure>
-					<figure class="icono">
+					<figure class="icono" onclick="salir();">
 						<?php
 						if($fila[9]!='Null'){?>
 							<img id="icono" src="usuarios/<?php echo $fila[9]; 	?>">

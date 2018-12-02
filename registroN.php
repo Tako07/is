@@ -43,7 +43,7 @@
 						</figure>
 					</div>
 					<div id="cajaT">
-						<input type="checkbox" name="terminos" id="terminos" value="Acepto" required> Aceptas nuestros <a href="https://www.trivago.es/terminos-y-condiciones">terminos y condiciones.</a>
+						<input type="checkbox" name="terminos" id="terminos" value="Acepto" required> Aceptas nuestros <a href="terminos_condiciones_Services_In.pdf" onclick="terminos();" target="_blank">terminos y condiciones.</a>
 					</div>
 					<div class="botones1">
 						<input type="submit"  class="formButton1" value="Registrarse" >

@@ -17,7 +17,9 @@
  	*
  	**/
 	$con->set_charset("utf8");
-	$bandera=2;
+	if(isset($_SESSION['bandera'])){
+		$bandera=$_SESSION['bandera'];
+	}
 ?>
 <html lang="es">
 	<head>
@@ -75,7 +77,7 @@
 						</figure>';
 					}
 					?>
-					<figure class="icono">
+					<figure class="icono" onclick="salir();">
 						<img id="icono" src="iconos/ic_profile_v3.png">
 					</figure>
 				</section>

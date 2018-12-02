@@ -70,163 +70,161 @@
             		}
             		?>
             		</figure>
-          			<figure class="icono">
+          			<figure class="icono" onclick="salir();">
             			<img id="icono" src="iconos/ic_profile_v3.png">
           			</figure>
         		</section>
       		</header>
       		<section id="centro">
-            <div id="seccion-banner">
-    					<section id="banner1">
-    						<nav>
-    							<h1><b>Servicios más buscados</b></h1>
-    							<lo>
-    								<?php
-    								/**
-    							 	*@Brief Negocios con mejor calificacion
-    							 	*Obtendra los 5 negocios con mayor calificacion y los mostrara
-    							 	**/
-    								$serv='select nombre_negocio from vista_negocio order by calificacion limit 5;';
-    								$servi=mysqli_query ($con,$serv);
-    								$j=0;
-    								while ($row=mysqli_fetch_assoc($servi)) {
-    									$servicios[$j]['nombre']=$row['nombre_negocio'];
-    									$j++;
-    								}
-    								for($j=0; $j<mysqli_num_rows($servi);$j++){
-    									echo '<li><a href="servicio.php?Negocio='.$servicios[$j]['nombre'].'">'.$servicios[$j]['nombre'].'</a></li>';
-    								}
-    								?>
-    							</lo>
-    							<h1><b>Categorías</b></h1>
-    							<lo>
-    								<li><a href="servicios_de_categoria.php?categoria=Plomería">Plomería</a></li>
-    								<li><a href="servicios_de_categoria.php?categoria=Electricista">Electricista</a></li>
-    								<li><a href="servicios_de_categoria.php?categoria=Mecánico">Mecánico</a></li>
-    								<li><a href="servicios_de_categoria.php?categoria=Carpintería">Carpintería</a></li>
-    								<li><a href="servicios_de_categoria.php?categoria=Cerrajería">Cerrajería</a></li>
-    								<br><br>
-    								<a id="vermas" href="categorias.php">Ver mas...</a>
-    							</lo>
-    						</nav>
-                <figure id="publicidad1">
-    										<div id="publicidadbann" class="carousel slide" data-ride="carousel">
-    												<script type="text/javascript">
-    												$('#publicidadbann').carousel({
-    													interval: 5000,
-    													pause:true,
-    													wrap:true
-    											 });
-    											</script>
-    										<div class="carousel-inner">
-    												<div class="item active">
-    													<img src="iconos/publicidad1.jpg"  alt="">
-    												</div>
-    												<div class="item">
-    													<img src="negocios/Carpinteria_Don_Jose1.jpg"  alt="">
-    												</div>
-    										</div>
-    										</div>
-    						</figure>
-    					</section>
-    					<figure>
-    			            <div id="publicidad2" class="carousel slide" data-ride="carousel">
-    			              	<script type="text/javascript">
-    			        	      $('#publicidad2').carousel({
-    			            	    interval: 5000,
-    			                	pause:true,
-    			                	wrap:true
-    			             	 });
-    			            	</script>
-    			            <div class="carousel-inner">
-    			              	<div class="item active">
-    			                	<img src="iconos/publicidad1.jpg"  alt="">
-    			              	</div>
-    			              	<div class="item">
-    			                	<img src="negocios/Carpinteria_Don_Jose1.jpg"  alt="">
-    			              	</div>
-    			            </div>
-    									</div>
-    					</figure>
-    				</div>
-            <section id="centroCat">
-	            <h1>Mostrando resultados de "<?php echo $buscar;?>"</h1>
-
-	            <?php
-		        		if(mysqli_num_rows($result2)>0){
-		        			$j=0;
-			        		while ($row=mysqli_fetch_assoc($result2)) {
-								$resultado[$j]['nombre']=$row['nombre_negocio'];
-								$resultado[$j]['url']=$row['url_imagen'];
-								$j++;
-							}
-							/**
-						 	*@Brief Numero de filas negocio
-						 	*Obtiene el numero de filas que se necesitaran para mostrar todos los negocios que sigue el usuario
-						 	**/
-							$nfilas=mysqli_num_rows($result2);
-							if(($nfilas/4)<1){
-								$nfilas=1;
-							}else{
-								if($nfilas%4!=0){
-									$nfilas/=4;
-									$nfilas=intval($nfilas);
-									$nfilas+=1;
-								}else{
-									$nfilas/=4;
-									$nfilas=intval($nfilas);
+	            <div id="seccion-banner">
+					<section id="banner1">
+						<nav>
+							<h1><b>Servicios más buscados</b></h1>
+							<lo>
+								<?php
+								/**
+							 	*@Brief Negocios con mejor calificacion
+							 	*Obtendra los 5 negocios con mayor calificacion y los mostrara
+							 	**/
+								$serv='select nombre_negocio from vista_negocio order by calificacion limit 5;';
+								$servi=mysqli_query ($con,$serv);
+								$j=0;
+								while ($row=mysqli_fetch_assoc($servi)) {
+									$servicios[$j]['nombre']=$row['nombre_negocio'];
+									$j++;
 								}
+								for($j=0; $j<mysqli_num_rows($servi);$j++){
+									echo '<li><a href="servicio.php?Negocio='.$servicios[$j]['nombre'].'">'.$servicios[$j]['nombre'].'</a></li>';
+								}
+								?>
+							</lo>
+							<h1><b>Categorías</b></h1>
+							<lo>
+								<li><a href="servicios_de_categoria.php?categoria=Plomería">Plomería</a></li>
+								<li><a href="servicios_de_categoria.php?categoria=Electricista">Electricista</a></li>
+								<li><a href="servicios_de_categoria.php?categoria=Mecánico">Mecánico</a></li>
+								<li><a href="servicios_de_categoria.php?categoria=Carpintería">Carpintería</a></li>
+								<li><a href="servicios_de_categoria.php?categoria=Cerrajería">Cerrajería</a></li>
+								<br><br>
+								<a id="vermas" href="categorias.php">Ver mas...</a>
+							</lo>
+						</nav>
+		                <figure id="publicidad1">
+							<div id="publicidadbann" class="carousel slide" data-ride="carousel">
+									<script type="text/javascript">
+									$('#publicidadbann').carousel({
+										interval: 5000,
+										pause:true,
+										wrap:true
+								 });
+								</script>
+								<div class="carousel-inner">
+										<div class="item active">
+											<img src="iconos/publicidad1.jpg"  alt="">
+										</div>
+										<div class="item">
+											<img src="negocios/Carpinteria_Don_Jose1.jpg"  alt="">
+										</div>
+								</div>
+							</div>
+						</figure>
+					</section>
+					<figure>
+			            <div id="publicidad2" class="carousel slide" data-ride="carousel">
+			              	<script type="text/javascript">
+			        	      $('#publicidad2').carousel({
+			            	    interval: 5000,
+			                	pause:true,
+			                	wrap:true
+			             	 });
+			            	</script>
+			            <div class="carousel-inner">
+			              	<div class="item active">
+			                	<img src="iconos/publicidad1.jpg"  alt="">
+			              	</div>
+			              	<div class="item">
+			                	<img src="negocios/Carpinteria_Don_Jose1.jpg"  alt="">
+			              	</div>
+			            </div>
+									</div>
+					</figure>
+				</div>
+	            <section id="centroCat">
+		            <h1>Mostrando resultados de "<?php echo $buscar;?>"</h1>
+		            <?php
+	        		if(mysqli_num_rows($result2)>0){
+	        			$j=0;
+		        		while ($row=mysqli_fetch_assoc($result2)) {
+							$resultado[$j]['nombre']=$row['nombre_negocio'];
+							$resultado[$j]['url']=$row['url_imagen'];
+							$j++;
+						}
+						/**
+					 	*@Brief Numero de filas negocio
+					 	*Obtiene el numero de filas que se necesitaran para mostrar todos los negocios que sigue el usuario
+					 	**/
+						$nfilas=mysqli_num_rows($result2);
+						if(($nfilas/4)<1){
+							$nfilas=1;
+						}else{
+							if($nfilas%4!=0){
+								$nfilas/=4;
+								$nfilas=intval($nfilas);
+								$nfilas+=1;
+							}else{
+								$nfilas/=4;
+								$nfilas=intval($nfilas);
 							}
-							$i=0;
-							/**
-						 	*@Brief Segun el numero de filas se repetira el ciclo
-						 	**/
-							for($j=1; $j-1<$nfilas; $j+=1){
-								$count=0;
-								if($j>1){
-									echo '<br>';
-								}?>
-								<div class="cartitas">
-									<?php
-									/**
-								 	*@Brief Numero de tarjetas por fila
-								 	*Coloca hasta 4 tarjetas de informacion por fila si no se completan los 4 se llenara de tarjetas vacias
-								 	**/
-									for($count=0; $i <mysqli_num_rows($result2)&&$count<4; $i=$i+1,$count++) {?>
-										<div class="card">
-											<?php echo '<img class="center-block" src="negocios/'.$resultado[$i]['url'].'" height="120">'; ?>
-											<div class="card-body">
-												<p class="card-text"><?php echo $resultado[$i]['nombre']; ?></p>
-												<div class="linkCard">
-													<a href="servicio.php?Negocio='<?php echo $resultado[$i]["nombre"]; ?>'">Ver servicio</a>
-												</div>
+						}
+						$i=0;
+						/**
+					 	*@Brief Segun el numero de filas se repetira el ciclo
+					 	**/
+						for($j=1; $j-1<$nfilas; $j+=1){
+							$count=0;
+							if($j>1){
+								echo '<br>';
+							}?>
+							<div class="cartitas">
+								<?php
+								/**
+							 	*@Brief Numero de tarjetas por fila
+							 	*Coloca hasta 4 tarjetas de informacion por fila si no se completan los 4 se llenara de tarjetas vacias
+							 	**/
+								for($count=0; $i <mysqli_num_rows($result2)&&$count<4; $i=$i+1,$count++) {?>
+									<div class="card">
+										<?php echo '<img class="center-block" src="negocios/'.$resultado[$i]['url'].'" height="120" width="190">'; ?>
+										<div class="card-body">
+											<p class="card-text"><?php echo $resultado[$i]['nombre']; ?></p>
+											<div class="linkCard">
+												<a href="servicio.php?Negocio=<?php echo $resultado[$i]["nombre"]; ?>">Ver servicio</a>
 											</div>
 										</div>
-									<?php }
-									if($count<4){
-										while ($count<4) {
-											echo '
-											<section id="notarjeta">
-												<figure class="negocios">
-													</figure>
-													<div id="nada">
-														<p></p>
-													</div>
-												<button id="bnada"></button>
-											</section>';
-											$count++;
-											$i++;
-										}
-									}?>
-								</section>
-							<?php }?>
+									</div>
+								<?php }
+								if($count<4){
+									while ($count<4) {
+										echo '
+										<section id="notarjeta">
+											<figure class="negocios">
+												</figure>
+												<div id="nada">
+													<p></p>
+												</div>
+											<button id="bnada"></button>
+										</section>';
+										$count++;
+										$i++;
+									}
+								}?>
+							</div>
 						<?php }?>
-				</div>
-      		</section>
-    	</section>
-    	<footer id="pie">
-        	<button id="anunciate">Anuncia tu servicio</button>
-    	</footer>
+					<?php }?>
+      			</section>
+	    	</section>
+	    	<footer id="pie">
+	        	<button id="anunciate">Anuncia tu servicio</button>
+	    	</footer>
     	</div>
   	</body>
 </html>
