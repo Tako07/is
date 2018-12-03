@@ -1,12 +1,18 @@
 <?php session_start();
 if(isset($_SESSION['idUsuario'])){
+	$ID=$_SESSION['idUsuario'];
+	$_SESSION['idUsuario']=$ID;
 	$bandera=$_SESSION['bandera'];
+	$_SESSION['bandera']=$bandera;
 }else{
 	if(isset($_SESSION['idNegocio'])){
+		$ID=$_SESSION['idNegocio'];
+		$_SESSION['idNegocio']=$ID;
 		$bandera=$_SESSION['bandera'];
-		echo $_SESSION['bandera'];
+		$_SESSION['bandera']=$bandera;
 	}else{
 		$bandera=2;
+		$_SESSION['bandera']=2;
 	}
 }
 	/*!&lt; Servidor al que se va a conectar*/
@@ -37,7 +43,7 @@ $conexion->set_charset("utf8");
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		<script src="reproductor.js"></script>
 		<?php
-		include "mapa.php"
+		include "mapa.php";
 		 ?>
 		<script src="loginregistro.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1bW_pjIz7e3gCFGnwUs3tn5PR-5I0Khw&callback=initMap" async defer>
@@ -125,23 +131,23 @@ $conexion->set_charset("utf8");
 							</lo>
 						</nav>
 						<figure id="publicidad1">
-							<div id="publicidadbann" class="carousel slide" data-ride="carousel">
-									<script type="text/javascript">
-									$('#publicidadbann').carousel({
-										interval: 5000,
-										pause:true,
-										wrap:true
-								 });
-								</script>
-								<div class="carousel-inner">
-									<div class="item active">
-										<img src="iconos/publicidad1.jpg"  alt="">
-									</div>
-									<div class="item">
-										<img src="negocios/Carpinteria_Don_Jose1.jpg"  alt="">
-									</div>
-								</div>
-							</div>
+										<div id="publicidadbann" class="carousel slide" data-ride="carousel">
+												<script type="text/javascript">
+												$('#publicidadbann').carousel({
+													interval: 5000,
+													pause:true,
+													wrap:true
+											 });
+											</script>
+										<div class="carousel-inner">
+												<div class="item active">
+													<img src="iconos/publicidad1.jpg"  alt="">
+												</div>
+												<div class="item">
+													<img src="negocios/Carpinteria_Don_Jose1.jpg"  alt="">
+												</div>
+										</div>
+										</div>
 						</figure>
 					</section>
 					<figure>

@@ -5,6 +5,7 @@
  	*Se conecta con la base de datos
  	**/
 	$con=mysqli_connect("localhost" , "root" , "" , "data_service_in") or die("No se pudo conectar: ".mysql_error());
+  $conexion=mysqli_connect("localhost" , "root" , "" , "data_service_in") or die("No se pudo conectar: ".mysql_error());
 	/**
  	*@Brief Realiza la conexion
  	* Si no se puede conectar con la base de datos mostrara un mensaje de error
@@ -175,7 +176,7 @@
 		<script src="botonHamb1.js"></script>
 		<script src="botonHamb.js"></script>
 		<script src="reproductor.js"></script>
-		<script src="mapa.js"></script>
+		<?php include "mapa.php"; ?>
 		<script src="loginregistro.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx0lps41wdrYFh7wh6BscIvCc_nIRkgRw&callback=initMap" async defer>
 		</script>

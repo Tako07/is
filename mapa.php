@@ -39,9 +39,13 @@ function fn_si(ruta){
 	 centro ={lat: latitud,lng:longitud};
 	 lugares=[{lat:latitud,lng:longitud,nomb:"Este eres tú"}';
 	 while ($rowMark=mysqli_fetch_assoc($resultMark)) {
+		 if($rowMark["latitud"]!=null||$rowMark["longitud"]!=null){
+
+
 			 echo '
 			 ,{lat:'.$rowMark["latitud"].' ,lng: '.$rowMark["longitud"].',nomb:"'.$rowMark["nombre_negocio"].'"}';
-	 }
+	 	}
+ 	}
 
 	 echo '];
 
@@ -55,7 +59,7 @@ function fn_si(ruta){
 	var gMapa = new google.maps.Map(divMapa,objConfig);
 
 	for(i=0;i<lugares.length;i++){
-		if(Math.abs(lugares[i].lat)-Math.abs(latitud)<0.005&&Math.abs(lugares[i].lng)-Math.abs(longitud)<0.005){
+		if(Math.abs(lugares[i].lat)-Math.abs(latitud)<0.5&&Math.abs(lugares[i].lng)-Math.abs(longitud)<0.5){
 		var marker=new google.maps.Marker({
 			position:new google.maps.LatLng(lugares[i].lat, lugares[i].lng ),
 			map: gMapa,
