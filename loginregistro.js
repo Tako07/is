@@ -72,7 +72,6 @@ function finRegistro(){
 	window.open("FinRegistro.php","_self");
 }
 function abreNegocio(){
-	alert('hola');
 	window.open("index.php","_self");
 }
 /**
