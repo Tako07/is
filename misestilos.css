@@ -316,7 +316,6 @@ a{										/*Formato para los hipervinculos*/
 	margin-top: 5%;
 	height:auto;
 	text-align: left;
-	border: 1px solid #34FE00;
 
 }
 #tablaRecom{
@@ -365,6 +364,3 @@ a{										/*Formato para los hipervinculos*/
 
 
 /*/////////////////////////////////////////////////////////////////////INICIA Busqueda///////////////////////////////////////////////////*/
-#Texto{
-	border: 1px solid #FF0000;
-}

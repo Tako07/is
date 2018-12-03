@@ -30,6 +30,7 @@ var tag = document.createElement('script');
         events: {
           /*Cuando termine de configurarse se reproducira*/
           'onReady': onPlayerReady,
+          'onStateChange': onPlayerStateChange,
         }
       });
     }
@@ -38,7 +39,12 @@ var tag = document.createElement('script');
     */
     function onPlayerReady(event) {
       event.target.setVolume(20);     //volumen de los videos
-      player.setShuffle(true);        //la lista se reproducira aleatoriamente (aun no sirve)
       event.target.playVideo();       //reproduce los videos
-
+    }
+    function onPlayerStateChange(event){
+      switch(event.data){
+        case 1:
+          player.setShuffle(true);        //la lista se reproducira aleatoriamente (aun no sirve)
+        break;
+      }
     }

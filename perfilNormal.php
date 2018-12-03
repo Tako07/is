@@ -1,6 +1,8 @@
 <?php session_start();
 	if (isset($_POST['idUsuario'])) {
 		$ID=$_POST['idUsuario'];
+		$_SESSION["idUsuario"]=$ID;
+		$_SESSION["bandera"]=3;
 	}
 	if(isset($_SESSION['idUsuario'])){
 		$ID=$_SESSION["idUsuario"];
