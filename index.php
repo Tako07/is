@@ -178,60 +178,50 @@ $conexion->set_charset("utf8");
 								<div id='superior'>
 									<?php
 									/*!&lt; Qry a ejecutar para obtener el nombre de 3 negocios*/
-									$qry='select id_negocio,nombre_negocio from vista_negocio limit 3';
+									$qry='select n.id_negocio as id, nombre_negocio as nombre, calificacion, id_paquete as paquete,url_imagen as imagen
+									from vista_negocio as n inner join vista_imagenes as i on n.id_negocio=i.id_negocio where calificacion>4 and id_paquete=4
+									group by n.id_negocio order by calificacion desc limit 6';
 									/*!&lt; ejecución de la consulta "qry"*/
 									$aux=mysqli_query($conexion, $qry);
 									/*!&lt; Mientras exixstan valores de la consulta imprime tarjetas*/
+									$cont=0;
 									while ($row=mysqli_fetch_assoc($aux)) {
-										$query='select url_imagen from vista_imagenes where id_negocio="'.$row["id_negocio"].'" limit 1';
-										$auxi=mysqli_query($conexion, $query);
-										$imagen="./mjolnir.jpg";
-										if($rowe=mysqli_fetch_assoc($auxi)){
-											$imagen=$rowe["url_imagen"];
-										}
-										echo '
-										<div class="card">
-		  								<img class="card-img-top" src="./negocios/'.$imagen.'" width="150" height="150">
-		  								<div class="card-body">
-		    								<p class="card-text">'.$row["nombre_negocio"].'.</p>
-												<div class="linkCard">
-		    									<a href="servicio.php?Negocio='.$row["nombre_negocio"].'" >Ver servicio</a>
+
+											$cont++;
+											if($cont<4){
+												echo '
+												<div class="card">
+				  								<img class="card-img-top" src="./negocios/'.$row["imagen"].'" width="100" height="150">
+				  								<div class="card-body">
+				    								<p class="card-text">'.$row["nombre"].'.</p>
+														<div class="linkCard">
+				    									<a href="servicio.php?Negocio='.$row["nombre"].'" >Ver servicio</a>
+														</div>
+				  								</div>
+												</div>';
+
+											}else{
+												if($cont==4){
+												echo'</div>
+												<div id="inferior">';
+											}echo '
+											<div class="card">
+												<img class="card-img-top" src="./negocios/'.$row["imagen"].'" width="150" height="150">
+												<div class="card-body">
+													<p class="card-text">'.$row["nombre"].'.</p>
+													<div class="linkCard">
+														<a href="servicio.php?Negocio='.$row["nombre"].'" >Ver servicio</a>
+													</div>
 												</div>
-		  								</div>
-										</div>';
+											</div>';
+
+											}
+
+
 									}
 									 ?>
-								</div>
-								<div id='inferior'>
-								<?php
-								/*!&lt; Consulta para obtener nombre de los negocios*/
-								$qry='select id_negocio,nombre_negocio from vista_negocio limit 3';
-								/*!&lt; ejecución de query "qry"*/
-								$aux2=mysqli_query($conexion, $qry);
-								/*!&lt; Ciclo para colocar tarjetas*/
-								while ($row2=mysqli_fetch_assoc($aux2)) {
-									/*!&lt; Query para obtener las imagenes de los negocios*/
-									$query2='select url_imagen from vista_imagenes where id_negocio="'.$row2["id_negocio"].'" limit 1';
-									/*!&lt; ejecución del query*/
-									$auxi2=mysqli_query($conexion, $query2);
-									/*!&lt; imagen por defecto*/
-									$imagen2="./mjolnir.jpg";
-									/*!&lt si el negocio tiene una imagen, colocarla*/
-									if($rowe2=mysqli_fetch_assoc($auxi2)){
-										$imagen2=$rowe2["url_imagen"];
-									}
-									echo '
-									<div class="card">
-										<img class="card-img-top" src="./negocios/'.$imagen2.'" height="150">
-										<div class="card-body">
-											<p class="card-text">'.$row2["nombre_negocio"].'.</p>
-											<div class="linkCard">
-												<a href="servicio.php?Negocio='.$row2["nombre_negocio"].'" >Ver servicio</a>
-											</div>
-										</div>
-									</div>';
-								}
-								 ?>
+
+
 
 								</div>
 							</div>
