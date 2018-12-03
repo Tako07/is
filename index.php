@@ -125,7 +125,7 @@ $conexion->set_charset("utf8");
 								<li><a href="servicios_de_categoria.php?categoria=Carpintería">Carpintería</a></li>
 								<li><a href="servicios_de_categoria.php?categoria=Cerrajería">Cerrajería</a></li>
 								<br><br>
-								<a id="vermas" href="categorias.php">Ver mas...</a>
+								<a id="vermas" href="servicios_de_categoria.php">Ver mas...</a>
 							</lo>
 						</nav>
 						<figure id="publicidad1">

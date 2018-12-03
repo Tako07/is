@@ -1,12 +1,10 @@
 <?php
-$nombCat=$_GET["seleccion"];
-$idCat;
 $con=mysqli_connect("localhost" , "root" , "" , "data_service_in") or die("No se pudo conectar: ".mysql_error());
 if(mysqli_connect_errno()){
   printf("Falló la conexión: %s\n",mysqli_connect_errno());
 }
 $con->set_charset("utf8");
-$q='select n.nombre_negocio, i.url_imagen from vista_categoria c inner join vista_negocio n on c.id_categoria=n.id_categoria inner join vista_imagenes i on n.id_negocio=i.id_negocio where c.nombre_categoria=\''.$nombCat.'\' group by n.id_negocio;';
+$q='select n.id_negocio as id,nombre_negocio as nombre,url_imagen as imagen from vista_negocio as n inner join vista_imagenes as i on n.id_negocio=i.id_negocio group by i.id_negocio ';
 $result=mysqli_query ($con,$q);
 
 if(isset($_SESSION['bandera'])){
@@ -154,78 +152,35 @@ if(isset($_SESSION['bandera'])){
     					</figure>
     				</div>
             <section id="centroCat">
-              <div class="cartitas">
-                <div class="card">
-                    <img class="center-block" src="./negocios/Carpinteria_Don_Jose1.jpg" height="150">
-                    <div class="card-body">
-                        <p class="card-text">Holi</p>
-                        <div class="linkCard">
-                            <a href="servicio.php?Negocio='.$row2["nombre_negocio"].'" >Ver servicio</a>
+              <?php
+
+                  $contador=0;
+                  while ($row=mysqli_fetch_assoc($result)) {
+                    if ($contador==0){
+                    echo '<div class="cartitas">';
+                  }
+                  $contador++;
+                    echo '
+                    <div class="card">
+                        <img class="center-block" src="./negocios/'.$row["imagen"].'" height="150" width="180">
+                        <div class="card-body">
+                            <p class="card-text">'.$row['nombre'].'</p>
+                            <div class="linkCard">
+                                <a href="servicio.php?Negocio='.$row["nombre"].'" >Ver servicio</a>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="card">
-                <img class="center-block" src="./negocios/Carpinteria_Don_Jose1.jpg" height="150">
-                <div class="card-body">
-                <p class="card-text">Holi</p>
-                <div class="linkCard">
-                  <a href="servicio.php?Negocio='.$row2["nombre_negocio"].'" >Ver servicio</a>
-                </div>
-                </div>
-                </div><div class="card">
-                <img class="center-block" src="./negocios/Carpinteria_Don_Jose1.jpg" height="150">
-                <div class="card-body">
-                <p class="card-text">Holi</p>
-                <div class="linkCard">
-                  <a href="servicio.php?Negocio='.$row2["nombre_negocio"].'" >Ver servicio</a>
-                </div>
-                </div>
-                </div><div class="card">
-                <img class="center-block" src="./negocios/Carpinteria_Don_Jose1.jpg" height="150">
-                <div class="card-body">
-                <p class="card-text">Holi</p>
-                <div class="linkCard">
-                  <a href="servicio.php?Negocio='.$row2["nombre_negocio"].'" >Ver servicio</a>
-                </div>
-                </div>
-                </div>
-      </div>
-      <div class="cartitas">
-        <div class="card">
-        <img class="center-block" src="./negocios/Carpinteria_Don_Jose1.jpg" height="150">
-        <div class="card-body">
-        <p class="card-text">Holi</p>
-        <div class="linkCard">
-          <a href="servicio.php?Negocio='.$row2["nombre_negocio"].'" >Ver servicio</a>
-        </div>
-        </div>
-        </div>
-        <div class="card">
-        <img class="center-block" src="./negocios/Carpinteria_Don_Jose1.jpg" height="150">
-        <div class="card-body">
-        <p class="card-text">Holi</p>
-        <div class="linkCard">
-          <a href="servicio.php?Negocio='.$row2["nombre_negocio"].'" >Ver servicio</a>
-        </div>
-        </div>
-        </div><div class="card">
-        <img class="center-block" src="./negocios/Carpinteria_Don_Jose1.jpg" height="150">
-        <div class="card-body">
-        <p class="card-text">Holi</p>
-        <div class="linkCard">
-          <a href="servicio.php?Negocio='.$row2["nombre_negocio"].'" >Ver servicio</a>
-        </div>
-        </div>
-        </div><div class="card">
-        <img class="center-block" src="./negocios/Carpinteria_Don_Jose1.jpg" height="150">
-        <div class="card-body">
-        <p class="card-text">Holi</p>
-        <div class="linkCard">
-          <a href="servicio.php?Negocio='.$row2["nombre_negocio"].'" >Ver servicio</a>
-        </div>
-        </div>
-        </div>
-      </div>
+                    </div>';
+                    if ($contador==4){
+                    echo '</div>';
+                    $contador=0;
+                  }
+                  }
+
+
+
+
+               ?>
+
       </section>
     	</section>
 

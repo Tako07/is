@@ -1,5 +1,6 @@
 <?php
  	session_start();
+  $aiuda=1;
  	/**
  	*@Brief Realiza la conexion
  	*Se conecta con la base de datos
