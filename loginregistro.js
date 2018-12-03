@@ -22,7 +22,6 @@ function mostrarpass(i){
 	if(i==0){
 		if (pass1==0) {
 			/*Si esta en tipo pass se cambia a text y la bandera cambia*/
-			alert("entra1");
 			document.getElementById('contraseña').type="text";
 			pass1=1;
 		}else{
@@ -32,7 +31,6 @@ function mostrarpass(i){
 		}
 	}else{
 		if (pass2==0) {
-			alert("entra2");
 			/*Si esta en tipo pass se cambia a text y la bandera cambia*/
 			document.getElementById('contraseña1').type="text";
 			pass2=1;
