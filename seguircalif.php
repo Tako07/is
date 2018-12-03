@@ -31,6 +31,8 @@
 		}
 	}
 	if($con->query($sql)===TRUE){
+		$procedure='CALL avgneg('.$IDN.');';
+		$con->query($procedure);
 		echo '<form id="Formulario" action="servicio.php?Negocio='.$fila1[0].'" method="post">
 				<input type="hidden" name="Usuario" value="'.$IDU.'">
 			</form>';

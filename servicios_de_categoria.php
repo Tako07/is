@@ -11,6 +11,9 @@ $result=mysqli_query ($con,$q);
 
 if(isset($_SESSION['bandera'])){
     $bandera=$_SESSION['bandera'];
+}else{
+    $bandera=2;
+    $_SESSION['bandera']=2;
 }
 ?>
 <!DOCTYPE html>
@@ -87,7 +90,7 @@ if(isset($_SESSION['bandera'])){
     							 	*@Brief Negocios con mejor calificacion
     							 	*Obtendra los 5 negocios con mayor calificacion y los mostrara
     							 	**/
-    								$serv='select nombre_negocio from vista_negocio order by calificacion limit 5;';
+    								$serv='select nombre_negocio, calificacion from vista_negocio order by calificacion  desc limit 5;';
     								$servi=mysqli_query ($con,$serv);
     								$j=0;
     								while ($row=mysqli_fetch_assoc($servi)) {

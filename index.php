@@ -1,13 +1,11 @@
 <?php session_start();
 if(isset($_SESSION['idUsuario'])){
 	$ID=$_SESSION['idUsuario'];
-	$_SESSION['idUsuario']=$ID;
 	$bandera=$_SESSION['bandera'];
 	$_SESSION['bandera']=$bandera;
 }else{
 	if(isset($_SESSION['idNegocio'])){
 		$ID=$_SESSION['idNegocio'];
-		$_SESSION['idNegocio']=$ID;
 		$bandera=$_SESSION['bandera'];
 		$_SESSION['bandera']=$bandera;
 	}else{
@@ -107,7 +105,7 @@ $conexion->set_charset("utf8");
 							 	*@Brief Negocios con mejor calificacion
 							 	*Obtendra los 5 negocios con mayor calificacion y los mostrara
 							 	**/
-								$serv='select nombre_negocio from vista_negocio order by calificacion limit 5;';
+								$serv='select nombre_negocio, calificacion from vista_negocio order by calificacion  desc limit 5;';
 								$servi=mysqli_query ($conexion,$serv);
 								$j=0;
 								while ($row=mysqli_fetch_assoc($servi)) {
@@ -119,7 +117,7 @@ $conexion->set_charset("utf8");
 								}
 								?>
 							</lo>
-							<h1><b>Categorías</b></h1>
+							<h1><b>Categorías más buscados</b></h1>
 							<lo>
 								<li><a href="servicios_de_categoria.php?categoria=Plomería">Plomería</a></li>
 								<li><a href="servicios_de_categoria.php?categoria=Electricista">Electricista</a></li>
