@@ -159,6 +159,12 @@
 								<a id="vermas" href="categorias.php">Ver mas...</a>
 							</lo>
 						</nav>
+						<?php
+						$qryImg='select url_imagen as imagen, nombre_negocio
+						from vista_negocio as n inner join vista_imagenes as i on i.id_negocio=n.id_negocio
+						group by n.id_negocio';
+						$resultCarr=mysqli_query ($con,$qryImg);
+						 ?>
 						<figure id="publicidad1">
 										<div id="publicidadbann" class="carousel slide" data-ride="carousel">
 												<script type="text/javascript">
@@ -168,34 +174,63 @@
 													wrap:true
 											 });
 											</script>
+											<div class="carousel-inner">
+											<?php
+											$contCarr=0;
+											while ($rowCarr=mysqli_fetch_assoc($resultCarr)) {
+												$contCarr++;
+												if($contCarr==1){
+													echo '
+													<div class="item active">
+														<img src="iconos/publicidad1.jpg"  alt="">
+													</div>
+													';
+												}else{
+												echo '
+												<div class="item">
+													<img src="negocios/'.$rowCarr["imagen"].'"  alt="">
+												</div>
+												';
+											}
+										}
+												 ?>
+						</figure>
+					</section>
+					<?php
+					$qryImg='select url_imagen as imagen, nombre_negocio
+					from vista_negocio as n inner join vista_imagenes as i on i.id_negocio=n.id_negocio
+					group by n.id_negocio';
+					$resultCarr=mysqli_query ($con,$qryImg);
+					 ?>
+					<figure id="publicidad2">
+									<div id="publicidadbann" class="carousel slide" data-ride="carousel">
+											<script type="text/javascript">
+											$('#publicidadbann').carousel({
+												interval: 5000,
+												pause:true,
+												wrap:true
+										 });
+										</script>
 										<div class="carousel-inner">
+										<?php
+										$contCarr=0;
+										while ($rowCarr=mysqli_fetch_assoc($resultCarr)) {
+											$contCarr++;
+											if($contCarr==1){
+												echo '
 												<div class="item active">
 													<img src="iconos/publicidad1.jpg"  alt="">
 												</div>
-												<div class="item">
-													<img src="negocios/Carpinteria_Don_Jose1.jpg"  alt="">
-												</div>
-										</div>
-										</div>
-						</figure>
-					</section>
-					<figure>
-			            <div id="publicidad2" class="carousel slide" data-ride="carousel">
-			              	<script type="text/javascript">
-			        	      $('#publicidad2').carousel({
-			            	    interval: 5000,
-			                	pause:true,
-			                	wrap:true
-			             	 });
-			            	</script>
-			            <div class="carousel-inner">
-			              	<div class="item active">
-			                	<img src="iconos/publicidad1.jpg"  alt="">
-			              	</div>
-			              	<div class="item">
-			                	<img src="negocios/carpinteria_jose.jpg"  alt="">
-			              	</div>
-			            </div>
+												';
+											}else{
+											echo '
+											<div class="item">
+												<img src="negocios/'.$rowCarr["imagen"].'"  alt="">
+											</div>
+											';
+										}
+									}
+											 ?>
 					</figure>
 				</div>
 				<section id="centro2">
