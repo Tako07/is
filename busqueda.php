@@ -20,6 +20,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Services In</title>
     <link rel="stylesheet" href="estilos.css">
+      <script src="botonHamb.js"></script>
       <script src="botonHamb1.js"></script>
     	<script src="loginregistro.js"></script>
     	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
@@ -150,9 +151,9 @@
 					</figure>
 				</div>
 	            <section id="centroCat">
-		            <h1>Mostrando resultados de "<?php echo $buscar;?>"</h1>
 		            <?php
 	        		if(mysqli_num_rows($result2)>0){
+	        			echo '<h1>Mostrando resultados de '.$buscar.'</h1>';
 	        			$j=0;
 		        		while ($row=mysqli_fetch_assoc($result2)) {
 							$resultado[$j]['nombre']=$row['nombre_negocio'];
@@ -219,7 +220,9 @@
 								}?>
 							</div>
 						<?php }?>
-					<?php }?>
+					<?php }else{
+						echo '<h1>No se encontraron conincidencias para "'.$buscar.'"</h1>';
+						}?>
       			</section>
 	    	</section>
 	    	<footer id="pie">
