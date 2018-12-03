@@ -1,4 +1,5 @@
 <?php session_start();
+/*!&lt; Obtiene el idUusario con un post o con una sesion*/
 	if (isset($_POST['idUsuario'])) {
 		$ID=$_POST['idUsuario'];
 		$_SESSION["idUsuario"]=$ID;

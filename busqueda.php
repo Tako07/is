@@ -9,8 +9,10 @@
 	if(mysqli_connect_errno()){						/*Comprueba que la conexion se realiza correctamente de no ser así mostrara un mensaje en pantalla*/
 		printf("Falló la conexión: %s\n",mysqli_connect_errno());
 	}
-	$q="SELECT n.nombre_negocio, i.url_imagen FROM vista_negocio n INNER JOIN vista_imagenes i ON n.id_negocio=i.id_negocio INNER JOIN vista_categorias c ON n.id_categoria=c.id_categoria WHERE n.nombre_negocio LIKE '%".$buscar."%' OR n.etiquetas LIKE '%".$buscar."%' OR c.nombre_categoria LIKE '%".$buscar."%' group by n.nombre_negocio;";	/*Realiza la consulta para coincidencías con la base de datos en la tabla de vista de negocio. Las comparaciones se realizan con las columnas de "nombre_negocio" y la de "etiquetas"*/
-	$result2=mysqli_query ($con,$q);				/*Se realiza la busqueda de la consulta anterior y se obtienen toda la informacion de los negocios que tengan coincidencias y se guardan  en la variable $result*/
+	/*!&lt; Realiza la consulta para coincidencías con la base de datos en la tabla de vista de negocio. Las comparaciones se realizan con las columnas de "nombre_negocio" y la de "etiquetas*/
+	$q="SELECT n.nombre_negocio, i.url_imagen FROM vista_negocio n INNER JOIN vista_imagenes i ON n.id_negocio=i.id_negocio INNER JOIN vista_categorias c ON n.id_categoria=c.id_categoria WHERE n.nombre_negocio LIKE '%".$buscar."%' OR n.etiquetas LIKE '%".$buscar."%' OR c.nombre_categoria LIKE '%".$buscar."%' group by n.nombre_negocio;";
+	/*!&lt; Se realiza la busqueda de la consulta anterior y se obtienen toda la informacion de los negocios que tengan coincidencias y se guardan  en la variable $result*/
+	$result2=mysqli_query ($con,$q);
 ?>
 <!DOCTYPE html>
 <html lang="es">

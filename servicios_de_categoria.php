@@ -1,8 +1,20 @@
 <?php
+/**
+    *@Brief Realiza la conexion
+    *Se conecta con la base de datos
+    **/
 $con=mysqli_connect("localhost" , "root" , "" , "data_service_in") or die("No se pudo conectar: ".mysql_error());
+/**
+    *@Brief Realiza la conexion
+    * Si no se puede conectar con la base de datos mostrara un mensaje de error
+    **/
 if(mysqli_connect_errno()){
   printf("Falló la conexión: %s\n",mysqli_connect_errno());
 }
+/**
+    *@Brief Realiza la conexion
+    * Guarda la configuracion para leer acentos
+    **/
 $con->set_charset("utf8");
 $q='select n.id_negocio as id,nombre_negocio as nombre,url_imagen as imagen from vista_negocio as n inner join vista_imagenes as i on n.id_negocio=i.id_negocio group by i.id_negocio ';
 $result=mysqli_query ($con,$q);

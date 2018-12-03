@@ -49,6 +49,7 @@
 				echo '<script>alert("Correo ya registrado, pruebe con otro");
 				history.back();</script>';
 			}else{
+				/*!&lt; De no existir el usuario y/o el correo en la base se guarda y lleva al usuario a su perfil*/
 					$sql="INSERT INTO usuario (username,nombre,apellido,fecha_nacimiento,correo,password) VALUES ('".$usuario."','".$nombre."','".$apellido."','".$fecha."','".$correo."',MD5('".$contraseña."'));";
 					if($con->query($sql)===TRUE){
 						echo '<script>alert("SE Registro");</script>';

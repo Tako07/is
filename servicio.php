@@ -1,6 +1,5 @@
 <?php
  	session_start();
-  $aiuda=1;
  	/**
  	*@Brief Realiza la conexion
  	*Se conecta con la base de datos
@@ -14,6 +13,10 @@
 	if(mysqli_connect_errno()){
 		printf("Falló la conexión: %s\n",mysqli_connect_errno());
 	}
+	/**
+ 	*@Brief Realiza la conexion
+ 	* Guarda la configuracion para leer acentos
+ 	**/
 	$con->set_charset("utf8");
 	/**
  	*@Brief URL

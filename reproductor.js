@@ -30,6 +30,7 @@ var tag = document.createElement('script');
         events: {
           /*Cuando termine de configurarse se reproducira*/
           'onReady': onPlayerReady,
+          /*Cuando el estado del reproductor cambia barajea la playlist*/
           'onStateChange': onPlayerStateChange,
         }
       });

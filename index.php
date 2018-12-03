@@ -1,4 +1,5 @@
 <?php session_start();
+/*!&lt; Obtiene el id de usuario o negocio sino se obtiene ninguna la bandera sera igual a 2 (sin iniciar sesion)*/
 if(isset($_SESSION['idUsuario'])){
 	$ID=$_SESSION['idUsuario'];
 	$bandera=$_SESSION['bandera'];
