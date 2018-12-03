@@ -59,7 +59,7 @@ function fn_si(ruta){
 	var gMapa = new google.maps.Map(divMapa,objConfig);
 
 	for(i=0;i<lugares.length;i++){
-		if(Math.abs(lugares[i].lat)-Math.abs(latitud)<0.5&&Math.abs(lugares[i].lng)-Math.abs(longitud)<0.5){
+		if(Math.abs(lugares[i].lat)-Math.abs(latitud)<0.005&&Math.abs(lugares[i].lng)-Math.abs(longitud)<0.005){
 		var marker=new google.maps.Marker({
 			position:new google.maps.LatLng(lugares[i].lat, lugares[i].lng ),
 			map: gMapa,
