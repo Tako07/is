@@ -58,7 +58,7 @@
 }
 #buscar{				/*Este es la parte del buscador fondo, tamaño*/
 	text-align: left;
-	width: 90%;
+	width: 88%;
 	height: 100%;
 	color: white;
 	font: bold 20px roboto;
@@ -68,7 +68,8 @@
 	border-color: #0D47A1;
 }
 #lupa{									/*Le da tamaño al boton de la lupa*/
-	width: 10%;
+	width: 12%;
+	height: 100%;
 	background-color: transparent;
 	outline: none;
 	cursor: pointer;
@@ -94,7 +95,7 @@
 	text-align: center;
 	height: 50%;
 	width: 45%;
-	font: 14px roboto;
+	font: 140% roboto;
 	background-color: #1565c0;
 	border-width: 1px;
 	border-color: #0d47a1;
@@ -252,18 +253,16 @@ a{										/*Formato para los hipervinculos*/
 	height: 35px;
 	margin: 0%;
 	padding: 0%;
- 	bottom: 0px;
+	top:100%;
 }
 #anunciate{
 	margin-top: 2.5px;
-	margin-right: 50px;
-	float: right;
+	margin-left: 50px;
 	height: 30px;
 	cursor: pointer;
 	outline: none;
 	padding: 5px;
 	border-width: 1px;
-	align-items: right;
 }
 
 .tarjetas{

@@ -36,3 +36,7 @@ function cambiarid (){
 function salir(){
 	window.open("salir.php","_self");
 }
+
+function anuncia(){
+	window.open("promociones.php","_self");
+}

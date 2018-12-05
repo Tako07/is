@@ -52,7 +52,7 @@ if(isset($_SESSION['bandera'])){
         		</figure>
         		<section class="buscar">
           			<form id="formulario" action="busqueda.php" method="post">
-            			<input id="buscar" type="search" name="busqueda" maxlength="200" placeholder="Ingresa tu busqueda"></input>
+            			<input id="buscar" type="search" name="busqueda" maxlength="200" placeholder="Ingresa tu búsqueda"></input>
             			<button type="submit" name="bsearch" id="lupa"></button>
           			</form>
         		</section>
@@ -112,7 +112,7 @@ if(isset($_SESSION['bandera'])){
     								}
     								?>
     							</lo>
-    							<h1><b>Categorías</b></h1>
+    							<h1><b>Categorías más buscadas</b></h1>
     							<lo>
     								<li><a href="servicios_de_categoria.php?categoria=Plomería">Plomería</a></li>
     								<li><a href="servicios_de_categoria.php?categoria=Electricista">Electricista</a></li>
@@ -231,8 +231,8 @@ if(isset($_SESSION['bandera'])){
     	</section>
 
     	<footer id="pie">
-        	<button id="anunciate">Anuncia tu servicio</button>
-    	</footer>
+        <button id="anunciate" onclick="anuncia();">Anuncia tu servicio</button>
+      </footer>
     	</div>
   	</body>
 </html>

@@ -60,7 +60,7 @@ body{
 }
 #buscar{				/*Este es la parte del buscador fondo, tamaño*/
 	text-align: left;
-	width: 90%;
+	width: 88%;
 	height: 100%;
 	color: white;
 	font: bold 20px roboto;
@@ -70,7 +70,8 @@ body{
 	border-color: #0D47A1;
 }
 #lupa{									/*Le da tamaño al boton de la lupa*/
-	width: 10%;
+	width: 12%;
+	height: 100%;
 	background-color: transparent;
 	outline: none;
 	cursor: pointer;
@@ -338,17 +339,14 @@ h2{
 	height: 35px;
   	bottom: 0px;
 }
-#anunciate{								/*Boton dentro del pie de pagina*/
+#anunciate{
 	margin-top: 2.5px;
-	margin-right: 50px;
-	float: right;
+	margin-left: 50px;
 	height: 30px;
 	cursor: pointer;
 	outline: none;
 	padding: 5px;
 	border-width: 1px;
-	align-items: right;
-	font: 95% roboto;
 }
 #imagenN{
 	width: 50%;
