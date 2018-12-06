@@ -4,6 +4,8 @@
     *Se conecta con la base de datos
     **/
 $con=mysqli_connect("localhost" , "root" , "" , "data_service_in") or die("No se pudo conectar: ".mysql_error());
+$categoria=$_GET['categoria'];
+
 /**
     *@Brief Realiza la conexion
     * Si no se puede conectar con la base de datos mostrara un mensaje de error
@@ -16,7 +18,13 @@ if(mysqli_connect_errno()){
     * Guarda la configuracion para leer acentos
     **/
 $con->set_charset("utf8");
-$q='select n.id_negocio as id,nombre_negocio as nombre,url_imagen as imagen from vista_negocio as n inner join vista_imagenes as i on n.id_negocio=i.id_negocio group by i.id_negocio ';
+if($categoria=="0"){
+  $q='select n.id_negocio as id,nombre_negocio as nombre,url_imagen as imagen from vista_negocio as n inner join vista_imagenes as i on n.id_negocio=i.id_negocio group by i.id_negocio ';
+}else{
+  $q='select n.id_negocio as id,nombre_negocio as nombre,url_imagen as imagen, c.nombre_categoria as categoria from
+  ((vista_negocio as n inner join vista_imagenes as i on n.id_negocio=i.id_negocio)
+  inner join vista_categorias as c on n.id_categoria=c.id_categoria) where c.nombre_categoria="'.$categoria.'" group by i.id_negocio ';
+}
 $result=mysqli_query ($con,$q);
 
 if(isset($_SESSION['bandera'])){
@@ -113,14 +121,14 @@ if(isset($_SESSION['bandera'])){
     								?>
     							</lo>
     							<h1><b>Categorías más buscadas</b></h1>
-    							<lo>
-    								<li><a href="servicios_de_categoria.php?categoria=Plomería">Plomería</a></li>
+                  <lo>
+    								<li><a href="servicios_de_categoria.php?categoria=Plomeria">Plomería</a></li>
     								<li><a href="servicios_de_categoria.php?categoria=Electricista">Electricista</a></li>
-    								<li><a href="servicios_de_categoria.php?categoria=Mecánico">Mecánico</a></li>
-    								<li><a href="servicios_de_categoria.php?categoria=Carpintería">Carpintería</a></li>
-    								<li><a href="servicios_de_categoria.php?categoria=Cerrajería">Cerrajería</a></li>
+    								<li><a href="servicios_de_categoria.php?categoria=Mecanico">Mecánico</a></li>
+    								<li><a href="servicios_de_categoria.php?categoria=Carpinteria">Carpintería</a></li>
+    								<li><a href="servicios_de_categoria.php?categoria=Cerrajeria">Cerrajería</a></li>
     								<br><br>
-    								<a id="vermas" href="categorias.php">Ver mas...</a>
+    								<a id="vermas" href="servicios_de_categoria.php?categoria=0">Ver mas...</a>
     							</lo>
     						</nav>
                 <?php

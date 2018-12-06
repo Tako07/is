@@ -151,13 +151,13 @@
 							</lo>
 							<h1><b>Categorías más buscadas</b></h1>
 							<lo>
-								<li><a href="servicios_de_categoria.php?categoria=Plomería">Plomería</a></li>
+								<li><a href="servicios_de_categoria.php?categoria=Plomeria">Plomería</a></li>
 								<li><a href="servicios_de_categoria.php?categoria=Electricista">Electricista</a></li>
-								<li><a href="servicios_de_categoria.php?categoria=Mecánico">Mecánico</a></li>
-								<li><a href="servicios_de_categoria.php?categoria=Carpintería">Carpintería</a></li>
-								<li><a href="servicios_de_categoria.php?categoria=Cerrajería">Cerrajería</a></li>
+								<li><a href="servicios_de_categoria.php?categoria=Mecanico">Mecánico</a></li>
+								<li><a href="servicios_de_categoria.php?categoria=Carpinteria">Carpintería</a></li>
+								<li><a href="servicios_de_categoria.php?categoria=Cerrajeria">Cerrajería</a></li>
 								<br><br>
-								<a id="vermas" href="categorias.php">Ver mas...</a>
+								<a id="vermas" href="servicios_de_categoria.php?categoria=0">Ver mas...</a>
 							</lo>
 						</nav>
 						<?php
