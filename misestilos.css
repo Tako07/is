@@ -9,6 +9,9 @@
 	display: block;
 	overflow: hidden;
 }
+body{
+	height: 100%;
+}
 
 #cabecera{					/*Esta es la parte de la cabecera, el color el tamaño y el tipo de letra*/
 	display: flex;
@@ -253,7 +256,7 @@ a{										/*Formato para los hipervinculos*/
 	height: 35px;
 	margin: 0%;
 	padding: 0%;
-	top:100%;
+	bottom: 0px;
 }
 #anunciate{
 	margin-top: 2.5px;

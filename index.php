@@ -136,39 +136,36 @@ $conexion->set_charset("utf8");
 						$resultCarr=mysqli_query ($conexion,$qryImg);
 						 ?>
 						<figure id="publicidad1">
-										<div id="publicidadbann" class="carousel slide" data-ride="carousel">
-												<script type="text/javascript">
-												$('#publicidadbann').carousel({
-													interval: 5000,
-													pause:true,
-													wrap:true
-											 });
-											</script>
-											<div class="carousel-inner">
-											<?php
-											$contCarr=0;
-											while ($rowCarr=mysqli_fetch_assoc($resultCarr)) {
-												$contCarr++;
-												if($contCarr==1){
-													echo '
-													<div class="item active">
-														<img src="iconos/publicidad1.jpg"  alt="">
-													</div>
-													';
-												}else{
-												echo '
-												<div class="item">
-													<img src="negocios/'.$rowCarr["imagen"].'"  alt="">
-												</div>
-												';
-											}
+							<div id="publicidadbann" class="carousel slide" data-ride="carousel">
+								<script type="text/javascript">
+								$('#publicidadbann').carousel({
+									interval: 5000,
+									pause:true,
+									wrap:true
+								 });
+								</script>
+									<div class="carousel-inner">
+									<?php
+									$contCarr=0;
+									while ($rowCarr=mysqli_fetch_assoc($resultCarr)) {
+										$contCarr++;
+										if($contCarr==1){
+											echo '
+											<div class="item active">
+												<img src="iconos/publicidad1.jpg"  alt="">
+											</div>
+											';
+										}else{
+											echo '
+											<div class="item">
+												<img src="negocios/'.$rowCarr["imagen"].'"  alt="">
+											</div>
+											';
 										}
-												 ?>
-
-
-
-										</div>
-										</div>
+									}
+									?>
+								</div>
+							</div>
 						</figure>
 					</section>
 					<?php
@@ -178,34 +175,36 @@ $conexion->set_charset("utf8");
 					$resultCarr=mysqli_query ($conexion,$qryImg);
 					 ?>
 					<figure id="publicidad2">
-									<div id="publicidadbann" class="carousel slide" data-ride="carousel">
-											<script type="text/javascript">
-											$('#publicidadbann').carousel({
-												interval: 5000,
-												pause:true,
-												wrap:true
-										 });
-										</script>
-										<div class="carousel-inner">
-										<?php
-										$contCarr=0;
-										while ($rowCarr=mysqli_fetch_assoc($resultCarr)) {
-											$contCarr++;
-											if($contCarr==1){
-												echo '
-												<div class="item active">
-													<img src="iconos/publicidad1.jpg"  alt="">
-												</div>
-												';
-											}else{
-											echo '
-											<div class="item">
-												<img src="negocios/'.$rowCarr["imagen"].'"  alt="">
-											</div>
-											';
-										}
+						<div id="publicidadbann" class="carousel slide" data-ride="carousel">
+							<script type="text/javascript">
+								$('#publicidadbann').carousel({
+									interval: 5000,
+									pause:true,
+									wrap:true
+							 });
+							</script>
+							<div class="carousel-inner">
+								<?php
+								$contCarr=0;
+								while ($rowCarr=mysqli_fetch_assoc($resultCarr)) {
+									$contCarr++;
+									if($contCarr==1){
+										echo '
+										<div class="item active">
+											<img src="iconos/publicidad1.jpg"  alt="">
+										</div>
+										';
+									}else{
+									echo '
+									<div class="item">
+										<img src="negocios/'.$rowCarr["imagen"].'"  alt="">
+									</div>
+									';
 									}
-											 ?>
+								}
+								?>
+							</div>
+						</div>
 					</figure>
 				</div>
 				<section id="centro1">
