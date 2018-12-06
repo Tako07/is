@@ -163,7 +163,7 @@
 						<?php
 						$qryImg='select url_imagen as imagen, nombre_negocio
 						from vista_negocio as n inner join vista_imagenes as i on i.id_negocio=n.id_negocio
-						group by n.id_negocio';
+						group by n.id_negocio order by rand()';
 						$resultCarr=mysqli_query ($con,$qryImg);
 						 ?>
 						<figure id="publicidad1">
@@ -200,7 +200,7 @@
 					<?php
 					$qryImg='select url_imagen as imagen, nombre_negocio
 					from vista_negocio as n inner join vista_imagenes as i on i.id_negocio=n.id_negocio
-					group by n.id_negocio';
+					group by n.id_negocio order by rand()';
 					$resultCarr=mysqli_query ($con,$qryImg);
 					 ?>
 					<figure id="publicidad2">

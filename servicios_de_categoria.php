@@ -132,9 +132,9 @@ if(isset($_SESSION['bandera'])){
     							</lo>
     						</nav>
                 <?php
-    						$qryImg='select url_imagen as imagen, nombre_negocio
-    						from vista_negocio as n inner join vista_imagenes as i on i.id_negocio=n.id_negocio
-    						group by n.id_negocio';
+                $qryImg='select url_imagen as imagen, nombre_negocio
+      					from vista_negocio as n inner join vista_imagenes as i on i.id_negocio=n.id_negocio
+      					group by n.id_negocio order by rand()';
     						$resultCarr=mysqli_query ($con,$qryImg);
     						 ?>
     						<figure id="publicidad1">
@@ -169,9 +169,9 @@ if(isset($_SESSION['bandera'])){
     						</figure>
     					</section>
               <?php
-  						$qryImg='select url_imagen as imagen, nombre_negocio
-  						from vista_negocio as n inner join vista_imagenes as i on i.id_negocio=n.id_negocio
-  						group by n.id_negocio';
+              $qryImg='select url_imagen as imagen, nombre_negocio
+    					from vista_negocio as n inner join vista_imagenes as i on i.id_negocio=n.id_negocio
+    					group by n.id_negocio order by rand()';
   						$resultCarr=mysqli_query ($con,$qryImg);
   						 ?>
   						<figure id="publicidad2">

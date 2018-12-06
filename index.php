@@ -132,7 +132,7 @@ $conexion->set_charset("utf8");
 						<?php
 						$qryImg='select url_imagen as imagen, nombre_negocio
 						from vista_negocio as n inner join vista_imagenes as i on i.id_negocio=n.id_negocio
-						group by n.id_negocio';
+						group by n.id_negocio order by rand()';
 						$resultCarr=mysqli_query ($conexion,$qryImg);
 						 ?>
 						<figure id="publicidad1">
@@ -174,7 +174,7 @@ $conexion->set_charset("utf8");
 					<?php
 					$qryImg='select url_imagen as imagen, nombre_negocio
 					from vista_negocio as n inner join vista_imagenes as i on i.id_negocio=n.id_negocio
-					group by n.id_negocio';
+					group by n.id_negocio order by rand()';
 					$resultCarr=mysqli_query ($conexion,$qryImg);
 					 ?>
 					<figure id="publicidad2">
