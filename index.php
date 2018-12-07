@@ -25,6 +25,11 @@ if(isset($_SESSION['idUsuario'])){
 	/*!&lt; Conexión a la base de datos*/
 $conexion= mysqli_connect($host,$user,$password,$database);
 $conexion->set_charset("utf8");
+$qryImg='select url_imagen as imagen, nombre_negocio
+from vista_negocio as n inner join vista_imagenes as i on i.id_negocio=n.id_negocio
+group by n.id_negocio order by rand()';
+$resultCarr=mysqli_query ($conexion,$qryImg);
+$y=mysqli_num_rows($resultCarr);
 ?>
 <!DOCTYPE html>
 
@@ -55,7 +60,7 @@ $conexion->set_charset("utf8");
 	<body>
 		<div id="app">
 			<header id="cabecera">
-				<button name="bbanner" id="hamburguesa" onclick="cambiarid();"></button>
+				<button name="bbanner" id="hamburguesa" onclick="cambiarid(<?php echo $y; ?>);"></button>
 				<figure class="logo" onclick="home();">
 					<img id="logo" src="iconos/logo.png">
 				</figure>
@@ -120,20 +125,16 @@ $conexion->set_charset("utf8");
 							</lo>
 							<h1><b>Categorías más buscadas</b></h1>
 							<lo>
-								<li><a href="servicios_de_categoria.php?categoria=Plomeria">Plomería</a></li>
-								<li><a href="servicios_de_categoria.php?categoria=Electricista">Electricista</a></li>
-								<li><a href="servicios_de_categoria.php?categoria=Mecanico">Mecánico</a></li>
-								<li><a href="servicios_de_categoria.php?categoria=Carpinteria">Carpintería</a></li>
-								<li><a href="servicios_de_categoria.php?categoria=Cerrajeria">Cerrajería</a></li>
+								<li><a href="servicios_de_categoria.php?categoria=Plomería">Plomería</a></li>
+								<li><a href="servicios_de_categoria.php?categoria=Eléctricista">Electricista</a></li>
+								<li><a href="servicios_de_categoria.php?categoria=Mecánico">Mecánico</a></li>
+								<li><a href="servicios_de_categoria.php?categoria=Carpintería">Carpintería</a></li>
+								<li><a href="servicios_de_categoria.php?categoria=Cerrajería">Cerrajería</a></li>
 								<br><br>
 								<a id="vermas" href="servicios_de_categoria.php?categoria=0">Ver mas...</a>
 							</lo>
 						</nav>
 						<?php
-						$qryImg='select url_imagen as imagen, nombre_negocio
-						from vista_negocio as n inner join vista_imagenes as i on i.id_negocio=n.id_negocio
-						group by n.id_negocio order by rand()';
-						$resultCarr=mysqli_query ($conexion,$qryImg);
 						 ?>
 						<figure id="publicidad1">
 							<div id="publicidadbann" class="carousel slide" data-ride="carousel">
@@ -157,8 +158,8 @@ $conexion->set_charset("utf8");
 											';
 										}else{
 											echo '
-											<div class="item">
-												<img hidden src="negocios/'.$rowCarr["imagen"].'"  alt="">
+											<div hidden id="hola'.$contCarr.'" class="item">
+												<img  src="negocios/'.$rowCarr["imagen"].'"  alt="">
 											</div>
 											';
 										}

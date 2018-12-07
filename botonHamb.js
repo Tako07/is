@@ -5,12 +5,17 @@ var cont=0;
 /**
 *@description Funcion para mostrar el banner
 */
-function cambiarid (){
+function cambiarid (i){
+	i--;
 	if (cont==0) {				/*Si esta oculta*/
 		var zona=document.getElementById('seccion-banner');
 		var banner=document.getElementById('banner1');
 		var dentro=document.getElementById('publicidad1');
 		var fuera=document.getElementById('publicidad2');
+		while(i>1){
+			document.getElementsByClassName('item')[i].removeAttribute("hidden");
+			i--;
+		}
 		banner.style.visibility = 'visible';
 		banner.style.position = 'static';
 		dentro.style.visibility = 'visible';
@@ -23,6 +28,10 @@ function cambiarid (){
 		var banner=document.getElementById('banner1');
 		var dentro=document.getElementById('publicidad1');
 		var fuera=document.getElementById('publicidad2');
+		while(i>1){
+			document.getElementsByClassName('item')[i].setAttribute("hidden");
+			i--;
+		}
 		banner.style.visibility = 'hidden';
 		banner.style.position = 'absolute';
 		dentro.style.visibility = 'hidden';
