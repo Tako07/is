@@ -43,6 +43,7 @@ if(isset($_SESSION['bandera'])){
     <title>Services In</title>
     <link rel="stylesheet" href="estilos.css">
       <script src="botonHamb1.js"></script>
+      <script src="botonHamb.js"></script>
     	<script src="loginregistro.js"></script>
     	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
 		<!-- Minified JS library -->
