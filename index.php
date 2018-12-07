@@ -158,8 +158,8 @@ $y=mysqli_num_rows($resultCarr);
 											';
 										}else{
 											echo '
-											<div hidden id="hola'.$contCarr.'" class="item">
-												<img  src="negocios/'.$rowCarr["imagen"].'"  alt="">
+											<div class="item">
+												<img src="negocios/'.$rowCarr["imagen"].'"  alt="">
 											</div>
 											';
 										}
@@ -198,7 +198,7 @@ $y=mysqli_num_rows($resultCarr);
 									}else{
 									echo '
 									<div class="item">
-										<img src="negocios/'.$rowCarr["imagen"].'"  alt="">
+										<img  src="negocios/'.$rowCarr["imagen"].'"  alt="">
 									</div>
 									';
 									}
