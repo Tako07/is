@@ -223,7 +223,7 @@
 							</div>
 						<?php }?>
 					<?php }else{
-						echo '<h1>No se encontraron conincidencias para "'.$buscar.'"</h1>';
+						echo '<h1>No se encontraron coincidencias para "'.$buscar.'"</h1>';
 						}?>
       			</section>
 	    	</section>

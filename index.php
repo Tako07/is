@@ -158,7 +158,7 @@ $conexion->set_charset("utf8");
 										}else{
 											echo '
 											<div class="item">
-												<img src="negocios/'.$rowCarr["imagen"].'"  alt="">
+												<img hidden src="negocios/'.$rowCarr["imagen"].'"  alt="">
 											</div>
 											';
 										}
